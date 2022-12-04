@@ -3,13 +3,12 @@ import Image from 'next/image'
 import React, { Suspense, useEffect } from 'react'
 import Header from "../components/HeaderComponents/Header"
 import Footer from "../components/FooterComponents/Footer"
-import FooterPageLinks from "../components/FooterComponents/FooterPageLinks"
-import FooterContactUs from "../components/FooterComponents/FooterContactUs"
-import FooterImportantLink from "../components/FooterComponents/FooterImportantLink"
-import FooterContact from "../components/FooterComponents/FooterContact"
-import FooterBottom from "../components/FooterComponents/FooterBottom"
+import Splash from "../components/HomePageComponents/Splash"
+import TrainingsHomePage from "../components/HomePageComponents/Training/TrainingsHomePage"
+import publicRequest from './api/requestMethods'
 
 export default function Home() {
+
   return (
     <div >
       <Head>
@@ -20,6 +19,16 @@ export default function Home() {
 
       <main >
         <Header />
+        <Splash />
+        <TrainingsHomePage publicRequest={publicRequest} />
+        {/* <HomeAboutUs /> */}
+        {/* <Suspense fallback={<div>Loading...</div>}> */}
+        {/* <Mission /> */}
+        {/* <OurServices /> */}
+        {/* <Statistics /> */}
+        {/* <Jumpstart /> */}
+        {/* <Testimonials /> */}
+        {/* </Suspense> */}
       </main>
 
       <footer>
