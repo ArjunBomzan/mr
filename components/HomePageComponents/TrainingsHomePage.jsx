@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Link from 'next/link';
 import uuid from 'react-uuid';
-import TrainingCard from './TrainingCard';
-import coursesApi from "../../../pages/api/coursesApi";
+import TrainingCard from '../Training/TrainingCard';
+import coursesApi from "../../pages/api/coursesApi";
 
 const TrainingsHomePage = (props) => {
     const [courses, setCourses] = useState();

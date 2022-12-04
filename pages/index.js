@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import React, { Suspense, useEffect } from 'react'
 import Header from "../components/HeaderComponents/Header"
 import Footer from "../components/FooterComponents/Footer"
 import Splash from "../components/HomePageComponents/Splash"
-import TrainingsHomePage from "../components/HomePageComponents/Training/TrainingsHomePage"
+import HomeAboutUs from "../components/HomePageComponents/HomeAboutUs"
+import TrainingsHomePage from "../components/HomePageComponents/TrainingsHomePage"
 import publicRequest from './api/requestMethods'
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
         <Header />
         <Splash />
         <TrainingsHomePage publicRequest={publicRequest} />
-        {/* <HomeAboutUs /> */}
+        <HomeAboutUs />
         {/* <Suspense fallback={<div>Loading...</div>}> */}
         {/* <Mission /> */}
         {/* <OurServices /> */}
