@@ -1,0 +1,131 @@
+.training-icon-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    width: 25%;
+    font-size: 1rem;
+    text-align: center;
+    flex-direction: column;
+}
+
+@media (min-width:600px) {
+    .training-icon-div {
+        text-align: start;
+        flex-direction: row;
+    }
+}
+
+.training-icon-div svg,
+.training-icon-div img {
+    width: 1.5rem;
+    fill: #2a6fdb;
+}
+
+.card-shadow {
+    box-shadow: 0px 0px 9px 1px rgb(102 102 102 / 24%);
+}
+
+.training-indicator {
+    display: flex;
+    gap: 0.7rem;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.training-indicator svg {
+    width: 0.5rem;
+}
+
+.training-card img {
+    transform: scale(0.93);
+    transition: all 0.2s;
+    height: auto;
+    margin: auto;
+    width: auto;
+}
+
+.training-card {
+    transition: all 0.2s ease-in-out;
+    border-radius: 10px;
+    /* height: 230px; */
+}
+
+.training-card:hover img {
+    transform: scale(1);
+    z-index: inherit;
+}
+
+.training-card-img-div {
+    border-radius: 10px 10px 0px 0px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+.learn-more-hover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: 0;
+    display: flex;
+    border-radius: 10px 10px 0px 0px;
+    transition: opacity 0.2s;
+    fill: currentColor;
+}
+
+.training-card:hover {
+    /* box-shadow: 2px 2px 5px 2px #e5e5e5; */
+    box-shadow: 1px 1px 3px 1px #d4d4d4;
+}
+
+.training-card:hover .learn-more {
+    background-color: rgba(222, 222, 222, 0.119);
+    opacity: 1;
+}
+
+.training-card>.learn-more {
+    background-color: black;
+    opacity: 0;
+    color: white;
+    padding: 10px;
+
+}
+
+.learn-more {
+    padding: 10px;
+    background-color: green !important;
+}
+
+.training-div {
+    transition: max-height 0.5s;
+}
+
+.training-div:hover {
+    max-height: 200px;
+}
+
+#learn-more {
+    opacity: 0;
+    transition: 0.2s opacity;
+    border-radius: 0px 8px 0px 4px;
+    background-color: #22c55e !important;
+    color: white;
+    padding: 10px;
+}
+
+.training-card:hover #learn-more {
+    opacity: 1;
+}
+
+#learn-more:hover {
+    background-color: #1da850 !important;
+}
+
+#learn-more:active {
+    background-color: #1a9246 !important;
+}

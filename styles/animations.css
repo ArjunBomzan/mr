@@ -1,0 +1,113 @@
+.slide-left-to-right {
+  animation-duration: 1s;
+  animation-name: slideLeftToRight;
+}
+
+
+.slide-right-to-left {
+  animation-duration: 1s;
+  animation-name: slideRightToLeft;
+}
+
+.text-fade {
+  animation-duration: 2s;
+  animation-name: textFade;
+}
+
+
+@keyframes slideLeftToRight {
+  from {
+    margin-right: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-right: 0;
+    width: max;
+  }
+}
+
+@keyframes slideRightToLeft {
+  from {
+    margin-left: 100%;
+    /* width: 300%; */
+  }
+
+  to {
+    margin-left: 0;
+    /* width: max; */
+  }
+}
+
+@keyframes textFade {
+  from {
+    opacity: 0.1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-90 {
+  animation-duration: 2s;
+  animation-name: slide90;
+  animation-delay: 1s;
+}
+
+@keyframes slide90 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 90%;
+  }
+}
+
+.slide-80 {
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-name: slide80;
+}
+
+@keyframes slide80 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 80%;
+  }
+}
+
+.slide-70 {
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-name: slide70;
+}
+
+@keyframes slide70 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 70%;
+  }
+}
+
+.zoom-image {
+  animation-duration: 2s;
+  animation-name: zoomImage;
+}
+
+@keyframes zoomImage {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
