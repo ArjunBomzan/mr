@@ -1,16 +1,19 @@
-import { Link, useLocation } from "react-router-dom"
-import { publicRequest } from "../../../../requestMethods"
+
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { coursesApi } from "../../../pages/api/apiCalls";
 
 const RelatedComponents = () => {
-  let location = useLocation();
-  const pathname = location.pathname.split("/")[2]
-
+  const router = useRouter();
+  const { slug } = router.query
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    publicRequest.get("course/")
-      .then(res => { setCourses(res.data) })
-      .catch(err => { console.log(err) })
+    // publicRequest.get("course/")
+    //   .then(res => { setCourses(res.data) })
+    //   .catch(err => { console.log(err) })
+    coursesApi({ setCourses })
   }, []);
   return (
     <div className="lg:px-44 md:px-20 px-4 sm:flex-row flex-col flex gap-10 mb-10 mt-10">
@@ -23,9 +26,9 @@ const RelatedComponents = () => {
         >
           {
             courses?.map((course) => {
-              return (!(pathname == course.id) && <Link
+              return (!(slug == course.slug) && <Link
                 className="flex gap-1 items-center w-48"
-                href={`/courses/${course.id}`}
+                href={`/courses/${course.slug}`}
                 key={course.id}
               >
                 <img src={course.image} className="w-20" />

@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import Link from 'next/link';
 import uuid from 'react-uuid';
-import TrainingCard from '../Training/TrainingCard';
-import coursesApi from "../../pages/api/coursesApi";
+import TrainingCard from '../TrainingComponents/TrainingCard';
+import { coursesApi } from "../../pages/api/apiCalls";
 
 const TrainingsHomePage = (props) => {
     const [courses, setCourses] = useState();
+    const home = true
     useEffect(() => {
-        coursesApi({ setCourses })
+        coursesApi({ setCourses, home })
     }, []);
     return (
         <div className='px-4 py-20 lg:px-44 md:px-20 sm:px-16 relative'>
@@ -16,7 +17,7 @@ const TrainingsHomePage = (props) => {
                 className='grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 mt-6'
             >
                 {
-                    courses?.map((course) => {
+                    courses?.slice(0, 12)?.map((course) => {
                         return <TrainingCard course={course} key={uuid()} />
                     })
                 }

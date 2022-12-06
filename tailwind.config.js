@@ -15,9 +15,9 @@ module.exports = {
         full: '100%',
       },
       backgroundImage: {
-        'splash-bg': "url('/src/assets/splash-bg.jpg')",
+        'splash-bg': "url('/assets/tailwind/blog-splash.jpg')",
         'office-bg': "url('/src/assets/office.jpg')",
-        'statistics-bg': "url('/src/assets/statistics-bg.jpg')",
+        'statistics-bg': "url('/assets/homePage/statistics-bg.jpg')",
         'testimonials': "url('/src/assets/testimonial.jpg')",
         'blogs': "url('/src/assets/blog-splash.jpg')",
         'splash-ed': "url('/src/assets/splash-education.jpg')",

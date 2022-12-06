@@ -1,14 +1,20 @@
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import React, { Suspense, useEffect } from 'react'
-import Header from "../components/HeaderComponents/Header"
-import Footer from "../components/FooterComponents/Footer"
-import Splash from "../components/HomePageComponents/Splash"
+import React from 'react'
 import HomeAboutUs from "../components/HomePageComponents/HomeAboutUs"
+import Jumpstart from "../components/HomePageComponents/Jumpstart"
+import Mission from "../components/HomePageComponents/Mission"
+import OurServices from "../components/HomePageComponents/OurServices.tsx"
+import Splash from "../components/HomePageComponents/Splash"
+import Statistics from "../components/HomePageComponents/Statistics"
+import Testimonials from "../components/HomePageComponents/Testimonials"
 import TrainingsHomePage from "../components/HomePageComponents/TrainingsHomePage"
-import publicRequest from './api/requestMethods'
 
 export default function Home() {
-
+  const TestimonialNoSsr = dynamic(
+    () => import("../components/HomePageComponents/Testimonials"),
+    { ssr: false }
+  )
   return (
     <div >
       <Head>
@@ -18,22 +24,16 @@ export default function Home() {
       </Head>
 
       <main >
-        <Header />
         <Splash />
-        <TrainingsHomePage publicRequest={publicRequest} />
+        <TrainingsHomePage />
         <HomeAboutUs />
-        {/* <Suspense fallback={<div>Loading...</div>}> */}
-        {/* <Mission /> */}
-        {/* <OurServices /> */}
-        {/* <Statistics /> */}
-        {/* <Jumpstart /> */}
-        {/* <Testimonials /> */}
-        {/* </Suspense> */}
+        <Mission />
+        <OurServices />
+        <Statistics />
+        <Jumpstart />
+        <TestimonialNoSsr />
       </main>
 
-      <footer>
-        <Footer />
-      </footer>
     </div>
   )
 }

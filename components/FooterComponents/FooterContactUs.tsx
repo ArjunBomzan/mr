@@ -14,40 +14,40 @@ const FooterContactUs = () => {
                     </Link>
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400'>
-                    <a href='https://goo.gl/maps/L6b1682tr3T21jXy9' target="_blank">
+                    <Link href='https://goo.gl/maps/L6b1682tr3T21jXy9' target="_blank" rel="noreferrer">
                         Putalisadak, Kumari Galli 2
-                    </a>
+                    </Link>
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400'>
                     {/* <Link href=''> */}
-                    <a href="tel:+9823721737">
-                        9823721737</a>
+                    <Link href="tel:+9823721737">
+                        9823721737</Link>
                     {/* </Link> */}
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400'>
-                    <a href='whatsapp://send?text=Hello World!&phone=%2B9779823721737'>
+                    <Link href='whatsapp://send?text=Hello World!&phone=%2B9779823721737'>
                         9823721737 (Whatsapp)
-                    </a>
+                    </Link>
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400'>
-                    <a href="viber://chat/?number=%2B9779823721737">
+                    <Link href="viber://chat/?number=%2B9779823721737">
                         9823721737 (Viber)
-                    </a>
+                    </Link>
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400'>
-                    <a href='https://www.facebook.com/MindRisersConsortium'>
+                    <Link href='https://www.facebook.com/MindRisersConsortium'>
                         Facebook
-                    </a>
+                    </Link>
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400'>
-                    <a href="https://www.facebook.com/messages/t/112200750406684">
+                    <Link href="https://www.facebook.com/messages/t/112200750406684">
                         Messenger
-                    </a>
+                    </Link>
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400'>
-                    <a href='mailto:tech.mindrisers@gmail.com'>
+                    <Link href='mailto:tech.mindrisers@gmail.com'>
                         tech.mindrisers@gmail.com
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </div>

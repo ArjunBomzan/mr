@@ -1,28 +1,25 @@
-import { publicRequest } from '../../../requestMethods'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import { coursesCombinesApi } from '../../pages/api/apiCalls'
+import Loader from '../Loader'
 import TrainingBanner from './TrainingBanner'
 import RelatedComponents from './TrainingComponents/RelatedComponents'
 import SuccessStories from './TrainingComponents/SuccessComponents/SuccessStories'
 import TrainingContainer from './TrainingContainer'
 import TrainingSubHeader from './TrainingSubHeader'
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom'
-import Loader from '../../../Loader'
 
 const Training = () => {
+    const router = useRouter()
+    const { slug } = router.query
     const [course, setCourse] = useState();
-    let location = useLocation();
-    const pathname = location.pathname.split("/")[2]
+
     useEffect(() => {
-        publicRequest.get(`coursecombine/${pathname}/`)
-            .then(res => {
-                // console.log(res.data.data)
-                setCourse(res.data)
-            })
-            .catch(err => console.log(err))
-    }, [pathname]);
+        setCourse()
+        router.isReady && coursesCombinesApi({ setCourse, slug })
+    }, [slug, router.isReady]);
 
     return (
-        <>
+        <div>
             {
                 course ?
                     <>
@@ -35,7 +32,7 @@ const Training = () => {
                     :
                     <Loader />
             }
-        </>
+        </div>
     )
 }
 
