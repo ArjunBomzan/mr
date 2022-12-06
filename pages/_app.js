@@ -1,12 +1,11 @@
-// import '../styles/globals.css'
-import "../styles/index.css"
-import "../styles/animations.css"
-import "../styles/training.css"
-// import "../styles/output.css"
-import Header from "../components/HeaderComponents/Header";
-import Footer from "../components/FooterComponents/Footer";
-import Link from "next/link";
+import "../styles/animations.css";
+import "../styles/index.css";
+import "../styles/training.css";
 
+import { Html } from 'next/document';
+import Link from "next/link";
+import Footer from "../components/FooterComponents/Footer";
+import Header from "../components/HeaderComponents/Header";
 function MyApp({ Component, pageProps }) {
   return <>
     <Header />

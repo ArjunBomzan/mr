@@ -8,7 +8,7 @@ const BlogCard = ({ thumbnail, title, blurb, md, url, imgAlt }) => {
   return (
     <Link
       // href={`/tech-services/${url}`}
-      href={`${(type == "tech-services" || type == "services") && "tech-services"}/${url}`}
+      href={`/${(type == "tech-services" || type == "services") ? "tech-services" : "blogs"}/${url}`}
       // onClick={handleOnClick}
       className='cursor-pointer h-[450px] blog-container image-box bg-white flex flex-col rounded-md duration-500'
     // className='cursor-pointer h-[450px] blog-container image-box bg-white w-[80%] md:w-[45%] lg:w-[28%] xl:w-[26%] mt-12 flex flex-col rounded-md hover:rounded-none duration-500'

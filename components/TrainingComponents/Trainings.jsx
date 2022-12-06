@@ -7,7 +7,7 @@ import Loader from '../Loader'
 import TrainingCard from './TrainingCard'
 
 
-const Trainings = ({ bgColor = 'bg-neutral-200', cardBg = 'bg-white' }) => {
+const Trainings = ({ bgColor = 'bg-white', cardBg = 'bg-white' }) => {
   const router = useRouter()
   const { slug } = router.query
   const [courses, setCourses] = useState();

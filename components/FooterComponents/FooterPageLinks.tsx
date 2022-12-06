@@ -24,7 +24,7 @@ const FooterPageLinks = () => {
           </Link>
         </li>
         <li className='cursor-pointer hover:text-neutral-400'>
-          <Link href='onlineadmission'>
+          <Link href='admission'>
             Online Admission
           </Link>
         </li>

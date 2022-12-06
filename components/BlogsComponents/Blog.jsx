@@ -18,17 +18,16 @@ const Blog = () => {
 
 
   useEffect(() => {
-    {
-      if (router.isReady) {
-
-        const index = blogs.indexOf(slug);
-        console.log("index", blogs.indexOf(slug), slug)
-        if (index !== -1) blogs.splice(index, 1);
-        router.pathname?.split('/')[1] == "blogs" && singleBlogApi({ setBlog, setDescription, setBlogs, slug })
-        router.pathname?.split('/')[1] == "tech-services" && techServicesApi({ setBlog, setDescription, setBlogs, slug })
-      }
+    setBlogs([])
+    if (router.isReady) {
+      const index = blogs.indexOf(slug);
+      console.log("index", blogs.indexOf(slug), slug)
+      if (index !== -1) blogs.splice(index, 1);
+      router.pathname?.split('/')[1] == "blogs" && singleBlogApi({ setBlog, setDescription, setBlogs, slug })
+      router.pathname?.split('/')[1] == "tech-services" && techServicesApi({ setBlog, setDescription, setBlogs, slug })
     }
-  }, [router.pathname, router.isReady]);
+
+  }, [slug, router.isReady]);
 
   return (
     <>
