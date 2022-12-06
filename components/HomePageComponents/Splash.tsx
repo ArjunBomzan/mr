@@ -4,7 +4,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from 'next/link'
-
+import SplashBg from "../../assets/homePage/splash-bg.jpg";
 const Splash = () => {
   return (
     <div className='relative z-[0] h-[65vh]'>
@@ -29,7 +29,7 @@ const Splash = () => {
           className="parallax-bg bg-splash-bg"
           data-swiper-parallax="-23%"></div> */}
         <SwiperSlide >
-          <div className='w-full bg-splash-bg bg-no-repeat bg-cover h-[65vh]'>
+          <div className='w-full bg-splash-bg bg-no-repeat bg-cover h-[65vh]' style={{ backgroundImage: `url(${SplashBg.src})` }}>
             <div className='flex flex-col items-center justify-center w-full h-full bg-mask '>
               <div
                 // className='text-green-400 slide-left-to-right text-md'
@@ -55,7 +55,7 @@ const Splash = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide >
-          <div className='w-full bg-splash-bg bg-no-repeat bg-cover h-[65vh]'>
+          <div className='w-full bg-splash-bg bg-no-repeat bg-cover h-[65vh]' style={{ backgroundImage: `url(${SplashBg.src})` }}>
             <div className='flex flex-col items-center justify-center w-full h-full bg-mask'>
               <div className='text-green-400 slide-left-to-right text-md'>SOFTWARE DEVELOPMENT TRAININGS</div>
               <h2 className='w-4/5 mt-2 font-sans text-[1rem] font-extrabold text-center text-white text-fade h-max sm:w-1/2 sm:text-[2rem]'>

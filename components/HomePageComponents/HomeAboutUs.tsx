@@ -1,6 +1,7 @@
 
 import Matrix from '../../assets/homePage/matrix.jpg'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const HomeAboutUs = () => {
   return (
@@ -19,18 +20,18 @@ const HomeAboutUs = () => {
           To sum up, MindRisers is committed to 100% clients and students satisfaction with the best value ever possible in Nepal. MindRisers is not just a company, it is the trust of thousands of clients and students."
         </p> */}
           <p className='text-justify about-us'>
-            Mind Risers is a parent company of <a href='https://jobrisers.com/'>jobrisers.com</a>,  <a href='https://tummytruck.com.np/'>tummytruck.com.np</a>, <a href='https://digitalpalika.org/'>digitalpalika.org</a> , mind risers software development company, and the training institute. We are the only company in Nepal where we guarantee paid internship and job placement after the course is completed in our software development and digital marketing company.
+            Mind Risers is a parent company of <Link href='https://jobrisers.com/'>jobrisers.com</Link>,  <Link href='https://tummytruck.com.np/'>tummytruck.com.np</Link>, <Link href='https://digitalpalika.org/'>digitalpalika.org</Link> , mind risers software development company, and the training institute. We are the only company in Nepal where we guarantee paid internship and job placement after the course is completed in our software development and digital marketing company.
             What we believe is practical knowledge can be delivered only if the institution continuously does research and development in the same place.
           </p>
-          {/* <a className='flex flex-row space-x-2 ' href='#why-us-container'> */}
-          <a href='#why-us-container' className='items-center flex flex-row space-x-2 px-4 py-3 mt-8 text-white duration-500 bg-green-500 rounded-md w-max fill-white hover:fill-black hover:text-black hover:bg-slate-300'>
+          {/* <Link className='flex flex-row space-x-2 ' href='#why-us-container'> */}
+          <Link href='#why-us-container' className='items-center flex flex-row space-x-2 px-4 py-3 mt-8 text-white duration-500 bg-green-500 rounded-md w-max fill-white hover:fill-black hover:text-black hover:bg-slate-300'>
             <span className='font-semibold text-md'>
               Discover More
             </span>
             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-          </a>
+          </Link>
           {/* </a> */}
         </div>
         <div className='w-full lg:w-1/2' >

@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper";
 import { useMediaQuery } from "react-responsive";
-
+import Background from '../../assets/homePage/testimonial.jpg'
 import TestimonialCard from './TestimonialCard'
 
 
@@ -19,7 +19,7 @@ const Testimonials = () => {
 
 
   return (
-    <section className='bg-testimonials bg-fixed bg-contain h-max'>
+    <section className='bg-testimonials bg-fixed bg-contain h-max' style={{ backgroundImage: `url(${Background.src})` }}>
       <div className='w-full h-full flex flex-col items-center bg-mask py-20 sm:py-32 px-0 space-y-12'>
         <div className='flex flex-col w-full'>
           <p className="w-full text-center text-green-500 text-sm tracking-widest font-medium mb-5">TESTIMONIALS</p>

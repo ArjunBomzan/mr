@@ -2,10 +2,16 @@
   "name": "mind-risers-next",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
+  "comments0":{
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start"
+  },
+  "scripts": {
+    
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
     "lint": "next lint",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",

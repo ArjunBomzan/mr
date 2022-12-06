@@ -59,7 +59,7 @@ const Statistic = ({ value, label }: statisticInterface) => {
 
 const Statistics = () => {
   return (
-    <section className="bg-fixed bg-statistics-bg h-max bg-no-repeat bg-auto">
+    <section className="bg-fixed h-max bg-no-repeat bg-auto" style={{ backgroundImage: `url(${StatisticsBg.src})` }}>
       <div className='flex flex-col items-center w-full h-full px-5 py-20 space-y-12 bg-mask lg:flex-row sm:py-32 sm:px-32 lg:space-y-0'>
         <div className='flex flex-col w-full px-4 pl-10 lg:w-1/2 space-y-9'>
           <h4 className='font-sans font-medium tracking-widest text-green-500 text-md'>STATISTICS</h4>
