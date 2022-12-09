@@ -1,7 +1,4 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-import { coursesCombinesApi } from '../../pages/api/apiCalls'
 import Loader from '../Loader'
 import TrainingBanner from './TrainingBanner'
 import RelatedComponents from './TrainingComponents/RelatedComponents'
@@ -10,34 +7,24 @@ import TrainingContainer from './TrainingContainer'
 import { Meta } from './TrainingMeta'
 import TrainingSubHeader from './TrainingSubHeader'
 
-const Training = () => {
-    const router = useRouter()
-    const { slug } = router.query
-    const [course, setCourse] = useState();
-    const [meta, setMeta] = useState();
-    // console.log(course?.data?.course[0]?.meta_tag)
-    useEffect(() => {
-        setCourse()
-        router.isReady && coursesCombinesApi({ setCourse, slug })
-    }, [slug, router.isReady]);
-    console.log(Meta[slug])
+const Training = (props) => {
     return (
         <>
             <Head>
-                <title>{course?.data?.course[0]?.title}</title>
-                {Meta[slug]?.map((meta) => {
+                <title>{props?.course?.data?.course[0]?.title}</title>
+                {Meta[props?.slug]?.map((meta) => {
                     return <meta name={meta?.name} property={meta?.property} content={meta?.content} detail={meta?.detail} />
                 })}
             </Head>
             <div>
                 {
-                    course ?
+                    props?.course ?
                         <>
-                            <TrainingBanner course={course} />
+                            <TrainingBanner course={props?.course} />
                             <TrainingSubHeader />
-                            <TrainingContainer course={course} />
-                            <SuccessStories course={course} />
-                            <RelatedComponents course={course} />
+                            <TrainingContainer course={props?.course} />
+                            <SuccessStories course={props?.course} />
+                            <RelatedComponents course={props?.course} />
                         </>
                         :
                         <Loader />
