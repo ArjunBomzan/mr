@@ -5,6 +5,7 @@ import Jumpstart from '../HomePageComponents/Jumpstart'
 import OurServices from '../HomePageComponents/OurServices'
 import ServicesBanner from './ServicesBanner'
 import Trainings from '../TrainingComponents/Trainings'
+import dynamic from 'next/dynamic'
 
 const Services = () => {
   useEffect(() => window.scrollTo({
@@ -13,6 +14,10 @@ const Services = () => {
     behavior: 'smooth'
   }), [])
 
+  const Testimonials = dynamic(
+    () => import('../HomePageComponents/Testimonials'),
+    { ssr: false }
+  )
   return (
     <main>
       <ServicesBanner />
@@ -21,7 +26,7 @@ const Services = () => {
       {/* <Discover /> */}
       <Blogs />
       <Trainings />
-      {/* <Testimonials /> */}
+      <Testimonials />
       {/* <Partners /> */}
     </main>
   )

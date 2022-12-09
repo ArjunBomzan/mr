@@ -6,7 +6,7 @@ export default function blogs() {
     return (
         <div>
             <Head>
-                <title>Tech Services</title>
+                <title>Blogs</title>
             </Head>
             <main>
                 <Blogs />

@@ -19,6 +19,7 @@ const TrainingOverview = (props) => {
                     }
                 </ReactMarkdown>
             }
+
         </div>
     )
 }

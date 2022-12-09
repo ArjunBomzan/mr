@@ -6,15 +6,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SuccessStory from "./SuccessStory";
 
 const SuccessStories = (props) => {
-
     const w = window.innerWidth;
-    console.log("stories", props?.course?.data?.course[0]?.title)
     return (
         <>
             {
                 props?.course?.data?.success_story[0] &&
-                <div className='my-10 ' id="success_stories">
-                    <p className="font-bold text-3xl lg:px-44 md:px-20 px-2">Success Stories</p>
+                <div className='my-10 lg:px-44 md:px-20 px-2' id="success_stories">
+                    <p className="font-bold text-3xl">Success Stories</p>
                     <Swiper
                         slidesPerView={w < 400 ? 1 : w < 900 ? 3 : 3}
                         spaceBetween={25}
@@ -23,7 +21,6 @@ const SuccessStories = (props) => {
                             clickable: true,
                         }}
                         modules={[FreeMode, Pagination, Autoplay, Navigation]}
-                        className="mySwiper lg:mx-40 md:mx-20 mx-2"
                         loop={true}
                         autoplay={{
                             delay: 2000,

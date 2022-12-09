@@ -7,7 +7,7 @@ export default function blog() {
     return (
         <div>
             <Head>
-                <title>Slug BLogs</title>
+                <title>BLogs</title>
             </Head>
             <main>
                 <Blog />

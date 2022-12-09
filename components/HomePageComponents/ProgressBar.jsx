@@ -2,12 +2,12 @@ import { InView } from 'react-intersection-observer';
 const ProgressBar = ({ value, label }) => {
     return (
         <div className="w-full">
-            <p className='mb-3 text-sm font-bold tracking-wide text-neutral-600' >{label}</p>
+            <p className='mb-3 text-sm font-bold tracking-wide text-neutral-600 ' >{label}</p>
             <div className='flex flex-row w-full h-1 bg-neutral-800'>
                 <InView triggerOnce={true}>
                     {({ inView, ref, entry }) => (
                         <div
-                            className={`h-full bg-green-400 transition-all progress-bar`}
+                            className={`h-full bg-green-400 transition-all progress-bar text-neutral-600`}
                             style={{ width: inView ? `${value}%` : 0 }}
                             ref={ref}
                         ></div>

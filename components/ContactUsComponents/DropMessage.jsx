@@ -71,9 +71,9 @@ const DropMessage = () => {
                     >
                         {
                             submiting ?
-                                <div class="flex justify-center items-center gap-2">
-                                    <div class="spinner-border animate-spin inline-block w-5 h-5 border-4 rounded-full" role="status">
-                                        <span class="visually-hidden">Loading...</span>
+                                <div className="flex justify-center items-center gap-2">
+                                    <div className="spinner-border animate-spin inline-block w-5 h-5 border-4 rounded-full" role="status">
+                                        <span className="visually-hidden">Loading...</span>
                                     </div>
                                     Submit
                                 </div>

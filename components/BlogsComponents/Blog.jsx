@@ -42,7 +42,7 @@ const Blog = () => {
                 date={blog?.updated_at}
               />
             </div >
-            <main className='blogs-container bg-white pb-20 px-6 lg:px-0'>
+            <main className='blogs-container bg-white pb-10 px-6 lg:px-0'>
               <div className='w-full h-full flex justify-center'>
                 <article className='h-full '>
                   <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >

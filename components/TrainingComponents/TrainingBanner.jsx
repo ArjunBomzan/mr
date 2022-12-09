@@ -2,7 +2,6 @@ import Link from 'next/link'
 
 const TrainingBanner = (props) => {
     const course = props?.course?.data?.course[0]
-    console.log("banner", course)
     return (
         <div className="overflow-hidden">
             <div
@@ -10,10 +9,11 @@ const TrainingBanner = (props) => {
                 // style={{ backgroundImage: `url(${process.env.REACT_APP_domain}${course?.banner})` }}
                 className=' bg-center bg-cover bg-no-repeat text-md training-banner relative '
             >
-                {/* <img src={`${process.env.REACT_APP_domain}${course?.banner}`} className='absolute z-[-1] training-banner-img bg-center bg-cover bg-no-repeat h-full w-full' /> */}
+                <img src={`${process.env.REACT_APP_domain}${course?.banner}`} className='absolute z-[-1] training-banner-img bg-center bg-cover bg-no-repeat h-full w-full' />
                 <img src={`https://api.mindrisers.jobrisers.com${course?.banner}`} className='absolute z-[-1] training-banner-img bg-center bg-cover bg-no-repeat h-full w-full' />
+
                 <div className="text-white text-right flex flex-col items-end gap-8 lg:p-16 sm:p-12 p-6">
-                    <span className=''><span href="/">Home</span> / {course?.title}</span>
+                    <span className=''><Link href="/">Home</Link> / {course?.title}</span>
                     <p className=' text-3xl '>{course?.title}</p>
                     {
                         course?.banner_desc && <p className=''>{course?.banner_desc}</p>
@@ -23,7 +23,7 @@ const TrainingBanner = (props) => {
                         <span className=''>Career: {course?.career}</span>
                     </div>
                     <div className='flex gap-8 justify-end'>
-                        <Link className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 border border-green-600 rounded fill-white flex gap-2 items-center text-sm" href="#quick_inquiry">
+                        <Link className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 border border-green-600 rounded fill-white flex gap-2 items-center text-sm" href="#quick_inquiry" scroll={false}>
                             Send Enquiry
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className='w-3'>
                                 <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />

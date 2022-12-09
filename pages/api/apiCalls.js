@@ -58,10 +58,11 @@ export async function ContactListApi(props) {
                     title: 'Thank you',
                     footer: '<a href="/">Home Page</a>',
                     html: 'We will get back to you soon.',
+                    confirmButtonColor: '#3085d6',
                     showCloseButton: true,
                     focusConfirm: false,
                     confirmButtonText:
-                        '<i class="fa fa-thumbs-up"></i> View Courses!',
+                        '<i className="fa fa-thumbs-up"></i> View Courses!',
                     confirmButtonAriaLabel: 'Thumbs up, great!',
                 }).then((result) => {
                     result.isConfirmed && props?.router.push("/courses");

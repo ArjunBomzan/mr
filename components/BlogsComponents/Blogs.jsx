@@ -31,7 +31,6 @@ const Blogs = () => {
                 <h2 className='w-full text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold font-sans mt-12 mb-10'>Tech services we provide</h2>
 
             }
-            {/* <section className='flex flex-row flex-wrap w-full pb-20 justify-evenly h-max'> */}
             <section className='grid gap-4 grid-cols-1 sm:grid-cols-2 sm:gap-4 lg:gap-10 lg:grid-cols-3 my-10 lg:px-44 md:px-20 sm:px-2 px-4'>
               {
                 blogs?.map((blog) => {

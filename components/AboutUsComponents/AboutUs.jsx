@@ -4,10 +4,14 @@ import HomeAboutUs from "../HomePageComponents/HomeAboutUs"
 import Mission from "../HomePageComponents/Mission"
 import OurCulture from './OurCulture'
 import OurTeam from './OurTeam'
-import Partners from './Partners'
 import ApplyNow from './ApplyNow'
+import dynamic from 'next/dynamic'
 
 const AboutUs = () => {
+    const PartnersNoSsr = dynamic(
+        () => import('./Partners'),
+        { ssr: false }
+    )
     return (
         <main>
             <AboutUsBanner />
@@ -15,7 +19,7 @@ const AboutUs = () => {
             <Mission />
             <OurCulture />
             <OurTeam />
-            <Partners />
+            <PartnersNoSsr />
             <ApplyNow />
         </main>
     )

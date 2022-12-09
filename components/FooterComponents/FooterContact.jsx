@@ -46,14 +46,14 @@ const FooterContact = () => {
         />
         {errors?.email?.type === "required" && <p>This field is required</p>}
         {errors?.email?.type === "pattern" && <p>Invalid Email</p>}
-        <button type='submit' className='w-full h-10 rounded-md bg-green-400 hover:bg-slate-400 duration-500 text-white flex flex-row items-center justify-center space-x-1 px-10' disabled={submiting}>
+        <button type='submit' className='w-full h-10 rounded-md bg-green-600 hover:bg-green-700 duration-200 text-white flex flex-row items-center justify-center space-x-1 px-10' disabled={submiting}>
 
           {
             submiting ?
               <>
-                <div class="flex justify-center items-center gap-2">
-                  <div class="spinner-border animate-spin inline-block w-5 h-5 border-4 rounded-full" role="status">
-                    <span class="visually-hidden">Loading...</span>
+                <div className="flex justify-center items-center gap-2">
+                  <div className="spinner-border animate-spin inline-block w-5 h-5 border-4 rounded-full" role="status">
+                    <span className="visually-hidden">Loading...</span>
                   </div>
                   Submit
                 </div>

@@ -14,7 +14,7 @@ const RelatedBlogs = (props) => {
             </h3>
             <section className='grid gap-8 grid-cols-1 sm:grid-cols-2 sm:gap-4 lg:gap-10 lg:grid-cols-3 my-10'>
                 {
-                    props?.blogs?.map((blog) => {
+                    props?.blogs?.slice(0, 3)?.map((blog) => {
                         return (<BlogCard
                             title={blog.title}
                             // blurb="Lifting your people and business"

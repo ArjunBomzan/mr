@@ -1,6 +1,7 @@
+import Background from '../../assets/aboutUsPage/office.jpg'
 const ContactBanner = () => {
   return (
-    <div className='w-full bg-office-bg bg-fixed'>
+    <div className='w-full bg-office-bg bg-fixed' style={{ backgroundImage: `url(${Background.src})` }}>
       <div className='w-full h-full flex flex-col justify-center items-center bg-light-mask text-white'>
         <h2 className='font-sans text-4xl sm:text-6xl w-max pt-12 sm:pt-28 font-bold'>
           CONTACT US

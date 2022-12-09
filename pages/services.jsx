@@ -1,14 +1,20 @@
+import Head from "next/head"
 import Header from "../components/HeaderComponents/Header"
 import Services from "../components/ServicesComponents/Services"
 
 const services = () => {
 
   return (
-    <div>
-      <main>
-        <Services />
-      </main>
-    </div>
+    <>
+      <Head>
+        <title>Services</title>
+      </Head>
+      <div>
+        <main>
+          <Services />
+        </main>
+      </div>
+    </>
   )
 }
 

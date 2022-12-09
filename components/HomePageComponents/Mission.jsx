@@ -6,7 +6,7 @@ const Mission = () => {
   return (
     <section className='flex flex-col w-full px-5 py-20 space-y-24 h-max sm:py-32 sm:px-32 lg:px-44' id="why-us-container">
       <div className='flex flex-col justify-between w-full md:flex-row'>
-        <div className='flex flex-col w-full mb-16 ml-1 space-y-10 md:ml-0 md:mb-0 md:w-1/2 md:mr-16'>
+        <div className='flex flex-col w-full mb-16 ml-1 space-y-10 md:ml-0 md:mb-0 md:w-1/2 md:mr-16 font-sans'>
           <ProgressBar value={90} label='Training' />
           <ProgressBar value={80} label='Development' />
           <ProgressBar value={70} label='Marketing' />
