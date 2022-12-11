@@ -1,13 +1,16 @@
 import Head from 'next/head';
 import React from 'react';
 import Trainings from "../../components/TrainingComponents/Trainings";
-import { coursesApi } from '../api/apiCalls';
-import { useState, useEffect } from "react";
-const courses = () => {
-    const [courses, setCourses] = useState();
-    useEffect(() => {
-        coursesApi({ setCourses })
-    }, []);
+
+export const getStaticProps = async () => {
+    const res = await fetch(`${process.env.DOMAIN_V1}course/`)
+    const data = await res.json()
+    return {
+        props: { courses: data }
+    }
+}
+
+const courses = ({ courses }) => {
     return (
         <>
             <Head>

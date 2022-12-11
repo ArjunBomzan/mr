@@ -6,7 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SuccessStory from "./SuccessStory";
 
 const SuccessStories = (props) => {
-    const w = window.innerWidth;
+    if (typeof window !== "undefined") {
+        const w = window.innerWidth;
+    }
     return (
         <>
             {
