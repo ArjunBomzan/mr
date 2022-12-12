@@ -6,9 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SuccessStory from "./SuccessStory";
 
 const SuccessStories = (props) => {
-    if (typeof window !== "undefined") {
-        const w = window.innerWidth;
-    }
     return (
         <>
             {
@@ -16,7 +13,7 @@ const SuccessStories = (props) => {
                 <div className='my-10 lg:px-44 md:px-20 px-2' id="success_stories">
                     <p className="font-bold text-3xl">Success Stories</p>
                     <Swiper
-                        slidesPerView={w < 400 ? 1 : w < 900 ? 3 : 3}
+                        slidesPerView={3}
                         spaceBetween={25}
                         freeMode={true}
                         pagination={{

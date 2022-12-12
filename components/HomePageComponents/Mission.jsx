@@ -7,15 +7,15 @@ const Mission = () => {
     <section className='flex flex-col w-full px-5 py-20 space-y-24 h-max sm:py-32 sm:px-32 lg:px-44' id="why-us-container">
       <div className='flex flex-col justify-between w-full md:flex-row'>
         <div className='flex flex-col w-full mb-16 ml-1 space-y-10 md:ml-0 md:mb-0 md:w-1/2 md:mr-16 font-sans'>
-          <ProgressBar value={90} label='Training' />
+          {/* <ProgressBar value={90} label='Training' />
           <ProgressBar value={80} label='Development' />
-          <ProgressBar value={70} label='Marketing' />
+          <ProgressBar value={70} label='Marketing' /> */}
         </div>
         <div className='w-full space-y-8 md:w-1/2'>
           <h2 className='font-sans text-3xl font-bold md:text-4xl'>
             WHY US?
           </h2>
-          <p>
+          <p className="text-justify">
             Our technological development competence is progressive and on track with Next-Gen Tech Applications. MindRisers is the first choice of our clients and students due to its outstanding and unbeatable outcomes. Our clients say that MindRisers is the best IT service providing and digital marketing agency in Nepal. Allow us to plan, build, and improve your tech products so that you can concentrate on your core market. You can rely on us for your digital needs as we have a group consisting of innovative thinkers, fast engineers, vigilant program managers, and active Web Marketers.
           </p>
         </div>
@@ -37,7 +37,7 @@ const Mission = () => {
             </svg>
           }
           statNum={12}
-          text='DEVELOPERS'
+          text='COURSES'
         />
         <Statistic
           icon={
@@ -46,7 +46,7 @@ const Mission = () => {
             </svg>
           }
           statNum={237}
-          text='CUSTOMERS'
+          text='STUDENTS'
         />
         <Statistic
           icon={
@@ -55,7 +55,7 @@ const Mission = () => {
             </svg>
           }
           statNum={477}
-          text='PROJECTS'
+          text='PLACEMENTS'
         />
       </div>
     </section>

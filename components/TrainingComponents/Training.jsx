@@ -4,17 +4,20 @@ import TrainingBanner from './TrainingBanner'
 import RelatedComponents from './TrainingComponents/RelatedComponents'
 import SuccessStories from './TrainingComponents/SuccessComponents/SuccessStories'
 import TrainingContainer from './TrainingContainer'
-import { Meta } from './TrainingMeta'
 import TrainingSubHeader from './TrainingSubHeader'
 
 const Training = (props) => {
+    console.log(props?.course?.data?.meta)
     return (
         <>
             <Head>
                 <title>{props?.course?.data?.course[0]?.title}</title>
-                {/* {Meta[props?.slug]?.map((meta) => {
-                    return <meta name={meta?.name} property={meta?.property} content={meta?.content} detail={meta?.detail} />
-                })} */}
+                {
+                    props?.course?.data?.meta?.map((meta) => {
+                        return <meta key={meta?.id} name={meta?.name} content={meta?.content} detail={meta?.detail} property={meta?.property}
+                        />
+                    })
+                }
             </Head>
             <div>
                 {

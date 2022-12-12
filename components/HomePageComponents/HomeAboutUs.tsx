@@ -6,7 +6,7 @@ import Link from 'next/link'
 const HomeAboutUs = () => {
   return (
     <section className=" space-y-12 h-max   bg-neutral-100" >
-      <div className=' py-16 sm:py-16 lg:space-y-0 lg:mx-44 md:mx-20 sm:mx-16 mx-2 lg:flex-row flex flex-col px-4 gap-4'>
+      <div className=' py-16 sm:py-16 lg:space-y-0 lg:mx-44 md:mx-20 sm:mx-16 mx-2 lg:flex-row flex flex-col px-4 gap-8'>
         <div className='flex flex-col w-full lg:w-1/2 space-y-9 '>
           <h2 className='w-5/6 text-xl font-bold sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl' >About Us</h2>
           {/* <p>
@@ -24,7 +24,7 @@ const HomeAboutUs = () => {
             What we believe is practical knowledge can be delivered only if the institution continuously does research and development in the same place.
           </p>
           {/* <Link className='flex flex-row space-x-2 ' href='#why-us-container'> */}
-          <Link href='#why-us-container' className='items-center flex flex-row space-x-2 px-4 py-3 mt-8 text-white duration-500 bg-green-500 rounded-md w-max fill-white hover:fill-black hover:text-black hover:bg-slate-300'>
+          <Link href='#why-us-container' scroll={false} className='items-center flex flex-row space-x-2 px-4 py-3 mt-8 text-white duration-500 bg-green-500 rounded-md w-max fill-white hover:fill-black hover:text-black hover:bg-slate-300'>
             <span className='font-semibold text-md'>
               Discover More
             </span>

@@ -79,13 +79,14 @@ export async function ContactListApi(props) {
 }
 
 export async function DropDownOptions(props) {
-    publicRequest.get("course/")
+    props?.setCourse && publicRequest.get("course/")
         .then(res => { props?.setCourse(res.data) })
         .catch(err => { console.log(err) })
-    publicRequest.get("shedule/")
+
+    props?.setSchedule && publicRequest.get("shedule/")
         .then(res => { props?.setSchedule(res.data) })
         .catch(err => { console.log(err) })
-    publicRequest.get("qualification/")
+    props?.setQualification && publicRequest.get("qualification/")
         .then(res => { props?.setQualification(res.data) })
         .catch(err => { console.log(err) })
 }

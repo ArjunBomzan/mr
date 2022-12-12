@@ -1,7 +1,10 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import React from 'react'
+import Gallery from '../components/HomePageComponents/Gallery'
 import HomeAboutUs from "../components/HomePageComponents/HomeAboutUs"
+import HomeContact from '../components/HomePageComponents/HomeContact'
+import HomeSuccessStories from '../components/HomePageComponents/HomeSuccessStories'
 import Jumpstart from "../components/HomePageComponents/Jumpstart"
 import Mission from "../components/HomePageComponents/Mission"
 import OurServices from "../components/HomePageComponents/OurServices.tsx"
@@ -23,13 +26,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main >
+      <main className='text-gray-800' >
         <Splash />
         <TrainingsHomePage />
         <HomeAboutUs />
         <Mission />
-        <OurServices />
-        <Statistics />
+        {/* <OurServices /> */}
+        <HomeContact />
+        <Gallery />
+        <HomeSuccessStories />
+        {/* <Statistics /> */}
         <Jumpstart />
         <TestimonialNoSsr />
       </main>
