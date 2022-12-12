@@ -3,7 +3,7 @@ const ServicesBanner = () => {
   return (
     <div className='w-full bg-fixed bg-office-bg' style={{ backgroundImage: `url(${Background.src})` }}>
       <div className='flex flex-col items-center justify-center w-full h-full text-white bg-light-mask'>
-        <h2 className='pt-12 font-sans text-4xl font-bold sm:text-6xl w-max sm:pt-28'>
+        <h2 className='pt-12  text-4xl font-bold sm:text-6xl w-max sm:pt-28'>
           Services
         </h2>
         <p className='w-4/5 pt-4 pb-12 text-center text-gray-200 sm:pb-28 md:w-1/3'>

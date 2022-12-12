@@ -29,7 +29,7 @@ const OurTeam = () => {
       </div>
       <div className='w-full p-10 md:w-1/2 bg-neutral-900 '>
         <p className="w-full text-center text-green-500 text-sm tracking-widest font-medium mb-5">OUR TEAM</p>
-        <h3 className="text-white font-sans font-bold text-lg sm:text-xl  text-center mb-10">Let us introduce ourselves</h3>
+        <h3 className="text-white  font-bold text-lg sm:text-xl  text-center mb-10">Let us introduce ourselves</h3>
         <div className='flex flex-col space-y-5 md:space-y-0 md:space-x-5 md:flex-row md:px-5 w-full items-center justify-center'>
           <Person
             name='John Doe'

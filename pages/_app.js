@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps }) {
 
   return <>
     <Header />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css"></link>
     <Component {...pageProps} />
     <Footer />
 

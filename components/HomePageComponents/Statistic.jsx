@@ -7,7 +7,7 @@ const Statistic = ({ icon, statNum, text, }) => {
     return (
         <div className='flex flex-col items-center justify-center w-max mission'>
             {icon}
-            <h2 className='pt-2 pb-2 font-sans text-3xl font-bold md:text-5xl lg:text-6xl xl:text-7xl md:pt-0 md:pb-4'>
+            <h2 className='pt-2 pb-2  text-3xl font-bold md:text-5xl lg:text-6xl xl:text-7xl md:pt-0 md:pb-4'>
                 <InView triggerOnce={true}>
                     {({ inView, ref, entry }) => (
                         <div ref={ref}>

@@ -16,7 +16,7 @@ const OurServices = () => {
         <Image src={ComputerMan} ref={ref} alt='Services' className={`rounded-md w-full object-cover`} />
       </div>
       <div className='flex flex-col w-full lg:w-1/2 space-y-9'>
-        <h4 className='font-sans font-medium tracking-widest text-green-500 text-md'>OUR SERVICE</h4>
+        <h4 className=' font-medium tracking-widest text-green-500 text-md'>OUR SERVICE</h4>
         <h2 className='w-5/6 text-xl font-bold text-black sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl' >Managed IT solutions and IT training tailored to your business and for your career growth.</h2>
         <p className='text-black'>
           Our 123team is capable of making applications as sophisticated as you can imagine. We do not only make top-of-the-line mobile applications, web applications, and enterprise applications, but also specialize in digital marketing, and teaching you modern technologies. MindRisers is known as the best IT services provider and IT training centre in Kathmandu Nepal.

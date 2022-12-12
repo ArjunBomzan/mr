@@ -7,7 +7,7 @@ const BlogsBanner = (props) => {
       className='w-full bg-blogs relative'
     >
       <div className='w-full h-full  py-28 flex flex-col justify-center items-center bg-light-mask text-white'>
-        <h2 className='font-sans text-4xl sm:text-6xl w-ma font-bold text-center'>
+        <h2 className=' text-4xl sm:text-6xl w-ma font-bold text-center'>
           {props?.title}
         </h2>
         <div className='text-gray-200 text-start absolute bottom-0 left-0 m-3 mx-5 flex flex-col'>

@@ -17,7 +17,7 @@ const DropMessage = () => {
     return (
         <div className='pagecard w-full max-h-min h-max sm:h-auto flex-1 text-black overflow-hidden'>
             <div className='flex flex-col items-center justify-start w-full h-full pt-8 pb-10 space-y-3'>
-                <h2 className='w-full px-2 font-sans text-2xl font-semibold text-left'>Drop us a message</h2>
+                <h2 className='w-full px-2  text-2xl font-semibold text-left'>Drop us a message</h2>
                 <form className='flex flex-col w-full px-2 form' onSubmit={handleSubmit(onSubmit)}>
                     <label className='font-medium text-gray-500 font-md'>Your name (required)</label>
                     <input
