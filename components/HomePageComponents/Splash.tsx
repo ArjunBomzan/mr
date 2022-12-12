@@ -22,7 +22,7 @@ const Splash = () => {
           </h2>
           <div
             // className='w-1/2 text-center slide-right-to-left mt-5 text-slate-400'
-            className='w-1/2 text-center mt-5 text-slate-400'
+            className='w-1/2 text-center mt-5 text-gray-400'
           >
             MindRisers Consortium is a forward-thinking app and website development company in Kathmandu Nepal with many years of experience to make what you wish.
           </div>

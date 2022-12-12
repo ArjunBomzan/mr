@@ -33,17 +33,17 @@
   }
 }
 
-body {
-  scroll-behavior: smooth;
-  -webkit-scroll-behavior: auto !important;
-  /* font-family: "Open Sans", sans-serif; */
-  font-family: 'Adobe Clean', sans-serif;
-
-}
-
 html {
   scroll-behavior: smooth;
   -webkit-scroll-behavior: auto !important;
+}
+
+body {
+  scroll-behavior: smooth;
+  -webkit-scroll-behavior: auto !important;
+  font-family: 'Adobe Clean', sans-serif;
+  color: rgb(49, 49, 49);
+
 }
 
 pagecard>img {
@@ -231,7 +231,7 @@ input[type=number] {
   letter-spacing: 0.025em;
 
   --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity));
+  /* color: rgb(55 65 81 / var(--tw-text-opacity)); */
   font-weight: bold;
 }
 

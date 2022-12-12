@@ -26,7 +26,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='text-gray-800' >
+      {/* <main className='text-gray-800' > */}
+      <main>
         <Splash />
         <TrainingsHomePage />
         <HomeAboutUs />

@@ -18,7 +18,7 @@ const BlogCard = ({ thumbnail, title, blurb, md, url, imgAlt }) => {
       </div>
       <div className='flex flex-col p-6 gap-5'>
         <h4 className=' text-neutral-600 font-bold text-xl '>{title}</h4>
-        <p className=" text-neutral-700 text-base ">
+        <p className=" text-base ">
           {blurb}
         </p>
         <p className=" text-green-500 text-base underline underline-offset-4 font-normal cursor-pointer w-max decoration-current duration-200 hover:decoration-white" >Read Now</p>

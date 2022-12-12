@@ -5,7 +5,7 @@ const JumpstartChild = ({ icon, title, info }) => {
         {icon}
       </div>
       <h4 className='pt-3 text-2xl font-bold text-center text-green-500'>{title}</h4>
-      <p className='text-center text-neutral-700'>
+      <p className='text-center'>
         {info}
       </p>
     </div>
