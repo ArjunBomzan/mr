@@ -7,7 +7,6 @@ import TrainingContainer from './TrainingContainer'
 import TrainingSubHeader from './TrainingSubHeader'
 
 const Training = (props) => {
-    console.log(props?.course?.data?.course?.page_title)
     return (
         <>
             <Head>
