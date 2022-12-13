@@ -7,11 +7,11 @@ import TrainingContainer from './TrainingContainer'
 import TrainingSubHeader from './TrainingSubHeader'
 
 const Training = (props) => {
-    console.log(props?.course?.data?.meta)
+    console.log(props?.course?.data?.course?.page_title)
     return (
         <>
             <Head>
-                <title>{props?.course?.data?.course[0]?.title}</title>
+                <title>{props?.course?.data?.course?.page_title}</title>
                 {
                     props?.course?.data?.meta?.map((meta) => {
                         return <meta key={meta?.id} name={meta?.name} content={meta?.content} detail={meta?.detail} property={meta?.property}

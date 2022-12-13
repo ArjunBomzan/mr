@@ -3,7 +3,7 @@ const BlogsBanner = (props) => {
   console.log(props)
   return (
     <div
-      style={{ backgroundImage: props?.banner ? `url(${props?.banner})` : `url(${Background.src})` }}
+      style={{ backgroundImage: props?.banner ? `url(${process.env.DOMAIN}${props?.banner})` : `url(${Background.src})` }}
       className='w-full bg-blogs relative'
     >
       <div className='w-full h-full  py-28 flex flex-col justify-center items-center bg-light-mask text-white'>

@@ -31,7 +31,7 @@ const RelatedComponents = () => {
                 href={`/courses/${course.slug}`}
                 key={course.id}
               >
-                <img src={course.image} className="w-20" />
+                <img src={`${process.env.DOMAIN}${course.image}`} className="w-20" />
                 <span className="whitespace-nowrap max-w-[7rem] overflow-hidden">{course.title}</span>
               </Link>)
             })

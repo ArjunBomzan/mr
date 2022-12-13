@@ -20,7 +20,7 @@ const TrainingCard = (props) => {
                 {
                     props?.course?.image ?
                         <img
-                            src={props?.course?.image}
+                            src={`${process.env.DOMAIN}${props?.course?.image}`}
                             className='z-[-10]'
                             alt={props?.course?.title}
                         />
