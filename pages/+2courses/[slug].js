@@ -4,7 +4,6 @@ import Training from "../../components/TrainingComponents/Training";
 export async function getStaticPaths() {
     const res = await fetch(`${process.env.DOMAIN_V1}course/`)
     const courses = await res.json()
-    console.log(courses)
     const paths = courses.map((course) => ({
         params: { slug: course.slug },
     }))

@@ -7,10 +7,7 @@ import HomeContact from '../components/HomePageComponents/HomeContact'
 import HomeSuccessStories from '../components/HomePageComponents/HomeSuccessStories'
 import Jumpstart from "../components/HomePageComponents/Jumpstart"
 import Mission from "../components/HomePageComponents/Mission"
-import OurServices from "../components/HomePageComponents/OurServices.tsx"
 import Splash from "../components/HomePageComponents/Splash"
-import Statistics from "../components/HomePageComponents/Statistics"
-import Testimonials from "../components/HomePageComponents/Testimonials"
 import TrainingsHomePage from "../components/HomePageComponents/TrainingsHomePage"
 
 export default function Home() {

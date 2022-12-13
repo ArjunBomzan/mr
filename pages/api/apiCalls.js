@@ -8,6 +8,11 @@ export async function coursesApi(props) {
         .then(res => { props?.setCourses(res.data) })
         .catch(err => console.log(err))
 }
+export async function galleriesApi(props) {
+    await publicRequest.get("gallery/")
+        .then(res => { props?.setGalleries(res.data) })
+        .catch(err => console.log(err))
+}
 export async function singleBlogApi(props) {
     await publicRequest.get(`singleblog/?search=${props?.slug}`)
         .then(res => {

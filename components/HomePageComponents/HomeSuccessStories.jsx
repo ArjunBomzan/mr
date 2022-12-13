@@ -8,14 +8,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 const HomeSuccessStories = () => {
     const Card = ({ title, content }) => {
         return (
-            <div class="flex justify-center my-10 " style={{ paddingLeft: "5px", paddingTop: "5px", marginLeft: "-5px", marginTop: "-5px" }}>
-                <div class="rounded-lg shadow-lg bg-white max-w-sm block card-shadow cursor-pointer ">
+            <div className="flex justify-center my-10 " style={{ paddingLeft: "5px", paddingTop: "5px", marginLeft: "-5px", marginTop: "-5px" }}>
+                <div className="rounded-lg shadow-lg bg-white max-w-sm block card-shadow cursor-pointer ">
                     <a href="#!">
-                        <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt="" />
+                        <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt="" />
                     </a>
-                    <div class="p-6">
-                        <h5 class="text-gray-900 text-xl font-medium mb-2">{title}</h5>
-                        <p class="text-gray-700 text-base mb-4">
+                    <div className="p-6">
+                        <h5 className="text-gray-900 text-xl font-medium mb-2">{title}</h5>
+                        <p className="text-gray-700 text-base mb-4">
                             {content}
                         </p>
                     </div>
