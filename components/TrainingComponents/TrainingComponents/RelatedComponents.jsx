@@ -7,12 +7,10 @@ import { coursesApi } from "../../../pages/api/apiCalls";
 
 const RelatedComponents = () => {
   const router = useRouter();
+  const pathname = router.pathname.split('/')[1]
   const { slug } = router.query
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    // publicRequest.get("course/")
-    //   .then(res => { setCourses(res.data) })
-    //   .catch(err => { console.log(err) })
     coursesApi({ setCourses })
   }, []);
   return (
@@ -25,15 +23,16 @@ const RelatedComponents = () => {
           style={{ gridTemplateColumns: "1fr 1fr" }}
         >
           {
-            courses?.map((course) => {
-              return (!(slug == course.slug) && <Link
-                className="flex gap-1 items-center w-48"
-                href={`/courses/${course.slug}`}
-                key={course.id}
-              >
-                <img src={`${process.env.DOMAIN}${course.image}`} className="w-20" />
-                <span className="whitespace-nowrap max-w-[7rem] overflow-hidden">{course.title}</span>
-              </Link>)
+            courses?.splice(0, 7)?.map((course) => {
+              return (!(slug == course.slug) && (
+                <Link
+                  className="flex gap-1 items-center w-48"
+                  href={`/${pathname == 'courses' ? 'courses' : '+2courses'}/${course.slug}`}
+                  key={course.id}
+                >
+                  <img src={`${process.env.DOMAIN}${course.image}`} className="w-20" />
+                  <span className="whitespace-nowrap max-w-[7rem] overflow-hidden">{course.title}</span>
+                </Link>))
             })
           }
         </div>

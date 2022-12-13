@@ -10,7 +10,7 @@ const Training = (props) => {
     return (
         <>
             <Head>
-                <title>{props?.course?.data?.course?.page_title}</title>
+                <title>{props?.course?.data?.course[0]?.page_title}</title>
                 {
                     props?.course?.data?.meta?.map((meta) => {
                         return <meta key={meta?.id} name={meta?.name} content={meta?.content} detail={meta?.detail} property={meta?.property}

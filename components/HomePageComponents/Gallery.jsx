@@ -1,4 +1,13 @@
+export const getStaticProps = async () => {
+    const res = await fetch(`${process.env.DOMAIN_V1}course/`)
+    const data = await res.json()
+    return {
+        props: { galleries: data }
+    }
+}
+
 const Gallery = () => {
+
     return (
         <section class="overflow-hidden">
 
