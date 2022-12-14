@@ -13,6 +13,11 @@ export async function galleriesApi(props) {
         .then(res => { props?.setGalleries(res.data) })
         .catch(err => console.log(err))
 }
+export async function homeSuccessStoriesApi(props) {
+    await publicRequest.get("successstoryhome/")
+        .then(res => { props?.setSuccessStories(res.data) })
+        .catch(err => console.log(err))
+}
 export async function singleBlogApi(props) {
     await publicRequest.get(`singleblog/?search=${props?.slug}`)
         .then(res => {

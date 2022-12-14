@@ -3,15 +3,20 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { homeSuccessStoriesApi } from "../../pages/api/apiCalls";
+import { useEffect, useState } from 'react'
 
 const HomeSuccessStories = () => {
-    const Card = ({ title, content }) => {
+    const [successStoreis, setSuccessStories] = useState([]);
+    useEffect(() => {
+        homeSuccessStoriesApi({ setSuccessStories })
+    }, []);
+    const Card = ({ title, content, img }) => {
         return (
-            <div className="flex justify-center my-10 " style={{ paddingLeft: "5px", paddingTop: "5px", marginLeft: "-5px", marginTop: "-5px" }}>
-                <div className="rounded-lg shadow-lg bg-white max-w-sm block card-shadow cursor-pointer ">
+            <div className="flex justify-center my-10 w-full" style={{ paddingLeft: "5px", paddingTop: "5px", marginLeft: "-5px", marginTop: "-5px" }}>
+                <div className="rounded-lg shadow-lg bg-white max-w-sm block card-shadow cursor-pointer  w-full">
                     <a href="#!">
-                        <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" alt="" />
+                        <img className="rounded-t-lg  w-full h-48" src={`${img}`} alt="" />
                     </a>
                     <div className="p-6">
                         <h5 className="text-gray-900 text-xl font-medium mb-2">{title}</h5>
@@ -40,10 +45,11 @@ const HomeSuccessStories = () => {
                     disableOnInteraction: false,
                 }}
             >
-                <SwiperSlide><Card title="Title" content="Content" /></SwiperSlide>
-                <SwiperSlide><Card title="Title" content="Content" /></SwiperSlide>
-                <SwiperSlide><Card title="Title" content="Content" /></SwiperSlide>
-                <SwiperSlide><Card title="Title" content="Content" /></SwiperSlide>
+                {
+                    successStoreis?.map((successStory) => {
+                        return <SwiperSlide key={successStory.id} ><Card title={successStory.title} content={successStory.content} img={successStory.image} /></SwiperSlide>
+                    })
+                }
             </Swiper>
         </div >
     )

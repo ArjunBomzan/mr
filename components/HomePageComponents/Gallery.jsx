@@ -19,30 +19,30 @@ const Gallery = () => {
                     <div className="flex flex-wrap md:w-1/2 ">
                         <div className="w-1/2 p-1 md:p-2 h-40 overflow-hidden">
                             <img alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"
-                                src={`${process.env.DOMAIN}${galleries[0]?.image}`} />
+                                src={`${process.env.DOMAIN}${galleries?.[0]?.image}`} />
                         </div>
                         <div className="w-1/2 p-1 md:p-2 h-40 overflow-hidden">
                             <img alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"
-                                src={`${process.env.DOMAIN}${galleries[1]?.image}`} />
+                                src={`${process.env.DOMAIN}${galleries?.[1]?.image}`} />
                         </div>
                         <div className="w-full p-1 md:p-2 flex-grow  h-60">
                             <img alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"
-                                src={`${process.env.DOMAIN}${galleries[2]?.image}`} />
+                                src={`${process.env.DOMAIN}${galleries?.[2]?.image}`} />
                         </div>
                     </div>
                     <div className="flex flex-wrap md:w-1/2 flex-col-reverse md:flex-col">
                         <div className="w-full p-1 md:p-2 h-60">
                             <img alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"
-                                src={`${process.env.DOMAIN}${galleries[3]?.image}`} />
+                                src={`${process.env.DOMAIN}${galleries?.[3]?.image}`} />
                         </div>
                         <div className="flex h-40">
                             <div className="w-1/2 p-1 md:p-2">
                                 <img alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"
-                                    src={`${process.env.DOMAIN}${galleries[4]?.image}`} />
+                                    src={`${process.env.DOMAIN}${galleries?.[4]?.image}`} />
                             </div>
                             <div className="w-1/2 p-1 md:p-2">
                                 <img alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"
-                                    src={`${process.env.DOMAIN}${galleries[5]?.image}`} />
+                                    src={`${process.env.DOMAIN}${galleries?.[5]?.image}`} />
                             </div>
                         </div>
                     </div>
