@@ -11,7 +11,7 @@ const HeaderTabs = () => {
     <div className='flex flex-col items-center space-y-7 sm:space-y-0 lg:flex-row lg:space-x-5 h-full sm:justify-evenly  font-medium text-xl sm:text-lg '>
       <span className={`nav-button ${(pathname == "courses") && 'active'}`}><Link href='/courses'>Courses</Link></span>
       <span className={`nav-button ${(pathname == "+2courses") && 'active'}`}><Link href='/+2courses'>+2 Courses</Link></span>
-      <span className={`nav-button ${(pathname == "online-admission") && 'active'}`}><Link href='/online-admission'>Online Admission</Link></span>
+      <span className={`nav-button ${(pathname == "admission") && 'active'}`}><Link href='/admission'>Online Admission</Link></span>
       <span className={`nav-button ${(pathname == "partners") && 'active'}`}><Link href='/partners'>Placement Partner</Link></span>
       <span className={`nav-button ${(pathname == "success-gallery") && 'active'}`}><Link href='/success-gallery'>Success Gallery</Link></span>
       <span className={`nav-button ${(pathname == "blogs") && 'active'}`}><Link href='/blogs'>Blogs</Link></span>
