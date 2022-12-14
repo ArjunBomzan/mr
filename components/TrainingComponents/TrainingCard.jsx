@@ -11,6 +11,7 @@ const TrainingCard = (props) => {
             className='training-card cursor-pointer relative bg-white'
             style={{ flexGrow: "0" }}
         >
+
             <div className="flex justify-end absolute z-[20] w-full learn-more-div">
                 <p id="learn-more" >Learn More</p>
             </div>
@@ -26,8 +27,13 @@ const TrainingCard = (props) => {
                         <img src={props.img} className='z-[-10]' />
                 }
             </div>
-            <div className='flex gap-1 flex-col text-center mb-2 overflow-hidden'>
-                <div className='px-3 overflow-hidden whitespace-nowrap text-ellipsis'><p className='font-bold whitespace-nowrap truncate'>{props?.course?.title}</p></div>
+            <div className='flex gap-1 flex-col text-center mb-2 '>
+                <div className='px-3 tool-tip'>
+                    <p className='font-bold whitespace-nowrap truncate tool-tip' data-bs-toggle="tooltip" title={`${props?.course?.title}`}>
+                        {props?.course?.title}
+                    </p>
+
+                </div>
                 <p>Duration: <span className='font-bold'>{props?.course?.duration}</span></p>
             </div>
         </Link>
