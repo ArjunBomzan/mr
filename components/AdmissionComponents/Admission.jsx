@@ -87,9 +87,10 @@ const Admission = () => {
                   className="admission-form-input"
                   id="qualification"
                   name="qualification"
+                  placeholder="Your college/ Institution name *"
                   {...register("qualification", { required: true })}
                 >
-                  <option></option>
+                  <option value="" disabled selected>-----------</option>
                   {
                     qualification?.map((item) => {
                       return <option id={item.id} value={item.id} key={item.id}>{item.qualification}</option>
@@ -112,7 +113,7 @@ const Admission = () => {
                   name="course"
                   {...register("course", { required: true })}
                 >
-                  <option></option>
+                  <option value="" disabled selected>-----------</option>
                   {
                     course?.map((item) => {
                       return <option key={item.id} value={item.id}>{item.title}</option>
@@ -134,7 +135,7 @@ const Admission = () => {
                   name="shedule"
                   {...register("shedule", { required: true })}
                 >
-                  <option></option>
+                  <option value="" disabled selected>-----------</option>
                   {
                     schedule?.map((item) => {
                       return <option key={item.id} value={item.id}>{item.shedule}</option>
