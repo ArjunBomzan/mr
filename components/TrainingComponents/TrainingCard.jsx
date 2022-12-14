@@ -27,7 +27,7 @@ const TrainingCard = (props) => {
                 }
             </div>
             <div className='flex gap-1 flex-col text-center mb-2 overflow-hidden'>
-                <div className='px-3 overflow-hidden whitespace-nowrap text-ellipsis'><p className='font-bold whitespace-nowrap'>{props?.course?.title}</p></div>
+                <div className='px-3 overflow-hidden whitespace-nowrap text-ellipsis'><p className='font-bold whitespace-nowrap truncate'>{props?.course?.title}</p></div>
                 <p>Duration: <span className='font-bold'>{props?.course?.duration}</span></p>
             </div>
         </Link>
