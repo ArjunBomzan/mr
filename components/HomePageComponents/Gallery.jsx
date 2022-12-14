@@ -8,7 +8,7 @@ const Gallery = () => {
         galleriesApi({ setGalleries })
     }, []);
     return (
-        <section className="overflow-hidden">
+        <section className="overflow-hidden bg-neutral-100">
 
             <div className="flex flex-col w-full px-5 py-16 sm:px-20 lg:px-44 gap-8">
                 <div>

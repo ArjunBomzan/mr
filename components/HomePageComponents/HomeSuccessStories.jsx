@@ -29,8 +29,8 @@ const HomeSuccessStories = () => {
         )
     }
     return (
-        <div className='my-10 lg:px-44 md:px-20 px-2' id="success_stories">
-            <p className="font-bold text-3xl mb-8">Success Stories</p>
+        <div className='my-10 lg:px-44 md:px-20 px-2 bg-neutral-100 py-8' id="success_stories">
+            <p className="font-bold text-3xl mb-6">Success Stories</p>
             <Swiper
                 slidesPerView={3}
                 spaceBetween={35}
@@ -47,7 +47,7 @@ const HomeSuccessStories = () => {
             >
                 {
                     successStoreis?.map((successStory) => {
-                        return <SwiperSlide key={successStory.id} ><Card title={successStory.title} content={successStory.content} img={successStory.image} /></SwiperSlide>
+                        return <SwiperSlide key={successStory.id} className="my-3"><Card title={successStory.title} content={successStory.content} img={successStory.image} /></SwiperSlide>
                     })
                 }
             </Swiper>

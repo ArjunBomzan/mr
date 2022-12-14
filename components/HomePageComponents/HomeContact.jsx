@@ -20,7 +20,7 @@ const HomeContact = () => {
     }, []);
 
     return (
-        <div className='bg-neutral-100 flex items-center justify-center'>
+        <div className=' flex items-center justify-center'>
             <div className='flex flex-col lg:flex-row w-full px-5 py-16 sm:px-20 lg:px-44 gap-4'>
                 <div className='min-w-1/2'>
                     <h2 className="text-2xl font-bold">Request a call back</h2>

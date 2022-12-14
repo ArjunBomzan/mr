@@ -30,8 +30,8 @@ export default function Home() {
         <HomeAboutUs />
         <Mission />
         {/* <OurServices /> */}
-        <HomeContact />
         <Gallery />
+        <HomeContact />
         <HomeSuccessStories />
         {/* <Statistics /> */}
         <Jumpstart />
