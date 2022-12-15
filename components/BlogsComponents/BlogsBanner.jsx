@@ -1,6 +1,5 @@
 import Background from '../../assets/homePage/blog-splash.jpg'
 const BlogsBanner = (props) => {
-  console.log(props)
   return (
     <div
       style={{ backgroundImage: props?.banner ? `url(${process.env.DOMAIN}${props?.banner})` : `url(${Background.src})` }}
