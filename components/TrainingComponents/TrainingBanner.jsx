@@ -9,7 +9,7 @@ const TrainingBanner = (props) => {
                 // style={{ backgroundImage: `url(${process.env.REACT_APP_domain}${course?.banner})` }}
                 className=' bg-center bg-cover bg-no-repeat text-md training-banner relative '
             >
-                <img src={`${process.env.REACT_APP_domain}${course?.banner}`} className='absolute z-[-1] training-banner-img bg-center bg-cover bg-no-repeat h-full w-full' />
+                {/* <img src={`${process.env.REACT_APP_domain}${course?.banner}`} className='absolute z-[-1] training-banner-img bg-center bg-cover bg-no-repeat h-full w-full' /> */}
                 <img src={`https://api.mindrisers.jobrisers.com${course?.banner}`} className='absolute z-[-1] training-banner-img bg-center bg-cover bg-no-repeat h-full w-full' />
 
                 <div className="text-white text-right flex flex-col items-end gap-8 lg:p-16 sm:p-12 p-6">

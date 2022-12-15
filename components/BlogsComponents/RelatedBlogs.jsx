@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 const RelatedBlogs = () => {
     const router = useRouter()
+    const { slug } = router.query
     const type = router.pathname?.split('/')[1]
     const [blogs, setBlogs] = useState([]);
     useEffect(() => {
@@ -22,7 +23,7 @@ const RelatedBlogs = () => {
             <section className='grid gap-8 grid-cols-1 sm:grid-cols-2 sm:gap-4 lg:gap-10 lg:grid-cols-3 my-10'>
                 {
                     blogs?.slice(0, 3)?.map((blog) => {
-                        return (
+                        return (!(slug == blog.slug) && (
                             <BlogCard
                                 title={blog.title}
                                 blurb={blog.short_desc}
@@ -31,7 +32,7 @@ const RelatedBlogs = () => {
                                 imgAlt={blog.title}
                                 key={blog.id}
                             />
-                        )
+                        ))
                     })
                 }
             </section>
