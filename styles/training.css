@@ -41,7 +41,6 @@
 .training-card img {
     transform: scale(0.93);
     transition: all 0.2s;
-    height: 160px;
     margin: auto;
     width: auto;
 }
@@ -59,9 +58,9 @@
 
 .training-card-img-div {
     border-radius: 10px 10px 0px 0px;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
+    aspect-ratio: 4 / 2.3;
 }
 
 .learn-more-hover {
