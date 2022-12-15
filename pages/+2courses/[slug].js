@@ -2,7 +2,7 @@ import Head from "next/head";
 import Training from "../../components/TrainingComponents/Training";
 
 export async function getStaticPaths() {
-    const res = await fetch(`${process.env.DOMAIN_V1}course/`)
+    const res = await fetch(`${process.env.DOMAIN_V1}course/?category=2`)
     const courses = await res.json()
     const paths = courses.map((course) => ({
         params: { slug: course.slug },

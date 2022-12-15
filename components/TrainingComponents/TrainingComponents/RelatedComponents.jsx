@@ -10,8 +10,9 @@ const RelatedComponents = () => {
   const pathname = router.pathname.split('/')[1]
   const { slug } = router.query
   const [courses, setCourses] = useState([]);
+  const ApiType = pathname == "courses" ? 1 : 2
   useEffect(() => {
-    coursesApi({ setCourses })
+    coursesApi({ setCourses, ApiType })
   }, []);
   return (
     <div className="lg:px-44 md:px-20 px-4 sm:flex-row flex-col flex gap-10 mb-10 mt-10">
