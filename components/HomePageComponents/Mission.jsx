@@ -1,22 +1,22 @@
 import ProgressBar from "./ProgressBar";
 import Statistic from "./Statistic";
+import Matrix from '../../assets/homePage/why-us.jpg'
+import Image from "next/image";
 
 const Mission = () => {
 
   return (
     <section className='flex flex-col w-full px-5 py-20 space-y-24 h-max sm:py-32 sm:px-32 lg:px-44' id="why-us-container">
-      <div className='flex flex-col justify-between w-full md:flex-row'>
-        <div className='flex flex-col w-full mb-16 ml-1 space-y-10 md:ml-0 md:mb-0 md:w-1/2 md:mr-16 '>
-          {/* <ProgressBar value={90} label='Training' />
-          <ProgressBar value={80} label='Development' />
-          <ProgressBar value={70} label='Marketing' /> */}
+      <div className='flex flex-col justify-between w-full lg:flex-row gap-8'>
+        <div className='w-full lg:w-1/2' >
+          <Image src={Matrix} alt='Services' className='object-cover w-full rounded-md mt-4 lg:mt-20' />
         </div>
-        <div className='w-full space-y-8 md:w-1/2'>
+        <div className='w-full space-y-8 lg:w-1/2'>
           <h2 className=' text-3xl font-bold md:text-4xl'>
             WHY US?
           </h2>
           <p className="text-justify">
-            Our technological development competence is progressive and on track with Next-Gen Tech Applications. MindRisers is the first choice of our clients and students due to its outstanding and unbeatable outcomes. Our clients say that MindRisers is the best IT service providing and digital marketing agency in Nepal. Allow us to plan, build, and improve your tech products so that you can concentrate on your core market. You can rely on us for your digital needs as we have a group consisting of innovative thinkers, fast engineers, vigilant program managers, and active Web Marketers.
+            Mind Risers is the only IT training institute in Kathmandu, Nepal that offers paid internships and job placement after course completion. To enhance the careers of our students, we provide IT courses that are in high demand in the industry. We have a team serving as a tutor that consists of creative thinkers, quick engineers, vigilant program managers, and active web marketers. Our instructors provide students with a fantastic opportunity to learn from them since they are real-time developers who stay active with emerging technological advancements. Students learn about the topic thoroughly and practically thanks to our excellent educational method. Due to this distinctiveness, Mind Risers become the best IT training institute in Kathmandu, Nepal.
           </p>
         </div>
       </div>
