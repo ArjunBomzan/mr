@@ -13,14 +13,16 @@ const BlogCard = ({ thumbnail, title, blurb, md, url, imgAlt }) => {
       className='cursor-pointer h-[450px] blog-container image-box bg-white flex flex-col rounded-md duration-500'
     // className='cursor-pointer h-[450px] blog-container image-box bg-white w-[80%] md:w-[45%] lg:w-[28%] xl:w-[26%] mt-12 flex flex-col rounded-md hover:rounded-none duration-500'
     >
-      <div className='image-box max-h-56 h-56'>
+      <div className='image-box max-h-56 min-h-56 h-56'>
         <img src={`${process.env.DOMAIN}${thumbnail}`} alt={imgAlt} className='h-56 object-cover bg-cover' />
       </div>
-      <div className='flex flex-col p-6 gap-5'>
-        <h4 className=' text-neutral-600 font-bold text-xl '>{title}</h4>
-        <p className=" text-base ">
-          {blurb}
-        </p>
+      <div className='flex flex-col p-6 justify-between h-56 '>
+        <div className='h-20'>
+          <h4 className=' text-neutral-600 font-bold text-xl '>{title}</h4>
+          <p className="text-base line-clamp-3 mt-2">
+            {blurb}
+          </p>
+        </div>
         <p className=" text-green-500 text-base underline underline-offset-4 font-normal cursor-pointer w-max decoration-current duration-200 hover:decoration-white" >Read Now</p>
       </div>
     </Link>

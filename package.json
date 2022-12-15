@@ -52,6 +52,7 @@
     "web-vitals": "^2.1.4"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",
     "axios": "^1.2.0",
     "eslint": "8.29.0",
