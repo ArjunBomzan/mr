@@ -4,7 +4,7 @@ export const publicRequest = axios.create({
     baseURL: "https://api.mindrisers.jobrisers.com/blog/api/v1/",
 })
 export async function coursesApi(props) {
-    await publicRequest.get(`course/?category=${props.ApiType}`)
+    await publicRequest.get(`course/?category=${props.ApiType ? props.ApiType : ""}`)
         .then(res => { props?.setCourses(res.data) })
         .catch(err => console.log(err))
 }
