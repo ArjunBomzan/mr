@@ -1,13 +1,7 @@
-import dynamic from 'next/dynamic'
 import Link from 'next/link'
-import HeaderLeft from './HeaderLeft'
-
+import HeaderTailwind from "./HeaderTailwind";
 
 const Header = () => {
-  const HeaderRight = dynamic(
-    () => import('./HeaderRight'),
-    { ssr: false }
-  )
   return (
     <div className=' '>
       <div className='relative bg-green-500 top-0 flex flex-row justify-center sm:justify-between items-center text-white  px-8 sm:px-12 md:px-14 lg:px-18 py-2'>
@@ -45,10 +39,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
-      <header className='relative bg-white top-0 flex flex-row justify-between items-center pt-4 pb-4 px-8 sm:px-12 md:px-14 lg:px-18  duration-500' id="navbar">
-        <HeaderLeft />
-        <HeaderRight />
-      </header>
+      <HeaderTailwind />
     </div>
   )
 }

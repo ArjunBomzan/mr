@@ -1,21 +1,34 @@
-import React from 'react';
-// import Link from 'next/link';
-import { useLocation } from 'react-router-dom';
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import HeaderButtonRight from './HeaderButtonRight';
 
 const HeaderTabs = () => {
   const router = useRouter()
   const pathname = router.pathname.split("/")[1]
   return (
-    <div className='flex flex-col items-center space-y-7 sm:space-y-0 lg:flex-row lg:space-x-5 h-full sm:justify-evenly  font-medium text-xl sm:text-lg '>
-      <span className={`nav-button ${(pathname == "courses") && 'active'}`}><Link href='/courses'>Courses</Link></span>
-      <span className={`nav-button ${(pathname == "+2courses") && 'active'}`}><Link href='/+2courses'>+2 Courses</Link></span>
-      <span className={`nav-button ${(pathname == "admission") && 'active'}`}><Link href='/admission'>Online Admission</Link></span>
-      <span className={`nav-button ${(pathname == "partners") && 'active'}`}><Link href='/partners'>Placement Partner</Link></span>
-      <span className={`nav-button ${(pathname == "success-gallery") && 'active'}`}><Link href='/success-gallery'>Success Gallery</Link></span>
-      <span className={`nav-button ${(pathname == "blogs") && 'active'}`}><Link href='/blogs'>Blogs</Link></span>
-    </div>
+    <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto lg:mr-0 lg:items-center justify-start font-medium text-xl sm:text-lg text-fade transition duration-150 ease-in-out" style={{ animationDuration: "0.2s" }}>
+      <li class="nav-item p-2">
+        <span className={`nav-button ${(pathname == "courses") && 'active'}`}><Link href='/courses' className='mt-2'>Courses</Link></span>
+      </li>
+      <li class="nav-item p-2">
+        <span className={`nav-button ${(pathname == "+2courses") && 'active'}`}><Link href='/+2courses'>+2 Courses</Link></span>
+      </li>
+      <li class="nav-item p-2">
+        <span className={`nav-button ${(pathname == "admission") && 'active'}`}><Link href='/admission'>Online Admission</Link></span>
+      </li>
+      <li class="nav-item p-2">
+        <span className={`nav-button ${(pathname == "partners") && 'active'}`}><Link href='/partners'>Placement Partner</Link></span>
+      </li>
+      <li class="nav-item p-2">
+        <span className={`nav-button ${(pathname == "success-gallery") && 'active'}`}><Link href='/success-gallery'>Success Gallery</Link></span>
+      </li>
+      <li class="nav-item p-2">
+        <span className={`nav-button ${(pathname == "blogs") && 'active'}`}><Link href='/blogs'>Blogs</Link></span>
+      </li>
+      <li class="nav-item lg:py-0 p-2">
+        <HeaderButtonRight />
+      </li>
+    </ul>
   )
 }
 
