@@ -4,8 +4,11 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SuccessStory from "./SuccessStory";
+import { useEffect, useState } from 'react'
+import { useWindowSize } from "../../../ScreenSize";
 
 const SuccessStories = (props) => {
+    const size = useWindowSize({ useEffect, useState });
     return (
         <>
             {
@@ -13,7 +16,7 @@ const SuccessStories = (props) => {
                 <div className='my-10 lg:px-44 md:px-20 px-2' id="success_stories">
                     <p className="font-bold text-3xl">Success Stories</p>
                     <Swiper
-                        slidesPerView={3}
+                        slidesPerView={size.width > 990 ? 3 : size.width > 700 ? 2.5 : size.width > 600 ? 2 : size.width > 400 ? 1.5 : 1.2}
                         spaceBetween={25}
                         freeMode={true}
                         pagination={{

@@ -4,7 +4,7 @@ import React from 'react'
 import Gallery from '../components/HomePageComponents/Gallery'
 import HomeAboutUs from "../components/HomePageComponents/HomeAboutUs"
 import HomeContact from '../components/HomePageComponents/HomeContact'
-import HomeSuccessStories from '../components/HomePageComponents/HomeSuccessStories'
+// import HomeSuccessStories from '../components/HomePageComponents/HomeSuccessStories'
 import Jumpstart from "../components/HomePageComponents/Jumpstart"
 import Mission from "../components/HomePageComponents/Mission"
 import Splash from "../components/HomePageComponents/Splash"
@@ -15,6 +15,10 @@ export default function Home() {
     () => import("../components/HomePageComponents/Testimonials"),
     { ssr: false }
   )
+  const HomeSuccessStories = dynamic(
+    () => import("../components/HomePageComponents/HomeSuccessStories"),
+    { ssr: false }
+  )
   return (
     <div >
       <Head>
@@ -23,17 +27,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <main className='text-gray-800' > */}
       <main>
         <Splash />
         <TrainingsHomePage />
         <HomeAboutUs />
         <Mission />
-        {/* <OurServices /> */}
         <Gallery />
         <HomeContact />
         <HomeSuccessStories />
-        {/* <Statistics /> */}
         <Jumpstart />
         <TestimonialNoSsr />
       </main>

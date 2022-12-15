@@ -5,8 +5,11 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { homeSuccessStoriesApi } from "../../pages/api/apiCalls";
 import { useEffect, useState } from 'react'
+import { useWindowSize } from "../ScreenSize";
+
 
 const HomeSuccessStories = () => {
+    const size = useWindowSize({ useEffect, useState });
     const [successStoreis, setSuccessStories] = useState([]);
     useEffect(() => {
         homeSuccessStoriesApi({ setSuccessStories })
@@ -32,7 +35,7 @@ const HomeSuccessStories = () => {
         <div className='my-10 lg:px-44 md:px-20 px-2 bg-neutral-100 py-8' id="success_stories">
             <p className="font-bold text-3xl mb-6">Success Stories</p>
             <Swiper
-                slidesPerView={3}
+                slidesPerView={size.width > 990 ? 3 : size.width > 700 ? 2.5 : size.width > 600 ? 2 : size.width > 400 ? 1.5 : 1.2}
                 spaceBetween={35}
                 freeMode={true}
                 pagination={{
