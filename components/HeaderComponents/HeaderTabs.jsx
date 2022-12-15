@@ -25,7 +25,7 @@ const HeaderTabs = () => {
       <li class="nav-item p-2">
         <span className={`nav-button ${(pathname == "blogs") && 'active'}`}><Link href='/blogs'>Blogs</Link></span>
       </li>
-      <li class="nav-item lg:py-0 p-2">
+      <li class="nav-item lg:py-0 p-2 pr-0">
         <HeaderButtonRight />
       </li>
     </ul>
