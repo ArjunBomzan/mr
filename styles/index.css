@@ -15,6 +15,7 @@
     border-top: 4px;
     border-top: 2px solid white;
     transition-duration: .5s ease-in;
+    padding-top: 4px;
   }
 
   .nav-button.active {
