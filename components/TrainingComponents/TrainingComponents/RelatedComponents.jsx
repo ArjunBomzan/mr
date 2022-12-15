@@ -23,7 +23,7 @@ const RelatedComponents = () => {
           style={{ gridTemplateColumns: "1fr 1fr" }}
         >
           {
-            courses?.splice(0, 7)?.map((course) => {
+            courses?.slice(0, 7)?.map((course) => {
               return (!(slug == course.slug) && (
                 <Link
                   className="flex gap-1 items-center w-48"
