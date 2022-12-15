@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Blog from "../../components/BlogsComponents/Blog";
-import Header from '../../components/HeaderComponents/Header'
 
 export async function getStaticPaths() {
     const res = await fetch(`${process.env.DOMAIN_V1}singleblog/`)
@@ -20,10 +19,16 @@ export async function getStaticProps({ params }) {
 }
 
 export default function BlogSlug(props) {
+    console.log(props?.blog?.data?.metatagblog)
     return (
         <div>
             <Head>
-                <title>BLogs</title>
+                <title>{props?.blog?.data?.blog?.[0]?.page_title}</title>
+                {
+                    props?.blog?.data?.metatagblog?.map((meta) => {
+                        return <meta key={meta?.id} name={meta?.name} content={meta?.content} detail={meta?.detail} property={meta?.property} />
+                    })
+                }
             </Head>
             <main>
                 <Blog blog={props?.blog?.data?.blog?.[0]} />
