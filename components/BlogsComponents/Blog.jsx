@@ -1,9 +1,7 @@
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
-import { singleBlogApi, techServicesApi } from '../../pages/api/apiCalls'
 import Loader from "../Loader"
 import BlogsBanner from './BlogsBanner'
 import RelatedBlogs from './RelatedBlogs'

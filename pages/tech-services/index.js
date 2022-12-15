@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Header from "../../components/HeaderComponents/Header";
-import Blogs from '../../components/BlogsComponents/Blogs'
+import Blogs from '../../components/BlogsComponents/Blogs';
 
 
 export default function tech_services() {
