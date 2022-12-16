@@ -32,7 +32,7 @@ const HomeSuccessStories = () => {
         )
     }
     return (
-        <div className='my-10 lg:px-44 md:px-20 px-2 bg-neutral-100 py-8' id="success_stories">
+        <div className='py-10 lg:px-44 md:px-20 px-2 bg-neutral-100 py-8' id="success_stories">
             <p className="font-bold text-3xl mb-6">Success Stories</p>
             <Swiper
                 slidesPerView={size.width > 990 ? 3 : size.width > 700 ? 2.5 : size.width > 600 ? 2 : size.width > 400 ? 1.5 : 1.2}
