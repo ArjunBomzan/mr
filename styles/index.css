@@ -69,6 +69,10 @@ input[type=number] {
   height: 1.25rem;
   fill: currentColor;
 }
+.footer-socials svg {
+  height: 1rem;
+  fill: currentColor;
+}
 
 .image-box {
   overflow: hidden;
@@ -312,3 +316,4 @@ input[type=number] {
 .progress-bar {
   transition: width 2s;
 }
+

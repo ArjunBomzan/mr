@@ -1,5 +1,6 @@
 
 import Link from 'next/link'
+import SocialLinks from '../HeaderComponents/SocialLinks'
 
 const FooterImportantLink = () => {
     return (
@@ -19,14 +20,14 @@ const FooterImportantLink = () => {
                     </Link>
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400'>
-                    <Link href='placement-partners'>
+                    <Link href='partners'>
                         Placement Partner
                     </Link>
                 </li>
-                <li className='cursor-pointer hover:text-neutral-400'>
-                    <Link href='internship-placement'>
-                        Internship / Placement
-                    </Link>
+                <li className='cursor-pointer hover:text-neutral-400 mt-1'>
+                    <div className='flex gap-3 footer-socials justify-start w-full'>
+                        <SocialLinks />
+                    </div>
                 </li>
             </ul>
         </div>

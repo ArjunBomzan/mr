@@ -20,7 +20,7 @@ const HeaderTabs = () => {
         <span className={`nav-button ${(pathname == "partners") && 'active'}`}><Link href='/partners'>Placement Partner</Link></span>
       </li>
       <li class="nav-item p-2">
-        <span className={`nav-button ${(pathname == "success-gallery") && 'active'}`}><Link href='/success-gallery'>Success Gallery</Link></span>
+        <span className={`nav-button ${(pathname == "successgallery") && 'active'}`}><Link href='/successgallery'>Success Gallery</Link></span>
       </li>
       <li class="nav-item p-2">
         <span className={`nav-button ${(pathname == "blogs") && 'active'}`}><Link href='/blogs'>Blogs</Link></span>

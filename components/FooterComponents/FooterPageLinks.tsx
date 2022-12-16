@@ -19,8 +19,13 @@ const FooterPageLinks = () => {
           </Link>
         </li>
         <li className='cursor-pointer hover:text-neutral-400'>
-          <Link href='services'>
-            Our Services
+          <Link href='courses'>
+            Courses
+          </Link>
+        </li>
+        <li className='cursor-pointer hover:text-neutral-400'>
+          <Link href='+2courses'>
+            After +2 Courses
           </Link>
         </li>
         <li className='cursor-pointer hover:text-neutral-400'>
@@ -29,8 +34,8 @@ const FooterPageLinks = () => {
           </Link>
         </li>
         <li className='cursor-pointer hover:text-neutral-400'>
-          <Link href='partners'>
-            Our Partners
+          <Link href='success-gallery'>
+            Success Gallery
           </Link>
         </li>
         <li className='cursor-pointer hover:text-neutral-400'>
@@ -41,12 +46,6 @@ const FooterPageLinks = () => {
         <li className='cursor-pointer hover:text-neutral-400'>
           <Link href='terms-conditions'>
             Terms and conditions
-          </Link>
-        </li>
-        {/* <li className='cursor-pointer hover:text-neutral-400'>Careers</li> */}
-        <li className='cursor-pointer hover:text-neutral-400'>
-          <Link href='blogs'>
-            Blogs
           </Link>
         </li>
       </ul>

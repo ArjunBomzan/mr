@@ -1,5 +1,4 @@
 import Head from "next/head"
-import Header from "../components/HeaderComponents/Header"
 import Services from "../components/ServicesComponents/Services"
 
 const services = () => {
