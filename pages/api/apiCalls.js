@@ -87,6 +87,35 @@ export async function ContactListApi(props) {
         )
 
 }
+export async function AdmissionFormApi(props) {
+    publicRequest.post("applicationform/", props.data)
+        .then(res => {
+            props.setSubmiting(false)
+            if (res.status == 201) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Thank you',
+                    footer: '<a href="/">Home Page</a>',
+                    html: 'We will get back to you soon.',
+                    confirmButtonColor: '#3085d6',
+                    showCloseButton: true,
+                    focusConfirm: false,
+                    confirmButtonText:
+                        '<i className="fa fa-thumbs-up"></i> View Courses!',
+                    confirmButtonAriaLabel: 'Thumbs up, great!',
+                }).then((result) => {
+                    result.isConfirmed && props?.router.push("/courses");
+                })
+                props?.reset();
+            }
+        })
+        .catch(err => {
+            props.setSubmiting(false)
+            console.log(err)
+        }
+        )
+
+}
 
 export async function DropDownOptions(props) {
     props?.setCourse && publicRequest.get("course/")

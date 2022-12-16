@@ -1,7 +1,7 @@
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import { useRouter } from "next/router";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { ContactListApi } from "../../pages/api/apiCalls";
 
 const TrainingInquiry = (props) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -10,7 +10,7 @@ const TrainingInquiry = (props) => {
     const onSubmit = data => {
         console.log(data)
         setSubmiting(true)
-        // ContactListApi(setSubmiting, data, reset, router)
+        ContactListApi({ setSubmiting, data, reset, router })
     }
     return (
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full mt-5 form" id="quick_inquiry" onSubmit={handleSubmit(onSubmit)}>

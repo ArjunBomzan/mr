@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { ContactListApi, DropDownOptions } from "../../pages/api/apiCalls"
+import { AdmissionFormApi, DropDownOptions } from "../../pages/api/apiCalls"
 
 const Admission = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -13,7 +13,7 @@ const Admission = () => {
   const onSubmit = data => {
     console.log(data)
     setSubmiting(true)
-    ContactListApi({ setSubmiting, data, reset, router })
+    AdmissionFormApi({ setSubmiting, data, reset, router })
   }
   useEffect(() => {
     DropDownOptions({ setCourse, setSchedule, setQualification })
@@ -29,16 +29,16 @@ const Admission = () => {
             <label className="block text-gray-700 text-2xl font-bold mb-2 text-center w-full">Admission Form</label>
 
             <div>
-              <label className="admission-form-label" htmlFor="name">Full Name</label>
+              <label className="admission-form-label" htmlFor="full_name">Full Name</label>
               <input
                 className="admission-form-input focus:outline-none focus:shadow-outline"
-                id="name"
+                id="full_name"
                 type="text"
                 placeholder="Full Name"
-                name="name"
-                {...register("name", { required: true })}
+                name="full_name"
+                {...register("full_name", { required: true })}
               />
-              {errors?.name?.type === "required" && <p>This field is required</p>}
+              {errors?.full_name?.type === "required" && <p>This field is required</p>}
             </div>
 
             <div>
