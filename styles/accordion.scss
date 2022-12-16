@@ -47,7 +47,8 @@ $border: #edebeb;
     background: white;
     transition: all 0.35s;
     border-top: 0.5px solid $border;
-    // margin-bottom: -0.3px;
+    border-bottom: 0.5px solid $border;
+    margin-bottom: -0.5px;
   }
   &-close {
     display: flex;
@@ -63,9 +64,9 @@ $border: #edebeb;
 }
 .accordion-tab-label {
   // border-top: 0.5px solid rgb(208, 207, 207);
+  // margin-top: -0.3px;
   // border-bottom: 0.5px solid rgb(208, 207, 207);
-  // margin-top: -0.5px;
-  margin-bottom: -0.5px;
+  // margin-bottom: -0.5px;
   background: $offwhite;
 }
 
