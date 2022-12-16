@@ -7,11 +7,11 @@ const PartnerCard = (props) => {
     const pathname = router.pathname.split('/')[1]
     return (
         <Link
-            href={`${props?.course?.slug}`}
-            className='training-card cursor-pointer relative bg-white'
-            style={{ flexGrow: "0" }}
+            href={`${props?.course?.link}`}
+            className='training-card cursor-pointer relative bg-white partner'
+            style={{ flexGrow: "0", boxShadow: "0" }}
         >
-            <div className='overflow-hidden  training-card-img-div' >
+            <div className='overflow-hidden  training-card-img-div mb-4' >
                 {
                     props?.course?.image ?
                         <img
@@ -23,15 +23,11 @@ const PartnerCard = (props) => {
                         <img src={props.img} className='z-[-10]' />
                 }
             </div>
-            <div className='flex gap-1 flex-col text-center mb-2 '>
-                <div className='px-3 tool-tip'>
-                    <p className='font-bold whitespace-nowrap truncate tool-tip' data-bs-toggle="tooltip" title={`${props?.course?.title}`}>
-                        {props?.course?.title}
-                    </p>
-
-                </div>
-                <p>Duration: <span className='font-bold'>{props?.course?.duration}</span></p>
-            </div>
+            {/* <div className='px-3 tool-tip text-center'>
+                <p className='font-bold whitespace-nowrap truncate tool-tip' data-bs-toggle="tooltip" title={`${props?.course?.name}`}>
+                    {props?.course?.name}
+                </p>
+            </div> */}
         </Link>
     )
 }

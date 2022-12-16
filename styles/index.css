@@ -66,9 +66,10 @@ input[type=number] {
 }
 
 .header-socials svg {
-  height: 1.25rem;
+  height: 1.2rem;
   fill: currentColor;
 }
+
 .footer-socials svg {
   height: 1rem;
   fill: currentColor;
@@ -316,4 +317,3 @@ input[type=number] {
 .progress-bar {
   transition: width 2s;
 }
-

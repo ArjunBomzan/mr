@@ -1,13 +1,11 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 const TrainingCard = (props) => {
     const router = useRouter()
-    const pathname = router.pathname.split('/')[1]
     return (
         <Link
-            href={`${pathname == 'courses' ? 'courses' : '+2courses'}/${props?.course?.slug}`}
+            href={`${props?.course?.category == 'IT' ? 'courses' : '+2courses'}/${props?.course?.slug}`}
             className='training-card cursor-pointer relative bg-white'
             style={{ flexGrow: "0" }}
         >

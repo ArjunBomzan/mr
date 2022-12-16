@@ -1,16 +1,22 @@
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { useWindowSize } from "../ScreenSize";
+
 
 const TrainingBanner = (props) => {
+    const size = useWindowSize({ useEffect, useState });
+    console.log(size.width)
     const course = props?.course?.data?.course[0]
     return (
         <div className="overflow-hidden">
             <div
-                // style={{ backgroundImage: `url("https://broadwayinfosys.com/uploads/courses/114_course.jpg")` }}
-                // style={{ backgroundImage: `url(${process.env.REACT_APP_domain}${course?.banner})` }}
                 className=' bg-center bg-cover bg-no-repeat text-md training-banner relative '
             >
-                {/* <img src={`${process.env.REACT_APP_domain}${course?.banner}`} className='absolute z-[-1] training-banner-img bg-center bg-cover bg-no-repeat h-full w-full' /> */}
-                <img src={`https://api.mindrisers.jobrisers.com${course?.banner}`} className='absolute z-[-1] training-banner-img bg-center bg-cover bg-no-repeat h-full w-full' />
+                <img
+                    src={`https://api.mindrisers.jobrisers.com${size?.width < 600 ? course?.mobile_banner : course?.banner}`}
+                    className='absolute z-[-1] training-banner-img  bg-cover bg-no-repeat h-full '
+                    style={{ objectFit: 'cover', width: "100%" }}
+                />
 
                 <div className="text-white text-right flex flex-col items-end gap-8 lg:p-16 sm:p-12 p-6">
                     <span className=''><Link href="/">Home</Link> / {course?.title}</span>

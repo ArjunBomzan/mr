@@ -16,14 +16,14 @@ const HomeSuccessStories = () => {
     }, []);
     const Card = ({ title, content, img }) => {
         return (
-            <div className="flex justify-center my-10 w-full" style={{ paddingLeft: "5px", paddingTop: "5px", marginLeft: "-5px", marginTop: "-5px" }}>
-                <div className="rounded-lg shadow-lg bg-white max-w-sm block card-shadow cursor-pointer  w-full">
-                    <a href="#!">
-                        <img className="rounded-t-lg  w-full h-48" src={`${img}`} alt="" />
-                    </a>
+            <div className="flex justify-center w-full bg-white rounded-lg shadow-lg card-shadow cursor-pointer">
+                <div className="block w-full">
+                    <div className='training-card-img-div'>
+                        <img className="rounded-t-lg" src={`${img}`} alt="" style={{ aspectRatio: "4 / 2.3" }} />
+                    </div>
                     <div className="p-6">
                         <h5 className="text-gray-900 text-xl font-medium mb-2">{title}</h5>
-                        <p className="text-gray-700 text-base mb-4">
+                        <p className="text-gray-700 text-base">
                             {content}
                         </p>
                     </div>
@@ -32,7 +32,7 @@ const HomeSuccessStories = () => {
         )
     }
     return (
-        <div className='py-10 lg:px-44 md:px-20 px-2 bg-neutral-100 py-8' id="success_stories">
+        <div className='lg:px-44 md:px-20 px-2 bg-neutral-100 py-8' id="success_stories">
             <p className="font-bold text-3xl mb-6">Success Stories</p>
             <Swiper
                 slidesPerView={size.width > 990 ? 3 : size.width > 700 ? 2.5 : size.width > 600 ? 2 : size.width > 400 ? 1.5 : 1.2}
@@ -50,7 +50,7 @@ const HomeSuccessStories = () => {
             >
                 {
                     successStoreis?.map((successStory) => {
-                        return <SwiperSlide key={successStory.id} className="my-3"><Card title={successStory.title} content={successStory.content} img={successStory.image} /></SwiperSlide>
+                        return <SwiperSlide key={successStory.id} className="mb-10 mt-4"><Card title={successStory.title} content={successStory.content} img={successStory.image} /></SwiperSlide>
                     })
                 }
             </Swiper>

@@ -1,7 +1,5 @@
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
 import uuid from 'react-uuid'
-import { coursesApi } from '../../pages/api/apiCalls'
 import Loader from '../Loader'
 import TrainingCard from './TrainingCard'
 
@@ -13,7 +11,7 @@ const Trainings = (props) => {
     <>
       {
         props?.courses ?
-          <section className={`bg-white flex flex-col pb-20 pt-8 sm:pb-24 px-5 sm:px-14 md:px-18 lg:px-32 xl:px-44`}>
+          <section className={`bg-white flex flex-col py-10 px-8 sm:px-12 md:px-14 lg:px-18 `}>
             <h2 className='w-full  text-2xl font-bold text-center md:text-3xl lg:text-4xl xl:text-5xl'>
               {pathname == "courses" && <span>Courses</span>}
               {pathname == "+2courses" && <span>+2 Courses</span>}

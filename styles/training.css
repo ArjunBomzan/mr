@@ -78,8 +78,11 @@
 }
 
 .training-card:hover {
-    /* box-shadow: 2px 2px 5px 2px #e5e5e5; */
     box-shadow: 1px 1px 3px 1px #d4d4d4;
+}
+
+.training-card.partner:hover {
+    box-shadow: 1px 1px 3px 1px #ffffff;
 }
 
 .training-card:hover .learn-more {

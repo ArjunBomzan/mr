@@ -1,6 +1,3 @@
-import { useRouter } from 'next/router';
-import { useEffect, useState } from "react";
-import { singleBlogApi, techServicesApi } from "../../pages/api/apiCalls";
 import Loader from "../Loader";
 import BlogCard from "./BlogCard";
 import BlogsBanner from "./BlogsBanner";
@@ -14,15 +11,7 @@ const Blogs = (props) => {
         props?.blogs ? (
           <main className={`h-max w-full`}>
             <BlogsBanner title="Blogs" desc="Got a moment to read our latest blogs?" />
-            {/* blog types
-            {
-              type == "blogs" ?
-              <BlogsBanner title="Blogs" desc="Got a moment to read our latest blogs?" />
-                :
-                <h2 className='w-full text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold  mt-12 mb-10'>Tech services we provide</h2>
-
-            } */}
-            <section className='grid gap-4 grid-cols-1 sm:grid-cols-2 sm:gap-4 lg:gap-10 lg:grid-cols-3 my-10 lg:px-44 md:px-20 sm:px-2 px-4'>
+            <section className='grid gap-8 grid-cols-1 sm:grid-cols-2 md:gap-10 lg:gap-10 lg:grid-cols-3 my-10 pt-4 pb-4 px-8 sm:px-12 md:px-14 lg:px-18 '>
               {
                 props?.blogs?.map((blog) => {
                   return (

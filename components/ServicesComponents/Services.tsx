@@ -27,7 +27,6 @@ const Services = () => {
       <Blogs />
       <Trainings />
       <Testimonials />
-      {/* <Partners /> */}
     </main>
   )
 }

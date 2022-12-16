@@ -1,4 +1,5 @@
 import Head from "next/head"
+import SuccessGalleries from "../components/SuccessGalleryComponents/SuccessGalleries"
 
 const services = () => {
 
@@ -9,6 +10,7 @@ const services = () => {
             </Head>
             <div>
                 <main>
+                    <SuccessGalleries />
                 </main>
             </div>
         </>
