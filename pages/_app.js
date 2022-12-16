@@ -1,12 +1,15 @@
 import "../styles/animations.css";
 import "../styles/index.css";
 import "../styles/training.css";
+import "../styles/accordion.scss";
 // import 'tw-elements';
 
 import Link from "next/link";
 import Footer from "../components/FooterComponents/Footer";
 import Header from "../components/HeaderComponents/Header";
 import { useEffect } from "react";
+
+
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     const use = async () => {

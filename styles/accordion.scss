@@ -1,0 +1,84 @@
+$midnight: #ffffff;
+$clouds: #000000;
+$offwhite: #ffffff;
+$border: #edebeb;
+.accordion-tabs input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+// Layout
+.accordion-row {
+  display: flex;
+  .col {
+    flex: 1;
+    &:last-child {
+      margin-left: 1em;
+    }
+  }
+}
+/* Accordion styles */
+.accordion-tabs {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 0.5px solid $border;
+}
+.accordion-tab {
+  width: 100%;
+  overflow: hidden;
+  &-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background: $midnight;
+    font-weight: 600;
+    cursor: pointer;
+    &::after {
+      content: "\276F";
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      transition: all 0.35s;
+    }
+  }
+  &-content {
+    max-height: 0;
+    padding: 0 1em;
+    background: white;
+    transition: all 0.35s;
+    border-top: 0.5px solid $border;
+    // margin-bottom: -0.3px;
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: $midnight;
+    cursor: pointer;
+    &:hover {
+      background: $offwhite;
+    }
+  }
+}
+.accordion-tab-label {
+  // border-top: 0.5px solid rgb(208, 207, 207);
+  // border-bottom: 0.5px solid rgb(208, 207, 207);
+  // margin-top: -0.5px;
+  margin-bottom: -0.5px;
+  background: $offwhite;
+}
+
+// :checked
+input:checked {
+  + .accordion-tab-label {
+    background: $offwhite;
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+  ~ .accordion-tab-content {
+    max-height: 100vh;
+    padding: 1em;
+  }
+}

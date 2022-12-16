@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import uuid from 'react-uuid';
+import TrainingAccordion from './TrainingComponents/TrainingAccordion';
 import TrainingOverview from './TrainingComponents/TrainingOverview';
 import TrainingSyllabus from './TrainingComponents/TrainingSyllabus';
 import TrainingInquiry from './TrainingInquiry';
@@ -39,7 +40,9 @@ const TrainingContainer = (props) => {
                 <div className='w-[60%] mt-10 text-justify flex-grow' >
                     <TrainingOverview course={props.course} />
                     <TrainingSyllabus course={props.course} />
+
                 </div>
+
                 <div className='flex-grow'>
                     {
                         date && (
