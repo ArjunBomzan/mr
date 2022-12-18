@@ -14,11 +14,11 @@ const FooterImportantLink = () => {
                         Blogs
                     </Link>
                 </li>
-                <li className='cursor-pointer hover:text-neutral-400'>
+                {/* <li className='cursor-pointer hover:text-neutral-400'>
                     <Link href='help-faqs'>
                         Help & FAQ
                     </Link>
-                </li>
+                </li> */}
                 <li className='cursor-pointer hover:text-neutral-400'>
                     <Link href='partners'>
                         Placement Partner

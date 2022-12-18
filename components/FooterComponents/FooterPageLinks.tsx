@@ -34,20 +34,20 @@ const FooterPageLinks = () => {
           </Link>
         </li>
         <li className='cursor-pointer hover:text-neutral-400'>
-          <Link href='success-gallery'>
+          <Link href='successgallery'>
             Success Gallery
           </Link>
         </li>
-        <li className='cursor-pointer hover:text-neutral-400'>
+        {/* <li className='cursor-pointer hover:text-neutral-400'>
           <Link href='privacy-policy'>
             Privacy policy
           </Link>
-        </li>
-        <li className='cursor-pointer hover:text-neutral-400'>
+        </li> */}
+        {/* <li className='cursor-pointer hover:text-neutral-400'>
           <Link href='terms-conditions'>
             Terms and conditions
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   )
