@@ -49,9 +49,10 @@ const Admission = () => {
                 type="text"
                 placeholder="Email"
                 name="email"
-                {...register("email", { required: true })}
+                {...register("email", { required: true, pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ })}
               />
               {errors?.email?.type === "required" && <p>This field is required</p>}
+              {errors?.email?.type === "pattern" && <p>Invalid Email</p>}
             </div>
 
             <div>

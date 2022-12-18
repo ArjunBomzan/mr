@@ -17,7 +17,7 @@ const Trainings = (props) => {
               {pathname == "+2courses" && <span>+2 Courses</span>}
             </h2>
             <div
-              className='grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 mt-6'
+              className='grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-4 mt-6'
             >
               {
                 props?.courses?.map((course) => {

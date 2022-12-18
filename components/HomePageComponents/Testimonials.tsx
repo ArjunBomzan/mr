@@ -36,7 +36,7 @@ const Testimonials = () => {
             speed={800}
             autoplay={{
               delay: 2500,
-              disableOnInteraction: false,
+              disableOnInteraction: true,
             }}
             loop={true}
             loopFillGroupWithBlank={false}

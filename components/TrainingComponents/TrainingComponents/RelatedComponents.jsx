@@ -15,24 +15,24 @@ const RelatedComponents = () => {
     coursesApi({ setCourses, ApiType })
   }, []);
   return (
-    <div className="lg:px-44 md:px-20 px-4 sm:flex-row flex-col flex gap-10 mb-10 mt-10">
+    <div className="lg:px-44 md:px-20 px-4 sm:flex-col flex-col flex gap-10 mb-10 mt-10">
 
-      <div>
+      <div className=''>
         <p className="font-bold text-3xl">Related Courses</p>
         <div
-          className="grid gap-2 mt-4 overflow-auto"
-          style={{ gridTemplateColumns: "1fr 1fr" }}
+          className="grid gap-2 mt-4 overflow-auto grid-cols-1 sm:grid-cols-2  lg:grid-cols-3"
+        // style={{ gridTemplateColumns: "1fr 1fr" }}
         >
           {
             courses?.slice(0, 7)?.map((course) => {
               return (!(slug == course.slug) && (
                 <Link
-                  className="flex gap-1 items-center w-48"
+                  className="flex gap-1 items-center truncate"
                   href={`/${pathname == 'courses' ? 'courses' : '+2courses'}/${course.slug}`}
                   key={course.id}
                 >
                   <img src={`${process.env.DOMAIN}${course.image}`} className="w-20" />
-                  <span className="whitespace-nowrap max-w-[7rem] overflow-hidden">{course.title}</span>
+                  <span className="whitespace-nowrap truncate overflow-hidden">{course.title}</span>
                 </Link>))
             })
           }

@@ -35,15 +35,15 @@ const HomeContact = () => {
                             <label className="admission-form-label" htmlFor="course">I am interested in: *</label>
                             <div className="relative">
                                 <select
-                                    className="admission-form-input"
+                                    className="admission-form-input truncate"
                                     id="course"
                                     name="course"
                                     {...register("course", { required: true })}
                                 >
-                                    <option></option>
+                                    <option value="" disabled selected className="text-slate-400">Select a course</option>
                                     {
                                         course?.map((item) => {
-                                            return <option key={item.id} value={item.id}>{item.title}</option>
+                                            return <option key={item.id} value={item.id} className="truncate">{item.title}</option>
                                         })
                                     }
                                 </select>
@@ -61,6 +61,7 @@ const HomeContact = () => {
                                 className='admission-form-input'
                                 name="name"
                                 {...register("name", { required: true })}
+                                placeholder="Full Name"
                             />
                             {errors?.name?.type === "required" && <p>This field is required</p>}
                         </div>
@@ -73,6 +74,7 @@ const HomeContact = () => {
                                 className='admission-form-input'
                                 name="email"
                                 {...register("email", { required: true })}
+                                placeholder="Email"
                             />
                             {errors?.name?.type === "required" && <p>This field is required</p>}
 
@@ -86,6 +88,7 @@ const HomeContact = () => {
                                 className='admission-form-input'
                                 name="mobile_no"
                                 {...register("mobile_no", { required: true })}
+                                placeholder="Phone Number"
                             />
                             {errors?.name?.type === "required" && <p>This field is required</p>}
                         </div>

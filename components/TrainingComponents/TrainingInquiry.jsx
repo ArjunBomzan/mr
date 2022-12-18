@@ -14,38 +14,39 @@ const TrainingInquiry = (props) => {
     }
     return (
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full mt-5 form" id="quick_inquiry" onSubmit={handleSubmit(onSubmit)}>
-            <span className="block text-gray-700 text-lg font-bold mb-2">Quick Inquiry</span>
+            <span className="block text-lg font-bold mb-2">Quick Inquiry</span>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+                <label className="block text-sm font-bold mb-2" htmlFor="username">
                     Name *
                 </label>
                 <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Name"
                     name="name"
-                    {...register("name", { required: true })}
+                    {...register("name", { required: true },)}
                 />
                 {errors?.name?.type === "required" && <p>This field is required</p>}
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+                <label className="block text-sm font-bold mb-2" htmlFor="username">
                     Email *
                 </label>
                 <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Email"
                     name="email"
-                    {...register("email", { required: true })}
+                    {...register("email", { required: true, pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ })}
 
                 />
                 {errors?.email?.type === "required" && <p>This field is required</p>}
+                {errors?.email?.type === "pattern" && <p>Invalid Email</p>}
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+                <label className="block text-sm font-bold mb-2" htmlFor="username">
                     Mobile Number *
                 </label>
                 <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                     type="number"
                     placeholder="Mobile Number"
                     name="mobile_no"
@@ -54,11 +55,11 @@ const TrainingInquiry = (props) => {
                 {errors?.mobile_no?.type === "required" && <p>This field is required</p>}
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+                <label className="block text-sm font-bold mb-2" htmlFor="username">
                     Alternate Number
                 </label>
                 <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                     type="number"
                     placeholder="Alternate Number"
                     name="alternate_number"
@@ -67,11 +68,11 @@ const TrainingInquiry = (props) => {
                 {errors?.alternate_number?.type === "required" && <p>This field is required</p>}
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+                <label className="block text-sm font-bold mb-2" htmlFor="username">
                     Subject
                 </label>
                 <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                     type="text"
                     placeholder="Subject"
                     name="subject"
@@ -80,11 +81,11 @@ const TrainingInquiry = (props) => {
                 {errors?.subject?.type === "required" && <p>This field is required</p>}
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+                <label className="block text-sm font-bold mb-2" htmlFor="username">
                     Selected Course
                 </label>
                 <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                     type="text"
                     placeholder="Selected Course"
                     name="subject"
@@ -92,11 +93,11 @@ const TrainingInquiry = (props) => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+                <label className="block text-sm font-bold mb-2" htmlFor="username">
                     Message
                 </label>
                 <textarea
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                     type="text"
                     placeholder="Message"
                     name="message"
