@@ -10,7 +10,7 @@ const TrainingContainer = (props) => {
     return (
         <div >
             <div
-                className='flex gap-5 mt-20 p-6 lg:px-44 md:px-20 sm:px-2 overflow-auto'
+                className='flex gap-5 mt-20 p-6 lg:px-18     overflow-auto px-8 sm:px-12 md:px-14 lg:px-18 '
                 style={{ borderBottom: "0.5px solid rgb(163 163 163)" }}
             >
                 <Link href="#course_overview" className='training-indicator' scroll={false}>
@@ -36,7 +36,7 @@ const TrainingContainer = (props) => {
                 }
 
             </div>
-            <div className='flex gap-6 justify-center flex-wrap sm:flex-nowrap lg:px-44 md:px-20 sm:px-4 px-4'>
+            <div className='flex gap-6 justify-center flex-wrap lg:flex-nowrap lg:px-18 md:px-14 sm:px-12 px-8'>
                 <div className='w-[60%] mt-10 text-justify flex-grow' >
                     <TrainingOverview course={props.course} />
                     <TrainingSyllabus course={props.course} />

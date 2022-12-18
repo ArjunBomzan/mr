@@ -24,7 +24,7 @@ const FooterImportantLink = () => {
                         Placement Partner
                     </Link>
                 </li>
-                <li className='cursor-pointer hover:text-neutral-400 mt-1'>
+                <li className='mt-1'>
                     <div className='flex gap-3 footer-socials justify-start w-full'>
                         <SocialLinks />
                     </div>

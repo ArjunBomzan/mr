@@ -45,8 +45,8 @@ const FooterContactUs = () => {
                     </Link>
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400'>
-                    <Link href='mailto:class@mindrisers.com.np'>
-                        class@mindrisers.com.np
+                    <Link href='mailto:tech.mindrisers@gmail.com'>
+                        tech.mindrisers@gmail.com
                     </Link>
                 </li>
             </ul>

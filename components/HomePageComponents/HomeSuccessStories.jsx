@@ -32,8 +32,8 @@ const HomeSuccessStories = () => {
         )
     }
     return (
-        <div className='lg:px-44 md:px-20 px-2 bg-neutral-100 py-8' id="success_stories">
-            <p className="font-bold text-3xl mb-6">Success Stories</p>
+        <div className='py-8 lg:px-44 md:px-20 px-2 bg-neutral-100' id="success_stories">
+            <p className="font-bold text-3xl">Success Stories</p>
             <Swiper
                 slidesPerView={size.width > 990 ? 3 : size.width > 700 ? 2.5 : size.width > 600 ? 2 : size.width > 400 ? 1.5 : 1.2}
                 spaceBetween={35}
@@ -47,10 +47,12 @@ const HomeSuccessStories = () => {
                     delay: 2000,
                     disableOnInteraction: false,
                 }}
+                className="!-mx-2 md:!mx-0"
+            // style={{ marginLeft: "-0.5rem" }}
             >
                 {
                     successStoreis?.map((successStory) => {
-                        return <SwiperSlide key={successStory.id} className="mb-10 mt-4"><Card title={successStory.title} content={successStory.content} img={successStory.image} /></SwiperSlide>
+                        return <SwiperSlide key={successStory.id} className="mb-16 mt-10 mx-2 md:mx-0"><Card title={successStory.title} content={successStory.content} img={successStory.image} /></SwiperSlide>
                     })
                 }
             </Swiper>

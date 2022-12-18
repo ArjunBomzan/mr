@@ -6,7 +6,7 @@ import Image from "next/image";
 const Mission = () => {
 
   return (
-    <section className='flex flex-col w-full px-5 py-20 space-y-24 h-max sm:py-32 sm:px-32 lg:px-44' id="why-us-container">
+    <section className='flex flex-col w-full px-5 py-16 sm:px-20 lg:px-44 h-max gap-8' id="why-us-container">
       <div className='flex flex-col justify-between w-full lg:flex-row gap-8'>
         {/* <div className='w-full lg:w-1/2' >
           <Image src={Matrix} alt='Services' className='object-cover w-full rounded-md mt-4 lg:mt-20' />

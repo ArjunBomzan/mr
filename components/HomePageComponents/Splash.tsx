@@ -7,10 +7,10 @@ import Link from 'next/link'
 import SplashBg from "../../assets/homePage/splash-bg.jpg";
 const Splash = () => {
   return (
-    <div className='relative z-[0] h-[65vh]'>
+    <div className='relative z-[0] '>
 
-      <div className='w-full bg-splash-bg bg-no-repeat bg-cover h-[65vh]' style={{ backgroundImage: `url(${SplashBg.src})` }}>
-        <div className='flex flex-col items-center justify-center w-full h-full bg-mask '>
+      <div className='w-full bg-splash-bg bg-no-repeat bg-cover ' style={{ backgroundImage: `url(${SplashBg.src})` }}>
+        <div className='flex flex-col items-center justify-center w-full h-full bg-mask py-10 '>
           <div
             // className='text-green-400 slide-left-to-right text-md'
             className='text-green-400 text-md'

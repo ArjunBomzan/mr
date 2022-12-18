@@ -13,7 +13,7 @@ const SuccessStories = (props) => {
         <>
             {
                 props?.course?.data?.success_story[0] &&
-                <div className='my-10 lg:px-44 md:px-20 px-2' id="success_stories">
+                <div className='my-10 lg:px-18 md:px-14 px-8' id="success_stories">
                     <p className="font-bold text-3xl">Success Stories</p>
                     <Swiper
                         slidesPerView={size.width > 990 ? 3 : size.width > 700 ? 2.5 : size.width > 600 ? 2 : size.width > 400 ? 1.5 : 1.2}
@@ -28,10 +28,11 @@ const SuccessStories = (props) => {
                             delay: 2000,
                             disableOnInteraction: false,
                         }}
+                        className="!-mx-8 md:!mx-0"
                     >
                         {
                             props?.course?.data?.success_story?.map((success_story) => {
-                                return <SwiperSlide key={success_story.id}><SuccessStory success_story={success_story} title={props?.course?.data?.course[0]?.title} /></SwiperSlide>
+                                return <SwiperSlide key={success_story.id} className="mx-8 md:mx-0"><SuccessStory success_story={success_story} title={props?.course?.data?.course[0]?.title} /></SwiperSlide>
 
                             })
                         }
