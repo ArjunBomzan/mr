@@ -10,7 +10,7 @@
 
 # next.js
 /.next/
-/.next.zip/
+/.next.zip
 .next.zip/
 /out/
 
