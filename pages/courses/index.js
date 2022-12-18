@@ -12,7 +12,6 @@ export const getStaticProps = async () => {
 }
 
 const courses = ({ courses }) => {
-    console.log("this is the page", courses)
     return (
         <>
             <Head>

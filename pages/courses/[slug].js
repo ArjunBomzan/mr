@@ -20,7 +20,6 @@ export async function getStaticProps({ params }) {
 
 
 export default function course(props) {
-    console.log(props)
     return (
         <div>
             <Head>

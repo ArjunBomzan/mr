@@ -11,7 +11,7 @@ const TrainingsHomePage = (props) => {
         coursesApi({ setCourses, home })
     }, []);
     return (
-        <div className='px-4 py-20 lg:px-44 md:px-20 sm:px-16 relative'>
+        <div className='p-4 lg:py-20 lg:px-44 md:px-20 sm:p-16 relative'>
             <span className='w-5/6 text-xl font-bold sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl mb-6'>Popular Courses</span>
             <div
                 className='grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 mt-6'

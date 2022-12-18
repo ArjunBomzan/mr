@@ -14,14 +14,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const res = await fetch(`${process.env.DOMAIN_V1}coursecombine/${params.slug}/`)
     const course = await res.json()
-    console.log(course)
     return { props: { course } }
 }
 
 
 
 export default function course(props) {
-    console.log(props)
     return (
         <div>
             <Head>

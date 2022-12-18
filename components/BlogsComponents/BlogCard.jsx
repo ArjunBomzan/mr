@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 const BlogCard = ({ thumbnail, title, blurb, md, url, imgAlt }) => {
   const router = useRouter()
   const type = router.pathname.split('/')[1]
-  console.log((type == "tech-services" || type == "services"))
   return (
     <Link
       // href={`/tech-services/${url}`}

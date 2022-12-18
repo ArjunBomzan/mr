@@ -5,7 +5,6 @@ import { useWindowSize } from "../ScreenSize";
 
 const TrainingBanner = (props) => {
     const size = useWindowSize({ useEffect, useState });
-    console.log(size.width)
     const course = props?.course?.data?.course[0]
     return (
         <div className="overflow-hidden">

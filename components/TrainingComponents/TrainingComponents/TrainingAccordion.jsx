@@ -4,7 +4,6 @@ import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 
 const TrainingAccordion = (props) => {
-    console.log(props?.syllabus)
     return (
         <div class="accordion-tabs">
             {

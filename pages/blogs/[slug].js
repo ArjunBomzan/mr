@@ -14,12 +14,10 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const res = await fetch(`${process.env.DOMAIN_V1}singleblogslug/${params.slug}/`)
     const blog = await res.json()
-    console.log(blog)
     return { props: { blog } }
 }
 
 export default function BlogSlug(props) {
-    console.log(props?.blog?.data?.metatagblog)
     return (
         <div>
             <Head>

@@ -8,7 +8,6 @@ const HomeContact = () => {
     const router = useRouter();
     const [submiting, setSubmiting] = useState(false);
     const onSubmit = data => {
-        console.log(data)
         setSubmiting(true)
         ContactListApi({ setSubmiting, data, reset, router })
     };
@@ -40,7 +39,7 @@ const HomeContact = () => {
                                     name="course"
                                     {...register("course", { required: true })}
                                 >
-                                    <option value="" disabled selected className="text-slate-400">Select a course</option>
+                                    <option value="" className="text-slate-400" defaultValue="">Select a course</option>
                                     {
                                         course?.map((item) => {
                                             return <option key={item.id} value={item.id} className="truncate">{item.title}</option>

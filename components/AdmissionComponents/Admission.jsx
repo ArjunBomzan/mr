@@ -11,7 +11,6 @@ const Admission = () => {
   const [schedule, setSchedule] = useState([]);
   const [qualification, setQualification] = useState([]);
   const onSubmit = data => {
-    console.log(data)
     setSubmiting(true)
     AdmissionFormApi({ setSubmiting, data, reset, router })
   }
@@ -91,7 +90,7 @@ const Admission = () => {
                   placeholder="Your college/ Institution name *"
                   {...register("qualification", { required: true })}
                 >
-                  <option value="" disabled selected>-----------</option>
+                  <option value="" disabled >-----------</option>
                   {
                     qualification?.map((item) => {
                       return <option id={item.id} value={item.id} key={item.id}>{item.qualification}</option>
@@ -114,7 +113,7 @@ const Admission = () => {
                   name="course"
                   {...register("course", { required: true })}
                 >
-                  <option value="" disabled selected>-----------</option>
+                  <option value="" disabled >-----------</option>
                   {
                     course?.map((item) => {
                       return <option key={item.id} value={item.id}>{item.title}</option>
@@ -136,7 +135,7 @@ const Admission = () => {
                   name="shedule"
                   {...register("shedule", { required: true })}
                 >
-                  <option value="" disabled selected>-----------</option>
+                  <option value="" disabled >-----------</option>
                   {
                     schedule?.map((item) => {
                       return <option key={item.id} value={item.id}>{item.shedule}</option>

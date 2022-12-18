@@ -8,7 +8,6 @@ const DropMessage = () => {
     const router = useRouter();
     const [submiting, setSubmiting] = useState(false);
     const onSubmit = data => {
-        console.log(data)
         setSubmiting(true)
         ContactListApi({ setSubmiting, data, reset, router })
     };

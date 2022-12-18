@@ -5,8 +5,8 @@ import Link from 'next/link'
 
 const HomeAboutUs = () => {
   return (
-    <section className=" space-y-12 h-max   bg-neutral-100" >
-      <div className=' py-16 sm:py-16 lg:space-y-0 lg:mx-44 md:mx-20 sm:mx-16 mx-2 lg:flex-row flex flex-col px-4 gap-8'>
+    <section className="space-y-12 h-max bg-neutral-100">
+      <div className='py-16 sm:py-16 lg:space-y-0 lg:mx-44 md:mx-20 sm:mx-16 mx-2 lg:flex-row flex flex-col p-4 gap-8'>
         <div className='flex flex-col w-full lg:w-1/2 space-y-9 '>
           <h2 className='w-5/6 text-xl font-bold sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl' >About Us</h2>
           <p className='text-justify about-us'>

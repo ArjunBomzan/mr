@@ -28,7 +28,6 @@ export async function singleBlogApi(props) {
         .catch(err => console.log(err))
     await publicRequest.get(`singleblog/`)
         .then(res => {
-            console.log(res.data[0])
             props?.setBlogs(res.data)
         }
         )
@@ -44,7 +43,6 @@ export async function techServicesApi(props) {
         .catch(err => console.log(err))
     await publicRequest.get(`tech/`)
         .then(res => {
-            console.log(res.data[0])
             props?.setBlogs(res.data)
         }
         )
