@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Header from "../../components/HeaderComponents/Header";
 import Training from "../../components/TrainingComponents/Training";
 
 export async function getStaticPaths() {
@@ -25,6 +26,7 @@ export default function course(props) {
             <Head>
                 <title>Course Details</title>
             </Head>
+            <Header />
             <main>
                 <Training course={props?.course} />
             </main>

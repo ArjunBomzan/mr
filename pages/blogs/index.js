@@ -16,6 +16,7 @@ export default function blogs({ blogs }) {
             <Head>
                 <title>Blogs</title>
             </Head>
+            <Header />
             <main>
                 <Blogs blogs={blogs} />
             </main>

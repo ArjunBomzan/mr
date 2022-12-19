@@ -1,5 +1,6 @@
 import axios from 'axios'
 import Head from 'next/head'
+import Header from '../components/HeaderComponents/Header'
 import Partners from '../components/PlacementPartners/Partners'
 
 export const getStaticProps = async () => {
@@ -15,6 +16,7 @@ export default function Home({ partners }) {
             <Head>
                 <title>Placement Partners</title>
             </Head>
+            <Header />
             <Partners courses={partners} />
         </>
     )

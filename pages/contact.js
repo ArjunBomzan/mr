@@ -1,6 +1,6 @@
 import Head from "next/head";
+import ContactUs from '../components/ContactUsComponents/ContactUs';
 import Header from "../components/HeaderComponents/Header";
-import ContactUs from '../components/ContactUsComponents/ContactUs'
 
 export default function contact() {
     return (
@@ -8,6 +8,7 @@ export default function contact() {
             <Head>
                 <title>Contact</title>
             </Head>
+            <Header />
             <main>
                 <ContactUs />
             </main>

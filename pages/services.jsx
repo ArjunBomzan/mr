@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Header from "../components/HeaderComponents/Header"
 import Services from "../components/ServicesComponents/Services"
 
 const services = () => {
@@ -8,6 +9,7 @@ const services = () => {
       <Head>
         <title>Services</title>
       </Head>
+      <Header />
       <div>
         <main>
           <Services />

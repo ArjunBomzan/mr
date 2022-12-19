@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Header from "../components/HeaderComponents/Header"
 import SuccessGalleries from "../components/SuccessGalleryComponents/SuccessGalleries"
 
 const services = () => {
@@ -8,6 +9,7 @@ const services = () => {
             <Head>
                 <title>Success Gallery</title>
             </Head>
+            <Header />
             <div>
                 <main>
                     <SuccessGalleries />

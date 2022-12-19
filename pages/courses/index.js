@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Head from 'next/head';
 import React from 'react';
+import Header from '../../components/HeaderComponents/Header';
 import Trainings from "../../components/TrainingComponents/Trainings";
 
 export const getStaticProps = async () => {
@@ -17,6 +18,7 @@ const courses = ({ courses }) => {
             <Head>
                 <title>Courses</title>
             </Head>
+            <Header />
             <Trainings courses={courses} />
         </>
     )

@@ -1,13 +1,12 @@
+import "../styles/accordion.scss";
 import "../styles/animations.css";
 import "../styles/index.css";
 import "../styles/training.css";
-import "../styles/accordion.scss";
 // import 'tw-elements';
 
 import Link from "next/link";
-import Footer from "../components/FooterComponents/Footer";
-import Header from "../components/HeaderComponents/Header";
 import { useEffect } from "react";
+import Footer from "../components/FooterComponents/Footer";
 
 
 function MyApp({ Component, pageProps }) {
@@ -19,7 +18,6 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return <>
-    <Header />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css"></link>
     <Component {...pageProps} />
     <Footer />
