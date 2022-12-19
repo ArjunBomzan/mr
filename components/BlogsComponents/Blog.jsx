@@ -9,7 +9,7 @@ import RelatedBlogs from './RelatedBlogs'
 const Blog = (props) => {
   const router = useRouter()
   const { slug } = router.query
-
+  console.log(props?.blog?.category)
   return (
     <>
       {
@@ -32,7 +32,7 @@ const Blog = (props) => {
                 </article>
               </div>
             </main>
-            <RelatedBlogs blogs={props?.blogs} slug={slug} />
+            <RelatedBlogs blog={props?.blog} slug={slug} />
           </div >
           :
           <Loader />
