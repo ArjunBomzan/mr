@@ -1,16 +1,10 @@
-import ProgressBar from "./ProgressBar";
 import Statistic from "./Statistic";
-import Matrix from '../../assets/homePage/why-us.jpg'
-import Image from "next/image";
 
 const Mission = () => {
 
   return (
     <section className='flex flex-col w-full px-5 py-16 sm:px-20 lg:px-44 h-max gap-8' id="why-us-container">
       <div className='flex flex-col justify-between w-full lg:flex-row gap-8'>
-        {/* <div className='w-full lg:w-1/2' >
-          <Image src={Matrix} alt='Services' className='object-cover w-full rounded-md mt-4 lg:mt-20' />
-        </div> */}
         <div className='w-full space-y-8 lg:w-full'>
           <h2 className=' text-3xl font-bold md:text-4xl'>
             WHY US?

@@ -36,7 +36,7 @@ const TrainingContainer = (props) => {
                 }
 
             </div>
-            <div className='flex gap-6 justify-center flex-wrap lg:flex-nowrap lg:px-18 md:px-14 sm:px-12 px-8'>
+            <div className='flex gap-6 justify-center flex-wrap lg:flex-nowrap lg:px-18 md:px-14 sm:px-12 px-6'>
                 <div className='w-[60%] mt-10 text-justify flex-grow' >
                     <TrainingOverview course={props.course} />
                     <TrainingSyllabus course={props.course} />

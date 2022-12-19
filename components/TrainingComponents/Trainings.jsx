@@ -11,7 +11,7 @@ const Trainings = (props) => {
     <>
       {
         props?.courses ?
-          <section className={`bg-white flex flex-col py-10 px-8 sm:px-12 md:px-14 lg:px-18 `}>
+          <section className={`bg-white flex flex-col py-10 px-6 sm:px-12 md:px-14 lg:px-18 `}>
             <h2 className='w-full  text-2xl font-bold text-center md:text-3xl lg:text-4xl xl:text-5xl'>
               {pathname == "courses" && <span>Courses</span>}
               {pathname == "+2courses" && <span>+2 Courses</span>}

@@ -15,7 +15,7 @@ const RelatedComponents = () => {
     coursesApi({ setCourses, ApiType })
   }, []);
   return (
-    <div className="lg:px-18 md:px-14 px-8 sm:flex-col flex-col flex gap-10 mb-10 mt-10">
+    <div className="lg:px-18 md:px-14 px-6 sm:flex-col flex-col flex gap-10 mb-10 mt-10">
 
       <div className=''>
         <p className="font-bold text-3xl">Related Courses</p>
