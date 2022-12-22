@@ -10,7 +10,7 @@ const HeaderTabs = () => {
         <Link href='/courses' className={`nav-button ${(pathname == "courses") && 'active'}`}>Courses</Link>
       </li>
       <li className="nav-item p-2">
-        <Link href='/after+2-courses' className={`nav-button ${(pathname == "+2courses") && 'active'}`}>After +2 Courses</Link>
+        <Link href='/after+2-courses' className={`nav-button ${(pathname == "after+2-courses") && 'active'}`}>After +2 Courses</Link>
       </li>
       <li className="nav-item p-2">
         <Link href='/online-admission' className={`nav-button ${(pathname == "online-admission") && 'active'}`}>Online Admission</Link>

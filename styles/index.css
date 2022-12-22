@@ -288,7 +288,7 @@ input[type=number] {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor:"pointer"
+  cursor:pointer
 }
 
 #scroll-to-top svg {
