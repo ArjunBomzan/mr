@@ -10,22 +10,22 @@ const HeaderTabs = () => {
         <Link href='/courses' className={`nav-button ${(pathname == "courses") && 'active'}`}>Courses</Link>
       </li>
       <li className="nav-item p-2">
-        <Link href='/+2courses' className={`nav-button ${(pathname == "+2courses") && 'active'}`}>+2 Courses</Link>
+        <Link href='/after+2-courses' className={`nav-button ${(pathname == "+2courses") && 'active'}`}>After +2 Courses</Link>
       </li>
       <li className="nav-item p-2">
-        <Link href='/admission' className={`nav-button ${(pathname == "admission") && 'active'}`}>Online Admission</Link>
+        <Link href='/online-admission' className={`nav-button ${(pathname == "online-admission") && 'active'}`}>Online Admission</Link>
       </li>
       <li className="nav-item p-2">
-        <Link href='/partners' className={`nav-button ${(pathname == "partners") && 'active'}`}>Placement Partner</Link>
+        <Link href='/placement-partner' className={`nav-button ${(pathname == "placement-partner") && 'active'}`}>Placement Partner</Link>
       </li>
       <li className="nav-item p-2">
-        <Link href='/successgallery' className={`nav-button ${(pathname == "successgallery") && 'active'}`}>Success Gallery</Link>
+        <Link href='/success-gallery' className={`nav-button ${(pathname == "success-gallery") && 'active'}`}>Success Gallery</Link>
       </li>
       <li className="nav-item p-2">
         <Link href='/blogs' className={`nav-button ${(pathname == "blogs") && 'active'}`}>Blogs</Link>
       </li>
       <li className="nav-item lg:py-0 p-2 pr-0">
-        <Link href='/contact'>
+        <Link href='/contact-us'>
           <button className='rounded-lg h-10 px-5 text-md bg-green-500 text-white hover:bg-slate-300 hover:text-black duration-300'>
             Contact Us
           </button>

@@ -9,12 +9,12 @@ const FooterPageLinks = () => {
       </h4>
       <ul className='text-neutral-300  text-sm '>
         <li className='cursor-pointer hover:text-neutral-400'>
-          <Link href='about'>
+          <Link href='about-us'>
             About Us
           </Link>
         </li>
         <li className='cursor-pointer hover:text-neutral-400'>
-          <Link href='contact'>
+          <Link href='contact-us'>
             Contact Us
           </Link>
         </li>
@@ -24,17 +24,17 @@ const FooterPageLinks = () => {
           </Link>
         </li>
         <li className='cursor-pointer hover:text-neutral-400'>
-          <Link href='+2courses'>
+          <Link href='after+2-courses'>
             After +2 Courses
           </Link>
         </li>
         <li className='cursor-pointer hover:text-neutral-400'>
-          <Link href='admission'>
+          <Link href='online-admission'>
             Online Admission
           </Link>
         </li>
         <li className='cursor-pointer hover:text-neutral-400'>
-          <Link href='successgallery'>
+          <Link href='success-gallery'>
             Success Gallery
           </Link>
         </li>

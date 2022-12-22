@@ -28,7 +28,7 @@ const Admission = () => {
             <label className="block text-gray-700 text-2xl font-bold mb-2 text-center w-full">Admission Form</label>
 
             <div>
-              <label className="admission-form-label" htmlFor="full_name">Full Name</label>
+              <label className="admission-form-label required-field" htmlFor="full_name">Full Name</label>
               <input
                 className="admission-form-input focus:outline-none focus:shadow-outline"
                 id="full_name"
@@ -41,7 +41,7 @@ const Admission = () => {
             </div>
 
             <div>
-              <label className="admission-form-label" htmlFor="email">Email</label>
+              <label className="admission-form-label required-field " htmlFor="email">Email</label>
               <input
                 className="admission-form-input focus:outline-none focus:shadow-outline"
                 id="email"
@@ -55,7 +55,7 @@ const Admission = () => {
             </div>
 
             <div>
-              <label className="admission-form-label" htmlFor="mobile_no">Mobile Number *</label>
+              <label className="admission-form-label required-field" htmlFor="mobile_no">Mobile Number</label>
               <input
                 className="admission-form-input focus:outline-none focus:shadow-outline"
                 id="mobile_no"
@@ -68,7 +68,7 @@ const Admission = () => {
             </div>
 
             <div>
-              <label className="admission-form-label" htmlFor="college">Your college/ Institution name *</label>
+              <label className="admission-form-label required-field" htmlFor="college">Your college/ Institution name</label>
               <input
                 className="admission-form-input focus:outline-none focus:shadow-outline"
                 id="college"
@@ -81,7 +81,7 @@ const Admission = () => {
             </div>
 
             <div >
-              <label className="admission-form-label" htmlFor="qualification">Your Qualification Status:*</label>
+              <label className="admission-form-label required-field" htmlFor="qualification">Your Qualification Status</label>
               <div className="relative">
                 <select
                   className="admission-form-input"
@@ -105,7 +105,7 @@ const Admission = () => {
             </div>
 
             <div >
-              <label className="admission-form-label" htmlFor="course">I am interested in: *</label>
+              <label className="admission-form-label required-field" htmlFor="course">I am interested in</label>
               <div className="relative">
                 <select
                   className="admission-form-input"
@@ -128,7 +128,7 @@ const Admission = () => {
             </div>
 
             <div >
-              <label className="admission-form-label" htmlFor="shedule">Choose Schedule *</label>
+              <label className="admission-form-label required-field" htmlFor="shedule">Choose Schedule</label>
               <div className="relative">
                 <select className="admission-form-input"
                   id="shedule"
@@ -150,7 +150,7 @@ const Admission = () => {
             </div>
 
             <div style={{ flex: "100%" }}>
-              <label className="admission-form-label" htmlFor="remarks">I want to join Mind Risers Internship program after my training is over. *</label>
+              <label className="admission-form-label required-field" htmlFor="remarks">I want to join Mind Risers Internship program after my training is over</label>
               <div className="flex items-center gap-2">
                 <input
                   type="radio"

@@ -15,7 +15,7 @@ const courses = ({ courses }) => {
     return (
         <>
             <Head>
-                <title>+2 Courses</title>
+                <title>After +2 Courses</title>
             </Head>
             <Header />
             <Trainings courses={courses} />

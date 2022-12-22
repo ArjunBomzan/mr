@@ -28,7 +28,7 @@ const Splash = () => {
           >
             Mind Risers is the only IT training institute in Nepal offering paid internships after the course completion. With various courses covering everything from programming to designing and marketing, our professional instructor of highly educated educators is committed to assisting you in succeeding.
           </div>
-          <Link href='contact'>
+          <Link href='contact-us'>
             <button className='p-3 px-6 text-sm text-green-500 duration-500 border-2 border-green-500 rounded-md mt-9 hover:bg-green-500 hover:text-white'>
               Get Started
             </button>

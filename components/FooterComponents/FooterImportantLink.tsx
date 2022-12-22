@@ -20,11 +20,11 @@ const FooterImportantLink = () => {
                     </Link>
                 </li> */}
                 <li className='cursor-pointer hover:text-neutral-400'>
-                    <Link href='partners'>
+                    <Link href='placement-partner'>
                         Placement Partner
                     </Link>
                 </li>
-                <li className='mt-1 pt-2'>
+                <li className='mt-1 pt-1'>
                     <div className='flex gap-3 footer-socials justify-start w-full'>
                         <SocialLinks />
                     </div>
