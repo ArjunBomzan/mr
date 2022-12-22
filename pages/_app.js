@@ -37,17 +37,20 @@ function MyApp({ Component, pageProps }) {
       <meta property="og:title" content="IT Training Institute in Kathmandu, Nepal | IT Training | MindRisers" />
       <meta property="og:description"
         content="Are you searching for a Practical IT Training Center in Kathmandu Nepal then MindRisers is the perfect platform for you to learn Digital Skils" />
-      <meta property="og:image" content="/mindrisers.png" />
-      <meta property="twitter:card" content="summary_large_image" />
+      {/* <meta property="og:image" content="/mindrisers.png" /> */}
+      {/* <meta property="twitter:card" content="summary_large_image" /> */}
       <meta property="twitter:url" content="https://mindrisers.pages.dev/" />
       <meta property="twitter:title" content="MindRisers Nepal" />
       <meta property="twitter:description" content="Official website of MindRisers Nepal" />
-      <meta property="twitter:image" content="/mindrisers.png" />
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css"></link>
+      {/* <meta property="twitter:image" content="/mindrisers.png" /> */}
+
+      {/* <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css"></link> */}
+
     </Head>
-    <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=UA-235343232-1"></Script>
+    <Script id="one" strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=UA-235343232-1"></Script>
 
     <Script
+      id="two"
       strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `
@@ -56,6 +59,7 @@ function MyApp({ Component, pageProps }) {
       }}
     />
     <Script
+      id="three"
       strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `
@@ -68,6 +72,7 @@ function MyApp({ Component, pageProps }) {
     />
 
     <Script
+      id="four"
       strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `
@@ -83,6 +88,7 @@ function MyApp({ Component, pageProps }) {
       }}
     />
     <Script
+      id="six"
       strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `
@@ -104,6 +110,7 @@ function MyApp({ Component, pageProps }) {
     />
 
     <Script
+      id="seven"
       strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `
@@ -115,6 +122,7 @@ function MyApp({ Component, pageProps }) {
     />
 
     <Script
+      id="eight"
       strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `
