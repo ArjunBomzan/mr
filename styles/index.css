@@ -318,3 +318,9 @@ input[type=number] {
 .progress-bar {
   transition: width 2s;
 }
+
+.required-field::after{
+  content:" * ";
+  color: red;
+}
+

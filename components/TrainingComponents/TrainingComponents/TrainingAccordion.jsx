@@ -5,14 +5,14 @@ import remarkGfm from 'remark-gfm';
 
 const TrainingAccordion = (props) => {
     return (
-        <div class="accordion-tabs">
+        <div className="accordion-tabs">
             {
                 props?.syllabus?.map((syllable) => {
                     return (
-                        <div class="accordion-tab" key={syllable.id}>
+                        <div className="accordion-tab" key={syllable.id}>
                             <input type="checkbox" id={syllable.id} />
-                            <label class="accordion-tab-label" htmlFor={syllable.id}>{syllable.heading}</label>
-                            <div class="accordion-tab-content">
+                            <label className="accordion-tab-label" htmlFor={syllable.id}>{syllable.heading}</label>
+                            <div className="accordion-tab-content">
                                 <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
                                     {syllable?.description}
                                 </ReactMarkdown>

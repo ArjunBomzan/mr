@@ -24,7 +24,7 @@ const FooterImportantLink = () => {
                         Placement Partner
                     </Link>
                 </li>
-                <li className='mt-1'>
+                <li className='mt-1 pt-2'>
                     <div className='flex gap-3 footer-socials justify-start w-full'>
                         <SocialLinks />
                     </div>

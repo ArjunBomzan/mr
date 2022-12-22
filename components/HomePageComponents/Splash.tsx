@@ -15,16 +15,18 @@ const Splash = () => {
             // className='text-green-400 slide-left-to-right text-md'
             className='text-green-400 text-md'
           >
-            MANAGED IT SOLUTIONS
+            <p style={{
+              fontSize:"2em"
+            }}>#1</p>
           </div>
           <h2 className='w-4/5 mt-2  text-[1rem] font-extrabold text-center text-white text-fade h-max sm:w-1/2 sm:text-[2rem]'>
-            Reliable, scalable and built for your business.
+            IT Training Institue In Nepal
           </h2>
           <div
             // className='w-1/2 text-center slide-right-to-left mt-5 text-slate-400'
             className='w-1/2 text-center mt-5 text-gray-400'
           >
-            MindRisers Consortium is a forward-thinking app and website development company in Kathmandu Nepal with many years of experience to make what you wish.
+            Mind Risers is the only IT training institute in Nepal offering paid internships after the course completion. With various courses covering everything from programming to designing and marketing, our professional instructor of highly educated educators is committed to assisting you in succeeding.
           </div>
           <Link href='contact'>
             <button className='p-3 px-6 text-sm text-green-500 duration-500 border-2 border-green-500 rounded-md mt-9 hover:bg-green-500 hover:text-white'>

@@ -31,7 +31,7 @@ const HomeContact = () => {
                     <form className='grid grid-cols-1 sm:grid-cols-2 gap-4 w-full form' onSubmit={handleSubmit(onSubmit)}>
 
                         <div >
-                            <label className="admission-form-label" htmlFor="course">I am interested in: *</label>
+                            <label className="admission-form-label required-field" htmlFor="course">I am interested in</label>
                             <div className="relative">
                                 <select
                                     className="admission-form-input truncate"
@@ -54,7 +54,7 @@ const HomeContact = () => {
                         </div>
 
                         <div >
-                            <label className='font-medium font-md admission-form-label'>Your name *</label>
+                            <label className='font-medium font-md admission-form-label  required-field'>Your name</label>
                             <input
                                 type='text'
                                 className='admission-form-input'
@@ -67,7 +67,7 @@ const HomeContact = () => {
 
 
                         <div>
-                            <label className='font-medium font-md admission-form-label'>Your email *</label>
+                            <label className='font-medium font-md admission-form-label required-field'>Your email</label>
                             <input
                                 type='email'
                                 className='admission-form-input'
@@ -75,13 +75,11 @@ const HomeContact = () => {
                                 {...register("email", { required: true })}
                                 placeholder="Email"
                             />
-                            {errors?.name?.type === "required" && <p>This field is required</p>}
-
+                            {errors?.email?.type === "required" && <p>This field is required</p>}
                         </div>
 
-
                         <div>
-                            <label className='font-medium font-md admission-form-label'>Your Phone *</label>
+                            <label className='font-medium font-md admission-form-label required-field'>Your Phone</label>
                             <input
                                 type='number'
                                 className='admission-form-input'
@@ -89,7 +87,7 @@ const HomeContact = () => {
                                 {...register("mobile_no", { required: true })}
                                 placeholder="Phone Number"
                             />
-                            {errors?.name?.type === "required" && <p>This field is required</p>}
+                            {errors?.mobile_no?.type === "required" && <p>This field is required</p>}
                         </div>
 
                         <button
