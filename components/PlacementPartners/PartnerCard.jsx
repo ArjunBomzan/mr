@@ -6,8 +6,8 @@ const PartnerCard = (props) => {
     const router = useRouter()
     const pathname = router.pathname.split('/')[1]
     return (
-        <Link
-            href={`${props?.course?.link}`}
+        <div
+            // href={`${props?.course?.link}`}
             className='training-card cursor-pointer relative bg-white partner'
             style={{ flexGrow: "0", boxShadow: "0" }}
         >
@@ -28,7 +28,7 @@ const PartnerCard = (props) => {
                     {props?.course?.name}
                 </p>
             </div> */}
-        </Link>
+        </div>
     )
 }
 
