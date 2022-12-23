@@ -13,7 +13,8 @@ const SuccessStories = (props) => {
         <>
             {
                 props?.course?.data?.success_story[0] &&
-                <div className='my-10 lg:px-18 md:px-14 px-8' id="success_stories">
+                // <div className='my-10 lg:px-18 md:px-14 px-8' id="success_stories">
+                <div className='my-10 ' id="success_stories">
                     <p className="font-bold text-3xl">Success Stories</p>
                     <Swiper
                         slidesPerView={size.width > 990 ? 3 : size.width > 700 ? 2.5 : size.width > 600 ? 2 : size.width > 400 ? 1.5 : 1.2}

@@ -10,7 +10,9 @@ const TrainingContainer = (props) => {
     return (
         <div >
             <div
-                className='flex gap-5 mt-20 p-6 lg:px-18     overflow-auto px-8 sm:px-12 md:px-14 lg:px-18 '
+                // className='flex gap-5 mt-20 p-6 lg:px-18 overflow-auto px-8 sm:px-12 md:px-14 lg:px-18 '
+                // className='flex gap-5 mt-20 py-6 lg:px-18 overflow-auto  '
+                className='flex gap-5 mt-20 py-6  overflow-auto  '
                 style={{ borderBottom: "0.5px solid rgb(163 163 163)" }}
             >
                 <Link href="#course_overview" className='training-indicator' scroll={false}>
@@ -36,7 +38,8 @@ const TrainingContainer = (props) => {
                 }
 
             </div>
-            <div className='flex gap-6 justify-center flex-wrap lg:flex-nowrap lg:px-18 md:px-14 sm:px-12 px-6'>
+            {/* <div className='flex gap-6 justify-center flex-wrap lg:flex-nowrap lg:px-18 md:px-14 sm:px-12 px-6'> */}
+            <div className='flex gap-6 justify-center flex-wrap lg:flex-nowrap '>
                 <div className='w-[60%] mt-10 text-justify flex-grow' >
                     <TrainingOverview course={props.course} />
                     <TrainingSyllabus course={props.course} />
@@ -58,7 +61,7 @@ const TrainingContainer = (props) => {
                             </div>
                         )
                     }
-                    <TrainingInquiry course={props.course} />
+                    <TrainingInquiry course={props.course} course_list={props.course_list} course_id={props?.course_id} />
                 </div>
             </div>
         </div >

@@ -24,9 +24,11 @@ const Training = (props) => {
                         <>
                             <TrainingBanner course={props?.course} />
                             <TrainingSubHeader />
-                            <TrainingContainer course={props?.course} />
-                            <SuccessStories course={props?.course} />
-                            <RelatedComponents course={props?.course} />
+                            <div className='lg:px-44 md:px-20 sm:px-16'>
+                                <TrainingContainer course={props?.course} course_list={props?.course_list} course_id={props?.course_id} />
+                                <SuccessStories course={props?.course} />
+                                <RelatedComponents course={props?.course} />
+                            </div>
                         </>
                         :
                         <Loader />

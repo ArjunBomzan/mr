@@ -1,6 +1,6 @@
 const SuccessStory = (props) => {
   return (
-    <div className="block p-6 rounded-lg bg-white card-shadow cursor-pointer m-4 my-10 mb-16 flex-[33%]" >
+    <div className="block p-6 rounded-lg bg-white card-shadow cursor-pointer m-2 my-10 mb-16 flex-[33%]" >
       <div className="flex gap-4 items-center justify-start">
         <img
           src={`https://api.mindrisers.jobrisers.com${props?.success_story?.image}`}

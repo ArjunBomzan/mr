@@ -15,7 +15,8 @@ const RelatedComponents = () => {
     coursesApi({ setCourses, ApiType })
   }, []);
   return (
-    <div className="lg:px-18 md:px-14 px-6 sm:flex-col flex-col flex gap-10 mb-10 mt-10">
+    // <div className="lg:px-18 md:px-14 px-6 sm:flex-col flex-col flex gap-10 mb-10 mt-10">
+    <div className=" sm:flex-col flex-col flex gap-10 mb-10 mt-10">
 
       <div className=''>
         <p className="font-bold text-3xl">Related Courses</p>
@@ -28,7 +29,7 @@ const RelatedComponents = () => {
               return (!(slug == course.slug) && (
                 <Link
                   className="flex gap-1 items-center truncate"
-                  href={`/${pathname == 'courses' ? 'courses' : '+2courses'}/${course.slug}`}
+                  href={`/${pathname == 'courses' ? 'courses' : 'after+2-courses'}/${course.slug}`}
                   key={course.id}
                 >
                   <img src={`${process.env.DOMAIN}${course.image}`} className="w-20" />

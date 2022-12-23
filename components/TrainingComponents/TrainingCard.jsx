@@ -5,7 +5,7 @@ const TrainingCard = (props) => {
     const router = useRouter()
     return (
         <Link
-            href={`${props?.course?.category == 'IT' ? 'courses' : '+2courses'}/${props?.course?.slug}`}
+            href={`${props?.course?.category == 'IT' ? 'courses' : 'after+2-courses'}/${props?.course?.slug}`}
             className='training-card cursor-pointer relative bg-white'
             style={{ flexGrow: "0" }}
         >

@@ -83,13 +83,25 @@ const TrainingInquiry = (props) => {
                 <label className="block text-sm font-bold mb-2" htmlFor="username">
                     Selected Course
                 </label>
-                <input
+                <select className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Selected Course"
+                    name="select_course"
+                    {...register("select_course")}
+                >
+                    {/* <option>Select </option> */}
+                    {
+                        props.course_list.map(el => {
+                            return <option value={el.id} selected={props?.course_id == el.id} >{el.title}</option>
+                        })
+                    }
+                </select>
+                {/* <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                     type="text"
                     placeholder="Selected Course"
                     name="subject"
                     value={props?.course?.data?.course[0]?.title}
-                />
+                /> */}
             </div>
             <div className="mb-4">
                 <label className="block text-sm font-bold mb-2" htmlFor="username">
