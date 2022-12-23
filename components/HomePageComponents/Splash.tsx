@@ -1,22 +1,27 @@
-import { Autoplay, Navigation, Pagination } from "swiper";
+// import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
 import Link from 'next/link'
-import SplashBg from "../../assets/homePage/splash-bg.jpg";
+// import SplashBg from "../../assets/homePage/splash-bg.jpg";
+import SplashBg from "../../assets/homePage/splash-new.webp";
 const Splash = () => {
   return (
     <div className='relative z-[0] '>
 
-      <div className='w-full bg-splash-bg bg-no-repeat bg-cover ' style={{ backgroundImage: `url(${SplashBg.src})` }}>
+      <div className='w-full bg-splash-bg bg-no-repeat bg-cover ' style={{
+        backgroundImage: `url(${SplashBg.src})`,
+        backgroundColor: "rgba(0,0,0,0.5)",
+        backgroundBlendMode: "darken"
+      }}>
         <div className='flex flex-col items-center justify-center w-full h-full bg-mask py-10 '>
           <div
             // className='text-green-400 slide-left-to-right text-md'
             className='text-green-400 text-md'
           >
             <p style={{
-              fontSize:"2em"
+              fontSize: "2em"
             }}>#1</p>
           </div>
           <h2 className='w-4/5 mt-2  text-[1rem] font-extrabold text-center text-white text-fade h-max sm:w-1/2 sm:text-[2rem]'>
