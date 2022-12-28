@@ -18,54 +18,54 @@ const DropMessage = () => {
             <div className='flex flex-col items-center justify-start w-full h-full pt-8 pb-10 space-y-3'>
                 <h2 className='w-full px-2  text-2xl font-semibold text-left'>Drop us a message</h2>
                 <form className='flex flex-col w-full px-2 form' onSubmit={handleSubmit(onSubmit)}>
-                    <label className='font-medium text-gray-500 font-md'>Your name (required)</label>
+                    <label className=' mt-3 font-medium text-gray-500 font-md required-field'>Name</label>
                     <input
                         type='text'
-                        className='mb-5 border-2 border-gray-300 rounded-md h-9'
+                        className=' border-2 border-gray-300 rounded-md h-9 p-2'
                         name="name"
                         {...register("name", { required: true })}
                     />
-                    {errors?.name?.type === "required" && <p>This field is required</p>}
+                    {errors?.name?.type === "required" && <small className="text-red-500 ">This field is required</small>}
 
-                    <label className='font-medium text-gray-500 font-md'>Your email (required)</label>
+                    <label className=' mt-3 font-medium text-gray-500 font-md required-field'>Email</label>
                     <input
                         type='email'
-                        className='mb-5 border-2 border-gray-300 rounded-md h-9'
+                        className=' border-2 border-gray-300 rounded-md h-9 p-2'
                         name="email"
                         {...register("email", { required: true })}
                     />
-                    {errors?.name?.type === "required" && <p>This field is required</p>}
+                    {errors?.name?.type === "required" && <small className="text-red-500 ">This field is required</small>}
 
-                    <label className='font-medium text-gray-500 font-md'>Your Phone (required)</label>
+                    <label className=' mt-3 font-medium text-gray-500 font-md required-field'>Phone</label>
                     <input
                         type='number'
-                        className='mb-5 border-2 border-gray-300 rounded-md h-9'
+                        className=' border-2 border-gray-300 rounded-md h-9 p-2'
                         name="mobile_no"
                         {...register("mobile_no", { required: true })}
                     />
-                    {errors?.name?.type === "required" && <p>This field is required</p>}
+                    {errors?.name?.type === "required" && <small className="text-red-500 ">This field is required</small>}
 
-                    <label className='font-medium text-gray-500 font-md'>Subject</label>
+                    <label className=' mt-3 font-medium text-gray-500 font-md required-field'>Subject</label>
                     <input
                         type='text'
-                        className='mb-5 border-2 border-gray-300 rounded-md h-9'
+                        className=' border-2 border-gray-300 rounded-md h-9 p-2'
                         name="subject"
                         {...register("subject", { required: true })}
                     />
-                    {errors?.name?.type === "required" && <p>This field is required</p>}
+                    {errors?.name?.type === "required" && <small className="text-red-500 ">This field is required</small>}
 
-                    <label className='font-medium text-gray-500 font-md'>Message</label>
+                    <label className=' mt-3 font-medium text-gray-500 font-md required-field'>Message</label>
                     <textarea
-                        className='mb-5 border-2 border-gray-300 rounded-md h-28'
+                        className=' border-2 border-gray-300 rounded-md h-28 p-2'
                         name="message"
                         {...register("message", { required: true })}
                     />
-                    {errors?.name?.type === "required" && <p>This field is required</p>}
+                    {errors?.name?.type === "required" && <small className="text-red-500 ">This field is required</small>}
 
                     <button
                         type='submit'
                         name="name"
-                        className='px-4 py-2 text-lg font-medium text-white duration-500 bg-green-500 rounded-md cursor-pointer hover:bg-slate-400 hover:text-black w-max'
+                        className='mt-3 px-4 py-2 text-lg font-medium text-white duration-500 bg-green-500 rounded-md cursor-pointer hover:bg-slate-400 hover:text-black w-max'
                         disabled={submiting}
                     >
                         {

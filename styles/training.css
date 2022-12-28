@@ -60,7 +60,7 @@
     border-radius: 10px 10px 0px 0px;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 4 / 2.3;
+    /* aspect-ratio: 4 / 2.3; */
 }
 
 .learn-more-hover {
@@ -115,7 +115,7 @@
     opacity: 0;
     transition: 0.2s opacity;
     border-radius: 0px 8px 0px 4px;
-    background-color: #22c55e !important;
+    background-color: #018544 !important;
     color: white;
     padding: 10px;
 }

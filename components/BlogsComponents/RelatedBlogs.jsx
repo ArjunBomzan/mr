@@ -3,17 +3,20 @@ import React from 'react'
 import BlogCard from './BlogCard'
 import { useEffect, useState } from "react";
 import axios from 'axios';
+
 const RelatedBlogs = (props) => {
     console.log(props)
     const router = useRouter()
     const { slug } = router.query
     const type = router.pathname?.split('/')[1]
     const [blogs, setBlogs] = useState([]);
+
     useEffect(() => {
         axios.get(`${process.env.DOMAIN_V1}singleblog/?category=${props?.blog?.category}`)
             .then(res => setBlogs(res.data))
             .catch(err => console.log(err))
     }, []);
+    
     return (
         <div className=" px-6 lg:px-0" >
             <h3 className='text-4xl font-bold'>

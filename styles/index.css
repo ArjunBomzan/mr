@@ -19,13 +19,13 @@
   }
 
   .nav-button.active {
-    color: #22c55e;
-    border-top: 2px solid #22c55e;
+    color: #018544;
+    border-top: 2px solid #018544;
   }
 
   .nav-button:hover {
-    color: #22c55e;
-    border-top: 2px solid #22c55e;
+    color: #018544;
+    border-top: 2px solid #018544;
     cursor: pointer;
   }
 
@@ -282,7 +282,6 @@ input[type=number] {
   height: 40px;
   color: white;
   fill: currentColor;
-  background-color: #22c55e;
   border-radius: 100%;
   box-shadow: 0px 0px 5px 2px rgba(208, 208, 208, 0.12);
   display: flex;
@@ -296,7 +295,7 @@ input[type=number] {
 }
 
 .mission {
-  color: #22c55e;
+  color: #018544;
 }
 
 .training-banner .training-banner-img {

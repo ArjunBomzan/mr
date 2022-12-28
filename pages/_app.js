@@ -150,13 +150,13 @@ function MyApp({ Component, pageProps }) {
     <div id="fb-root"></div>
 
     {/* <!-- Your Chat Plugin code --> */}
-    <div id="fb-customer-chat" class="fb-customerchat">
+    <div id="fb-customer-chat" className="fb-customerchat">
     </div>
 
     <Component {...pageProps} />
     <Footer />
 
-    <span id="scroll-to-top" onClick={() => {
+    <span id="scroll-to-top" className="bg-green-500" onClick={() => {
       window.scroll(0, 0)
     }}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

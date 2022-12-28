@@ -18,10 +18,17 @@ const HomeSuccessStories = () => {
         return (
             <div className="flex justify-center w-full bg-white rounded-lg shadow-lg card-shadow cursor-pointer">
                 <div className="block w-full">
-                    <div className='training-card-img-div'>
-                        <img className="rounded-t-lg" src={`${img}`} alt="" style={{ aspectRatio: "4 / 2.3" }} />
+                    <div className='training-card-img-div'
+                        style={{
+                            backgroundImage: `url("${img}")`,
+                            backgroundPosition: "center",
+                            backgroundSize: "cover",
+                            width: "100%",
+                            height: "130px"
+                        }}
+                    >
                     </div>
-                    <div className="p-6">
+                    <div className="p-4">
                         <h5 className="text-gray-900 text-xl font-medium mb-2">{title}</h5>
                         <p className="text-gray-700 text-base">
                             {content}
@@ -35,20 +42,19 @@ const HomeSuccessStories = () => {
         <div className='py-8 lg:px-44 md:px-20 px-2 bg-neutral-100' id="success_stories">
             <p className="font-bold text-3xl">Success Stories</p>
             <Swiper
-                slidesPerView={size.width > 990 ? 3 : size.width > 700 ? 2.5 : size.width > 600 ? 2 : size.width > 400 ? 1.5 : 1.2}
+                slidesPerView={size.width > 990 ? 4 : size.width > 700 ? 3 : size.width > 600 ? 2.5 : size.width > 400 ? 2 : 1.2}
                 spaceBetween={35}
                 freeMode={true}
                 pagination={{
                     clickable: true,
                 }}
                 modules={[FreeMode, Pagination, Autoplay, Navigation]}
-                loop={true}
+                loop={false}
                 autoplay={{
                     delay: 2000,
                     disableOnInteraction: false,
                 }}
                 className="!-mx-2 md:!mx-0"
-            // style={{ marginLeft: "-0.5rem" }}
             >
                 {
                     successStoreis?.map((successStory) => {

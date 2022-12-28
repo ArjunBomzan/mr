@@ -24,7 +24,7 @@ const HomeContact = () => {
                 <div className='min-w-1/2'>
                     <h2 className="text-2xl font-bold">Request a call back</h2>
                     <p>Would you like to speak to one of our adviser over the phone?</p>
-                    <p>Just submit your detials and will be in touch shortly. You can also email us if you would prefer</p>
+                    <p>Just submit your details and will be in touch shortly. You can also email us if you would prefer.</p>
                 </div>
                 <div>
                     {/* <p>I would like to discuss</p> */}
@@ -54,7 +54,7 @@ const HomeContact = () => {
                         </div>
 
                         <div >
-                            <label className='font-medium font-md admission-form-label  required-field'>Your name</label>
+                            <label className='font-medium font-md admission-form-label  required-field'>Name</label>
                             <input
                                 type='text'
                                 className='admission-form-input'
@@ -67,7 +67,7 @@ const HomeContact = () => {
 
 
                         <div>
-                            <label className='font-medium font-md admission-form-label required-field'>Your email</label>
+                            <label className='font-medium font-md admission-form-label required-field'>Email</label>
                             <input
                                 type='email'
                                 className='admission-form-input'
@@ -79,7 +79,7 @@ const HomeContact = () => {
                         </div>
 
                         <div>
-                            <label className='font-medium font-md admission-form-label required-field'>Your Phone</label>
+                            <label className='font-medium font-md admission-form-label required-field'>Phone</label>
                             <input
                                 type='number'
                                 className='admission-form-input'

@@ -1,8 +1,6 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 
 const TrainingCard = (props) => {
-    const router = useRouter()
     return (
         <Link
             href={`${props?.course?.category == 'IT' ? 'courses' : 'after+2-courses'}/${props?.course?.slug}`}

@@ -19,11 +19,22 @@ module.exports = {
         'testimonials': "url('/src/assets/testimonial.jpg')",
         'blogs': "url('/src/assets/blog-splash.jpg')",
         'splash-ed': "url('/src/assets/splash-education.jpg')",
-      }, colors: {
+      },
+      colors: {
         'mask': 'rgba(0,0,0,0.75)',
         'light-mask': 'rgba(0,0,0,0.50)',
         'mask-white': 'rgba(256,256,256,0.50)',
+        green: {
+          100: "#018544",
+          200: "#018544",
+          300: "#018544",
+          400: "#018544",
+          500: "#018544",
+          600: "#018544",
+          700: "#018544",
+        }
       },
+
     },
   },
   plugins: [

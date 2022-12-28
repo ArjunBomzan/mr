@@ -13,7 +13,7 @@ const Gallery = () => {
             <div className="flex flex-col w-full px-5 py-16 sm:px-20 lg:px-44 gap-8">
                 <div>
                     <h2 className="font-bold text-4xl">Recent Photos</h2>
-                    <p className="font-bold text-2xl">Check out our photos</p>
+                    {/* <p className="font-bold text-xl">Check out our photos</p> */}
                 </div>
                 <div className="flex flex-wrap -m-1 md:-m-2 flex-col md:flex-row">
                     <div className="flex flex-wrap md:w-1/2 ">
