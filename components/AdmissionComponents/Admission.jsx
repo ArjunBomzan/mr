@@ -23,8 +23,8 @@ const Admission = () => {
         className='w-full bg-no-repeat bg-cover bg-center'
       // style={{ backgroundImage: `url(${image})`, }}
       >
-        <div className="w-full flex justify-center items-center p-6">
-          <form className="bg-white card-shadow rounded px-8 pt-6 pb-8 mb-4 lg:w-[50%] md:w-[60%] sm:w-[70%] my-10 admission-container form" onSubmit={handleSubmit(onSubmit)}>
+        <div className="w-full flex justify-center items-center sm:p-6">
+          <form className="bg-white card-shadow rounded px-8 pt-6 pb-8 sm:mb-4 lg:w-[50%] md:w-[60%] sm:w-[70%] sm:my-10 admission-container form" onSubmit={handleSubmit(onSubmit)}>
             <label className="block text-gray-700 text-2xl font-bold mb-2 text-center w-full">Admission Form</label>
 
             <div>

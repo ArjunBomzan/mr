@@ -9,22 +9,17 @@ const FooterImportantLink = () => {
                 Important links
             </h4>
             <ul className='text-neutral-300  text-sm '>
-                <li className='cursor-pointer hover:text-neutral-400'>
+                <li className='cursor-pointer hover:text-neutral-400 mb-1'>
                     <Link href='blogs'>
                         Blogs
                     </Link>
                 </li>
-                {/* <li className='cursor-pointer hover:text-neutral-400'>
-                    <Link href='help-faqs'>
-                        Help & FAQ
-                    </Link>
-                </li> */}
-                <li className='cursor-pointer hover:text-neutral-400'>
+                <li className='cursor-pointer hover:text-neutral-400 mb-1'>
                     <Link href='placement-partner'>
                         Placement Partner
                     </Link>
                 </li>
-                <li className='mt-1 pt-1'>
+                <li className='mt-2'>
                     <div className='flex gap-3 footer-socials justify-start w-full'>
                         <SocialLinks />
                     </div>

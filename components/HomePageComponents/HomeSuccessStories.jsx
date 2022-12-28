@@ -17,7 +17,7 @@ const HomeSuccessStories = () => {
     const Card = ({ title, content, img }) => {
         return (
             <div className="flex justify-center w-full bg-white rounded-lg shadow-lg card-shadow cursor-pointer">
-                <div className="block w-full">
+                <div className="block w-full" >
                     <div className='training-card-img-div'
                         style={{
                             backgroundImage: `url("${img}")`,
@@ -28,9 +28,11 @@ const HomeSuccessStories = () => {
                         }}
                     >
                     </div>
-                    <div className="p-4">
+                    <div className="p-4" style={{
+                        height: "130px"
+                    }}>
                         <h5 className="text-gray-900 text-xl font-medium mb-2">{title}</h5>
-                        <p className="text-gray-700 text-base">
+                        <p className="text-gray-700 text-base line-clamp-3">
                             {content}
                         </p>
                     </div>

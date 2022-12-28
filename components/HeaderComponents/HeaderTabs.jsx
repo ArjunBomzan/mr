@@ -5,7 +5,7 @@ const HeaderTabs = () => {
   const router = useRouter()
   const pathname = router.pathname.split("/")[1]
   return (
-    <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto lg:mr-0 lg:items-center justify-start font-medium text-xl sm:text-lg text-fade transition duration-150 ease-in-out" style={{ animationDuration: "0.2s" }}>
+    <ul className="navbar-nav flex flex-col pl-0 list-style-none mr-auto lg:mr-0 lg:items-center justify-start font-medium text-xl sm:text-lg text-fade transition duration-150 ease-in-out mt-7 sm:mt-0" style={{ animationDuration: "0.2s" }}>
       <li className="nav-item p-2">
         <Link href='/courses' className={`nav-button ${(pathname == "courses") && 'active'}`}>Courses</Link>
       </li>

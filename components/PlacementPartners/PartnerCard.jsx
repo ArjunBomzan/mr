@@ -2,14 +2,14 @@ const PartnerCard = (props) => {
     return (
         <div
             // href={`${props?.course?.link}`}
-            className='training-card cursor-pointer relative bg-white partner'
+            className='training-card cursor-pointer relative bg-white partner h-12 sm:h-20 bg-contain sm:bg-cover   '
             style={{
                 flexGrow: "0",
                 boxShadow: "0",
                 backgroundImage: `url("${process.env.DOMAIN}${props?.course?.image}")`,
-                height: "100px",
-                backgroundPosition:"center",
-                backgroundSize:"contain"
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                borderRadius: "10px"
             }}
         >
             {/* <div className='overflow-hidden  training-card-img-div mb-4' >

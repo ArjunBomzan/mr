@@ -8,32 +8,32 @@ const FooterPageLinks = () => {
         Company
       </h4>
       <ul className='text-neutral-300  text-sm '>
-        <li className='cursor-pointer hover:text-neutral-400'>
+        <li className='cursor-pointer hover:text-neutral-400 mb-1'>
           <Link href='about-us'>
             About Us
           </Link>
         </li>
-        <li className='cursor-pointer hover:text-neutral-400'>
+        <li className='cursor-pointer hover:text-neutral-400 mb-1'>
           <Link href='contact-us'>
             Contact Us
           </Link>
         </li>
-        <li className='cursor-pointer hover:text-neutral-400'>
+        <li className='cursor-pointer hover:text-neutral-400 mb-1'>
           <Link href='courses'>
             Courses
           </Link>
         </li>
-        <li className='cursor-pointer hover:text-neutral-400'>
+        <li className='cursor-pointer hover:text-neutral-400 mb-1'>
           <Link href='after+2-courses'>
             After +2 Courses
           </Link>
         </li>
-        <li className='cursor-pointer hover:text-neutral-400'>
+        <li className='cursor-pointer hover:text-neutral-400 mb-1'>
           <Link href='online-admission'>
             Online Admission
           </Link>
         </li>
-        <li className='cursor-pointer hover:text-neutral-400'>
+        <li className='cursor-pointer hover:text-neutral-400 mb-1'>
           <Link href='success-gallery'>
             Success Gallery
           </Link>
