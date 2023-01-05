@@ -7,7 +7,7 @@ import OurTeam from './OurTeam'
 import ApplyNow from './ApplyNow'
 import dynamic from 'next/dynamic'
 
-const AboutUs = () => {
+const AboutUs = (props) => {
     const PartnersNoSsr = dynamic(
         () => import('./Partners'),
         { ssr: false }
@@ -18,7 +18,7 @@ const AboutUs = () => {
             <HomeAboutUs />
             <Mission />
             <OurCulture />
-            <OurTeam />
+            <OurTeam {...props} />
             <PartnersNoSsr />
             <ApplyNow />
         </main>

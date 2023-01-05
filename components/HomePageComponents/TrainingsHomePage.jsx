@@ -1,15 +1,9 @@
-import { useEffect, useState } from "react";
 import Link from 'next/link';
 import uuid from 'react-uuid';
 import TrainingCard from '../TrainingComponents/TrainingCard';
-import { coursesApi } from "../../pages/api/apiCalls";
 
 const TrainingsHomePage = (props) => {
-    const [courses, setCourses] = useState();
-    const home = true
-    useEffect(() => {
-        coursesApi({ setCourses, home })
-    }, []);
+
     return (
         <div className='p-4 lg:py-20 lg:px-44 md:px-20 sm:p-16 relative'>
             <span className='w-5/6 text-xl font-bold sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl mb-6'>Popular Courses</span>
@@ -17,7 +11,7 @@ const TrainingsHomePage = (props) => {
                 className='grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 mt-6'
             >
                 {
-                    courses?.slice(0, 12)?.map((course) => {
+                    props?.courses?.slice(0, 12)?.map((course) => {
                         return <TrainingCard course={course} key={uuid()} />
                     })
                 }
@@ -30,5 +24,22 @@ const TrainingsHomePage = (props) => {
         </div>
     )
 }
+
+// export async function getServerSideProps() {
+//     let data = []
+//     try {
+//         const res = await axios.get(`https://api.mindrisers.jobrisers.com/blog/api/v1/course/`)
+//         data = await res.data
+//     }
+//     catch (err) {
+
+//     }
+
+//     return {
+//         props: { courses: data }
+//     }
+// }
+
+
 
 export default TrainingsHomePage

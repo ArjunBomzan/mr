@@ -11,9 +11,12 @@ module.exports = (phase) => {
     DOMAIN_V1: "https://api.mindrisers.jobrisers.com/blog/api/v1/",
     DOMAIN: "https://api.mindrisers.jobrisers.com/"
   }
-
+  const images = {
+    domains: ["api.mindrisers.jobrisers.com"],
+  }
   // next.config.js object
   return {
     env,
+    images
   }
 }

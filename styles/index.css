@@ -11,6 +11,10 @@
     @apply border-t-white lg: border-t-4 hover:text-green-400 hover:border-t-green-400 duration-500 cursor-pointer;
   } */
 
+  /* *{
+    background-color: rgba(255,0,0,0.05);
+  } */
+
   .nav-button {
     border-top: 4px;
     border-top: 2px solid white;

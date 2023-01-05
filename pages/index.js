@@ -10,8 +10,9 @@ import Jumpstart from "../components/HomePageComponents/Jumpstart"
 import Mission from "../components/HomePageComponents/Mission"
 import Splash from "../components/HomePageComponents/Splash"
 import TrainingsHomePage from "../components/HomePageComponents/TrainingsHomePage"
+import axios from "axios"
 
-export default function Home() {
+export default function Home(props) {
   const TestimonialNoSsr = dynamic(
     () => import("../components/HomePageComponents/Testimonials"),
     { ssr: false }
@@ -20,6 +21,8 @@ export default function Home() {
     () => import("../components/HomePageComponents/HomeSuccessStories"),
     { ssr: false }
   )
+
+  console.log({ props })
 
   return (
     <div className='lg:text-lg'>
@@ -31,7 +34,7 @@ export default function Home() {
       <Header />
       <main>
         <Splash />
-        <TrainingsHomePage />
+        <TrainingsHomePage courses={props.courses} />
         <HomeAboutUs />
         <Mission />
         <Gallery />
@@ -43,4 +46,18 @@ export default function Home() {
 
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  let data = []
+  try {
+    const res = await axios.get(`https://api.mindrisers.jobrisers.com/blog/api/v1/course/`)
+    data = await res.data
+  }
+  catch (err) {
+  }
+
+  return {
+    props: { courses: data }
+  }
 }
