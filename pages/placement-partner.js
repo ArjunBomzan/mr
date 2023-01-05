@@ -3,13 +3,6 @@ import Head from 'next/head'
 import Header from '../components/HeaderComponents/Header'
 import Partners from '../components/PlacementPartners/Partners'
 
-export const getStaticProps = async () => {
-    const res = await axios.get(`${process.env.DOMAIN_V1}placementpartner/`)
-    const data = await res.data
-    return {
-        props: { partners: data }
-    }
-}
 export default function Home({ partners }) {
     return (
         <>
@@ -20,4 +13,19 @@ export default function Home({ partners }) {
             <Partners courses={partners} />
         </>
     )
+}
+
+export async function getServerSideProps() {
+    let data = []
+    try {
+        const res = await axios.get(`${process.env.DOMAIN_V1}placementpartner/`)
+        data = await res.data
+    }
+    catch (err) {
+
+    }
+
+    return {
+        props: { partners: data }
+    }
 }

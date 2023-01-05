@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 import { useWindowSize } from "../ScreenSize";
 
 
-const HomeSuccessStories = () => {
+const HomeSuccessStories = (props) => {
     const size = useWindowSize({ useEffect, useState });
     const [successStoreis, setSuccessStories] = useState([]);
     useEffect(() => {
@@ -41,8 +41,8 @@ const HomeSuccessStories = () => {
         )
     }
     return (
-        <div className='py-8 lg:px-44 md:px-20 px-2 bg-neutral-100' id="success_stories">
-            <p className="font-bold text-3xl">Success Stories</p>
+        <div className={`${props.in_training_page ? "" : "py-8 lg:px-44 md:px-20 px-2 bg-neutral-100"}`} id="success_stories">
+            <p className={`${props.in_training_page ? "mt-10 font-bold text-3xl" : "font-bold text-3xl"} `}>Success Stories</p>
             <Swiper
                 slidesPerView={size.width > 990 ? 4 : size.width > 700 ? 3 : size.width > 600 ? 2.5 : size.width > 400 ? 2 : 1.2}
                 spaceBetween={35}

@@ -14,7 +14,7 @@ const Partners = (props) => {
                             </p>
                         </h2>
                         <div
-                            className='grid grid-cols-3  gap-3 sm:grid-cols-4 xl:grid-cols-5 mt-6'
+                            className='grid grid-cols-3 gap-3 sm:gap-4 md:gap-5 sm:grid-cols-4 xl:grid-cols-5 mt-6'
                         >
                             {
                                 props?.courses?.map((course) => {
@@ -30,4 +30,8 @@ const Partners = (props) => {
     )
 }
 
+
+
 export default Partners
+
+
