@@ -328,3 +328,10 @@ input[type=number] {
   color: red;
 }
 
+.about-us__banner{
+  background-image: url("../assets/homePage/matrix.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px ;
+}

@@ -9,7 +9,6 @@ import RelatedBlogs from './RelatedBlogs'
 const Blog = (props) => {
   const router = useRouter()
   const { slug } = router.query
-  console.log(props?.blog?.category)
   return (
     <>
       {

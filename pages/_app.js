@@ -45,8 +45,15 @@ function MyApp({ Component, pageProps }) {
       {/* <meta property="twitter:image" content="/mindrisers.png" /> */}
 
       {/* <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css"></link> */}
-
     </Head>
+
+    {/* <!-- Messenger Chat Plugin Code --> */}
+    <div id="fb-root"></div>
+
+    {/* <!-- Your Chat Plugin code --> */}
+    <div id="fb-customer-chat" className="fb-customerchat">
+    </div>
+
     <Script id="one" strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=UA-235343232-1"></Script>
 
     <Script
@@ -54,7 +61,7 @@ function MyApp({ Component, pageProps }) {
       strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `
-        console.log("with gogle an")
+        console.log("with gogle tag managers.")
         `
       }}
     />
@@ -133,7 +140,7 @@ function MyApp({ Component, pageProps }) {
                 });
               };
 
-              (function (d, s, id) {
+              (function(d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;
                 js = d.createElement(s); js.id = id;
@@ -144,14 +151,17 @@ function MyApp({ Component, pageProps }) {
       }}
     />
 
+    <Script
+      id="nine"
+      dangerouslySetInnerHTML={{
+        __html: `
+        console.log("mindrisers new id compid")
+        console.log("element",document.getElementById("fb-root"))
+      `
+      }}
+    />
 
 
-    {/* <!-- Messenger Chat Plugin Code --> */}
-    <div id="fb-root"></div>
-
-    {/* <!-- Your Chat Plugin code --> */}
-    <div id="fb-customer-chat" className="fb-customerchat">
-    </div>
 
     <Component {...pageProps} />
     <Footer />

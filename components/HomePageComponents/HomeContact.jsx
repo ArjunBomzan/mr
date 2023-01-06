@@ -11,7 +11,6 @@ const HomeContact = () => {
         setSubmiting(true)
         ContactListApi({ setSubmiting, data, reset, router })
     };
-    console.log(errors)
 
     const [course, setCourse] = useState([]);
     useEffect(() => {
