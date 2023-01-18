@@ -12,6 +12,7 @@ const Admission = () => {
   const [qualification, setQualification] = useState([]);
   const onSubmit = data => {
     setSubmiting(true)
+    data = { ...data, question: data.question || "..." }
     AdmissionFormApi({ setSubmiting, data, reset, router })
   }
   useEffect(() => {
@@ -28,16 +29,16 @@ const Admission = () => {
             <label className="block text-gray-700 text-2xl font-bold mb-2 text-center w-full">Admission Form</label>
 
             <div>
-              <label className="admission-form-label required-field" htmlFor="full_name">Full Name</label>
+              <label className="admission-form-label required-field" htmlFor="full_name">Name</label>
               <input
                 className="admission-form-input focus:outline-none focus:shadow-outline"
                 id="full_name"
                 type="text"
-                placeholder="Full Name"
+                placeholder="Name"
                 name="full_name"
                 {...register("full_name", { required: true })}
               />
-              {errors?.full_name?.type === "required" && <p>This field is required</p>}
+              {errors?.full_name?.type === "required" && <p class="error-msg--small">This field is required</p>}
             </div>
 
             <div>
@@ -50,38 +51,38 @@ const Admission = () => {
                 name="email"
                 {...register("email", { required: true, pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ })}
               />
-              {errors?.email?.type === "required" && <p>This field is required</p>}
-              {errors?.email?.type === "pattern" && <p>Invalid Email</p>}
+              {errors?.email?.type === "required" && <p class="error-msg--small">This field is required</p>}
+              {errors?.email?.type === "pattern" && <p class="error-msg--small">Invalid Email</p>}
             </div>
 
             <div>
-              <label className="admission-form-label required-field" htmlFor="mobile_no">Mobile Number</label>
+              <label className="admission-form-label required-field" htmlFor="mobile_no">Phone</label>
               <input
                 className="admission-form-input focus:outline-none focus:shadow-outline"
                 id="mobile_no"
                 type="number"
-                placeholder="Mobile Number"
+                placeholder="Phone"
                 name="mobile_no"
                 {...register("mobile_no", { required: true })}
               />
-              {errors?.mobile_no?.type === "required" && <p>This field is required</p>}
+              {errors?.mobile_no?.type === "required" && <p class="error-msg--small">This field is required</p>}
             </div>
 
             <div>
-              <label className="admission-form-label required-field" htmlFor="college">Your college/ Institution name</label>
+              <label className="admission-form-label required-field" htmlFor="college">College / Institution Name</label>
               <input
                 className="admission-form-input focus:outline-none focus:shadow-outline"
                 id="college"
                 type="text"
-                placeholder="Your college/ Institution name *"
+                placeholder="College / Institution Name *"
                 name="college"
                 {...register("college", { required: true })}
               />
-              {errors?.college?.type === "required" && <p>This field is required</p>}
+              {errors?.college?.type === "required" && <p class="error-msg--small">This field is required</p>}
             </div>
 
             <div >
-              <label className="admission-form-label required-field" htmlFor="qualification">Your Qualification Status</label>
+              <label className="admission-form-label required-field" htmlFor="qualification">Acedamic Status</label>
               <div className="relative">
                 <select
                   className="admission-form-input"
@@ -90,14 +91,14 @@ const Admission = () => {
                   placeholder="Your college/ Institution name *"
                   {...register("qualification", { required: true })}
                 >
-                  <option value="" disabled >-----------</option>
+                  <option value="">Select</option>
                   {
                     qualification?.map((item) => {
                       return <option id={item.id} value={item.id} key={item.id}>{item.qualification}</option>
                     })
                   }
                 </select>
-                {errors?.qualification?.type === "required" && <p>This field is required</p>}
+                {errors?.qualification?.type === "required" && <p class="error-msg--small">This field is required</p>}
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                   <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
                 </div>
@@ -105,7 +106,7 @@ const Admission = () => {
             </div>
 
             <div >
-              <label className="admission-form-label required-field" htmlFor="course">I am interested in</label>
+              <label className="admission-form-label required-field" htmlFor="course">Interested Course</label>
               <div className="relative">
                 <select
                   className="admission-form-input"
@@ -113,14 +114,14 @@ const Admission = () => {
                   name="course"
                   {...register("course", { required: true })}
                 >
-                  <option value="" disabled >-----------</option>
+                  <option value="" >Select</option>
                   {
                     course?.map((item) => {
                       return <option key={item.id} value={item.id}>{item.title}</option>
                     })
                   }
                 </select>
-                {errors?.course?.type === "required" && <p>This field is required</p>}
+                {errors?.course?.type === "required" && <p class="error-msg--small">This field is required</p>}
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                   <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
                 </div>
@@ -128,21 +129,21 @@ const Admission = () => {
             </div>
 
             <div >
-              <label className="admission-form-label required-field" htmlFor="shedule">Choose Schedule</label>
+              <label className="admission-form-label required-field" htmlFor="shedule">Preferred Schedule</label>
               <div className="relative">
                 <select className="admission-form-input"
                   id="shedule"
                   name="shedule"
                   {...register("shedule", { required: true })}
                 >
-                  <option value="" disabled >-----------</option>
+                  <option value="">Select</option>
                   {
                     schedule?.map((item) => {
                       return <option key={item.id} value={item.id}>{item.shedule}</option>
                     })
                   }
                 </select>
-                {errors?.shedule?.type === "required" && <p>This field is required</p>}
+                {errors?.shedule?.type === "required" && <p class="error-msg--small">This field is required</p>}
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                   <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
                 </div>
@@ -156,6 +157,7 @@ const Admission = () => {
                   type="radio"
                   id="remarks-yes"
                   value="Yes"
+                  checked
                   {...register("remarks", { required: true })}
                 />
                 <label className="block text-gray-700 text-sm" htmlFor="remarks-yes">
@@ -171,14 +173,18 @@ const Admission = () => {
                 <label className="block text-gray-700 text-sm" htmlFor="remarks-no">
                   No</label>
               </div>
+              {errors?.remarks?.type === "required" && <p class="error-msg--small">This field is required</p>}
             </div>
+            {
+              // JSON.stringify(errors)
+            }
 
             <div>
               <label className="admission-form-label" htmlFor="question">Any queries?</label>
               <textarea className="admission-form-input focus:outline-none focus:shadow-outline"
                 id="question"
                 type="text"
-                placeholder="Any queries?"
+                rows={5}
                 name="question"
                 {...register("question")}
               />

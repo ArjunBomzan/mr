@@ -269,6 +269,11 @@ input[type=number] {
   content: "⚠ ";
 }
 
+.error-msg--small {
+  font-size: 0.8rem;
+  margin-top:0.4rem;
+}
+
 .about-us a {
   color: blue;
 }
@@ -291,7 +296,7 @@ input[type=number] {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor:pointer
+  cursor: pointer
 }
 
 #scroll-to-top svg {
@@ -323,15 +328,15 @@ input[type=number] {
   transition: width 2s;
 }
 
-.required-field::after{
-  content:" * ";
+.required-field::after {
+  content: " * ";
   color: red;
 }
 
-.about-us__banner{
+.about-us__banner {
   background-image: url("../assets/homePage/matrix.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 5px ;
+  border-radius: 5px;
 }
