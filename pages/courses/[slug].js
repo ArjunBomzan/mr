@@ -2,17 +2,17 @@ import Head from "next/head";
 import Header from "../../components/HeaderComponents/Header";
 import Training from "../../components/TrainingComponents/Training";
 
-export async function getStaticPaths() {
-    const res = await fetch(`${process.env.DOMAIN_V1}course/?category=1`)
-    const courses = await res.json()
-    const paths = courses?.map((course) => ({
-        params: { slug: course.slug },
-    }))
-    return { paths, fallback: false }
-}
+// export async function getStaticPaths() {
+//     const res = await fetch(`${process.env.DOMAIN_V1}course/?category=1`)
+//     const courses = await res.json()
+//     const paths = courses?.map((course) => ({
+//         params: { slug: course.slug },
+//     }))
+//     return { paths, fallback: blocking }
+// }
 
 // This also gets called at build time
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
     const res = await fetch(`${process.env.DOMAIN_V1}coursecombine/${params.slug}/`)
     const course = await res.json()
 

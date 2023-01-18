@@ -4,13 +4,28 @@ import React from 'react';
 import Header from '../../components/HeaderComponents/Header';
 import Trainings from "../../components/TrainingComponents/Trainings";
 
-export const getStaticProps = async () => {
-    const res = await axios.get(`${process.env.DOMAIN_V1}course/?category=1`)
-    const data = await res.data
-    return {
-        props: { courses: data }
+// export const getStaticProps = async () => {
+//     const res = await axios.get(`${process.env.DOMAIN_V1}course/?category=1`)
+//     const data = await res.data
+//     return {
+//         props: { courses: data }
+//     }
+// }
+
+export async function getServerSideProps() {
+    let data = []
+    try {
+      const res = await axios.get(`https://api.mindrisers.jobrisers.com/blog/api/v1/course/`)
+      data = await res.data
     }
-}
+    catch (err) {
+    }
+  
+    return {
+      props: { courses: data }
+    }
+  }
+
 
 const courses = ({ courses }) => {
     return (

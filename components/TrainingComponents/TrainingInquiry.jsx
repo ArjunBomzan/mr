@@ -91,7 +91,7 @@ const TrainingInquiry = (props) => {
                     {/* <option>Select </option> */}
                     {
                         props.course_list.map(el => {
-                            return <option key={el.id} value={el.id} selected={props?.course_id == el.id} >{el.title}</option>
+                            return <option key={el.id} value={el.id} selected={props?.course_id == el.slug} >{el.title}</option>
                         })
                     }
                 </select>
