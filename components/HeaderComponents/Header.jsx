@@ -10,7 +10,7 @@ const Header = () => {
           fontSize: "0.8rem"
         }}
       >
-        <div className='text-md font-bold whitespace-nowrap hidden sm:block '>Contact: <span className='font-bold'><a href="tel:9823721737">+977 9823721737</a></span></div>
+        <div className='text-md font-bold whitespace-nowrap hidden sm:block '>Contact: <span className='font-bold'><a href="tel:9843217125">+977 9843217125</a></span></div>
         <div className='flex gap-4 sm:gap-6 header-socials  justify-between sm:justify-end w-full'>
           <SocialLinks />
         </div>

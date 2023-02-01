@@ -20,18 +20,18 @@ const FooterContactUs = () => {
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400 mb-1'>
                     {/* <Link href=''> */}
-                    <Link href="tel:+9823721737">
-                        9823721737</Link>
+                    <Link href="tel:+9843217125">
+                        9843217125</Link>
                     {/* </Link> */}
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400 mb-1'>
-                    <Link href='whatsapp://send?text=Hello World!&phone=%2B9779823721737'>
-                        9823721737 (Whatsapp)
+                    <Link href='whatsapp://send?text=Hello World!&phone=%2B9779843217125'>
+                        9843217125 (Whatsapp)
                     </Link>
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400 mb-1'>
-                    <Link href="viber://chat/?number=%2B9779823721737">
-                        9823721737 (Viber)
+                    <Link href="viber://chat/?number=%2B9779843217125">
+                        9843217125 (Viber)
                     </Link>
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400 mb-1'>
