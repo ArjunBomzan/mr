@@ -10,16 +10,24 @@ const TrainingBanner = (props) => {
         <div className="overflow-hidden">
             <div
                 className=' bg-center bg-cover bg-no-repeat text-md training-banner relative '
+                style={{
+                    backgroundImage: `url("https://api.mindrisers.jobrisers.com${size?.width < 600 ? course?.mobile_banner : course?.banner}")`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundColor: "rgba(0,0,0,0.75)",
+                    backgroundBlendMode: "darken"
+
+                }}
             >
-                <img
+                {/* <img
                     src={`https://api.mindrisers.jobrisers.com${size?.width < 600 ? course?.mobile_banner : course?.banner}`}
                     className='absolute z-[-1] training-banner-img  bg-cover bg-no-repeat h-full '
                     style={{ objectFit: 'cover', width: "100%" }}
-                />
+                /> */}
 
                 <div className="text-white text-right flex flex-col items-end gap-8 lg:p-16 sm:p-12 p-6">
                     <span className=''><Link href="/">Home</Link> / {course?.title}</span>
-                    <p className=' text-3xl '>{course?.title}</p>
+                    <h1 className=' text-3xl '>{course?.title}</h1>
                     {
                         course?.banner_desc && <p className=''>{course?.banner_desc}</p>
                     }

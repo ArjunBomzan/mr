@@ -7,7 +7,7 @@ const HeaderLeft = () => {
     <Link href='/'>
       <div id='header-left' className='flex flex-row items-center justify-center space-x-3 cursor-pointer'>
         <Image src={Logo} alt='MindRisers' width={45} />
-        <h1 className=' font-bold text-2xl leading-9'>mindrisers</h1>
+        <p className=' font-bold text-2xl leading-9'>mindrisers</p>
       </div>
     </Link>
   )

@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }) {
 
     <Head>
 
+
       <meta name="description"
         content="Are you searching for a Practical IT Training Center in Kathmandu Nepal then MindRisers is the perfect platform for you to learn Digital Skils" />
 

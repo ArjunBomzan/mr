@@ -3,7 +3,7 @@ const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next')
 
-const dev = false
+const dev = false;
 const hostname = dev ? 'localhost' : 'mindrisers.com.np'
 const port = 3000
 // when using middleware `hostname` and `port` must be provided below
