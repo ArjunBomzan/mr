@@ -29,7 +29,7 @@ const Training = (props) => {
                         <>
                             <TrainingBanner course={props?.course} />
                             <TrainingSubHeader />
-                            <div className='lg:px-44 md:px-20 sm:px-16'>
+                            <div className='lg:px-44 md:px-20 px-6 sm:px-16'>
                                 <TrainingContainer course={props?.course} course_list={props?.course_list} course_id={props?.course_id} />
                                 <HomeSuccessStories in_training_page={true} />
                                 <RelatedComponents course={props?.course} />

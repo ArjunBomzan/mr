@@ -15,7 +15,8 @@ const TrainingBanner = (props) => {
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundColor: "rgba(0,0,0,0.75)",
-                    backgroundBlendMode: "darken"
+                    backgroundBlendMode: "darken",
+                    backgroundRepeat:"no-repeat"
 
                 }}
             >
