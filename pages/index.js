@@ -22,10 +22,27 @@ export default function Home(props) {
     { ssr: false }
   )
 
+  let meta_title = "IT Training Institute in Kathmandu, Nepal | IT Training | MindRisers";
+  let meta_description = "Are you searching for a Practical IT Training Center in Kathmandu Nepal then MindRisers is the perfect platform for you to learn Digital Skils";
+
   return (
+
+
     <div className=''>
       <Head>
         <title>Mind Risers</title>
+        {/* facebook og tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={meta_title} />
+        <meta property="og:description" content={meta_description} />
+        {/* <meta property="og:image" content={meta_image} /> */}
+
+        {/* twitter og tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@mindrisers" />
+        <meta property="twitter:title" content={meta_title} />
+        <meta property="twitter:description" content={meta_description} />
+        {/* <meta name="twitter:image" content={meta_image} /> */}
       </Head>
       <Header />
       <main>

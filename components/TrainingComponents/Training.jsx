@@ -12,6 +12,13 @@ const Training = (props) => {
         { ssr: false }
     )
 
+    let meta_description = props?.course?.data?.meta?.find(meta => meta.name == "description")?.content || "";
+
+    let meta_image = props?.course?.data?.course[0]?.banner
+    if(meta_image){
+        meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${meta_image}`
+    }
+
     return (
         <>
             <Head>
@@ -22,6 +29,19 @@ const Training = (props) => {
                         />
                     })
                 }
+             
+                {/* facebook og tags */}
+                <meta property="og:type" content="article" />
+                <meta property="og:title" content={props?.course?.data?.course[0]?.page_title} />
+                <meta property="og:description" content={meta_description} />
+                <meta property="og:image" content={meta_image} />
+
+                {/* twitter og tags */}
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:site" content="@mindrisers" />
+                <meta property="twitter:title" content={props?.course?.data?.course[0]?.page_title} />
+                <meta property="twitter:description" content={meta_description} />
+                <meta name="twitter:image" content={meta_image} />
             </Head>
             <div>
                 {

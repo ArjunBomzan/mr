@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import uuid from 'react-uuid';
-import TrainingAccordion from './TrainingComponents/TrainingAccordion';
 import TrainingOverview from './TrainingComponents/TrainingOverview';
 import TrainingSyllabus from './TrainingComponents/TrainingSyllabus';
 import TrainingInquiry from './TrainingInquiry';
