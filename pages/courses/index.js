@@ -40,14 +40,14 @@ const courses = ({ courses }) => {
         <title>Courses</title>
         {/* facebook og tags */}
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={"MindRisers Coursers | IT related courses in Kathmandu, Nepal"} />
+        <meta property="og:title" content={"MindRisers Courses | IT related courses in Kathmandu, Nepal"} />
         <meta property="og:description" content={meta_description} />
         <meta property="og:image" content={meta_image} />
 
         {/* twitter og tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@mindrisers" />
-        <meta property="twitter:title" content={"MindRisers Coursers | IT related courses in Kathmandu, Nepal"} />
+        <meta property="twitter:title" content={"MindRisers Courses | IT related courses in Kathmandu, Nepal"} />
         <meta property="twitter:description" content={meta_description} />
         <meta name="twitter:image" content={meta_image} />
       </Head>
