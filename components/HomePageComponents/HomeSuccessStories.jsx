@@ -31,7 +31,7 @@ const HomeSuccessStories = (props) => {
                     <div className="p-4" style={{
                         height: "130px"
                     }}>
-                        <h5 className="text-gray-900 text-xl font-medium mb-2">{title}</h5>
+                        <h3 className="text-gray-900 text-xl font-medium mb-2">{title}</h3>
                         <p className="text-gray-700 text-base line-clamp-3">
                             {content}
                         </p>
@@ -42,7 +42,7 @@ const HomeSuccessStories = (props) => {
     }
     return (
         <div className={`${props.in_training_page ? "" : "py-8 lg:px-44 md:px-20 px-2 bg-neutral-100"}`} id="success_stories">
-            <p className={`${props.in_training_page ? "mt-10 font-bold text-3xl" : "font-bold text-3xl"} `}>Success Stories</p>
+            <h2 className={`${props.in_training_page ? "mt-10 font-bold text-3xl" : "font-bold text-3xl"} `}>Success Stories</h2>
             <Swiper
                 slidesPerView={size.width > 990 ? 4 : size.width > 700 ? 3 : size.width > 600 ? 2.5 : size.width > 400 ? 2 : 1.2}
                 spaceBetween={35}

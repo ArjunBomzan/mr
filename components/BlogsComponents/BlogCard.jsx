@@ -14,7 +14,7 @@ const BlogCard = ({ thumbnail, title, blurb, md, url, imgAlt }) => {
       </div>
       <div className='flex flex-col p-6 justify-between h-56 '>
         <div className='h-20'>
-          <h4 className=' text-neutral-600 font-bold text-xl '>{title}</h4>
+          <h2 className=' text-neutral-600 font-bold text-xl '>{title}</h2>
           <p className="text-base line-clamp-2 mt-2">
             {blurb}
           </p>

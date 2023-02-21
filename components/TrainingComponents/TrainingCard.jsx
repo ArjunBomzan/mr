@@ -25,9 +25,9 @@ const TrainingCard = (props) => {
             </div>
             <div className='flex gap-1 flex-col text-center mb-2 '>
                 <div className='px-3 tool-tip'>
-                    <p className='font-bold whitespace-nowrap truncate tool-tip' data-bs-toggle="tooltip" title={`${props?.course?.title}`}>
+                    <h2 className='font-bold whitespace-nowrap truncate tool-tip' data-bs-toggle="tooltip" title={`${props?.course?.title}`}>
                         {props?.course?.title}
-                    </p>
+                    </h2>
 
                 </div>
                 <p>Duration: <span className='font-bold'>{props?.course?.duration}</span></p>

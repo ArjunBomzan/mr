@@ -16,7 +16,7 @@ const Card = ({ title, content, img }) => {
                 >
                 </div>
                 <div className="p-4">
-                    <h5 className="text-gray-900 text-xl font-medium mb-1">{title}</h5>
+                    <h2 className="text-gray-900 text-xl font-medium mb-1">{title}</h2>
                     <p className="text-gray-700 text-base">
                         {content}
                     </p>
@@ -34,7 +34,7 @@ const SuccessGalleries = () => {
         {
             successStoreis ? (
                 <div className='px-8 sm:px-12 md:px-14 lg:px-18 py-10 bg-neutral-100 ' id="success_stories">
-                    <p className="font-bold text-3xl mb-6">Success Stories</p>
+                    <h1 className="font-bold text-3xl mb-6">Success Stories</h1>
                     <section className='grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 xl:grid-cols-5 gap-3'>
                         {
                             successStoreis?.map((successStory) => {

@@ -14,11 +14,13 @@ export default function blogs({ blogs }) {
 
     let meta_description = "Are you searching for a Practical IT Training Center in Kathmandu Nepal then MindRisers is the perfect platform for you to learn Digital Skils"
     let meta_image = `${process.env.NEXT_PUBLIC_DOMAIN}/assets/images/blogs.png`
-    
+
     return (
         <div>
             <Head>
-                <title>Blogs</title>
+                <title>Blogs - Trends, Ideas and Tips </title>
+                <meta name="keywords"
+                    content="mindrisers nepal, blogs, it training center, kathmandu" />
                 {/* facebook og tags */}
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={"Blogs | MindRisers Nepal"} />

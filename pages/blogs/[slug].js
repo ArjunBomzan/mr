@@ -26,6 +26,8 @@ export default function BlogSlug(props) {
     return (
         <div>
             <Head>
+            <meta name="keywords"
+                    content={`mindrisers nepal, blogs, it training center, kathmandu,${props?.blog?.data?.blog?.[0]?.page_title}`} />
                 <title>{props?.blog?.data?.blog?.[0]?.page_title}</title>
                 {/* facebook og tags */}
                 <meta property="og:type" content="article" />

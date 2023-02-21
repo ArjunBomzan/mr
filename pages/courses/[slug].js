@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Header from "../../components/HeaderComponents/Header";
 import Training from "../../components/TrainingComponents/Training";
 
@@ -26,9 +25,6 @@ export async function getServerSideProps({ params }) {
 export default function course(props) {
     return (
         <div>
-            <Head>
-                <title>Course Details</title>
-            </Head>
             <Header />
             <main>
                 <Training course={props?.course} course_list={props?.course_list} course_id={props?.course_id} />

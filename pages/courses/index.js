@@ -37,7 +37,9 @@ const courses = ({ courses }) => {
   return (
     <>
       <Head>
-        <title>Courses</title>
+        <title>Courses offered by mindrisers consortium</title>
+        <meta name="keywords"
+                    content="mindrisers nepal, courses, it training center, kathmandu" />
         {/* facebook og tags */}
         <meta property="og:type" content="article" />
         <meta property="og:title" content={"MindRisers Courses | IT related courses in Kathmandu, Nepal"} />
