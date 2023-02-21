@@ -41,7 +41,7 @@ const RelatedComponents = () => {
       </div>
 
       <div className="">
-        <p className="font-bold text-3xl">Browser by tags.</p>
+        <p className="font-bold text-3xl">Browse by tags.</p>
         <div className="flex gap-3 flex-wrap mt-4" style={{ color: "blue" }}>
           <span className="cursor-pointer">#PHP</span>
           <span className="cursor-pointer">#Vue.Js Career</span>

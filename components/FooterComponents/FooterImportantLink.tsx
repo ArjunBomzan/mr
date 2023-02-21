@@ -10,12 +10,12 @@ const FooterImportantLink = () => {
             </h4>
             <ul className='text-neutral-300  text-sm '>
                 <li className='cursor-pointer hover:text-neutral-400 mb-1'>
-                    <Link href='blogs'>
+                    <Link href='/blogs'>
                         Blogs
                     </Link>
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400 mb-1'>
-                    <Link href='placement-partner'>
+                    <Link href='/placement-partner'>
                         Placement Partner
                     </Link>
                 </li>

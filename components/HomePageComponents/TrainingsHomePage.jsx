@@ -17,7 +17,7 @@ const TrainingsHomePage = (props) => {
                 }
             </div>
             <div className='flex justify-center'>
-                <Link href='courses' className='p-3 px-6 text-sm text-green-500 duration-500 border-2 border-green-500 rounded-md hover:bg-green-500 hover:text-white inline-block mt-12 '>
+                <Link href='/courses' className='p-3 px-6 text-sm text-green-500 duration-500 border-2 border-green-500 rounded-md hover:bg-green-500 hover:text-white inline-block mt-12 '>
                     View All
                 </Link>
             </div>

@@ -3,7 +3,7 @@ import Link from 'next/link'
 const TrainingCard = (props) => {
     return (
         <Link
-            href={`${props?.course?.category == 'IT' ? 'courses' : 'after+2-courses'}/${props?.course?.slug}`}
+            href={`/${props?.course?.category == 'IT' ? 'courses' : 'after+2-courses'}/${props?.course?.slug}`}
             className='training-card cursor-pointer relative bg-white'
             style={{ flexGrow: "0" }}
         >

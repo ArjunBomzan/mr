@@ -34,7 +34,7 @@ const OurServices = () => {
           </button>
         }
         {router.pathname === '/' &&
-          <Link href='services'>
+          <Link href='/services'>
             <button className='px-4 py-3 text-white duration-500 bg-green-400 rounded-md hover:bg-slate-400 hover:text-black h-max w-max'>
               Learn More
             </button>

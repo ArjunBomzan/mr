@@ -33,7 +33,7 @@ const Splash = () => {
           >
             Mind Risers is the only IT training institute in Nepal offering paid internships after the course completion. With various courses covering everything from programming to designing and marketing, our professional instructor of highly educated educators is committed to assisting you in succeeding.
           </div>
-          <Link href='contact-us'>
+          <Link href='/contact-us'>
             <button className='p-3 px-6 text-sm text-green-500 duration-500 border-2 border-green-500 rounded-md mt-9 hover:bg-green-500 hover:text-white'>
               Get Started
             </button>
@@ -74,11 +74,7 @@ const Splash = () => {
               >
                 MindRisers Consortium is a forward-thinking app and website development company in Kathmandu Nepal with many years of experience to make what you wish.
               </div>
-              <Link href='contact'>
-                <button className='p-3 px-6 text-sm text-green-500 duration-500 border-2 border-green-500 rounded-md mt-9 hover:bg-green-500 hover:text-white'>
-                  Get Started
-                </button>
-              </Link>
+            
             </div>
           </div>
         </SwiperSlide>
@@ -92,11 +88,7 @@ const Splash = () => {
               <div className='w-1/2 text-center slide-right-to-left mt-9 text-slate-400'>
                 Our experienced in-house developers will teach you to be the best you can be
               </div>
-              <Link href='contact'>
-                <button className='p-3 px-6 text-sm text-green-500 duration-500 border-2 border-green-500 rounded-md mt-9 hover:bg-green-500 hover:text-white'>
-                  Get Started
-                </button>
-              </Link>
+             
             </div>
           </div>
         </SwiperSlide> */}
@@ -112,11 +104,6 @@ const Splash = () => {
                 <div className='w-1/2 text-center slide-right-to-left mt-9 text-slate-400'>
                   We have many years of experience to provide educational consultacy services.
                 </div>
-                <button className='p-3 px-6 text-xl text-green-500 duration-500 border-2 border-green-500 rounded-md mt-9 hover:bg-green-500 hover:text-white'>
-                  <Link href='contact'>
-                    Get Started
-                  </Link>
-                </button>
               </div>
             </div>
           </SwiperSlide> */}

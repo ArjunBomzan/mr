@@ -3,7 +3,6 @@ import Image from "next/image"
 import Facebook from "../../assets/social/iconmonstr-facebook-4-240.png"
 import Twitter from "../../assets/social/iconmonstr-twitter-4-240.png"
 import Linkedin from "../../assets/social/iconmonstr-linkedin-4-240.png"
-import { useRouter } from "next/router"
 
 
 export default function BlogShare() {
@@ -16,17 +15,17 @@ export default function BlogShare() {
             <ul className='flex justify-center gap-3 mt-3'>
                 <li>
                     <Link href={`https://www.facebook.com/sharer/sharer.php?u=${current_url}`} target="_blank" rel="noreferrer">
-                        <Image src={Facebook} height={40} width={40} />
+                        <Image src={Facebook} height={40} width={40} alt="facebook-icon" />
                     </Link>
                 </li>
                 <li>
                     <Link href={`https://twitter.com/intent/tweet?url=${current_url}`} target="_blank" rel="noreferrer">
-                        <Image src={Twitter} height={40} width={40} />
+                        <Image src={Twitter} height={40} width={40} alt="twitter-icon" />
                     </Link>
                 </li>
                 <li>
                     <Link href={`https://www.linkedin.com/shareArticle?mini=true&url=${current_url}`} target="_blank" rel="noreferrer">
-                        <Image src={Linkedin} height={40} width={40} />
+                        <Image src={Linkedin} height={40} width={40} alt="linkedin-icon" />
                     </Link>
                 </li>
             </ul>
