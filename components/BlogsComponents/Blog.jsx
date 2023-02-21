@@ -5,6 +5,11 @@ import remarkGfm from 'remark-gfm'
 import Loader from "../Loader"
 import BlogsBanner from './BlogsBanner'
 import RelatedBlogs from './RelatedBlogs'
+import dynamic from 'next/dynamic'
+const BlogShare = dynamic(
+  () => import('./BlogShare'),
+  { ssr: false }
+)
 
 const Blog = (props) => {
   const router = useRouter()
@@ -22,7 +27,7 @@ const Blog = (props) => {
                 date={props?.blog?.updated_at}
               />
             </div >
-            <main className='blogs-container bg-white pb-10 px-6 lg:px-0'>
+            <main className='blogs-container bg-white  px-6 lg:px-0'>
               <div className='w-full h-full flex justify-center'>
                 <article className='h-full '>
                   <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
@@ -31,6 +36,7 @@ const Blog = (props) => {
                 </article>
               </div>
             </main>
+            <BlogShare />
             <RelatedBlogs blog={props?.blog} slug={slug} />
           </div >
           :

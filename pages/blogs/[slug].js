@@ -19,26 +19,24 @@ export async function getServerSideProps({ params }) {
 }
 
 export default function BlogSlug(props) {
-
     
-    let meta_description = props?.blog?.data?.blog?.short_desc || "";
-    let meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${props?.blog?.data?.blog?.banner}`
+    let meta_description = props?.blog?.data?.blog[0]?.short_desc || "";
+    let meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${props?.blog?.data?.blog[0]?.banner}`
 
     return (
         <div>
             <Head>
                 <title>{props?.blog?.data?.blog?.[0]?.page_title}</title>
-
                 {/* facebook og tags */}
                 <meta property="og:type" content="article" />
-                <meta property="og:title" content={"Blogs | MindRisers Nepal"} />
+                <meta property="og:title" content={`${props?.blog?.data?.blog?.[0]?.page_title}`} />
                 <meta property="og:description" content={meta_description} />
                 <meta property="og:image" content={meta_image} />
 
                 {/* twitter og tags */}
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="@mindrisers" />
-                <meta property="twitter:title" content={"Blogs | MindRisers Nepal"} />
+                <meta property="twitter:title" content={`${props?.blog?.data?.blog?.[0]?.page_title}`} />
                 <meta property="twitter:description" content={meta_description} />
                 <meta name="twitter:image" content={meta_image} />
 
