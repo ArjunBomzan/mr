@@ -1,3 +1,4 @@
+import Image from "next/image"
 const PartnerCard = (props) => {
     return (
         <div
@@ -6,24 +7,17 @@ const PartnerCard = (props) => {
             style={{
                 flexGrow: "0",
                 boxShadow: "0",
-                backgroundImage: `url("${process.env.DOMAIN}${props?.course?.image}")`,
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                borderRadius: "10px"
+                // backgroundImage: `url("${process.env.DOMAIN}${props?.course?.image}")`,
+                // backgroundPosition: "center",
+                // backgroundRepeat: "no-repeat",
+                borderRadius: "10px",
+                overflow: "hidden"
+
             }}
         >
-            {/* <div className='overflow-hidden  training-card-img-div mb-4' >
-                {
-                    props?.course?.image ?
-                        <img
-                            src={`${process.env.DOMAIN}${props?.course?.image}`}
-                            className='z-[-10]'
-                            alt={props?.course?.title}
-                        />
-                        :
-                        <img loading="lazy" src={props.img} className='z-[-10]' />
-                }
-            </div> */}
+            <Image width={550} height={550} src={`${process.env.DOMAIN}${props?.course?.image}`} className={"w-full h-full"} style={{
+                objectFit: "cover"
+            }} />
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from "next/image"
 
 const TrainingCard = (props) => {
     return (
@@ -14,13 +15,13 @@ const TrainingCard = (props) => {
             <div className='overflow-hidden  training-card-img-div' >
                 {
                     props?.course?.image ?
-                        <img
+                        <Image width={450} height={450}
                             src={`${process.env.DOMAIN}${props?.course?.image}`}
                             className='z-[-10]'
                             alt={props?.course?.title}
                         />
                         :
-                        <img loading="lazy" src={props.img} className='z-[-10]' />
+                        <Image width={450} height={450} loading="lazy" src={props.img} className='z-[-10]' />
                 }
             </div>
             <div className='flex gap-1 flex-col text-center mb-2 '>

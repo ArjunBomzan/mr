@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { coursesApi } from "../../../pages/api/apiCalls";
+import Image from "next/image"
 
 const RelatedComponents = () => {
   const router = useRouter();
@@ -31,7 +32,7 @@ const RelatedComponents = () => {
                   href={`/${pathname == 'courses' ? 'courses' : 'after+2-courses'}/${course.slug}`}
                   key={course.id}
                 >
-                  <img loading="lazy" src={`${process.env.DOMAIN}${course.image}`} className="w-20" />
+                  <Image width={450} height={450} loading="lazy" src={`${process.env.DOMAIN}${course.image}`} className="w-20" />
                   <span className="whitespace-nowrap truncate overflow-hidden">{course.title}</span>
                 </Link>))
             })

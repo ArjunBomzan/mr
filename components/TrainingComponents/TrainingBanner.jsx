@@ -20,11 +20,7 @@ const TrainingBanner = (props) => {
 
                 }}
             >
-                {/* <img
-                    src={`https://api.mindrisers.jobrisers.com${size?.width < 600 ? course?.mobile_banner : course?.banner}`}
-                    className='absolute z-[-1] training-banner-img  bg-cover bg-no-repeat h-full '
-                    style={{ objectFit: 'cover', width: "100%" }}
-                /> */}
+               
 
                 <div className="text-white text-right flex flex-col items-end gap-8 lg:p-16 sm:p-12 p-6">
                     <span className=''><Link href="/">Home</Link> / {course?.title}</span>
