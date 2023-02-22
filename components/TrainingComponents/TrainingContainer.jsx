@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import uuid from 'react-uuid';
 import TrainingOverview from './TrainingComponents/TrainingOverview';
 import TrainingSyllabus from './TrainingComponents/TrainingSyllabus';
 import TrainingInquiry from './TrainingInquiry';
@@ -11,7 +10,7 @@ const TrainingContainer = (props) => {
             <div
                 // className='flex gap-5 mt-20 p-6 lg:px-18 overflow-auto px-8 sm:px-12 md:px-14 lg:px-18 '
                 // className='flex gap-5 mt-20 py-6 lg:px-18 overflow-auto  '
-                className='flex gap-5 mt-20 py-6  overflow-auto  '
+                className='flex gap-5 py-6  overflow-auto  '
                 style={{ borderBottom: "0.5px solid rgb(163 163 163)" }}
             >
                 <Link href="#course_overview" className='training-indicator' scroll={false}>
@@ -51,7 +50,7 @@ const TrainingContainer = (props) => {
                             <div className='bg-green-500 flex flex-wrap w-full p-5 justify-between text-white '>
                                 {
                                     date?.map((item) => {
-                                        return <div className='flex w-full justify-between' key={uuid()}>
+                                        return <div className='flex w-full justify-between' key={item.id}>
                                             <div className='whitespace-nowrap'>{item?.start_date}</div>
                                             <div className='whitespace-nowrap'>{item?.start_time}</div>
                                         </div>

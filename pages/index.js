@@ -8,7 +8,7 @@ import Jumpstart from "../components/HomePageComponents/Jumpstart"
 import Mission from "../components/HomePageComponents/Mission"
 import Splash from "../components/HomePageComponents/Splash"
 import TrainingsHomePage from "../components/HomePageComponents/TrainingsHomePage"
-import axios from "axios"
+import HomeAboutUs from "../components/HomePageComponents/HomeAboutUs"
 
 export default function Home(props) {
   const TestimonialNoSsr = dynamic(
@@ -49,6 +49,7 @@ export default function Home(props) {
       <main>
         <Splash />
         <TrainingsHomePage courses={props.courses} />
+        
         <HomeAboutUs />
         <Mission />
         <Gallery />
@@ -65,8 +66,9 @@ export default function Home(props) {
 export async function getServerSideProps() {
   let data = []
   try {
-    const res = await axios.get(`https://api.mindrisers.jobrisers.com/blog/api/v1/course/`)
-    data = await res.data
+
+    const res = await fetch(`https://api.mindrisers.jobrisers.com/blog/api/v1/course/`)
+    data = await res.json();
   }
   catch (err) {
   }

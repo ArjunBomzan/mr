@@ -6,6 +6,7 @@ import Loader from "../Loader"
 import BlogsBanner from './BlogsBanner'
 import RelatedBlogs from './RelatedBlogs'
 import dynamic from 'next/dynamic'
+
 const BlogShare = dynamic(
   () => import('./BlogShare'),
   { ssr: false }
@@ -28,6 +29,7 @@ const Blog = (props) => {
               />
             </div >
             <main className='blogs-container bg-white  px-6 lg:px-0'>
+
               <div className='w-full h-full flex justify-center'>
                 <article className='h-full '>
                   <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >

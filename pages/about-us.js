@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import AboutUs from '../components/AboutUsComponents/AboutUs'
 import Header from '../components/HeaderComponents/Header'
-import axios from "axios"
-
 export default function Home(props) {
     let meta_title = "About us | mindrisers Nepal"
     let meta_description = ""
@@ -34,8 +32,8 @@ export default function Home(props) {
 export async function getServerSideProps() {
     let data = []
     try {
-        const res = await axios.get(`${process.env.DB_DOMAIN_V1}teammember/`)
-        data = await res.data
+        const res = await fetch(`${process.env.DB_DOMAIN_V1}teammember/`)
+        data = await res.json()
     }
     catch (err) {
     }

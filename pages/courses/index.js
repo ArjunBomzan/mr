@@ -1,15 +1,12 @@
-import axios from 'axios';
 import Head from 'next/head';
 import Header from '../../components/HeaderComponents/Header';
 import Trainings from "../../components/TrainingComponents/Trainings";
 
-
-
 export async function getServerSideProps() {
   let data = []
   try {
-    const res = await axios.get(`https://api.mindrisers.jobrisers.com/blog/api/v1/course/`)
-    data = await res.data
+    const res = await fetch(`https://api.mindrisers.jobrisers.com/blog/api/v1/course/`)
+    data = await res.json()
   }
   catch (err) {
   }

@@ -1,6 +1,5 @@
-import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
-import remarkGfm from 'remark-gfm';
+import sanitizeHtml from 'sanitize-html';
+
 
 const TrainingSyllabusComponent = (props) => {
     return (
@@ -22,10 +21,7 @@ const TrainingSyllabusComponent = (props) => {
             <div
                 className="accordion-collapse collapse p-4 px-6"
                 id={`collapse${props?.syllable?.id}`}
-                aria-labelledby={`heading${props?.syllable?.id}`} >
-                <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
-                    {props?.syllable?.description}
-                </ReactMarkdown>
+                aria-labelledby={`heading${props?.syllable?.id}`} dangerouslySetInnerHTML={{ __html: sanitizeHtml(props?.syllable?.description) }} >
             </div>
         </div>
     )

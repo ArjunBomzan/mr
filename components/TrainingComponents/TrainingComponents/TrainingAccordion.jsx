@@ -1,6 +1,5 @@
-import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
-import remarkGfm from 'remark-gfm';
+import sanitizeHtml from 'sanitize-html';
+
 
 const TrainingAccordion = (props) => {
     return (
@@ -11,10 +10,10 @@ const TrainingAccordion = (props) => {
                         <div className="accordion-tab" key={syllable.id}>
                             <input type="checkbox" id={syllable.id} />
                             <label className="accordion-tab-label" htmlFor={syllable.id}>{syllable.heading}</label>
-                            <div className="accordion-tab-content">
-                                <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
+                            <div className="accordion-tab-content" dangerouslySetInnerHTML={{ __html: sanitizeHtml(syllable?.description) }}>
+                                {/* <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
                                     {syllable?.description}
-                                </ReactMarkdown>
+                                </ReactMarkdown> */}
                             </div>
                         </div>
                     )

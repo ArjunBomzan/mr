@@ -3,16 +3,6 @@ import Blog from "../../components/BlogsComponents/Blog";
 import Header from "../../components/HeaderComponents/Header";
 import { useRouter } from 'next/router'
 
-// export async function getStaticPaths() {
-//     const res = await fetch(`${process.env.DOMAIN_V1}singleblog/`)
-//     const blogs = await res.json()
-//     const paths = blogs.map((blog) => ({
-//         params: { slug: blog.slug },
-//     }))
-//     return { paths, fallback: false }
-// }
-
-// This also gets called at build time
 export async function getServerSideProps({ params }) {
     const res = await fetch(`${process.env.DOMAIN_V1}singleblogslug/${params.slug}/`)
     const blog = await res.json()

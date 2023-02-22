@@ -1,4 +1,3 @@
-import TrainingSyllabusComponent from './TrainingSyllabusComponent'
 import TrainingAccordion from './TrainingAccordion';
 
 const TrainingSyllabus = (props) => {

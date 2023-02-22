@@ -72,6 +72,7 @@
     "react-uuid": "^2.0.0",
     "rehype-raw": "^6.1.1",
     "remark-gfm": "^3.0.1",
+    "sanitize-html": "^2.10.0",
     "sweetalert2": "^11.6.15",
     "swiper": "^8.4.5",
     "tw-elements": "^1.0.0-alpha13"

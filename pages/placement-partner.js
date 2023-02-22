@@ -1,4 +1,4 @@
-import axios from 'axios'
+// import axios from 'axios'
 import Head from 'next/head'
 import Header from '../components/HeaderComponents/Header'
 import Partners from '../components/PlacementPartners/Partners'
@@ -35,8 +35,8 @@ export default function Home({ partners }) {
 export async function getServerSideProps() {
     let data = []
     try {
-        const res = await axios.get(`${process.env.DOMAIN_V1}placementpartner/`)
-        data = await res.data
+        const res = await fetch(`${process.env.DOMAIN_V1}placementpartner/`)
+        data = await res.json()
     }
     catch (err) {
 

@@ -1,8 +1,6 @@
 import { useRouter } from 'next/router'
-import uuid from 'react-uuid'
 import Loader from '../Loader'
 import TrainingCard from './TrainingCard'
-
 
 const Trainings = (props) => {
   const router = useRouter()
@@ -22,7 +20,7 @@ const Trainings = (props) => {
             >
               {
                 props?.courses?.map((course) => {
-                  return <TrainingCard course={course} key={uuid()} />
+                  return <TrainingCard course={course} key={course.id} />
                 })
               }
             </div>

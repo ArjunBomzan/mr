@@ -1,14 +1,14 @@
 import Head from 'next/head';
 import Header from '../../components/HeaderComponents/Header';
-import Trainings from "../../components/TrainingComponents/Trainings";
+// import Trainings from "../../components/TrainingComponents/Trainings";
 
-export const getStaticProps = async () => {
-    const res = await fetch(`${process.env.DOMAIN_V1}course/?category=2`)
-    const data = await res.json()
-    return {
-        props: { courses: data }
-    }
-}
+// export const getStaticProps = async () => {
+//     const res = await fetch(`${process.env.DOMAIN_V1}course/?category=2`)
+//     const data = await res.json()
+//     return {
+//         props: { courses: data }
+//     }
+// }
 
 const courses = ({ courses }) => {
     let meta_title = "After +2 courses | mindrisers Nepal"
@@ -34,7 +34,10 @@ const courses = ({ courses }) => {
             </Head>
 
             <Header />
-            <Trainings courses={courses} />
+            {/* <Trainings courses={courses} /> */}
+            <h1 className='w-full  text-2xl font-bold text-center md:text-3xl lg:text-4xl xl:text-5xl pt-10'>
+                <span>After +2 Courses</span>
+            </h1>
         </>
     )
 }
