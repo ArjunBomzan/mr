@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router'
-import React from 'react'
 import BlogCard from './BlogCard'
 import { useEffect, useState } from "react";
 import axios from 'axios';

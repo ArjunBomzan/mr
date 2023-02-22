@@ -1,4 +1,3 @@
-import React from 'react';
 import { galleriesApi } from '../../pages/api/apiCalls';
 import { useEffect, useState } from 'react'
 

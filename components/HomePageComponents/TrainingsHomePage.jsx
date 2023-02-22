@@ -12,7 +12,7 @@ const TrainingsHomePage = (props) => {
             >
                 {
                     props?.courses?.slice(0, 12)?.map((course) => {
-                        return <TrainingCard course={course} key={uuid()} />
+                        return <TrainingCard course={course} key={uuid()} home={true} />
                     })
                 }
             </div>

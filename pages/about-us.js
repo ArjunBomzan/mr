@@ -20,7 +20,7 @@ export default function Home(props) {
 
                 {/* twitter og tags */}
                 <meta name="twitter:card" content="summary" />
-                <meta name="twitter:site" content="@mindrisers" />
+                <meta name="twitter:site" content="Mindrisers" /><meta name="twitter:creator" content="@mindrisers" />
                 <meta property="twitter:title" content={meta_title} />
                 <meta property="twitter:description" content={meta_description} />
                 {/* <meta name="twitter:image" content={meta_image} /> */}

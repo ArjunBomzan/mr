@@ -1,4 +1,3 @@
-import React from 'react'
 import AboutUsBanner from "./AboutUsBanner"
 import HomeAboutUs from "../HomePageComponents/HomeAboutUs"
 import Mission from "../HomePageComponents/Mission"

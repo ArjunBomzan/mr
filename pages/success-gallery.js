@@ -2,7 +2,7 @@ import Head from "next/head"
 import Header from "../components/HeaderComponents/Header"
 import SuccessGalleries from "../components/SuccessGalleryComponents/SuccessGalleries"
 
-const services = () => {
+const services = ({ successStoreis }) => {
     let meta_title = " Internships | Job Placements | Mindrisers Nepal"
     let meta_description = ""
     return (
@@ -19,7 +19,7 @@ const services = () => {
 
                 {/* twitter og tags */}
                 <meta name="twitter:card" content="summary" />
-                <meta name="twitter:site" content="@mindrisers" />
+                <meta name="twitter:site" content="Mindrisers" /><meta name="twitter:creator" content="@mindrisers" />
                 <meta property="twitter:title" content={meta_title} />
                 <meta property="twitter:description" content={meta_description} />
                 {/* <meta name="twitter:image" content={meta_image} /> */}
@@ -27,11 +27,30 @@ const services = () => {
             <Header />
             <div>
                 <main>
-                    <SuccessGalleries />
+                    <SuccessGalleries successStoreis={successStoreis} />
                 </main>
             </div>
         </>
     )
 }
+
+export async function getServerSideProps() {
+    let data = []
+    try {
+
+        const res = await fetch(`${process.env.DOMAIN_V1}successstoryhome/`)
+        data = await res.json();
+
+    }
+    catch (err) {
+
+    }
+    return {
+        props: { successStoreis: data }
+    }
+
+
+}
+
 
 export default services

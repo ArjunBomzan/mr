@@ -1,8 +1,6 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import React from 'react'
 import Gallery from '../components/HomePageComponents/Gallery'
-import HomeAboutUs from "../components/HomePageComponents/HomeAboutUs"
 import HomeContact from '../components/HomePageComponents/HomeContact'
 // import HomeSuccessStories from '../components/HomePageComponents/HomeSuccessStories'
 import Header from '../components/HeaderComponents/Header'
@@ -42,7 +40,7 @@ export default function Home(props) {
 
         {/* twitter og tags */}
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@mindrisers" />
+        <meta name="twitter:site" content="Mindrisers" /><meta name="twitter:creator" content="@mindrisers" />
         <meta property="twitter:title" content={meta_title} />
         <meta property="twitter:description" content={meta_description} />
         {/* <meta name="twitter:image" content={meta_image} /> */}

@@ -5,19 +5,23 @@ import TrainingBanner from './TrainingBanner'
 import RelatedComponents from './TrainingComponents/RelatedComponents'
 import TrainingContainer from './TrainingContainer'
 import TrainingSubHeader from './TrainingSubHeader'
+import { useRouter } from 'next/router'
 
 const Training = (props) => {
     const HomeSuccessStories = dynamic(
         () => import("../../components/HomePageComponents/HomeSuccessStories"),
         { ssr: false }
     )
+    const router = useRouter()
 
     let meta_description = props?.course?.data?.meta?.find(meta => meta.name == "description")?.content || "";
 
     let meta_image = props?.course?.data?.course[0]?.banner
-    if(meta_image){
+    if (meta_image) {
         meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${meta_image}`
     }
+
+    let current_url = `${process.env.NEXT_PUBLIC_DOMAIN}${router.asPath}`
 
     return (
         <>
@@ -30,16 +34,18 @@ const Training = (props) => {
                         />
                     })
                 }
-             
+
                 {/* facebook og tags */}
-                <meta property="og:type" content="article" />
+                <meta property="og:url" content={current_url} />
+                <meta property="og:type" content="website" />
                 <meta property="og:title" content={props?.course?.data?.course[0]?.page_title} />
                 <meta property="og:description" content={meta_description} />
                 <meta property="og:image" content={meta_image} />
 
                 {/* twitter og tags */}
                 <meta name="twitter:card" content="summary" />
-                <meta name="twitter:site" content="@mindrisers" />
+                <meta name="twitter:site" content="Mindrisers" />
+                <meta name="twitter:creator" content="@mindrisers" />
                 <meta property="twitter:title" content={props?.course?.data?.course[0]?.page_title} />
                 <meta property="twitter:description" content={meta_description} />
                 <meta name="twitter:image" content={meta_image} />
