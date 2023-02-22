@@ -7,9 +7,6 @@ const PartnerCard = (props) => {
             style={{
                 flexGrow: "0",
                 boxShadow: "0",
-                // backgroundImage: `url("${process.env.DOMAIN}${props?.course?.image}")`,
-                // backgroundPosition: "center",
-                // backgroundRepeat: "no-repeat",
                 borderRadius: "10px",
                 overflow: "hidden"
 

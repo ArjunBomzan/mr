@@ -21,7 +21,7 @@ const TrainingCard = (props) => {
                             alt={props?.course?.title}
                         />
                         :
-                        <Image width={450} height={450} loading="lazy" src={props.img} className='z-[-10]' />
+                        <Image width={450} height={450} loading="lazy" src={props.img} className='z-[-10]' alt={`${props?.course?.slug}`} />
                 }
             </div>
             <div className='flex gap-1 flex-col text-center mb-2 '>

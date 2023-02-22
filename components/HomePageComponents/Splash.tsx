@@ -12,8 +12,6 @@ const Splash = () => {
 
       <div className='w-full bg-splash-bg bg-no-repeat bg-cover ' style={{
         backgroundImage: `url(${SplashBg.src})`,
-        // backgroundColor: "rgba(0,0,0,0.5)",
-        // backgroundBlendMode: "darken"
       }}>
         <div className='flex flex-col items-center justify-center w-full h-full bg-mask py-10 '>
           <div

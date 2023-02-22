@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { homeSuccessStoriesApi } from "../../pages/api/apiCalls";
 import { useEffect, useState } from 'react'
 import { useWindowSize } from "../ScreenSize";
-
+import Image from "next/image"
 
 const HomeSuccessStories = (props) => {
     const size = useWindowSize({ useEffect, useState });
@@ -18,16 +18,11 @@ const HomeSuccessStories = (props) => {
         return (
             <div className="flex justify-center w-full bg-white rounded-lg shadow-lg card-shadow cursor-pointer">
                 <div className="block w-full" >
-                    <div className='training-card-img-div'
-                        style={{
-                            backgroundImage: `url("${img}")`,
-                            backgroundPosition: "center",
-                            backgroundSize: "cover",
-                            width: "100%",
-                            height: "130px"
-                        }}
-                    >
-                    </div>
+                    <Image height={450} width={450} src={img} style={{
+                        height: "130px",
+                        width: "100%",
+                        objectFit: "cover"
+                    }} className="training-card-img-div" />
                     <div className="p-4" style={{
                         height: "130px"
                     }}>
@@ -44,7 +39,7 @@ const HomeSuccessStories = (props) => {
         <div className={`${props.in_training_page ? "" : "py-8 lg:px-44 md:px-20 px-2 bg-neutral-100"}`} id="success_stories">
             <h2 className={`${props.in_training_page ? "mt-10 font-bold text-3xl" : "font-bold text-3xl"} `}>Success Stories</h2>
             <Swiper
-                slidesPerView={size.width > 1500 ? 4 : size.width > 1200 ? 3  : size.width > 600 ? 2.3 : 1.3}
+                slidesPerView={size.width > 1500 ? 4 : size.width > 1200 ? 3 : size.width > 600 ? 2.3 : 1.3}
                 spaceBetween={35}
                 freeMode={true}
                 pagination={{
@@ -53,7 +48,7 @@ const HomeSuccessStories = (props) => {
                 modules={[FreeMode, Pagination, Autoplay, Navigation]}
                 loop={false}
                 autoplay={{
-                    delay: 2000,
+                    delay: 200000,
                     disableOnInteraction: false,
                 }}
                 className="!-mx-2 md:!mx-0"

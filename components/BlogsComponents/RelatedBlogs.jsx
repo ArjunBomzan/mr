@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 
 const RelatedBlogs = (props) => {
-    console.log(props)
     const router = useRouter()
     const { slug } = router.query
     const type = router.pathname?.split('/')[1]

@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
     <div id="fb-customer-chat" className="fb-customerchat">
     </div>
 
-    <Script id="one" strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=UA-235343232-1"></Script>
+    <Script id="one" strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=UA-235343232-1" defer></Script>
 
     <Script
       id="three"
@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
         gtag('config', 'UA-235343232-1');
         `
       }}
-    />
+      defer />
 
     <Script
       id="four"
@@ -57,6 +57,7 @@ function MyApp({ Component, pageProps }) {
         })(window, document, 'script', 'dataLayer', 'GTM-MSWM9SX');
         `
       }}
+      defer
     />
     <Script
       id="six"
@@ -78,6 +79,7 @@ function MyApp({ Component, pageProps }) {
               fbq('track', 'PageView');
         `
       }}
+      defer
     />
 
     <Script
@@ -90,6 +92,7 @@ function MyApp({ Component, pageProps }) {
                 chatbox.setAttribute("attribution", "biz_inbox");
         `
       }}
+      defer
     />
 
     <Script
@@ -113,6 +116,7 @@ function MyApp({ Component, pageProps }) {
               }(document, 'script', 'facebook-jssdk'));
         `
       }}
+      defer
     />
 
     <Component {...pageProps} />

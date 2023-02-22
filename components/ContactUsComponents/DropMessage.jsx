@@ -11,7 +11,6 @@ const DropMessage = () => {
         setSubmiting(true)
         ContactListApi({ setSubmiting, data, reset, router })
     };
-    console.log(errors)
 
     return (
         <div className='pagecard w-full max-h-min h-max sm:h-auto flex-1 text-black overflow-hidden'>

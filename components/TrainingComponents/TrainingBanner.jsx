@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { useWindowSize } from "../ScreenSize";
+import Image from "next/image"
 
 
 const TrainingBanner = (props) => {
@@ -11,17 +12,25 @@ const TrainingBanner = (props) => {
             <div
                 className=' bg-center bg-cover bg-no-repeat text-md training-banner relative '
                 style={{
-                    backgroundImage: `url("https://api.mindrisers.jobrisers.com${size?.width < 600 ? course?.mobile_banner : course?.banner}")`,
+                    // backgroundImage: `url("https://api.mindrisers.jobrisers.com${size?.width < 600 ? course?.mobile_banner : course?.banner}")`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundColor: "rgba(0,0,0,0.75)",
                     backgroundBlendMode: "darken",
-                    backgroundRepeat:"no-repeat"
+                    backgroundRepeat: "no-repeat",
+                    position: "relative"
 
                 }}
             >
-               
-
+                <Image width={1500} height={1500} src={`https://api.mindrisers.jobrisers.com${size?.width < 600 ? course?.mobile_banner : course?.banner}`}
+                    style={{
+                        position: "fixed",
+                        height: "100%",
+                        width: "100%",
+                        objectFit: "cover",
+                        zIndex: "-1",
+                        filter: "brightness(30%)"
+                    }} />
                 <div className="text-white text-right flex flex-col items-end gap-8 lg:p-16 sm:p-12 p-6">
                     <span className=''><Link href="/">Home</Link> / {course?.title}</span>
                     <h1 className=' text-3xl '>{course?.title}</h1>
