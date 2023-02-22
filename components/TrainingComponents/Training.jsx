@@ -35,6 +35,7 @@ const Training = (props) => {
                     })
                 }
 
+                <meta name="title" content={props?.course?.data?.course[0]?.page_title}/>
                 {/* facebook og tags */}
                 <meta property="og:url" content={current_url} />
                 <meta property="og:type" content="website" />
