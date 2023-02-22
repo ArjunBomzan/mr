@@ -20,7 +20,7 @@ const TrainingCard = (props) => {
                             alt={props?.course?.title}
                         />
                         :
-                        <img src={props.img} className='z-[-10]' />
+                        <img loading="lazy" src={props.img} className='z-[-10]' />
                 }
             </div>
             <div className='flex gap-1 flex-col text-center mb-2 '>

@@ -32,7 +32,7 @@ const RelatedComponents = () => {
                   href={`/${pathname == 'courses' ? 'courses' : 'after+2-courses'}/${course.slug}`}
                   key={course.id}
                 >
-                  <img src={`${process.env.DOMAIN}${course.image}`} className="w-20" />
+                  <img loading="lazy" src={`${process.env.DOMAIN}${course.image}`} className="w-20" />
                   <span className="whitespace-nowrap truncate overflow-hidden">{course.title}</span>
                 </Link>))
             })
