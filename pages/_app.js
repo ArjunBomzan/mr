@@ -3,9 +3,15 @@ import "../styles/animations.css";
 import "../styles/index.css";
 import "../styles/training.css";
 // import 'tw-elements';
+import dynamic from 'next/dynamic'
+const Footer = dynamic(
+  () => import('../components/FooterComponents/Footer'),
+  { ssr: false }
+)
+
 
 // import { useEffect } from "react";
-import Footer from "../components/FooterComponents/Footer";
+// import Footer from "../components/FooterComponents/Footer";
 // import Head from 'next/head'
 import Script from "next/script"
 

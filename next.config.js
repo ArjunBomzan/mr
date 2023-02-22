@@ -6,17 +6,33 @@ const {
 } = require('next/constants')
 
 // This uses phases as outlined here: https://nextjs.org/docs/#custom-configuration
-module.exports = (phase) => {
-  const env = {
-    DOMAIN_V1: "https://api.mindrisers.jobrisers.com/blog/api/v1/",
-    DOMAIN: "https://api.mindrisers.jobrisers.com/"
-  }
-  const images = {
-    domains: ["api.mindrisers.jobrisers.com"],
-  }
-  // next.config.js object
-  return {
-    env,
-    images
-  }
+
+// module.exports = (phase) => {
+//   const env = {
+//     DOMAIN_V1: "https://api.mindrisers.jobrisers.com/blog/api/v1/",
+//     DOMAIN: "https://api.mindrisers.jobrisers.com/"
+//   }
+//   const images = {
+//     domains: ["api.mindrisers.jobrisers.com"],
+//   }
+//   // next.config.js object
+//   return {
+//     env,
+//     images
+//   }
+// }
+
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+const env = {
+  DOMAIN_V1: "https://api.mindrisers.jobrisers.com/blog/api/v1/",
+  DOMAIN: "https://api.mindrisers.jobrisers.com/"
 }
+const images = {
+  domains: ["api.mindrisers.jobrisers.com"],
+}
+
+module.exports = withBundleAnalyzer({
+  env, images
+})
