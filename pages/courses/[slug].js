@@ -13,11 +13,21 @@ export async function getStaticPaths() {
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps({ params }) {
     const res = await fetch(`${process.env.DOMAIN_V1}coursecombine/${params.slug}/`)
+
+    if (!res.ok) {
+        return {
+            notFound: true,
+        };
+    }
+
     const course = await res.json()
 
     const data = await fetch(`${process.env.DOMAIN_V1}course/`)
     const course_list = await data.json()
-    return { props: { course, course_list, course_id: params.slug } }
+    return {
+        props: { course, course_list, course_id: params.slug },
+        revalidate: 60 * 60  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it. 
+    }
 }
 
 // This also gets called at build time

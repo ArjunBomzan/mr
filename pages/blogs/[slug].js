@@ -3,17 +3,57 @@ import Blog from "../../components/BlogsComponents/Blog";
 import Header from "../../components/HeaderComponents/Header";
 import { useRouter } from 'next/router'
 
-export async function getServerSideProps({ params }) {
+// export async function getServerSideProps({ params }) {
+//     const res = await fetch(`${process.env.DOMAIN_V1}singleblogslug/${params.slug}/`)
+//     const blog = await res.json()
+//     return { props: { blog } }
+// }
+/* 
+       TODO: // if blog slug donot match return 404 
+       fetch(`http://httpstat.us/404`)
+       .then(response => {
+           console.log({response})
+           if (!response.ok) {
+           throw new Error('HTTP error ' + response.status);
+           }
+           return response.text();
+       })
+       .then(data => console.log(data))
+       .catch(err => console.log({err}))
+   */
+
+export async function getStaticPaths() {
+    const res = await fetch(`${process.env.DOMAIN_V1}singleblog/`)
+    const blogs = await res.json()
+
+    const paths = blogs?.map((blog) => ({
+        params: { slug: blog.slug },
+    }))
+    return { paths, fallback: "blocking" }
+}
+
+// `getStaticPaths` requires using `getStaticProps`
+export async function getStaticProps({ params }) {
     const res = await fetch(`${process.env.DOMAIN_V1}singleblogslug/${params.slug}/`)
+
+    if (!res.ok) {
+        return {
+            notFound: true,
+        };
+    }
+
     const blog = await res.json()
-    return { props: { blog } }
+    return {
+        props: { blog },
+        revalidate: 60 * 60  // even when the content is not changed.. it revalidates... 
+    }
 }
 
 export default function BlogSlug(props) {
 
     const router = useRouter()
 
-    
+
     let meta_description = props?.blog?.data?.blog[0]?.short_desc || "";
     let meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${props?.blog?.data?.blog[0]?.banner}`
     let current_url = `${process.env.NEXT_PUBLIC_DOMAIN}${router.asPath}`
@@ -22,7 +62,7 @@ export default function BlogSlug(props) {
     return (
         <div>
             <Head>
-            <meta name="keywords"
+                <meta name="keywords"
                     content={`mindrisers nepal, blogs, it training center, kathmandu,${props?.blog?.data?.blog?.[0]?.page_title}`} />
                 <title>{props?.blog?.data?.blog?.[0]?.page_title}</title>
                 {/* facebook og tags */}
