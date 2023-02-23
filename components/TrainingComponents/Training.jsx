@@ -27,6 +27,7 @@ const Training = (props) => {
         <>
             <Head>
                 <title>{props?.course?.data?.course[0]?.page_title}</title>
+                <meta name="title" content={props?.course?.data?.course[0]?.page_title}/>
 
                 {
                     props?.course?.data?.meta?.map((meta) => {
@@ -35,7 +36,6 @@ const Training = (props) => {
                     })
                 }
 
-                <meta name="title" content={props?.course?.data?.course[0]?.page_title}/>
                 {/* facebook og tags */}
                 <meta property="og:url" content={current_url} />
                 <meta property="og:type" content="website" />

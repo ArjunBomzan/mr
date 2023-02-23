@@ -13,7 +13,7 @@ export default function BlogSlug(props) {
 
     const router = useRouter()
 
-    
+
     let meta_description = props?.blog?.data?.blog[0]?.short_desc || "";
     let meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${props?.blog?.data?.blog[0]?.banner}`
     let current_url = `${process.env.NEXT_PUBLIC_DOMAIN}${router.asPath}`
@@ -22,7 +22,7 @@ export default function BlogSlug(props) {
     return (
         <div>
             <Head>
-            <meta name="keywords"
+                <meta name="keywords"
                     content={`mindrisers nepal, blogs, it training center, kathmandu,${props?.blog?.data?.blog?.[0]?.page_title}`} />
                 <title>{props?.blog?.data?.blog?.[0]?.page_title}</title>
                 {/* facebook og tags */}
