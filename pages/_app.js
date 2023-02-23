@@ -8,21 +8,25 @@ const Footer = dynamic(
   () => import('../components/FooterComponents/Footer'),
   { ssr: false }
 )
+import Checked from "../assets/Admission/checked.webp"
+import Cross from "../assets/Admission/cross.webp"
+import Image from "next/image"
 
 
-// import { useEffect } from "react";
+import { useEffect } from "react";
 // import Footer from "../components/FooterComponents/Footer";
 // import Head from 'next/head'
 import Script from "next/script"
+import Link from "next/link";
 
 function MyApp({ Component, pageProps }) {
 
-  // useEffect(() => {
-  //   const use = async () => {
-  //     (await import('tw-elements')).default;
-  //   };
-  //   use();
-  // }, []);
+  useEffect(() => {
+    const use = async () => {
+      (await import('tw-elements')).default;
+    };
+    use();
+  }, []);
 
   return <>
 
@@ -127,6 +131,90 @@ function MyApp({ Component, pageProps }) {
 
     <Component {...pageProps} />
     <Footer />
+    <div className="admission-modal" id="admission-modal" style={{
+      width: "100%",
+      height: "100vh",
+      backgroundColor: "rgba(0,0,0,0.6)",
+      overflow: "hidden",
+      justifyContent: "center",
+      alignItems: "center",
+    }}>
+      <div
+        id="admission-modal-box"
+        style={{
+          borderRadius: "15px",
+          width: "50%",
+          marginRight: "auto",
+          marginLeft: "auto",
+          background: "white",
+          padding: "20px",
+          textAlign: "center",
+          position: "relative"
+        }}>
+        <Image src={Checked} alt="check-icon" height={80} width={80} style={{
+          display: "inline",
+          marginTop: "1.8em"
+        }} />
+        <Image src={Cross} alt="cross-icon" id="cross-icon" height={32} width={32} style={{
+          display: "inline",
+          position: "absolute",
+          top: "10px",
+          right: "10px",
+          cursor: "pointer"
+        }} />
+        <p style={{
+          padding: " 0.8em 1em 0",
+          color: "inherit",
+          fontSize: " 1.875em",
+          fontWeight: " 600",
+          textAlign: " center",
+          textTransform: " none",
+          wordWrap: " break-word",
+        }}>Thank You</p>
+        <p style={{
+          padding: " 0.8em 1em",
+          color: "inherit",
+          fontSize: " 1.125em",
+          fontWeight: " 600",
+          textAlign: " center",
+          textTransform: " none",
+          wordWrap: " break-word",
+        }}>We will get back to you soon.</p>
+        <Link href="/courses" type="button" className="bg-green-500 rounded-lg h-10 px-5 text-md bg-green-500 text-white" style={{
+          margin: "0.3125em",
+          padding: "0.625em 1.1em",
+          transition: "box-shadow .1s",
+          boxShadow: "0 0 0 3px rgb(0 0 0 / 0%)",
+          fontWeight: "500",
+          color: "white"
+        }}> View Courses ! </Link>
+        <hr className=" mt-2 mb-2" />
+        <Link href="/courses" className="text-green-500 underline" style={{
+          textUnderlinePosition: "under"
+        }}>Home</Link>
+      </div>
+
+    </div>
+    <Script
+      id="nine"
+      strategy="afterInteractive"
+      dangerouslySetInnerHTML={{
+        __html: `
+        document.getElementById("admission-modal").addEventListener("click",()=>{
+          document.getElementById("admission-modal").classList.remove("active")
+        })
+        document.getElementById("cross-icon").addEventListener("click",()=>{
+          document.getElementById("admission-modal").classList.remove("active")
+        })
+        document.getElementById("admission-modal-box").addEventListener("click",(event)=>{
+          event.stopPropagation();
+
+        })
+       
+        `
+      }}
+      defer
+    />
 
     <span id="scroll-to-top" className="bg-green-500" onClick={() => {
       window.scroll(0, 0)

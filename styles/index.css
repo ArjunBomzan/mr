@@ -271,7 +271,7 @@ input[type=number] {
 
 .error-msg--small {
   font-size: 0.8rem;
-  margin-top:0.4rem;
+  margin-top: 0.4rem;
 }
 
 .about-us a {
@@ -341,7 +341,21 @@ input[type=number] {
   border-radius: 5px;
 }
 
-#course_overview ul{
-  padding:revert;
+#course_overview ul {
+  padding: revert;
   list-style-type: disc;
+}
+
+.admission-modal {
+  display: none;
+}
+
+.admission-modal.active {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1050;
 }

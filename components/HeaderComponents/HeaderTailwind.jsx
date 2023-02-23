@@ -1,11 +1,17 @@
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 import HeaderLeft from './HeaderLeft'
 
+import HeaderTabs from './HeaderTabs'
+
+
 const HeaderTailwind = () => {
-    const HeaderTabs = dynamic(
-        () => import('./HeaderTabs'),
-        { ssr: false }
-    )
+
+    // const HeaderTabs = dynamic(
+    //     () => import('./HeaderTabs'),
+    //     { ssr: false }
+    // )
+
+
     return (
         <nav className="sticky-top bg-white  w-full flex flex-wrap items-center justify-between py-4 shadow-lg navbar navbar-expand-lg navbar-light  pt-4 pb-4 px-6 sm:px-12 md:px-14 lg:px-18 ">
             <div className="container-fluid w-full flex flex-wrap items-center justify-between">

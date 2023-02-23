@@ -1,4 +1,4 @@
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 import axios from 'axios'
 export const publicRequest = axios.create({
     baseURL: "https://api.mindrisers.jobrisers.com/blog/api/v1/",
@@ -61,20 +61,25 @@ export async function ContactListApi(props) {
         .then(res => {
             props.setSubmiting(false)
             if (res.status == 200) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Thank you',
-                    footer: '<a href="/">Home Page</a>',
-                    html: 'We will get back to you soon.',
-                    confirmButtonColor: '#3085d6',
-                    showCloseButton: true,
-                    focusConfirm: false,
-                    confirmButtonText:
-                        '<i className="fa fa-thumbs-up"></i> View Courses!',
-                    confirmButtonAriaLabel: 'Thumbs up, great!',
-                }).then((result) => {
-                    result.isConfirmed && props?.router.push("/courses");
-                })
+
+                // Swal.fire({
+                //     icon: 'success',
+                //     title: 'Thank you',
+                //     footer: '<a href="/">Home Page</a>',
+                //     html: 'We will get back to you soon.',
+                //     confirmButtonColor: '#3085d6',
+                //     showCloseButton: true,
+                //     focusConfirm: false,
+                //     confirmButtonText:
+                //         '<i className="fa fa-thumbs-up"></i> View Courses!',
+                //     confirmButtonAriaLabel: 'Thumbs up, great!',
+                // }).then((result) => {
+                //     result.isConfirmed && props?.router.push("/courses");
+                // })
+                let modal = document.getElementById("admission-modal")
+                if (modal) {
+                    modal.classList.add("active")
+                }
                 props?.reset();
             }
         })
@@ -90,20 +95,24 @@ export async function AdmissionFormApi(props) {
         .then(res => {
             props.setSubmiting(false)
             if (res.status == 201) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Thank you',
-                    footer: '<a href="/">Home Page</a>',
-                    html: 'We will get back to you soon.',
-                    confirmButtonColor: '#3085d6',
-                    showCloseButton: true,
-                    focusConfirm: false,
-                    confirmButtonText:
-                        '<i className="fa fa-thumbs-up"></i> View Courses!',
-                    confirmButtonAriaLabel: 'Thumbs up, great!',
-                }).then((result) => {
-                    result.isConfirmed && props?.router.push("/courses");
-                })
+                // Swal.fire({
+                //     icon: 'success',
+                //     title: 'Thank you',
+                //     footer: '<a href="/">Home Page</a>',
+                //     html: 'We will get back to you soon.',
+                //     confirmButtonColor: '#3085d6',
+                //     showCloseButton: true,
+                //     focusConfirm: false,
+                //     confirmButtonText:
+                //         '<i className="fa fa-thumbs-up"></i> View Courses!',
+                //     confirmButtonAriaLabel: 'Thumbs up, great!',
+                // }).then((result) => {
+                //     result.isConfirmed && props?.router.push("/courses");
+                // })
+                let modal = document.getElementById("admission-modal")
+                if (modal) {
+                    modal.classList.add("active")
+                }
                 props?.reset();
             }
         })

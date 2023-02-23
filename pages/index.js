@@ -2,7 +2,6 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Gallery from '../components/HomePageComponents/Gallery'
 import HomeContact from '../components/HomePageComponents/HomeContact'
-// import HomeSuccessStories from '../components/HomePageComponents/HomeSuccessStories'
 import Header from '../components/HeaderComponents/Header'
 import Jumpstart from "../components/HomePageComponents/Jumpstart"
 import Mission from "../components/HomePageComponents/Mission"
