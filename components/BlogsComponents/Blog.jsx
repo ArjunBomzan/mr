@@ -1,12 +1,14 @@
 import { useRouter } from 'next/router'
-import ReactMarkdown from 'react-markdown'
-import rehypeRaw from 'rehype-raw'
-import remarkGfm from 'remark-gfm'
+// import ReactMarkdown from 'react-markdown'
+// import rehypeRaw from 'rehype-raw'
+// import remarkGfm from 'remark-gfm'
 import Loader from "../Loader"
 import BlogsBanner from './BlogsBanner'
 import RelatedBlogs from './RelatedBlogs'
 import dynamic from 'next/dynamic'
 import Head from "next/head"
+// import sanitizeHtml from 'sanitize-html';
+
 
 const BlogShare = dynamic(
   () => import('./BlogShare'),
@@ -36,10 +38,10 @@ const Blog = (props) => {
               <main className='blogs-container bg-white  px-6 lg:px-0'>
 
                 <div className='w-full h-full flex justify-center'>
-                  <article className='h-full '>
-                    <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
+                  <article className='h-full ' dangerouslySetInnerHTML={{ __html: props?.blog?.description }}>
+                    {/* <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
                       {props?.blog?.description}
-                    </ReactMarkdown>
+                    </ReactMarkdown> */}
                   </article>
                 </div>
               </main>

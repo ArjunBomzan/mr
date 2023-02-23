@@ -1,4 +1,4 @@
-import sanitizeHtml from 'sanitize-html';
+// import sanitizeHtml from 'sanitize-html';
 
 
 const TrainingSyllabusComponent = (props) => {
@@ -21,7 +21,7 @@ const TrainingSyllabusComponent = (props) => {
             <div
                 className="accordion-collapse collapse p-4 px-6"
                 id={`collapse${props?.syllable?.id}`}
-                aria-labelledby={`heading${props?.syllable?.id}`} dangerouslySetInnerHTML={{ __html: sanitizeHtml(props?.syllable?.description) }} >
+                aria-labelledby={`heading${props?.syllable?.id}`} dangerouslySetInnerHTML={{ __html: (props?.syllable?.description) }} >
             </div>
         </div>
     )
