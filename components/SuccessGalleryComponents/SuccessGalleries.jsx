@@ -7,7 +7,7 @@ const Card = ({ title, content, img }) => {
                     height: "150px",
                     width: "100%",
                     objectFit: "cover"
-                }} className="training-card-img-div" />
+                }} className="training-card-img-div" alt={title} />
                 <div className="p-4">
                     <h2 className="text-gray-900 text-xl font-medium mb-1">{title}</h2>
                     <p className="text-gray-700 text-base">

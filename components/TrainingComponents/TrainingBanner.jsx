@@ -30,7 +30,7 @@ const TrainingBanner = (props) => {
                         objectFit: "cover",
                         zIndex: "-1",
                         filter: "brightness(30%)"
-                    }} />
+                    }} alt={course?.title} />
                 <div className="text-white text-right flex flex-col items-end gap-8 lg:p-16 sm:p-12 p-6">
                     <span className=''><Link href="/">Home</Link> / {course?.title}</span>
                     <h1 className=' text-3xl '>{course?.title}</h1>

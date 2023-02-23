@@ -12,7 +12,7 @@ const PartnerCard = (props) => {
 
             }}
         >
-            <Image width={550} height={550} src={`${process.env.DOMAIN}${props?.course?.image}`} className={"w-full h-full"} style={{
+            <Image width={550} height={550} src={`${process.env.DOMAIN}${props?.course?.image}`} alt={"partner-company-logo"} className={"w-full h-full"} style={{
                 objectFit: "cover"
             }} />
         </div>
