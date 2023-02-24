@@ -19,9 +19,10 @@ const TrainingCard = (props) => {
                             src={`${process.env.DOMAIN}${props?.course?.image}`}
                             className='z-[-10]'
                             alt={props?.course?.title}
+                            loading="eager"
                         />
                         :
-                        <Image width={450} height={450} loading="lazy" src={props.img} className='z-[-10]' alt={`${props?.course?.slug}`} />
+                        <Image width={450} height={450} loading="eager" src={props.img} className='z-[-10]' alt={`${props?.course?.slug}`} />
                 }
             </div>
             <div className='flex gap-1 flex-col text-center mb-2 '>
