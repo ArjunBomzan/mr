@@ -17,10 +17,10 @@ const RelatedBlogs = (props) => {
     
     return (
         <div className=" px-6 lg:px-0" >
-            <h3 className='text-4xl font-bold'>
+            <h2 className='text-4xl font-bold'>
                 {type == "blogs" && <span>Recent Blogs</span>}
-            </h3>
-            <section className='grid gap-8 grid-cols-1 sm:grid-cols-2 sm:gap-4 lg:gap-10 lg:grid-cols-3 my-10'>
+            </h2>
+            <div className='grid gap-8 grid-cols-1 sm:grid-cols-2 sm:gap-4 lg:gap-10 lg:grid-cols-3 my-10'>
                 {
                     blogs?.map((blog) => {
                         return (!(slug == blog.slug) && (
@@ -35,7 +35,7 @@ const RelatedBlogs = (props) => {
                         ))
                     })
                 }
-            </section>
+            </div>
         </div>
     )
 }

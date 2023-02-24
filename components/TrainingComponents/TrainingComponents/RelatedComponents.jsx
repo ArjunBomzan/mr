@@ -19,7 +19,7 @@ const RelatedComponents = () => {
     <div className=" sm:flex-col flex-col flex gap-10 mb-10 mt-10">
 
       <div className=''>
-        <p className="font-bold text-3xl">Related Courses</p>
+        <h2 className="font-bold text-3xl">Related Courses</h2>
         <div
           className="grid gap-2 mt-4 overflow-auto grid-cols-1 sm:grid-cols-2  lg:grid-cols-3"
         // style={{ gridTemplateColumns: "1fr 1fr" }}
@@ -33,7 +33,7 @@ const RelatedComponents = () => {
                   key={course.id}
                 >
                   <Image width={450} height={450} loading="lazy" src={`${process.env.DOMAIN}${course.image}`} className="w-20" alt={`${course.slug}`} />
-                  <span className="whitespace-nowrap truncate overflow-hidden">{course.title}</span>
+                  <h3 className="whitespace-nowrap truncate overflow-hidden">{course.title}</h3>
                 </Link>))
             })
           }
@@ -41,12 +41,12 @@ const RelatedComponents = () => {
       </div>
 
       <div className="">
-        <p className="font-bold text-3xl">Browse by tags.</p>
+        <h2 className="font-bold text-3xl">Browse by tags.</h2>
         <div className="flex gap-3 flex-wrap mt-4" style={{ color: "blue" }}>
-          <span className="cursor-pointer">#PHP</span>
-          <span className="cursor-pointer">#Vue.Js Career</span>
-          <span className="cursor-pointer">#Web Development</span>
-          <span className="cursor-pointer">#MERN</span>
+          <h3 className="cursor-pointer">#PHP</h3>
+          <h3 className="cursor-pointer">#Vue.Js Career</h3>
+          <h3 className="cursor-pointer">#Web Development</h3>
+          <h3 className="cursor-pointer">#MERN</h3>
         </div>
       </div>
     </div >

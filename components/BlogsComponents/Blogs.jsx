@@ -13,6 +13,7 @@ const Blogs = (props) => {
                 props?.blogs?.map((blog) => {
                   return (
                     <BlogCard
+                      index={true}
                       title={blog.title}
                       blurb={blog.short_desc}
                       thumbnail={blog.img ? blog.img : blog.image}
