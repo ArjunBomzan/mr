@@ -22,7 +22,7 @@ const HomeSuccessStories = (props) => {
                         height: "130px",
                         width: "100%",
                         objectFit: "cover"
-                    }} className="training-card-img-div" />
+                    }} className="training-card-img-div" alt={title} />
                     <div className="p-4" style={{
                         height: "130px"
                     }}>
