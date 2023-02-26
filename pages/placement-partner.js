@@ -32,7 +32,27 @@ export default function Home({ partners }) {
     )
 }
 
-export async function getServerSideProps() {
+// export async function getStaticProps({ params }) {
+//     const res = await fetch(`${process.env.DOMAIN_V1}coursecombine/${params.slug}/`)
+
+//     if (!res.ok) {
+//         return {
+//             notFound: true,
+//         };
+//     }
+
+//     const course = await res.json()
+
+//     const data = await fetch(`${process.env.DOMAIN_V1}course/`)
+//     const course_list = await data.json()
+//     return {
+//         props: { course, course_list, course_id: params.slug },
+//         revalidate: 60 * 60  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it. 
+//     }
+// }
+
+
+export async function getStaticProps() {
     let data = []
     try {
         const res = await fetch(`${process.env.DOMAIN_V1}placementpartner/`)
@@ -43,6 +63,7 @@ export async function getServerSideProps() {
     }
 
     return {
-        props: { partners: data }
+        props: { partners: data },
+        revalidate: 12 * 60 * 60
     }
 }
