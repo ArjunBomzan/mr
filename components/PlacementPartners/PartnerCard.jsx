@@ -1,8 +1,11 @@
+import Link from "next/link"
 import Image from "next/image"
+
 const PartnerCard = (props) => {
     return (
-        <div
-            // href={`${props?.course?.link}`}
+        <Link
+            href={`${props?.course?.link}`}
+            target="_blank"
             className='training-card cursor-pointer relative bg-white partner h-12 sm:h-20 bg-contain sm:bg-cover   '
             style={{
                 flexGrow: "0",
@@ -15,7 +18,7 @@ const PartnerCard = (props) => {
             <Image width={550} height={550} src={`${process.env.DOMAIN}${props?.course?.image}`} alt={"partner-company-logo"} className={"w-full h-full"} style={{
                 objectFit: "cover"
             }} />
-        </div>
+        </Link>
     )
 }
 
