@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import Blogs from '../BlogsComponents/Blogs'
 
 import Jumpstart from '../HomePageComponents/Jumpstart'
-import OurServices from '../HomePageComponents/OurServices'
+// import OurServices from '../HomePageComponents/OurServices'
 import ServicesBanner from './ServicesBanner'
 import Trainings from '../TrainingComponents/Trainings'
 import dynamic from 'next/dynamic'
@@ -22,7 +22,7 @@ const Services = () => {
     <main>
       <ServicesBanner />
       <Jumpstart />
-      <OurServices />
+      {/* <OurServices /> */}
       {/* <Discover /> */}
       <Blogs />
       <Trainings />

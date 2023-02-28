@@ -4,8 +4,6 @@ import BlogsBanner from "./BlogsBanner";
 const Blogs = (props) => {
   return (
     <>
-
-      
           <main className={`h-max w-full`}>
             <BlogsBanner title="Blogs" desc="Got a moment to read our latest blogs?" />
             <section className='grid gap-8 grid-cols-1 sm:grid-cols-2 md:gap-10 lg:gap-10 lg:grid-cols-3 my-10 pt-4 pb-4 px-8 sm:px-12 md:px-14 lg:px-18 '>

@@ -7,7 +7,7 @@ const BlogCard = ({ thumbnail, title, blurb, url, imgAlt, index }) => {
   const type = router.pathname.split('/')[1]
   return (
     <Link
-      href={`/${(type == "tech-services" || type == "services") ? "tech-services" : "blogs"}/${url}`}
+      href={`/blogs/${url}`}
       className='cursor-pointer h-[450px] blog-container image-box bg-white flex flex-col rounded-md duration-500'
     >
       <div className='image-box max-h-56 min-h-56 h-56'>
