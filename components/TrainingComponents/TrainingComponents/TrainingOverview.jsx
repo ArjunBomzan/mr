@@ -20,26 +20,26 @@ const TrainingOverview = (props) => {
 
         if (limitOverView && first_page_load) {
 
-            setTimeout(() =>{
+            setTimeout(() => {
 
                 // Get the navigation bar element
-                const navbar = document.getElementById('navbar--sticky');zz
-    
+                const navbar = document.getElementById('navbar--sticky'); 
+
                 // Get the element to scroll to
                 const syllabus = document.getElementById('course_syllabus');
-    
+
                 // Get the offset position of the element to scroll to
                 const syllabusOffset = syllabus.offsetTop;
-    
+
                 // Get the height of the navigation bar element
                 const navbarHeight = navbar.offsetHeight;
-    
+
                 // Calculate the final position to scroll to
                 const finalPosition = syllabusOffset - navbarHeight - 40;
-    
+
                 // Scroll to the final position
                 window.scrollTo({ top: finalPosition, behavior: 'smooth' });
-            },100)
+            }, 100)
         } else {
             first_page_load = true;
         }
@@ -60,9 +60,9 @@ const TrainingOverview = (props) => {
             }} onClick={() => { setlimitOverView(!limitOverView) }}>
                 {
                     limitOverView ?
-                        <><span> <Image src={DownArrow} height={16} width={16} className="inline" />  </span> <p className="inline">Read More</p></>
+                        <><span> <Image alt="arrow-down-icon" src={DownArrow} height={16} width={16} className="inline" />  </span> <p className="inline">Read More</p></>
                         :
-                        <><span> <Image src={UpArrow} height={16} width={16} className="inline" />  </span> <p className="inline">Read Less</p></>
+                        <><span> <Image alt="arrow-up-icon" src={UpArrow} height={16} width={16} className="inline" />  </span> <p className="inline">Read Less</p></>
                 }
             </div>
         </div>

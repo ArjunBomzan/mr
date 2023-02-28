@@ -12,7 +12,10 @@ const TrainingInquiry = (props) => {
         ContactListApi({ setSubmiting, data, reset, router })
     }
     return (
-        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full mt-5 form" id="quick_inquiry" onSubmit={handleSubmit(onSubmit)}>
+        <form style={{
+            position: "sticky",
+            top: "100px"
+        }} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full mt-5 form" id="quick_inquiry" onSubmit={handleSubmit(onSubmit)}>
             <span className="block text-lg font-bold mb-2">Quick Inquiry</span>
             <div className="mb-4">
                 <label className="block text-sm font-bold mb-2" htmlFor="username">
