@@ -5,6 +5,7 @@ const PartnerCard = (props) => {
     return (
         <Link
             href={`${props?.course?.link}`}
+            target="_blank"
             className='training-card cursor-pointer relative bg-white partner h-12 sm:h-20 bg-contain sm:bg-cover   '
             style={{
                 flexGrow: "0",
