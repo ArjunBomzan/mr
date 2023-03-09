@@ -2,11 +2,12 @@ import Head from "next/head";
 import Blogs from "../../components/BlogsComponents/Blogs";
 import Header from "../../components/HeaderComponents/Header";
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
     const res = await fetch(`${process.env.DOMAIN_V1}singleblog/`)
     const data = await res.json()
     return {
-        props: { blogs: data }
+        props: { blogs: data },
+        revalidate: 60 * 60 * 24 * 3  // 3 day
     }
 }
 

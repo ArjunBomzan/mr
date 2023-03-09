@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import AboutUs from '../components/AboutUsComponents/AboutUs'
 import Header from '../components/HeaderComponents/Header'
+
 export default function Home(props) {
     let meta_title = "About us | mindrisers Nepal"
     let meta_description = ""
@@ -24,22 +25,7 @@ export default function Home(props) {
                 {/* <meta name="twitter:image" content={meta_image} /> */}
             </Head>
             <Header />
-            <AboutUs members={props.members} />
+            <AboutUs members={[]} />
         </>
     )
 }
-
-export async function getServerSideProps() {
-    let data = []
-    try {
-        // const res = await fetch(`${process.env.DB_DOMAIN_V1}teammember/`)
-        // data = await res.json()
-    }
-    catch (err) {
-    }
-
-    return {
-        props: { members: data }
-    }
-}
-

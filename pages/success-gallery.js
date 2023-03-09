@@ -34,7 +34,7 @@ const services = ({ successStoreis }) => {
     )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     let data = []
     try {
 
@@ -46,7 +46,8 @@ export async function getServerSideProps() {
 
     }
     return {
-        props: { successStoreis: data }
+        props: { successStoreis: data },
+        revalidate: 60 * 60 * 24 * 3  //  3 day
     }
 
 

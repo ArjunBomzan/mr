@@ -64,6 +64,6 @@ export async function getStaticProps() {
 
     return {
         props: { partners: data },
-        revalidate: 12 * 60 * 60
+        revalidate: 60 * 60 * 24 * 3  // 3 day
     }
 }
