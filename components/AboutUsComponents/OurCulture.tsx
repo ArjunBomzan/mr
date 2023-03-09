@@ -15,7 +15,7 @@ const OurCulture = () => {
             </svg>
           }
           title='Vision'
-          info='We have a vision'
+          info='Empowering global innovation through cutting-edge technology education.'
           />
         <CultureCard
           icon={
@@ -24,7 +24,7 @@ const OurCulture = () => {
           </svg>
           }
           title='Mission'
-          info='We have a mission'
+          info='Equipping individuals with industry-relevant skills to shape the digital world.'
           />
         <CultureCard
           icon={
@@ -33,7 +33,7 @@ const OurCulture = () => {
             </svg>
           }
           title='Motto'
-          info='We have a motto'
+          info='Inspiring creativity, driving innovation, shaping the future.'
         />
       </div>
     </section>

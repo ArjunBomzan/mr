@@ -32,8 +32,8 @@ export default function Home(props) {
 export async function getServerSideProps() {
     let data = []
     try {
-        const res = await fetch(`${process.env.DB_DOMAIN_V1}teammember/`)
-        data = await res.json()
+        // const res = await fetch(`${process.env.DB_DOMAIN_V1}teammember/`)
+        // data = await res.json()
     }
     catch (err) {
     }
