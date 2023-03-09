@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Header from '../../components/HeaderComponents/Header';
 import Trainings from "../../components/TrainingComponents/Trainings";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   let data = []
   try {
     const res = await fetch(`https://api.mindrisers.jobrisers.com/blog/api/v1/course/`)
@@ -12,7 +12,9 @@ export async function getServerSideProps() {
   }
 
   return {
-    props: { courses: data }
+    props: { courses: data },
+    revalidate: 60 * 60 * 24  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it. 
+
   }
 }
 

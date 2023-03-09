@@ -4,7 +4,8 @@ import Image from "next/image"
 const TrainingCard = (props) => {
     return (
         <Link
-            href={`/${props?.course?.category == 'IT' ? 'courses' : 'after+2-courses'}/${props?.course?.slug}`}
+            // href={`/${props?.course?.category == 'IT' ? 'courses' : 'after+2-courses'}/${props?.course?.slug}`}
+            href={`/courses/${props?.course?.slug}`}
             className='training-card cursor-pointer relative bg-white'
             style={{ flexGrow: "0" }}
         >

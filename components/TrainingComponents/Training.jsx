@@ -26,8 +26,8 @@ const Training = (props) => {
     return (
         <>
             <Head>
-                <title>{props?.course?.data?.course[0]?.page_title}</title>
-                <meta name="title" content={props?.course?.data?.course[0]?.page_title}/>
+                <title>{props?.course?.data?.course[0]?.title}</title>
+                <meta name="title" content={props?.course?.data?.course[0]?.title}/>
 
                 {
                     props?.course?.data?.meta?.map((meta) => {
@@ -39,7 +39,7 @@ const Training = (props) => {
                 {/* facebook og tags */}
                 <meta property="og:url" content={current_url} />
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content={props?.course?.data?.course[0]?.page_title} />
+                <meta property="og:title" content={props?.course?.data?.course[0]?.title} />
                 <meta property="og:description" content={meta_description} />
                 <meta property="og:image" content={meta_image} />
 
@@ -47,7 +47,7 @@ const Training = (props) => {
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="Mindrisers" />
                 <meta name="twitter:creator" content="@mindrisers" />
-                <meta property="twitter:title" content={props?.course?.data?.course[0]?.page_title} />
+                <meta property="twitter:title" content={props?.course?.data?.course[0]?.title} />
                 <meta property="twitter:description" content={meta_description} />
                 <meta name="twitter:image" content={meta_image} />
             </Head>
