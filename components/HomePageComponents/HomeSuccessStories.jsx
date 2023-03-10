@@ -3,17 +3,22 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { homeSuccessStoriesApi } from "../../pages/api/apiCalls";
+// import { homeSuccessStoriesApi } from "../../pages/api/apiCalls";
 import { useEffect, useState } from 'react'
 import { useWindowSize } from "../ScreenSize";
 import Image from "next/image"
 
 const HomeSuccessStories = (props) => {
     const size = useWindowSize({ useEffect, useState });
-    const [successStoreis, setSuccessStories] = useState([]);
-    useEffect(() => {
-        homeSuccessStoriesApi({ setSuccessStories })
-    }, []);
+
+    // const [successStoreis, setSuccessStories] = useState([]);
+    // useEffect(() => {
+    //     homeSuccessStoriesApi({ setSuccessStories })
+    // }, []);
+
+    const successStoreis = props.successStoreis;
+
+
     const Card = ({ title, content, img }) => {
         return (
             <div className="flex justify-center w-full bg-white rounded-lg shadow-lg card-shadow cursor-pointer">

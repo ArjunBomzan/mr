@@ -4,6 +4,7 @@ import Header from '../components/HeaderComponents/Header'
 import Partners from '../components/PlacementPartners/Partners'
 
 export default function Home({ partners }) {
+    
     let meta_title = "Placement Partners | Internships | Mindrisers Nepal"
     let meta_description = ""
 

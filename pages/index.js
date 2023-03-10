@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Gallery from '../components/HomePageComponents/Gallery'
 import HomeContact from '../components/HomePageComponents/HomeContact'
@@ -8,12 +8,16 @@ import Mission from "../components/HomePageComponents/Mission"
 import Splash from "../components/HomePageComponents/Splash"
 import TrainingsHomePage from "../components/HomePageComponents/TrainingsHomePage"
 import HomeAboutUs from "../components/HomePageComponents/HomeAboutUs"
+// import HomeSuccessStories from "../components/HomePageComponents/HomeSuccessStories"
+// import TestimonialNoSsr from "../components/HomePageComponents/Testimonials"
 
 export default function Home(props) {
+
   const TestimonialNoSsr = dynamic(
     () => import("../components/HomePageComponents/Testimonials"),
     { ssr: false }
   )
+
   const HomeSuccessStories = dynamic(
     () => import("../components/HomePageComponents/HomeSuccessStories"),
     { ssr: false }
@@ -49,12 +53,11 @@ export default function Home(props) {
       <main>
         <Splash />
         <TrainingsHomePage courses={props.courses} />
-        
         <HomeAboutUs />
         <Mission />
-        <Gallery />
+        <Gallery gallery_data={props.gallery_data} />
         <HomeContact />
-        <HomeSuccessStories />
+        <HomeSuccessStories successStoreis={props.successStoreis} />
         <Jumpstart />
         <TestimonialNoSsr />
       </main>
@@ -63,17 +66,33 @@ export default function Home(props) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   let data = []
+  let gallery_data = [];
+  let successStoreis = [];
+
   try {
 
     const res = await fetch(`https://api.mindrisers.jobrisers.com/blog/api/v1/course/`)
     data = await res.json();
+
+    const gallery_res = await fetch(`https://api.mindrisers.jobrisers.com/blog/api/v1/gallery/`)
+    gallery_data = await gallery_res.json();
+
+    const successStoreis_res = await fetch(`https://api.mindrisers.jobrisers.com/blog/api/v1/successstoryhome/`)
+    successStoreis = await successStoreis_res.json();
+
   }
   catch (err) {
   }
 
   return {
-    props: { courses: data }
+    props: {
+      courses: data,
+      gallery_data: gallery_data,
+      successStoreis
+    },
+    revalidate: 60 * 60 * 24 * 7  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it. 
+
   }
 }
