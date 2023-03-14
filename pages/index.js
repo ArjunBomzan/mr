@@ -1,4 +1,4 @@
-// import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Gallery from '../components/HomePageComponents/Gallery'
 import HomeContact from '../components/HomePageComponents/HomeContact'
