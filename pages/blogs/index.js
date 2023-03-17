@@ -7,7 +7,7 @@ export const getStaticProps = async () => {
     const data = await res.json()
     return {
         props: { blogs: data },
-        revalidate: 60 * 60 * 24 * 3  // 3 day
+        revalidate: 60 * 60 * 24 * 1  // 3 day
     }
 }
 

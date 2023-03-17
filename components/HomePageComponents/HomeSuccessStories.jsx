@@ -3,17 +3,25 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { homeSuccessStoriesApi } from "../../pages/api/apiCalls";
+import { homeSuccessStoriesApi } from "../../pages/api/apiCalls";
 import { useEffect, useState } from 'react'
 import { useWindowSize } from "../ScreenSize";
 import Image from "next/image"
 
 const HomeSuccessStories = (props) => {
+
+    // const [success_stories_api_data, setSuccessStories] = useState(initialState);
+    // useEffect(() =>{
+
+    // },[])
+
     const size = useWindowSize({ useEffect, useState });
 
-    // const [successStoreis, setSuccessStories] = useState([]);
+    // const [successStoreis, setSuccessStories] = useState(props.successStoreis);
     // useEffect(() => {
-    //     homeSuccessStoriesApi({ setSuccessStories })
+    //     if (!successStoreis) {
+    //         homeSuccessStoriesApi({ setSuccessStories })
+    //     }
     // }, []);
 
     const successStoreis = props.successStoreis;

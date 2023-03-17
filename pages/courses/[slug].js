@@ -24,8 +24,16 @@ export async function getStaticProps({ params }) {
 
     const data = await fetch(`${process.env.DOMAIN_V1}course/`)
     const course_list = await data.json()
+
+
+    const success_storie_res = await fetch(`${process.env.DOMAIN_V1}successstoryhome/`)
+    const success_stories = await success_storie_res.json()
+
+
+
+
     return {
-        props: { course, course_list, course_id: params.slug },
+        props: { course, course_list, course_id: params.slug, success_stories },
         revalidate: 60 * 60  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it. 
     }
 }
@@ -59,7 +67,7 @@ export default function course(props) {
         <div>
             <Header />
             <main>
-                <Training course={props?.course} course_list={props?.course_list} course_id={props?.course_id} />
+                <Training {...props} />
             </main>
         </div>
     )

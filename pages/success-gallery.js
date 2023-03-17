@@ -47,7 +47,7 @@ export async function getStaticProps() {
     }
     return {
         props: { successStoreis: data },
-        revalidate: 60 * 60 * 24 * 3  //  3 day
+        revalidate: 60 * 60 * 24 * 1  //  3 day
     }
 
 

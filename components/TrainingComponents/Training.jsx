@@ -27,7 +27,7 @@ const Training = (props) => {
         <>
             <Head>
                 <title>{props?.course?.data?.course[0]?.title}</title>
-                <meta name="title" content={props?.course?.data?.course[0]?.title}/>
+                <meta name="title" content={props?.course?.data?.course[0]?.title} />
 
                 {
                     props?.course?.data?.meta?.map((meta) => {
@@ -59,7 +59,7 @@ const Training = (props) => {
                             <TrainingSubHeader />
                             <div className='lg:px-44 md:px-20 px-6 sm:px-16'>
                                 <TrainingContainer course={props?.course} course_list={props?.course_list} course_id={props?.course_id} />
-                                <HomeSuccessStories in_training_page={true} />
+                                <HomeSuccessStories in_training_page={true} successStoreis={props?.success_stories} />
                                 <RelatedComponents course={props?.course} />
                             </div>
                         </>
