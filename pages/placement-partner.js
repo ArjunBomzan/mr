@@ -4,7 +4,7 @@ import Header from '../components/HeaderComponents/Header'
 import Partners from '../components/PlacementPartners/Partners'
 
 export default function Home({ partners }) {
-    
+
     let meta_title = "Placement Partners | Internships | Mindrisers Nepal"
     let meta_description = ""
 
@@ -65,6 +65,8 @@ export async function getStaticProps() {
 
     return {
         props: { partners: data },
-        revalidate: 60 * 60 * 24 * 1  // 3 day
+        // revalidate: 60 * 60 * 24 * 1  // 3 day
+        revalidate: 60 * 5  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it. 
+
     }
 }
