@@ -1,12 +1,13 @@
 import Image from "next/image"
 const Card = ({ title, content, img }) => {
     return (
-        <div className="flex justify-center w-full bg-white rounded-lg shadow-lg card-shadow cursor-pointer">
+        <div className="flex justify-center w-full bg-white rounded-lg shadow-lg card-shadow ">
             <div className="block w-full">
                 <Image height={450} width={450} src={img} style={{
-                    height: "150px",
+                    height: "220px",
                     width: "100%",
-                    objectFit: "cover"
+                    objectFit: "cover",
+                    // objectPosition:"top",
                 }} className="training-card-img-div" alt={title} />
                 <div className="p-4">
                     <h2 className="text-gray-900 text-xl font-medium mb-1">{title}</h2>

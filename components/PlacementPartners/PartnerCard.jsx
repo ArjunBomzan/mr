@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 
 const PartnerCard = (props) => {
+    console.log({props})
     return (
         <Link
             href={`${props?.course?.link}`}
@@ -15,7 +16,7 @@ const PartnerCard = (props) => {
 
             }}
         >
-            <Image width={550} height={550} src={`${process.env.DOMAIN}${props?.course?.image}`} alt={"partner-company-logo"} className={"w-full h-full"} style={{
+            <Image width={550} height={550} src={`${process.env.DOMAIN}${props?.course?.image}`} alt={`${props?.course?.name}-logo`} className={"w-full h-full"} style={{
                 objectFit: "cover"
             }} />
         </Link>

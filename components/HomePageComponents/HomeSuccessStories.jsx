@@ -29,12 +29,13 @@ const HomeSuccessStories = (props) => {
 
     const Card = ({ title, content, img }) => {
         return (
-            <div className="flex justify-center w-full bg-white rounded-lg shadow-lg card-shadow cursor-pointer">
+            <div className="flex justify-center w-full bg-white rounded-lg shadow-lg card-shadow">
                 <div className="block w-full" >
                     <Image height={450} width={450} src={img} style={{
-                        height: "130px",
+                        height: "200px",
                         width: "100%",
-                        objectFit: "cover"
+                        objectFit: "cover",
+                        // objectPosition:"top",
                     }} className="training-card-img-div" alt={title} />
                     <div className="p-4" style={{
                         height: "130px"
