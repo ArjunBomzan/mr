@@ -53,6 +53,7 @@
     "web-vitals": "^2.1.4"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^13.2.4",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",
     "axios": "^1.2.0",
