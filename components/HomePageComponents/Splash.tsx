@@ -15,7 +15,7 @@ const Splash = () => {
             }}>#1</p>
           </div>
           <h1 className='w-4/5 mt-2  text-[1rem] font-extrabold text-center text-white text-fade h-max sm:w-1/2 sm:text-[2rem]'>
-            IT Training Institue In Nepal
+            IT Training Institute In Nepal
           </h1>
           <div
             // className='w-1/2 text-center slide-right-to-left mt-5 text-slate-400'
