@@ -10,9 +10,13 @@ const RelatedBlogs = (props) => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        axios.get(`${process.env.DOMAIN_V1}singleblog/?category=${props?.blog?.category}`)
+        function fetchBlog(){
+            axios.get(`${process.env.DOMAIN_V1}singleblog/?category=${props?.blog?.category}`)
             .then(res => setBlogs(res.data))
             .catch(err => console.log(err))
+        }
+        fetchBlog()
+        
     }, []);
     
     return (

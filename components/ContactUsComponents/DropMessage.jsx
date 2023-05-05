@@ -2,14 +2,26 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ContactListApi } from "../../pages/api/apiCalls";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const DropMessage = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const router = useRouter();
     const [submiting, setSubmiting] = useState(false);
+    const [token, setToken] = useState("")
+    const [error, setError] = useState("")
+
     const onSubmit = data => {
+
+        if (!token) {
+            setError("You must verify the captcha")
+            return;
+        }
+
+
         setSubmiting(true)
         ContactListApi({ setSubmiting, data, reset, router })
+        setToken("")
     };
 
     return (
@@ -60,7 +72,20 @@ const DropMessage = () => {
                         {...register("message", { required: true })}
                     />
                     {errors?.name?.type === "required" && <small className="text-red-500 ">This field is required</small>}
-
+                    <div className="mt-3">
+                        <ReCAPTCHA
+                            sitekey="6LdOx-IlAAAAAOvVO0qqqq6_EFe6V1Rqip_s55QN"
+                            onChange={(e) => {
+                                setToken(e)
+                                setError("")
+                            }}
+                        />
+                        {
+                            error
+                            &&
+                            <p className="error-msg--small">{error}</p>
+                        }
+                    </div>
                     <button
                         type='submit'
                         name="name"

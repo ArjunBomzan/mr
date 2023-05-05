@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AdmissionFormApi, DropDownOptions } from "../../pages/api/apiCalls"
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 const Admission = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -10,10 +12,22 @@ const Admission = () => {
   const [course, setCourse] = useState([]);
   const [schedule, setSchedule] = useState([]);
   const [qualification, setQualification] = useState([]);
+  const [token, setToken] = useState("")
+  const [error, setError] = useState("")
+
   const onSubmit = data => {
+
+
+    if (!token) {
+      setError("You must verify the captcha")
+      return;
+    }
+
+
     setSubmiting(true)
     data = { ...data, question: data.question || "..." }
     AdmissionFormApi({ setSubmiting, data, reset, router })
+    setToken("")
   }
   useEffect(() => {
     DropDownOptions({ setCourse, setSchedule, setQualification })
@@ -195,6 +209,23 @@ const Admission = () => {
               type="submit">
               Submit
             </button> */}
+            <div className="  basis-[100%]" style={{
+              flexBasis: "100%"
+            }}>
+
+              <ReCAPTCHA
+                sitekey="6LdOx-IlAAAAAOvVO0qqqq6_EFe6V1Rqip_s55QN"
+                onChange={(e) => {
+                  setToken(e)
+                  setError("")
+                }}
+              />
+              {
+                error
+                &&
+                <p className="error-msg--small">{error}</p>
+              }
+            </div>
 
             <button
               type='submit'
