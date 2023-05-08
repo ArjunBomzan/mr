@@ -45,7 +45,7 @@ export async function getStaticProps({ params }) {
     const blog = await res.json()
     return {
         props: { blog },
-        revalidate: 60 * 60 * 24 * 3  // even when the content is not changed.. it revalidates... 
+        revalidate: 60 * 60 * 24  // even when the content is not changed.. it revalidates... 
         // revalidate: 60 * 1  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it. 
 
     }
