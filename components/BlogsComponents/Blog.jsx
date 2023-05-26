@@ -8,6 +8,7 @@ import RelatedBlogs from './RelatedBlogs'
 import dynamic from 'next/dynamic'
 import Head from "next/head"
 import SingleBlogBanner from './SingleBlogBanner'
+import formatDate from '../../utils/formatDate'
 // import sanitizeHtml from 'sanitize-html';
 
 
@@ -30,11 +31,11 @@ const Blog = (props) => {
             <div className='px-0 lg:px-44 pb-20 ' >
               <div >
                 <SingleBlogBanner
-                blog={props.blog}
-                banner={props?.blog?.banner}
-                title={props?.blog?.title}
-                auth_name={props?.blog?.auth_name}
-                date={props?.blog?.updated_at}
+                  blog={props.blog}
+                  banner={props?.blog?.banner}
+                  title={props?.blog?.title}
+                  auth_name={props?.blog?.auth_name}
+                  date={props?.blog?.updated_at}
                 />
               </div >
               <main className='blogs-container bg-white  px-6 lg:px-0'>
@@ -46,6 +47,7 @@ const Blog = (props) => {
                     </ReactMarkdown> */}
                   </article>
                 </div>
+              <p className='my-2'>Created Date :  {formatDate(props?.blog?.created_at)}</p>
               </main>
               <BlogShare />
               <RelatedBlogs blog={props?.blog} slug={slug} />
