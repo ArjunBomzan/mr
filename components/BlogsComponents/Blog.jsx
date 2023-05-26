@@ -7,6 +7,7 @@ import BlogsBanner from './BlogsBanner'
 import RelatedBlogs from './RelatedBlogs'
 import dynamic from 'next/dynamic'
 import Head from "next/head"
+import SingleBlogBanner from './SingleBlogBanner'
 // import sanitizeHtml from 'sanitize-html';
 
 
@@ -28,12 +29,12 @@ const Blog = (props) => {
             </Head>
             <div className='px-0 lg:px-44 pb-20 ' >
               <div >
-                <BlogsBanner
-                  blog={props.blog}
-                  banner={props?.blog?.banner}
-                  title={props?.blog?.title}
-                  auth_name={props?.blog?.auth_name}
-                  date={props?.blog?.updated_at}
+                <SingleBlogBanner
+                blog={props.blog}
+                banner={props?.blog?.banner}
+                title={props?.blog?.title}
+                auth_name={props?.blog?.auth_name}
+                date={props?.blog?.updated_at}
                 />
               </div >
               <main className='blogs-container bg-white  px-6 lg:px-0'>
