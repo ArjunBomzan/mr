@@ -29,6 +29,7 @@ const Blog = (props) => {
             <div className='px-0 lg:px-44 pb-20 ' >
               <div >
                 <BlogsBanner
+                  blog={props.blog}
                   banner={props?.blog?.banner}
                   title={props?.blog?.title}
                   auth_name={props?.blog?.auth_name}

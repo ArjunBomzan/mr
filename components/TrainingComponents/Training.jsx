@@ -45,7 +45,7 @@ const Training = (props) => {
 
                 {/* twitter og tags */}
                 <meta name="twitter:card" content="summary" />
-                <meta name="twitter:site" content="Mindrisers" />
+                <meta name="twitter:site" content="@mindrisers" />
                 <meta name="twitter:creator" content="@mindrisers" />
                 <meta property="twitter:title" content={props?.course?.data?.course[0]?.title} />
                 <meta property="twitter:description" content={meta_description} />
