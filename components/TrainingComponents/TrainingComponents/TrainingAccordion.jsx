@@ -10,7 +10,7 @@ const TrainingAccordion = (props) => {
                         <div className="accordion-tab" key={syllable.id}>
                             <input type="checkbox" id={syllable.id} />
                             <label className="accordion-tab-label" htmlFor={syllable.id}><h3>{syllable.heading}</h3></label>
-                            <div className="accordion-tab-content" dangerouslySetInnerHTML={{ __html: (syllable?.description) }}>
+                            <div className="accordion-tab-content text-left" dangerouslySetInnerHTML={{ __html: (syllable?.description) }}>
                                 {/* <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
                                     {syllable?.description}
                                 </ReactMarkdown> */}

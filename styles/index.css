@@ -70,7 +70,7 @@ input[type=number] {
 }
 
 .header-socials svg {
-  height: 0.8rem;
+  height: 1rem;
   fill: currentColor;
 }
 
@@ -382,7 +382,8 @@ input[type=number] {
 
 .accordion-tab-content ul {
   list-style-type: disc !important;
-  list-style-position: inside !important;
+  list-style-position: outside !important;
+  padding-left: 2rem;
 }
 
 .testimonial-card-clamp-4 {
