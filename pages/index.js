@@ -73,13 +73,13 @@ export async function getStaticProps() {
 
   try {
 
-    const res = await fetch(`https://api.mindrisers.jobrisers.com/blog/api/v1/course/`)
+    const res = await fetch(`https://mindrisers.com.np/blog/api/v1/course/`)
     data = await res.json();
 
-    const gallery_res = await fetch(`https://api.mindrisers.jobrisers.com/blog/api/v1/gallery/`)
+    const gallery_res = await fetch(`https://mindrisers.com.np/blog/api/v1/gallery/`)
     gallery_data = await gallery_res.json();
 
-    const successStoreis_res = await fetch(`https://api.mindrisers.jobrisers.com/blog/api/v1/successstoryhome/`)
+    const successStoreis_res = await fetch(`https://mindrisers.com.np/blog/api/v1/successstoryhome/`)
     successStoreis = await successStoreis_res.json();
 
   }

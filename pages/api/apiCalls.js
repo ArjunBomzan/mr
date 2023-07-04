@@ -1,7 +1,7 @@
 // import Swal from "sweetalert2";
 import axios from 'axios'
 export const publicRequest = axios.create({
-    baseURL: "https://api.mindrisers.jobrisers.com/blog/api/v1/",
+    baseURL: "https://mindrisers.com.np/blog/api/v1/",
 })
 export async function coursesApi(props) {
     await publicRequest.get(`course/?category=${props.ApiType ? props.ApiType : ""}`)

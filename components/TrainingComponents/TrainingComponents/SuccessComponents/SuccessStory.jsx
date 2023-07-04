@@ -4,7 +4,7 @@ const SuccessStory = (props) => {
     <div className="block p-6 rounded-lg bg-white card-shadow cursor-pointer m-2 my-10 mb-16 flex-[33%]" >
       <div className="flex gap-4 items-center justify-start">
         <Image width={450} height={450}
-          src={`https://api.mindrisers.jobrisers.com${props?.success_story?.image}`}
+          src={`https://mindrisers.com.np${props?.success_story?.image}`}
           className="rounded-full w-10 h-10 shadow-lg "
           alt="Avatar"
         />

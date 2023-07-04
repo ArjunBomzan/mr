@@ -9,11 +9,11 @@ const {
 
 // module.exports = (phase) => {
 //   const env = {
-//     DOMAIN_V1: "https://api.mindrisers.jobrisers.com/blog/api/v1/",
-//     DOMAIN: "https://api.mindrisers.jobrisers.com/"
+//     DOMAIN_V1: "https://mindrisers.com.np/blog/api/v1/",
+//     DOMAIN: "https://mindrisers.com.np/"
 //   }
 //   const images = {
-//     domains: ["api.mindrisers.jobrisers.com"],
+//     domains: ["mindrisers.com.np"],
 //   }
 //   // next.config.js object
 //   return {
@@ -26,11 +26,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 const env = {
-  DOMAIN_V1: "https://api.mindrisers.jobrisers.com/blog/api/v1/",
-  DOMAIN: "https://api.mindrisers.jobrisers.com/"
+  DOMAIN_V1: "https://mindrisers.com.np/blog/api/v1/",
+  DOMAIN: "https://mindrisers.com.np/"
 }
 const images = {
-  domains: ["api.mindrisers.jobrisers.com"],
+  domains: ["mindrisers.com.np"],
 }
 
 module.exports = withBundleAnalyzer({

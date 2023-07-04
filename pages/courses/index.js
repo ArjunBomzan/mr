@@ -5,7 +5,7 @@ import Trainings from "../../components/TrainingComponents/Trainings";
 export async function getStaticProps() {
   let data = []
   try {
-    const res = await fetch(`https://api.mindrisers.jobrisers.com/blog/api/v1/course/`)
+    const res = await fetch(`https://mindrisers.com.np/blog/api/v1/course/`)
     data = await res.json()
   }
   catch (err) {

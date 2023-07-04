@@ -12,7 +12,7 @@ const TrainingBanner = (props) => {
             <div
                 className=' bg-center bg-cover bg-no-repeat text-md training-banner relative '
                 style={{
-                    // backgroundImage: `url("https://api.mindrisers.jobrisers.com${size?.width < 600 ? course?.mobile_banner : course?.banner}")`,
+                    // backgroundImage: `url("https://mindrisers.com.np${size?.width < 600 ? course?.mobile_banner : course?.banner}")`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundColor: "rgba(0,0,0,0.75)",
@@ -22,7 +22,7 @@ const TrainingBanner = (props) => {
 
                 }}
             >
-                <Image width={1500} height={1500} src={`https://api.mindrisers.jobrisers.com${size?.width < 600 ? course?.mobile_banner : course?.banner}`}
+                <Image width={1500} height={1500} src={`https://mindrisers.com.np${size?.width < 600 ? course?.mobile_banner : course?.banner}`}
                     style={{
                         position: "fixed",
                         height: "100%",

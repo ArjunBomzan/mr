@@ -28,7 +28,7 @@ const TrainingsHomePage = (props) => {
 // export async function getServerSideProps() {
 //     let data = []
 //     try {
-//         const res = await axios.get(`https://api.mindrisers.jobrisers.com/blog/api/v1/course/`)
+//         const res = await axios.get(`https://mindrisers.com.np/blog/api/v1/course/`)
 //         data = await res.data
 //     }
 //     catch (err) {
