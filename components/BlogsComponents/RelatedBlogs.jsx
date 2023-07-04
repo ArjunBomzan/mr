@@ -10,20 +10,24 @@ const RelatedBlogs = (props) => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        function fetchBlog(){
+        function fetchBlog() {
             axios.get(`${process.env.DOMAIN_V1}singleblog/?category=${props?.blog?.category}`)
-            .then(res => setBlogs(res.data))
-            .catch(err => console.log(err))
+                .then(res => setBlogs(res.data))
+                .catch(err => console.log(err))
         }
         fetchBlog()
-        
+
     }, []);
-    
+
     return (
         <div className=" px-6 lg:px-0" >
-            <h2 className='text-4xl font-bold'>
-                {type == "blogs" && <span>Recent Blogs</span>}
-            </h2>
+            {
+                blogs?.length > 0
+                &&
+                <h2 className='text-4xl font-bold'>
+                    {type == "blogs" && <span>Recent Blogs</span>}
+                </h2>
+            }
             <div className='grid gap-8 grid-cols-1 sm:grid-cols-2 sm:gap-4 lg:gap-10 lg:grid-cols-3 my-10'>
                 {
                     blogs?.map((blog) => {
