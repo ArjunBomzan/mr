@@ -8,7 +8,7 @@ const HomeAboutUs = () => {
         <div className='flex flex-col w-full lg:w-1/2 space-y-9 justify-center '>
           <h2 className='w-5/6 text-xl font-bold sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl' >About Us</h2>
           <p className='text-justify about-us'>
-            Mind Risers is a parent company of <Link href='https://jobrisers.com/'>jobrisers.com</Link>,  <Link href='https://tummytruck.com.np/'>tummytruck.com.np</Link>, <Link href='https://digitalpalika.org/'>digitalpalika.org</Link> , mind risers software development company, and the training institute. We are the only company in Nepal where we guarantee paid internship and job placement after the course is completed in our software development and digital marketing company.
+            Mind Risers is a parent company of mindrisers technology pvt.ltd, <Link href='https://tummytruck.com.np/'>tummytruck</Link>, <Link href='https://digitalpalika.org/'>digitalpalika</Link> , mindrisers software development company, and the training institute. We are the only company in Nepal where we guarantee paid internship and job placement after the course is completed in our software development and digital marketing company.
             What we believe is practical knowledge can be delivered only if the institution continuously does research and development in the same place.
           </p>
         </div>

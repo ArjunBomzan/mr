@@ -3,7 +3,7 @@ const Card = ({ title, content, img }) => {
     return (
         <div className="flex justify-center w-full bg-white rounded-lg shadow-lg card-shadow ">
             <div className="block w-full">
-                <Image height={450} width={450} src={img} style={{
+                <Image height={350} width={350} src={img} style={{
                     height: "220px",
                     width: "100%",
                     objectFit: "cover",
