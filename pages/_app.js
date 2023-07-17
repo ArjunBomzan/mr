@@ -141,9 +141,10 @@ function MyApp({ Component, pageProps }) {
     }}>
       <div
         id="admission-modal-box"
+        className="md:w-3/4 lg:w-1/2"
         style={{
           borderRadius: "15px",
-          width: "50%",
+          // width: "50%",
           marginRight: "auto",
           marginLeft: "auto",
           background: "white",
@@ -189,7 +190,7 @@ function MyApp({ Component, pageProps }) {
           color: "white"
         }}> View Courses ! </Link>
         <hr className=" mt-2 mb-2" />
-        <Link href="/courses" className="text-green-500 underline" style={{
+        <Link href="/" className="text-green-500 underline" style={{
           textUnderlinePosition: "under"
         }}>Home</Link>
       </div>

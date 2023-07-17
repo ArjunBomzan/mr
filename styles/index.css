@@ -263,6 +263,7 @@ input[type=number] {
 
 .form p {
   color: red;
+  font-size:0.8rem;
 }
 
 .form p::before {
