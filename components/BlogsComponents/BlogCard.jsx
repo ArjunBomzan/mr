@@ -9,10 +9,10 @@ const BlogCard = ({ thumbnail, title, blurb, url, imgAlt, index, created_at }) =
   return (
     <Link
       href={`/blogs/${url}`}
-      className='cursor-pointer h-[450px] blog-container image-box bg-white flex flex-col rounded-md duration-500'
+      className='cursor-pointer blog-container image-box bg-white flex flex-col rounded-md duration-500'
     >
-      <div className='image-box max-h-56 min-h-56 h-56'>
-        <Image width={450} height={450} src={`${process.env.DOMAIN}${thumbnail}`} alt={imgAlt} className=' object-cover bg-cover' />
+      <div className='image-box mb-3  '>
+        <Image width={450} height={450} src={`${process.env.DOMAIN}${thumbnail}`} alt={imgAlt} className=' object-cover bg-cover ' />
       </div>
       <div className=' p-6 pt-0 '>
         <div className=''>
@@ -24,7 +24,7 @@ const BlogCard = ({ thumbnail, title, blurb, url, imgAlt, index, created_at }) =
               <h3 className=' text-neutral-600 font-bold text-xl '>{title}</h3>
 
           }
-          <p className="text-base text-justify line-clamp-4 mt-2">
+          <p className="text-base text-justify line-clamp-3 mt-2">
             {blurb}
           </p>
         </div>

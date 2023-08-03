@@ -22,18 +22,18 @@ import { useRouter } from 'next/router'
        .catch(err => console.log({err}))
    */
 
-export async function getStaticPaths() {
-    const res = await fetch(`${process.env.DOMAIN_V1}singleblog/`)
-    const blogs = await res.json()
+// export async function getStaticPaths() {
+//     const res = await fetch(`${process.env.DOMAIN_V1}singleblog/`)
+//     const blogs = await res.json()
 
-    const paths = blogs?.map((blog) => ({
-        params: { slug: blog.slug },
-    }))
-    return { paths, fallback: "blocking" }
-}
+//     const paths = blogs?.map((blog) => ({
+//         params: { slug: blog.slug },
+//     }))
+//     return { paths, fallback: "blocking" }
+// }
 
 // `getStaticPaths` requires using `getStaticProps`
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
     const res = await fetch(`${process.env.DOMAIN_V1}singleblogslug/${params.slug}/`)
 
     if (!res.ok) {
@@ -45,7 +45,7 @@ export async function getStaticProps({ params }) {
     const blog = await res.json()
     return {
         props: { blog },
-        revalidate: 60 * 60 * 24  // even when the content is not changed.. it revalidates... 
+        // revalidate: 60 * 60 * 24  // even when the content is not changed.. it revalidates... 
         // revalidate: 60 * 1  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it. 
 
     }

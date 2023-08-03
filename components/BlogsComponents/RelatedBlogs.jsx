@@ -12,7 +12,7 @@ const RelatedBlogs = (props) => {
     useEffect(() => {
         function fetchBlog() {
             axios.get(`${process.env.DOMAIN_V1}singleblog/?category=${props?.blog?.category}`)
-                .then(res => setBlogs(res.data))
+                .then(res => setBlogs(res.data?.navigation?.data || []))
                 .catch(err => console.log(err))
         }
         fetchBlog()
@@ -22,10 +22,10 @@ const RelatedBlogs = (props) => {
     return (
         <div className=" px-6 lg:px-0" >
             {
-                blogs?.length > 0
+                blogs?.filter(blog => slug != blog.slug)?.length > 0
                 &&
                 <h2 className='text-4xl font-bold'>
-                    {type == "blogs" && <span>Recent Blogs</span>}
+                    {type == "blogs" && <span> Recent Blogs</span>}
                 </h2>
             }
             <div className='grid gap-8 grid-cols-1 sm:grid-cols-2 sm:gap-4 lg:gap-10 lg:grid-cols-3 my-10'>

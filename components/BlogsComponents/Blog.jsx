@@ -38,7 +38,7 @@ const Blog = (props) => {
                   date={props?.blog?.updated_at}
                 />
               </div >
-              <main className='blogs-container bg-white  px-6 lg:px-0'>
+              <main className='blogs-container bg-white  p-6 lg:px-0'>
 
                 <div className='w-full h-full flex justify-center'>
                   <article className='h-full ' dangerouslySetInnerHTML={{ __html: props?.blog?.description }}>

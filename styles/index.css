@@ -43,6 +43,10 @@ html {
   -webkit-scroll-behavior: auto !important;
 }
 
+:root{
+  --primary-color:#018544;
+}
+
 body {
   scroll-behavior: smooth;
   -webkit-scroll-behavior: auto !important;
@@ -414,4 +418,74 @@ input[type=number] {
   /* set the background color of the thumb */
   border-radius: 5px;
   /* round the corners of the thumb */
+}
+
+
+
+/* pagination */
+
+
+
+.paginate-wrapper li[title] {
+  font-size: .8rem;
+  margin-right: .3rem;
+  border-radius: 50%;
+  text-align: center;
+  min-width: 2rem;
+  aspect-ratio: 1/1;
+  user-select: none;
+  display: inline-block;
+  border: 1px solid gray;
+  padding: .3rem;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+}
+
+.paginate-wrapper li *{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.paginate-wrapper li:has(button) {
+  margin:0 !important;
+  border:none !important;
+  border-top: 0 !important; 
+  border-bottom: 0 !important;
+  position: relative;
+}
+
+.paginate-wrapper li:has(button)::after {
+  content: "•••";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+.paginate-wrapper li.disabled,.rc-pagination-disabled {
+  /* background-color: gray; */
+  opacity: .4;
+  cursor: no-drop;
+}
+
+.paginate-wrapper li.disabled *,
+.rc-pagination-disabled {
+  cursor: no-drop;
+}
+
+.paginate-wrapper li.selected ,.rc-pagination-item-active {
+  color: white;
+  background-color: #EEEFFB;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+
+.rc-pagination-total-text{
+  font-size: 1rem;
+  margin-bottom: .5rem;
+  margin-top: .5rem;
 }

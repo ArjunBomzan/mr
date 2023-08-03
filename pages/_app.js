@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
     <div id="fb-customer-chat" className="fb-customerchat">
     </div>
 
-    <Script id="one" strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=UA-235343232-1" defer></Script>
+    <Script id="one" strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-4QD3EXCE1V" defer></Script>
 
     <Script
       id="three"
@@ -47,7 +47,7 @@ function MyApp({ Component, pageProps }) {
          window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'UA-235343232-1');
+        gtag('config', 'G-4QD3EXCE1V');
         `
       }}
       defer />

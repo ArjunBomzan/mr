@@ -25,7 +25,7 @@ const SingleBlogBanner = (props) => {
         JSON.stringify(process.env.NEXT_PUBLIC_DOMAIN)
       } */}
       <Image src={`${banner_url}`} className='w-full aspect-video object-contain mx-auto' height={1000} width={1000} alt={`${props?.title}`} />
-      <h1 className=' text-4xl sm:text-5xl w-ma font-bold mt-6 mb-4 '>
+      <h1 className=' text-xl sm:text-2xl md:text-3xl  w-ma font-bold  mt-8 '>
         {props?.title}
       </h1>
       {/* <div className='w-full h-full  py-28 flex flex-col justify-center items-center bg-light-mask text-white'>
