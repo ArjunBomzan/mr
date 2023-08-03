@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import Blogs from '../BlogsComponents/Blogs'
+// import Blogs from '../BlogsComponents/Blogs'
 
 import Jumpstart from '../HomePageComponents/Jumpstart'
 // import OurServices from '../HomePageComponents/OurServices'
@@ -24,7 +24,7 @@ const Services = () => {
       <Jumpstart />
       {/* <OurServices /> */}
       {/* <Discover /> */}
-      <Blogs />
+      {/* <Blogs /> */}
       <Trainings />
       <Testimonials />
     </main>
