@@ -50,7 +50,7 @@ const HomeSuccessStories = (props) => {
         )
     }
     return (
-        <div className={`${props.in_training_page ? "" : "py-8 lg:px-44 md:px-20 px-2 bg-neutral-100"}`} id="success_stories">
+        <div className={` select-none ${props.in_training_page ? "" : "py-8 lg:px-44 md:px-20 px-2 bg-neutral-100"}`} id="success_stories">
             <h2 className={`${props.in_training_page ? "mt-10 font-bold text-3xl" : "font-bold text-3xl"} `}>Success Stories</h2>
             <Swiper
                 slidesPerView={size.width > 1500 ? 4 : size.width > 1200 ? 3 : size.width > 600 ? 2.3 : 1.3}
@@ -58,6 +58,8 @@ const HomeSuccessStories = (props) => {
                 freeMode={true}
                 pagination={{
                     clickable: true,
+                    dynamicBullets: true,
+                    dynamicMainBullets: 3
                 }}
                 modules={[FreeMode, Pagination, Autoplay, Navigation]}
                 loop={false}
