@@ -27,11 +27,11 @@ const ContactDetails = () => {
         </Link>
       </div>
       <div className='w-full py-4 flex gap-5'>
-        <Link className='flex flex-row items-center space-x-3' target="_blank" href='mailto:tech.mindrisers@gmail.com'>
+        <Link className='flex flex-row items-center space-x-3' target="_blank" href='mailto:class@mindrisers.com.np'>
           <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
-          <h4 className=' font-semibold w-max'>tech.mindrisers@gmail.com</h4>
+          <h4 className=' font-semibold w-max'>class@mindrisers.com.np</h4>
         </Link>
       </div>
       <div className='w-full py-4 flex gap-5'>

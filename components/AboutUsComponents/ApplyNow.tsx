@@ -6,7 +6,7 @@ const ApplyNow = () => {
         <h2 className=' font-bold text-base md:text-xl  lg:text-2xl text-center md:text-left'>Interested in joining our team?</h2>
         <p className=" text-center md:text-left text-neutral-600">Email your resume and we&apos;ll get in touch with you</p>
         <button
-          onClick={() => window.location.href = 'mailto:tech.mindrisers@gmail.com'}
+          onClick={() => window.location.href = 'mailto:class@mindrisers.com.np'}
           className="mt-4 w-max px-5 py-3 bg-green-500 font-medium text-white hover:bg-slate-300 hover:text-black duration-500 cursor-pointer rounded-md">
           Apply Now
         </button>
