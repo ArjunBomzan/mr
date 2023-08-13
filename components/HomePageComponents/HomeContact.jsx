@@ -19,9 +19,9 @@ const HomeContact = () => {
 
     return (
         <div className=' flex items-center justify-center'>
-            <div className='flex flex-col lg:flex-row w-full px-5 py-16 sm:px-20 lg:px-44 gap-4'>
+            <div className='flex flex-col lg:flex-row w-full px-5 py-16 sm:px-20 lg:px-44 gap-6'>
                 <div className='min-w-1/2'>
-                    <h2 className="text-2xl font-bold">Request a call back</h2>
+                    <h2 className=" text-xl font-bold sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl mb-4 ">Request a call back</h2>
                     <p>Would you like to speak to one of our adviser over the phone?</p>
                     <p>Just submit your details and will be in touch shortly. You can also email us if you would prefer.</p>
                 </div>
@@ -30,7 +30,7 @@ const HomeContact = () => {
                     <form className='grid grid-cols-1 sm:grid-cols-2 gap-4 w-full form' onSubmit={handleSubmit(onSubmit)}>
 
                         <div >
-                            <label className="admission-form-label required-field" htmlFor="course">I am interested in</label>
+                            <label className="admission-form-label required-field" htmlFor="course">I am Interested In</label>
                             <div className="relative">
                                 <select
                                     className="admission-form-input truncate"

@@ -47,7 +47,7 @@ const Blog = (props) => {
                     </ReactMarkdown> */}
                   </article>
                 </div>
-              <p className='my-2'>Created Date :  {formatDate(props?.blog?.created_at)}</p>
+              <p className='my-2'>Published At :  {formatDate(props?.blog?.created_at)}</p>
               </main>
               <BlogShare />
               <RelatedBlogs blog={props?.blog} slug={slug} />

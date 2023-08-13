@@ -23,7 +23,7 @@ const Testimonials = () => {
       <div className='w-full h-full  flex flex-col items-center bg-mask py-10 sm:py-16 px-0 space-y-12'>
         <div className='flex flex-col w-full'>
           <h2 className="w-full text-center text-green-500 text-sm tracking-widest font-medium mb-5">TESTIMONIALS</h2>
-          <h3 className='w-full text-center text-white font-bold text-xl sm:text-xl md:text-xl lg:text-2xl xl:text-3xl mb-5'>WHAT OUR PARTNERING COMPANY SAY ABOUT US?
+          <h3 className='w-full text-center text-white  text-xl sm:text-xl md:text-xl lg:text-2xl xl:text-3xl mb-5'>WHAT OUR PARTNERING COMPANY SAY ABOUT US?
           </h3>
         </div>
         <div className='w-full justify-center items-center'>

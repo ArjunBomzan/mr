@@ -159,19 +159,18 @@ input[type=number] {
 }
 
 .blogs-container h1 {
-  font-size: 2rem;
-}
-
-.blogs-container h2 {
-  font-size: 1.5rem;
-}
-
-.blogs-container h3 {
   font-size: 1.6rem;
 }
 
-.blogs-container p {
+.blogs-container h2 {
+  font-size: 1.4rem;
+}
+
+.blogs-container h3 {
   font-size: 1.2rem;
+}
+
+.blogs-container p {
 }
 
 .blogs-container iframe {

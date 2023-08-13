@@ -14,7 +14,7 @@ const FooterContact = () => {
 
   return (
     <div className='footer-link-divs2  footer-link-divs-lg-1 flex flex-col space-y-4' >
-      <p className=' text-white font-semibold text-xl md:pt-2'>Let&apos;s talk</p>
+      <p className=' text-white font-semibold text-xl md:pt-2'>Let&apos;s Talk</p>
       <form
         className='flex flex-col space-y-4 w-full text-sm form'
         onSubmit={handleSubmit(onSubmit)}
