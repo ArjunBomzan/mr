@@ -28,17 +28,20 @@ const Blog = (props) => {
             <Head>
               <meta name="title" content={props?.blog?.title} />
             </Head>
-            <div className='px-0 lg:px-44 pb-20 ' >
-              <div >
-                <SingleBlogBanner
-                  blog={props.blog}
-                  banner={props?.blog?.banner}
-                  title={props?.blog?.title}
-                  auth_name={props?.blog?.auth_name}
-                  date={props?.blog?.updated_at}
-                />
-              </div >
-              <main className='blogs-container bg-white  p-6 lg:px-0'>
+            <div >
+              <SingleBlogBanner
+                blog={props.blog}
+                banner={props?.blog?.banner}
+                title={props?.blog?.title}
+                auth_name={props?.blog?.auth_name}
+                date={props?.blog?.updated_at}
+              />
+            </div >
+            <div className='px-6 lg:px-44 pb-20 ' >
+              <h1 className=' text-xl sm:text-2xl md:text-3xl  w-ma font-bold  mt-8   '>
+                {props?.blog?.title}
+              </h1>
+              <main className='blogs-container bg-white '>
 
                 <div className='w-full h-full flex justify-center'>
                   <article className='h-full ' dangerouslySetInnerHTML={{ __html: props?.blog?.description }}>
@@ -47,7 +50,7 @@ const Blog = (props) => {
                     </ReactMarkdown> */}
                   </article>
                 </div>
-              <p className='my-2'>Published At :  {formatDate(props?.blog?.created_at)}</p>
+                <p className='my-2'>Published At :  {formatDate(props?.blog?.created_at)}</p>
               </main>
               <BlogShare />
               <RelatedBlogs blog={props?.blog} slug={slug} />

@@ -10,8 +10,8 @@ export default function BlogShare() {
     let current_url = window.location.href
 
     return (
-        <section className='text-center text-lg font-bold mb-10'>
-            <p>Like this Post? Share it with your friends !</p>
+        <section className='text-center text-lg font-bold my-32'>
+            <p className="text-base md:text-lg lg:text-xl">Like this Post? Share it with your friends !</p>
             <ul className='flex justify-center gap-3 mt-3'>
                 <li>
                     <Link href={`https://www.facebook.com/sharer/sharer.php?u=${current_url}`} target="_blank" rel="noreferrer">

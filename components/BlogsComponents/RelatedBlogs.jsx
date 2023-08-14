@@ -39,6 +39,7 @@ const RelatedBlogs = (props) => {
                                 url={blog.slug}
                                 imgAlt={blog.title}
                                 key={blog.id}
+                                created_at={blog.created_at}
                             />
                         ))
                     })
