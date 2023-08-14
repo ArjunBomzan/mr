@@ -27,7 +27,7 @@ const SuccessGalleries = ({ successStoreis }) => {
             <h1 className="text-xl md:text-center sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl   mt-10 mb-5 md:mt-16 md:mb-8             w-full  text-2xl text-center md:text-3xl lg:text-4xl mt-10 mb-5 md:mt-16 md:mb-8
 
 ">Success Stories</h1>
-            <section className='grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-4'>
+            <section className='grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-4 mb-5 md:mb-16 '>
                 {
                     successStoreis?.map((successStory) => {
                         return <Card title={successStory.title} content={successStory.content} img={successStory.image} key={successStory.id} className="my-3" />

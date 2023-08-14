@@ -6,7 +6,7 @@ const ContactBanner = () => {
         <h1 className=' text-4xl sm:text-6xl w-max pt-12 sm:pt-28 font-bold'>
           CONTACT US
         </h1>
-        <p className='pt-4 pb-12 sm:pb-28 text-gray-200 w-1/3 text-center'>
+        <p className='pt-4 pb-12 sm:pb-28 text-gray-200 w-1/3 text-center text-xl'>
           For Any Registration And Information To Courses, Please Fill Up The Form Below Or Contact Us Via Phone Call.
         </p>
       </div>

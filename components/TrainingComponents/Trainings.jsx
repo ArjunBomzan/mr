@@ -14,7 +14,7 @@ const Trainings = (props) => {
       {
         props?.courses ?
           // <section className={`bg-white flex flex-col py-10 px-6 sm:px-12 md:px-14 lg:px-18 `}>
-          <section className={`bg-white flex flex-col pb-10 px-3 lg:px-44 md:px-20 sm:px-16 `}>
+          <section className={`bg-white flex flex-col pb-10 px-3 lg:px-44 md:px-20 sm:px-16 mb-5 md:mb-16 `}>
             <div
               className='grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-4 mt-6  '
             >

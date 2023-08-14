@@ -6,7 +6,7 @@ const Partners = (props) => {
         <>
             {
                 props?.courses ?
-                    <section className={`bg-white flex flex-col py-10 px-8 pt-0 sm:px-12 md:px-14 lg:px-18 gap-4`}>
+                    <section className={`bg-white flex flex-col py-10 px-8 sm:px-12 md:px-14 lg:px-18 gap-4`}>
                         <div className='w-full '>
                             <h1 className='          w-full  text-2xl text-center md:text-3xl lg:text-4xl mt-10 mb-5 md:mt-16 md:mb-8
 
@@ -16,7 +16,7 @@ text-center mt-10 mb-5 md:mt-16 md:mb-8'>Job Placement Partners</h1>
                             </p>
                         </div>
                         <div
-                            className='grid grid-cols-3 gap-3 sm:gap-4 md:gap-5 sm:grid-cols-4 xl:grid-cols-5 mt-6'
+                            className='grid grid-cols-3 gap-3 sm:gap-4 md:gap-5 sm:grid-cols-4 xl:grid-cols-5 mt-6 mb-5 md:mb-16 '
                         >
                             {
                                 props?.courses?.map((course) => {

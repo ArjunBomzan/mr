@@ -82,7 +82,7 @@ const ContactUs = () => {
   return (
     <main className='bg-white h-max'>
       <ContactBanner />
-      <div className='flex flex-col items-center justify-center flex-wrap w-full h-max gap-5 px-5 xl:px-40 lg:px-24 md:px-10 sm:flex-row'>
+      <div className='flex flex-col items-center justify-center flex-wrap w-full h-max gap-5 px-5 xl:px-40 lg:px-24 md:px-10 sm:flex-row mb-5 md:mb-16 '>
         <PageCard child={<ContactDetails />} />
         <DropMessage />
       </div>
