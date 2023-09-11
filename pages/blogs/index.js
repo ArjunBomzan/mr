@@ -6,7 +6,7 @@ export const getServerSideProps = async ({query}) => {
     let page = parseInt(query.page) || 1
     let searchTerm = query.q || ""
 
-    const res = await fetch(`${process.env.DOMAIN_V1}singleblog/?size=9&search=${searchTerm}&page=${page}`)
+    const res = await fetch(`${process.env.DOMAIN_V1}singleblog/?size=12&search=${searchTerm}&page=${page}`)
     const data = await res.json()
 
 

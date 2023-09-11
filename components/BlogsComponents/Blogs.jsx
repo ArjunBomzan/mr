@@ -36,7 +36,7 @@ const Blogs = ({ blogs, current_page, total_data }) => {
           &&
           <div className='paginate-wrapper text-center  mb-5 md:mb-16 '>
             <Pagination
-              pageSize={9}
+              pageSize={12}
               current={current_page}
               showTotal={(total, range) =>
                 `${range[0]} - ${range[1]} of ${total} items`
