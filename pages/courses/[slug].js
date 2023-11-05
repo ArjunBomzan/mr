@@ -29,6 +29,13 @@ export async function getStaticProps({ params }) {
     const success_storie_res = await fetch(`${process.env.DOMAIN_V1}successstoryhome/`)
     const success_stories = await success_storie_res.json()
 
+    // console.log(course.data.course[0].id)
+    // console.log(`${process.env.DOMAIN_V1}coursecombine/${course.data.course[0].id}`)
+    // const tags_res = await fetch(`${process.env.DOMAIN_V1}coursecombine/${course.data.course[0].id}/`)
+    // const tags = await tags_res.json()
+
+    // console.log(tags)
+
 
 
 

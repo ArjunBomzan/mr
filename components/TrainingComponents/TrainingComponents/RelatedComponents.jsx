@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { coursesApi } from "../../../pages/api/apiCalls";
 import Image from "next/image"
 
-const RelatedComponents = () => {
+const RelatedComponents = ({ course }) => {
   const router = useRouter();
   const pathname = router.pathname.split('/')[1]
   const { slug } = router.query
@@ -36,7 +36,7 @@ const RelatedComponents = () => {
                   href={`/${pathname == 'courses' ? 'courses' : 'after+2-courses'}/${course.slug}`}
                   key={course.id}
                 >
-                  <Image width={450} height={450}  src={`${process.env.DOMAIN}${course.image}`} className="w-20" alt={`${course.slug}`} />
+                  <Image width={450} height={450} src={`${process.env.DOMAIN}${course.image}`} className="w-20" alt={`${course.slug}`} />
                   <h3 className="whitespace-nowrap truncate overflow-hidden">{course.title}</h3>
                 </Link>))
             })
@@ -44,15 +44,37 @@ const RelatedComponents = () => {
         </div>
       </div>
 
-      <div className="">
-        <h2 className="font-bold text-3xl">Browse by tags.</h2>
-        <div className="flex gap-3 flex-wrap mt-4" style={{ color: "blue" }}>
-          <h3 className="cursor-pointer">#PHP</h3>
-          <h3 className="cursor-pointer">#Vue.Js Career</h3>
-          <h3 className="cursor-pointer">#Web Development</h3>
-          <h3 className="cursor-pointer">#MERN</h3>
+      {/* tags:
+      {
+        JSON.stringify(course.data.tag)
+      } */}
+
+      {
+        course.data.tag?.length > 0
+        &&
+        <div className="">
+          <h2 className="font-bold text-3xl">Browse by tags.</h2>
+          <div className="flex gap-3 flex-wrap mt-4" style={{ color: "blue" }}>
+            {
+              course.data.tag.map(tag => {
+                return (
+                  <h3 key={tag.id}
+                    // onClick={() => {
+                    //   router.push("/courses?tag=" + tag)
+                    // }}
+                    className="cursor-pointer lowercase">
+                    <Link href={"/courses?tag=" + tag.name}>#{tag.name}</Link>
+                  </h3>
+                )
+              })
+            }
+            {/* <h3 className="cursor-pointer">#PHP</h3>
+            <h3 className="cursor-pointer">#Vue.Js Career</h3>
+            <h3 className="cursor-pointer">#Web Development</h3>
+            <h3 className="cursor-pointer">#MERN</h3> */}
+          </div>
         </div>
-      </div>
+      }
     </div >
   )
 }

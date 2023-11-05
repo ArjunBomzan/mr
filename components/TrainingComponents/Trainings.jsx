@@ -1,14 +1,36 @@
 import { useRouter } from 'next/router'
 import Loader from '../Loader'
 import TrainingCard from './TrainingCard'
+import Image from 'next/image'
+
 
 const Trainings = (props) => {
   const router = useRouter()
   const pathname = router.pathname.split('/')[1]
+
+  console.log("tag",)
+  let { tag } = router.query
+
+
   return (
     <>
       <h1 className='w-full  text-2xl text-center md:text-3xl lg:text-4xl mt-10 mb-5 md:mt-16 md:mb-8'>
-        {pathname == "courses" && <span>Courses</span>}
+        {pathname == "courses" && <> <span>Courses</span>
+          &nbsp;
+          {
+            tag&&
+          <span className='relative bg-gray-300 text-base px-3 py-1 rounded-xl lowercase'>
+            # {tag}  <Image
+            onClick={() =>{
+              router.push("/courses")
+            }}
+             title='remove tag' className=' inline absolute cursor-pointer  text-red-400' width={24} height={24} src={"/assets/images/iconmonstr-x-mark-6-240.png"} />
+          </span>
+          }
+
+
+        </>
+        }
         {pathname == "after+2-courses" && <span>After +2 Courses</span>}
       </h1>
       {

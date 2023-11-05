@@ -1,18 +1,28 @@
 import Head from 'next/head';
 import Header from '../../components/HeaderComponents/Header';
 import Trainings from "../../components/TrainingComponents/Trainings";
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 export async function getStaticProps() {
+  // export async function getServerSideProps({query}) {
   let data = []
   try {
     const res = await fetch(`https://mindrisers.com.np/blog/api/v1/course/`)
+
+    // const res = await fetch(`${process.env.DOMAIN_V1}course/?tag=` + (query.tag || ''))
+    // const res = await fetch(`${process.env.DOMAIN_V1}course/?tag=` + ("frontend" || ''))
+
     data = await res.json()
+
   }
   catch (err) {
   }
 
   return {
-    props: { courses: data },
+    props: { courses_all: data },
+
     // revalidate: 60 * 60 * 24 * 1 // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it. 
     revalidate: 60 * 1  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it. 
 
@@ -22,10 +32,48 @@ export async function getStaticProps() {
 
 
 
-const courses = ({ courses }) => {
+const Courses = ({ courses_all }) => {
+
+  const [courses, setcourses] = useState(courses_all)
+
+  const router = useRouter()
+
+  useEffect(() => {
+
+    const fetchCourses = async () => {
+      if (router.isReady) {
+
+        console.log({ router })
+
+        // if (router.query.tag) {
+        //   console.log(router.query.tag)
+          try {
+
+            let data = []
+            const res = await fetch(`${process.env.DOMAIN_V1}course/?tag=` + (router.query.tag || ''))
+            data = await res.json()
+
+            console.log({data})
+
+            setcourses(data)
+          }
+          catch (err) {
+            console.log(err)
+
+          }
+
+        // }
+
+      }
+    }
+    fetchCourses()
+
+  }, [router.isReady,router.query.tag])
+
 
   let meta_description = "Are you searching for a Practical IT Training Center in Kathmandu Nepal then MindRisers is the perfect platform for you to learn Digital Skils"
   let meta_image = `${process.env.NEXT_PUBLIC_DOMAIN}/assets/images/courses.png`
+
 
   return (
     <>
@@ -53,4 +101,4 @@ const courses = ({ courses }) => {
   )
 }
 
-export default courses
+export default Courses
