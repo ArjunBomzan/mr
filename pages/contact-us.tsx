@@ -32,11 +32,11 @@ export default function contact() {
             <BannerWrapper size="small">
                 <div className="container text-center">
                     <p className="header-xl leading-[145%] title-space">Contact us</p>
-                    <p className="text-[20px] font-semibold text-primary">We would love to talk to you</p>
+                    <p className="text-xl font-semibold text-primary">We would love to talk to you</p>
                 </div>
             </BannerWrapper>
             <section className="container section-wrapper-m">
-                <div className="grid  lg:grid-cols-2 gap-base-double !2xl:gap-[150px]">
+                <div className="grid  lg:grid-cols-2 gap-base-double !2xl:gap-[9.375rem]">
                     <form className="section-p bg-orange-100 rounded-xl">
                         <div className="text-center title-space-3xl">
                             <p className="header-md text-secondary title-space ">Tell us about yourself</p>
@@ -70,8 +70,8 @@ export default function contact() {
                     </form>
                     <div className="">
                         <div className="title-space-3xl text-center lg:text-left ">
-                            <p className=" mb-[10px] sub-header-lg leading-[145%]">Contact us by Phone or Lcoation</p>
-                            <p className="text-[18px]">We are 24*7 available to help you out.</p>
+                            <p className=" title-space sub-header-lg leading-[145%]">Contact us by Phone or Lcoation</p>
+                            <p className="text-lg">We are 24*7 available to help you out.</p>
                         </div>
                         <div className=" text-xl 2xl:text-2xl">
                             <ul className="flex flex-col items-center lg:items-start">
@@ -96,7 +96,7 @@ export default function contact() {
 
             <section className="section-wrapper-m container">
                 <p className="header-md text-center title-space-3xl"><Swoosh type="secondary">Visit us at</Swoosh></p>
-                <div className="bg-orange-100 p-[10px] rounded-xl overflow-hidden">
+                <div className="bg-orange-100 p-[0.625rem] rounded-xl overflow-hidden">
                     <iframe className="w-full bg-gray-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7065.320961881295!2d85.31935314317536!3d27.696886654753925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19688077a1ff%3A0x3ea9b1c08b4234dc!2sMind%20Risers%20Consortium%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1702963933651!5m2!1sen!2snp" width="600" height="450" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </section>

@@ -88,8 +88,8 @@ const FooterLinks = ({ data }) => {
     <ul>
       {
         data.menus.map(el => {
-          return <li className={`text-sm font-medium mb-5 capitalize leading-[20px]`}>
-            <Link target={data.popup ? "_blank" : "_self"} href={el.url}>{el.icon && <span className='mr-[10px]'>{el.icon}</span>} {el.title} </Link>
+          return <li className={`text-sm font-medium mb-5 capitalize leading-5`}>
+            <Link target={data.popup ? "_blank" : "_self"} href={el.url}>{el.icon && <span className='mr-5'>{el.icon}</span>} {el.title} </Link>
           </li>
         })
       }
@@ -101,12 +101,12 @@ const Footer = () => {
 
 
   return (
-    <footer className='bg-primary text-white text-[14px]'>
+    <footer className='bg-primary text-white text-sm'>
       <div className="container section-wrapper-p-sm grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-sm">
         <div className="col-span-2 md:col-span-4 lg:col-span-1  text-center lg:text-left section-space-3xl xl:mb-0">
-          <div className='flex gap-[7px] items-center justify-center lg:flex-col xl:flex-row lg:justify-start title-space-xl'>
-            <Image src={Logo} className="h-[54px] w-[54px]" width={300} height={300} alt="" />
-            <p className={`${inter.className} text-[28px]`}>mindrisers</p>
+          <div className='flex gap-2 items-center justify-center lg:flex-col xl:flex-row lg:justify-start title-space-xl'>
+            <Image src={Logo} className="h-[3.375rem] w-[3.375rem]" width={300} height={300} alt="" />
+            <p className={`${inter.className} text-[1.75rem]`}>mindrisers</p>
           </div>
           <p>Mind Risers is the only IT training institute in Kathmandu, Nepal offering paid internships after the course completion</p>
         </div>
@@ -115,7 +115,7 @@ const Footer = () => {
         <FooterLinks data={resourcesData} />
         <FooterLinks data={aboutData} />
       </div>
-      <div className='border-t border-green-700 py-[30px] text-sm font-medium'>
+      <div className='border-t border-green-700 py-[1.875rem] text-sm font-medium'>
         <p className='text-center'>
         <span>&copy;{currentYear} Mindrisers</span>
         </p>

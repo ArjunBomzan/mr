@@ -190,7 +190,7 @@ export default function Home(props) {
       </section>
 
       <section className=' section-wrapper container'>
-        <p className='header text-center header-space'>Popular <Swoosh type='secondary'>Courses</Swoosh> </p>
+        <p className='header text-center title-space-5xl'>Popular <Swoosh type='secondary'>Courses</Swoosh> </p>
         {/* Headless component */}
         <CoursesList courses={courses} />
       </section>

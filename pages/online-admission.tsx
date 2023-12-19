@@ -26,15 +26,15 @@ export default function admission() {
             {/* <meta name="twitter:image" content={meta_image} /> */}
         </Head>
         <BannerWrapper>
-            <div className="container pt-[60px]">
-                <div className="text-center mb-[40px]">
+            <div className="container ">
+                <div className="text-center title-space-4xl">
                     <p className="text-secondary header-md font-normal leading-[145%]">Backed by Facts !</p>
                     <p className="mb-5 header-xl leadig-[145%]">We are Best in what we do</p>
                     <p className="mb-5 text-[20px] text-primary">Fill the form and join mindrisers to elevate your expertise in your interest filed.</p>
                     <button className="btn">Fill admission form</button>
                 </div>
                 <div>
-                    <ul className="bg-green-100 grid grid-cols-4 gap-[60px] max-w-[772px] mx-auto rounded-xl p-5">
+                    <ul className="bg-green-100 grid grid-cols-4 gap-lg max-w-[772px] mx-auto rounded-xl p-5">
                         {
                             [1, 2, 3, 4].map(el => {
                                 return <li className="">
@@ -50,7 +50,7 @@ export default function admission() {
 
         </BannerWrapper>
 
-        <section className="my-[100px] container">
+        <section className="section-wrapper-m container">
             <div>
                 <p className="header-md text-center"><Swoosh type="secondary">Admission Form</Swoosh></p>
             </div>

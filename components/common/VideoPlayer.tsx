@@ -14,7 +14,7 @@ export default function VideoPlayer({ className }: { className: string }) {
                     backgroundImage: `url('https://ooty-theme.myshopify.com/cdn/shop/files/video-sec-bg_1.jpg?v=1620132835')`
                 }}
             >
-                <AiOutlinePlayCircle className={`inline-block w-[40px] h-[40px] lg:w-[80px] lg:h-[80px] text-white ${classNames({ hidden: videoOpen })}`}
+                <AiOutlinePlayCircle className={`inline-block w-10 h-10 lg:w-20 lg:h-20 text-white ${classNames({ hidden: videoOpen })}`}
                     onClick={() => {
                         setVideoOpen(prev => !prev)
                     }}

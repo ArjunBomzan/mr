@@ -20,15 +20,14 @@ export default function Partners() {
     let commonClass = ` absolute top-0 left-0 bg-white text-black p-2 z-[200] top-[50%] -translate-y-[50%] hidden md:flex-center`
 
     return (
-        <section className='text-primary text-center container my-[100px] bg-primary-light py-[60px] rounded-[24px]'>
+        <section className='text-primary text-center container section-wrapper-m bg-primary-light section-wrapper-p-xs rounded-3xl'>
             <p className='header-lg title-space-lg text-expanded'>Our Top <Swoosh type="secondary"> Partnering</Swoosh> Companies</p>
             <p>We have partnered with Top companies in nepal to help you land in great <br /> internships, opportunities and Job placements.</p>
             {/* FIXME: istead of br we have to use max-width for mobile breakpoitns */}
-            <div className='my-[60px] relative lg:px-[56px] h-[116px]'>
+            <div className='section-wrapper-m-xs relative lg:px-[3.5rem] h-[7.25rem]'>
                 {/* width:{size.width} */}
                 <div className="bg-green-100 h-full flex items-center ">
                     {/* TODO: fixme ; dots in mboile and no arrow while  arrow in bigg but no dots */}
-
                     <Swiper
                         className=' borderr hide-custom-swiper-dots !overflow-x-clipp !overflow-y-visiblee '
                         loop={false}

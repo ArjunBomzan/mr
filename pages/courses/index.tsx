@@ -125,7 +125,7 @@ const Courses = ({ courses_all }) => {
           <p className='sub-header-lg title-space'>Explore <Swoosh type='secondary'>Skill Courses</Swoosh></p>
           <p className='text-[20px] text-primary'>Explore our courses</p>
         </div>
-        <div className='container  title-space-4xl-reverse !2xl:mt-[80px]'>
+        <div className='container  title-space-6xl-reverse !2xl:mt-[80px]'>
           <CoursesList courses={courses} />
         </div>
       </section>

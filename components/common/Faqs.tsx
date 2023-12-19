@@ -68,7 +68,7 @@ export default function Faqs({
 
 
     faqTitleStyle = faqTitleStyle || "capitalize border border-border p-5   flex justify-between items-center transition-all duration-[.3s] rounded-xl"
-    faqTitleOpenedStyle = faqTitleOpenedStyle || "rounded-bl-[0px] rounded-br-[0px]"
+    faqTitleOpenedStyle = faqTitleOpenedStyle || "rounded-bl-0 rounded-br-0"
 
     closedIcon = closedIcon || <FaChevronDown />
     opendedIcon = opendedIcon || <FaChevronDown />

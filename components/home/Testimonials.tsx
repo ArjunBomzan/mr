@@ -38,7 +38,7 @@ export default function Testimonials() {
 
     return (
         <section className='section-wrapper-m section-wrapper-p-double bg-gray'>
-            <p className='header-lg text-center mb-[60px]'>What our <Swoosh type="secondary"> Partnered</Swoosh> companies says about us</p>
+            <p className='header-lg text-center title-space-4xl'>What our <Swoosh type="secondary"> Partnered</Swoosh> companies says about us</p>
             <div>
                 <Swiper
                     className='custom-swiper-dots !overflow-x-clip !overflow-y-visible'
@@ -56,17 +56,15 @@ export default function Testimonials() {
                     {
                         [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(el => {
                             return <SwiperSlide className='cursor-pointer'>
-                                {/* <Image src="/assets/images/home/khalti.png" alt="" className='w-full h-[36px] object-contain' width={200} height={200} /> */}
-                                {/* slider -{el} */}
-                                <div className='bg-white rounded-[12px] p-5 text-gray-600'>
+                                <div className='bg-white rounded-xl p-5 text-gray-600'>
                                     <Rating rating={3} />
                                     <p className=' my-5 testimonial-card-clamp  clamp-7'>
                                         Mind Risers is the only IT training institute in Kathmandu, Nepal offering paid internships after the course completion.
                                     </p>
-                                    <div className='w-1/5 h-[4px] bg-border rounded-2xl '></div>
+                                    <div className='w-1/5 h-1 bg-border rounded-2xl '></div>
                                     <div className='mt-5'>
-                                        <p className='text-[14px] font-bold mb-[4px]'>Prabha Bhattaria</p>
-                                        <p className='text-[14px] mb-[4px]'>CEO</p>
+                                        <p className='text-sm font-bold mb-1'>Prabha Bhattaria</p>
+                                        <p className='text-sm mb-1'>CEO</p>
                                         <p>Slack Inc</p>
                                     </div>
                                 </div>

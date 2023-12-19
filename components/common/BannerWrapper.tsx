@@ -21,7 +21,7 @@ export default function BannerWrapper({ size = "normal", children }: { size?: ba
     return (
         <>
         {/* TODO different sizes for differnt breakpoints. */}
-            <div className={classNames(`border   banner-wrapper bg-primary-light banner-b-white-curve z-10 relative flex lg:blockk items-center py-[40px] `, /* TODO  change py accordinly and set heights automatically  */
+            <div className={classNames(`  banner-wrapper bg-primary-light banner-b-white-curve z-10 relative flex lg:blockk items-center py-[40px] `, /* TODO  change py accordinly and set heights automatically  */
                 { "h-[964px]": size == "big" }, /* TODO different sizes for differnt breakpoints. */
                 { "h-[591px]": size == "normal" },  
                 { "h-[364px]": size == "small" })
