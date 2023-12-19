@@ -3,6 +3,7 @@ import Admission from "../components/AdmissionComponents/Admission"
 import Header from "../components/HeaderComponents/Header"
 import BannerWrapper from "../components/common/BannerWrapper"
 import Swoosh from "../components/common/Swoosh"
+import Stats from "../components/common/Stats"
 
 export default function admission() {
     let meta_title = "Admission Form"
@@ -33,17 +34,10 @@ export default function admission() {
                     <p className="mb-5 text-[20px] text-primary">Fill the form and join mindrisers to elevate your expertise in your interest filed.</p>
                     <button className="btn">Fill admission form</button>
                 </div>
+
+                {/* TODO: used in home... make headleas component */}
                 <div>
-                    <ul className="bg-green-100 grid grid-cols-4 gap-lg max-w-[772px] mx-auto rounded-xl p-5">
-                        {
-                            [1, 2, 3, 4].map(el => {
-                                return <li className="">
-                                    <p className="header-md text-center">42 +</p>
-                                    <p className="uppercase text-[20px] text-center">Courses</p>  {/* TODO: fixme for proper data. */}
-                                </li>
-                            })
-                        }
-                    </ul>
+                    <Stats wrapperCalss="bg-green-100 grid grid-cols-4 gap-lg max-w-[772px] mx-auto rounded-xl p-5"/>
                 </div>
 
             </div>

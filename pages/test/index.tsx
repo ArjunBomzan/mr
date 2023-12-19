@@ -17,6 +17,15 @@ import Image from 'next/image';
 export default function index({ data }) {
 
     return <>
+
+        <div className=' h-96 bg-[rgba(0,0,0,0.5)]'>
+            <div className='banner-b-white-curve relative h-full'>
+
+            </div>
+
+        </div>
+    </>
+    return <>
         <h1 className='container opacity-10 '>hello</h1>
         {/* <Opportunity/> */}
         <div className="parent relative h-5 w-5 border p-5 ml-10 scale-100 opacity-100">

@@ -38,20 +38,19 @@ html {
     bottom: 0px;
     content: "";
     background-image: url("/assets/images/common/banner-b-white-curve.svg");
-    background-image: url("/assets/images/common/chirag.svg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 192px;
+    height: 92px;
     width: 100%;
+    /* background-color: white; */
     c-clip-path: polygon(25% 100%, 76% 100%, 88% 94%, 100% 74%, 100% 100%, 0 100%, 0 80%, 9% 91%);
     c-clip-path: polygon(48% 100%, 57% 100%, 87% 87%, 100% 65%, 100% 100%, 0 100%, 0 72%, 14% 85%);
     c-clip-path: polygon(100% 100%, 44.7% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 99.5%);
     c-clip-path: polygon(100% 0, 44.74% 0, 0 100%, 100% 100%);
-    /* Adjust the coordinates accordingly */
     c-clip-path: ellipse(100% 99.6% at 50% 100%);
     c-background-color: teal;
-    display: none;
+    /* display: none; */
 
 
 

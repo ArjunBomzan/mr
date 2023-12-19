@@ -12,6 +12,7 @@ import Opportunity from '../public/assets/images/common/Opportunity';
 import Faqs from '../components/common/Faqs';
 import classNames from 'classnames';
 import VideoPlayer from '../components/common/VideoPlayer';
+import Stats from '../components/common/Stats';
 
 export default function Home(props) {
 
@@ -99,7 +100,6 @@ export default function Home(props) {
         <meta property="twitter:description" content={meta_description} />
         {/* <meta name="twitter:image" content={meta_image} /> */}
       </Head>
-      <div className="">
         <BannerWrapper size='big'>
           <section className='h-full bg-no-repeat w-full '
             style={{
@@ -152,10 +152,16 @@ export default function Home(props) {
                   <span className={`text-secondary relative font-bold text-[32px] -left-[40px] `}><Swoosh>Mindrisers</Swoosh></span>
                 </p>
               </div>
+              <p>
+              Mind Risers, Nepal's sole IT training institute, provides paid internships post-course. Our diverse courses, led by expert instructors, span programming, design, and marketing to ensure your success.
+              </p>
+              <div className='mt-[7.5rem]'>
+                <Stats wrapperClass='bg-green-100 grid grid-cols-4 gap-lg max-w-[772px]  rounded-xl p-5'/>
+              </div>
+              
             </div>
           </section>
         </BannerWrapper>
-      </div>
 
       <section className=' section-wrapper container grid gap-[40px] lg:gap-0 grid-cols-1 lg:grid-cols-[45%,55%] items-center '>
         <div className={classNames(
@@ -190,7 +196,7 @@ export default function Home(props) {
       </section>
 
       {/* vercel test */}
-      
+
       <section className=' section-wrapper container'>
         <p className='header text-center title-space-5xl'>Popular <Swoosh type='secondary'>Courses</Swoosh> </p>
         {/* Headless component */}
