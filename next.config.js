@@ -30,7 +30,7 @@ const env = {
   DOMAIN: "https://mindrisers.com.np/"
 }
 const images = {
-  domains: ["mindrisers.com.np"],
+  domains: ["mindrisers.com.np","picsum.photos"],
 }
 
 module.exports = withBundleAnalyzer({

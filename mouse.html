@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            background-color: #333;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 200px);
+        }
+
+        li {
+            position: relative;
+            display: inline-block;
+            z-index: 10;
+            font-size: 3rem;
+            color: white;
+        }
+
+        li span {
+            position: absolute;
+            z-index: 100;
+        }
+
+        li span:hover::after {
+            display: inline-block;
+        }
+
+        .one span::after,
+        .two span::after,
+        .three span::after,
+        .four span::after {
+            position: absolute;
+            content: "";
+            display: none;
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* transform: translate(-50%, -50%); */
+            background-image: url('https://picsum.photos/200/300');
+        }
+
+        #tracker {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <ul>
+        <li class="one"><span>one </span></li>
+        <li class="two"><span>two </span></li>
+        <li class="three"><span>three </span></li>
+        <li class="four"><span>four </span></li>
+    </ul> -->
+
+
+    <div id="tracker">tracker</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tracker = document.getElementById("tracker");
+
+            document.addEventListener("mousemove", function (event) {
+                const mouseX = event.clientX;
+                const mouseY = event.clientY;
+                console.log({mouseX});
+                console.log({mouseY});
+
+                // tracker.style.transform = `translate(${mouseX - 25}px, ${mouseY - 25}px)`;
+                tracker.style.left = `${mouseX-25}px`;
+                tracker.style.top = `${mouseY-25}px`;
+            });
+            
+        });
+    </script>
+
+</body>
+
+</html>

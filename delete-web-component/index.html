@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex{
+            display: flex;
+        }
+
+        div:first-child{
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Web component</h1>
+    <div class="flex">
+        <my-custom-element></my-custom-element>
+        <my-custom-element></my-custom-element>
+        <my-custom-element></my-custom-element>
+        <my-custom-element></my-custom-element>
+    </div>
+
+
+    <script>
+        class MyCustomElement extends HTMLElement {
+            constructor() {
+                super();
+
+                // Create a shadow DOM for encapsulation
+                this.attachShadow({ mode: 'open' });
+
+                // Define the content of the shadow DOM
+                this.shadowRoot.innerHTML = `
+            
+            <div>This is my custom element!</div>
+        `;
+            }
+        }
+        customElements.define('my-custom-element', MyCustomElement);
+    </script>
+</body>
+
+</html>

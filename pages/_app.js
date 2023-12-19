@@ -1,23 +1,27 @@
-import "../styles/accordion.scss";
-import "../styles/animations.css";
+// import "../styles/accordion.scss";
+// import "../styles/animations.css";
 import "../styles/index.css";
-import "../styles/training.css";
-// import 'tw-elements';
-import dynamic from 'next/dynamic'
-const Footer = dynamic(
-  () => import('../components/FooterComponents/Footer'),
-  { ssr: false }
-)
+// import "../styles/training.css";
+
+
 import Checked from "../assets/Admission/checked.webp"
 import Cross from "../assets/Admission/cross.webp"
 import Image from "next/image"
 
 
+import { Poppins } from '@next/font/google'
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["italic", "normal"]
+})
+
 import { useEffect } from "react";
-// import Footer from "../components/FooterComponents/Footer";
 // import Head from 'next/head'
 import Script from "next/script"
 import Link from "next/link";
+import Header from "../components/HeaderComponents/Header";
+import Footer from "../components/FooterComponents/Footer";
 
 function MyApp({ Component, pageProps }) {
 
@@ -129,9 +133,18 @@ function MyApp({ Component, pageProps }) {
       defer
     />
 
-    <Component {...pageProps} />
-    <Footer />
-    <div className="admission-modal" id="admission-modal" style={{
+    <div className={`text-body ${poppins.className}`}>
+      <Header/>
+      <Component {...pageProps} />
+      <Footer/>
+
+    </div>
+
+
+    {/* <Footer /> */}
+
+
+    <div className="admission-modal hidden" id="admission-modal" style={{
       width: "100%",
       height: "100vh",
       backgroundColor: "rgba(0,0,0,0.6)",
@@ -181,7 +194,7 @@ function MyApp({ Component, pageProps }) {
           textTransform: " none",
           wordWrap: " break-word",
         }}>We will get back to you soon.</p>
-        <Link href="/courses" type="button" className="bg-green-500 rounded-lg h-10 px-5 text-md bg-green-500 text-white" style={{
+        <Link href="/courses" type="button" className="bg-primary rounded-lg h-10 px-5 text-md  text-white" style={{
           margin: "0.3125em",
           padding: "0.625em 1.1em",
           transition: "box-shadow .1s",
@@ -217,7 +230,7 @@ function MyApp({ Component, pageProps }) {
       defer
     />
 
-    <span id="scroll-to-top" className="bg-green-500" onClick={() => {
+    <span id="scroll-to-top" className="bg-primary hidden" onClick={() => {
       window.scroll(0, 0)
     }}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
