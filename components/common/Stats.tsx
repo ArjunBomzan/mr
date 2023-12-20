@@ -1,7 +1,7 @@
 
 /**
  * 
- * @param string wrapperCalss  
+ * @param string wrapperClass  
  * @returns 
  */
 
