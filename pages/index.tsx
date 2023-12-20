@@ -185,7 +185,7 @@ export default function Home(props) {
                                 );
                             })}
                         </ul>
-                        <p className="mb-[30px] flex items-center gap-[5px] md:gap-[11px] text-[20px] text-primary md:text-[24px]">
+                        <p className="mb-[30px] flex items-center justify-center md:justify-start gap-[5px] md:gap-[11px] text-[20px] text-primary md:text-[24px]">
                             <span>{`<h2>`}</span>
                             <span className="md:header-lg text-expanded-sm !text-secondary font-semibold  ">
                                 {" "}
@@ -198,16 +198,16 @@ export default function Home(props) {
 
                             {/* tailwind cannot generate dynamic classnames values after build */}
                             <ul className="hidden ">
-                                <li className="-left-[20px]"></li>
-                                <li className="-left-[40px]"></li>
-                                <li className="-left-[60px]"></li>
+                                <li className="-left-[20px] -ml-[20px]"></li>
+                                <li className="-left-[40px] -ml-[40px]"></li>
                             </ul>
-                            <ul className="inline-flex flex-grow justify-center md:flex-grow-0 md:justify-start">
+                            <div className="flex gap-[20px] justify-center relative left-4">
+                            <ul className="inline-flex flex-gro justify-center md:flex-grow-0 md:justify-start">
                                 {growWithUsers.map((el, index) => {
                                     return (
                                         <li
-                                            className={`flex-center overflow-hidden rounded-full  -left-[${
-                                                20 * index
+                                            className={`flex-center overflow-hidden rounded-full   -ml-[${
+                                                20 * 1
                                             }px] relative z-[${index + 1}px] `}
                                         >
                                             <Image
@@ -223,11 +223,13 @@ export default function Home(props) {
                             </ul>
                             <p>
                                 <span
-                                    className={`relative md:-left-[40px] text-[32px] font-bold text-secondary `}
+                                    className={`relative md::-left-[40px] text-[32px] font-bold text-secondary `}
                                 >
                                     <Swoosh>Mindrisers</Swoosh>
                                 </span>
                             </p>
+
+                            </div>
                         </div>
                         <p className="mt-[30px] max-w-[983px] text-primary">
                             Mind Risers, Nepal's sole IT training institute,
