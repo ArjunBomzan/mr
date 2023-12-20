@@ -150,7 +150,7 @@ const Courses = ({ courses_all }) => {
                         alt=""
                         height={600}
                         width={600}
-                        className="hidden h-auto w-auto lg:inline-block"
+                        className="hidden h-auto w-full lg:inline-block"
                         src="/assets/images/courses/banner-image.svg"
                     />
                 </div>

@@ -36,7 +36,7 @@ const services = ({ successStoreis }) => {
                             <p className="header-xl leading-[145%] text-secondary">Hand !</p>
                             <p className=" mt-5 text-[20px] text-primary">We have provided more than 1000s of experts to the market. Know about few who are doing extraordinary in various companies in their niche.</p>
                         </div>
-                        <Image src={"/assets/images/gallery/people-chatting 1.svg"} alt="" height={500} width={500} className="hidden lg:block" />
+                        <Image src={"/assets/images/gallery/people-chatting 1.svg"} alt="" height={500} width={500} className="hidden w-full lg:block" />
                     </div>
                 </div>
             </BannerWrapper>
