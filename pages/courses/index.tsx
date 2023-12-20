@@ -119,13 +119,13 @@ const Courses = ({ courses_all }) => {
             </Head>
 
             <BannerWrapper>
-                <div className="lg:pt-[30px]] container grid items-center gap-[40px]  lg:grid-cols-[55%,45%] ">
+                <div className="lg:pt-[30px]] container grid items-center gap-[20px] text-center  lg:grid-cols-[55%,45%] lg:text-left xl:gap-[40px]">
                     <div>
                         <p className="header-xl title-space">
                             Learn Top IT Skills
                         </p>
 
-                        <p className="mb-[30px] flex items-center  text-[20px] text-primary md:gap-[11px] md:text-[24px]">
+                        <p className="mb-[30px] flex items-center justify-center text-[20px]  text-primary md:gap-[11px] md:text-[24px] lg:justify-start">
                             <span>{`<h2>`}</span>
                             <span className="xl:header-lg text-expanded-sm font-semibold !text-secondary  ">
                                 {" "}
@@ -134,7 +134,7 @@ const Courses = ({ courses_all }) => {
                             <span>{`</h2>`}</span>
                         </p>
 
-                        <p className=" mb-5 flex items-center gap-[10px]">
+                        <p className=" mb-5 flex items-center justify-center gap-[10px] lg:justify-start">
                             <span className="header-xl">with</span>
                             <span className="header text-secondary ">
                                 <Swoosh>Mindrisers</Swoosh>

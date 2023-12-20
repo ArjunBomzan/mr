@@ -35,6 +35,7 @@ html {
 
 .banner-b-white-curve::after {
  
+    height: 90px;
     background-image: url("/assets/images/common/banner-b-white-curve.svg");
     /* background-color: white; */
     /* c-clip-path: polygon(25% 100%, 76% 100%, 88% 94%, 100% 74%, 100% 100%, 0 100%, 0 80%, 9% 91%);
