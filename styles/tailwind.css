@@ -66,10 +66,10 @@
     }
 
     .header-lg {
-        @apply header  text-[30px] lg:text-[35px] xl:text-[42px] leading-[100%]
+        @apply header  text-[30px] lg:text-[35px] xl:text-[42px]
     }
     .header-xl {
-        @apply header  text-[38px] lg:text-[45px] xl:text-[54px] leading-[145%] /* typescale.com  original 54 px for 1920 */
+        @apply header  text-[38px] lg:text-[45px] xl:text-[54px]  /* typescale.com  original 54 px for 1920 */
     }
 
     .sub-header-sm{
@@ -108,6 +108,9 @@
     }
    
 
+    .text-expanded-sm{
+        @apply leading-[100%]
+    }
     .text-expanded{
         /* @apply leading-[130%] md:leading-[135%] lg:leading-[145%] */
         @apply leading-[145%] md:leading-[135%] lg:leading-[145%]

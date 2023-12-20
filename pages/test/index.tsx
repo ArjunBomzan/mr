@@ -19,7 +19,7 @@ export default function index({ data }) {
     return <>
 
         <div className=' h-96 bg-[rgba(0,0,0,0.5)]'>
-            <div className='banner-b-white-curve relative h-full'>
+            <div className='banner-b-white-curve w-full relative h-full'>
 
             </div>
 

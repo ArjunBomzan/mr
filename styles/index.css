@@ -34,25 +34,16 @@ html {
 
 
 .banner-b-white-curve::after {
-    position: absolute;
-    bottom: 0px;
-    content: "";
+ 
     background-image: url("/assets/images/common/banner-b-white-curve.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 92px;
-    width: 100%;
     /* background-color: white; */
-    c-clip-path: polygon(25% 100%, 76% 100%, 88% 94%, 100% 74%, 100% 100%, 0 100%, 0 80%, 9% 91%);
+    /* c-clip-path: polygon(25% 100%, 76% 100%, 88% 94%, 100% 74%, 100% 100%, 0 100%, 0 80%, 9% 91%);
     c-clip-path: polygon(48% 100%, 57% 100%, 87% 87%, 100% 65%, 100% 100%, 0 100%, 0 72%, 14% 85%);
     c-clip-path: polygon(100% 100%, 44.7% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 99.5%);
     c-clip-path: polygon(100% 0, 44.74% 0, 0 100%, 100% 100%);
     c-clip-path: ellipse(100% 99.6% at 50% 100%);
-    c-background-color: teal;
+    c-background-color: teal; */
     /* display: none; */
-
-
 
 }
 
@@ -108,21 +99,24 @@ html {
 
 
 /* for cruved ..arrow in home page */
-.targett::after {
+.target::after {
     position: absolute;
     content: "";
     background-image: url("/assets/images/home/banner/curve-stroke.svg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    right: 20%;
-    bottom: -30px;
+    bottom: -8px;
     height: auto;
     width: auto;
     height: 812px;
     width: 1561px;
-    transform: translatey(100%);
+    transform: translate(-100%,100%);
     z-index: -1;
+}
+.arrow-pointer{
+    background-image: url("/assets/images/home/banner/curve-stroke.svg");
+
 }
 
 .custom-swiper-dots .swiper-pagination {

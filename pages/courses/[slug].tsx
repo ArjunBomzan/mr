@@ -44,7 +44,7 @@ export default function course(props) {
     return (
 
         <div>
-            <BannerWrapper>
+            <BannerWrapper extendedClassName="after:h-[50px] md:">
                 <div className="container grid lg:grid-cols-[60%,40%] gap-[30px] items-center ">
                     <div>
                         <p className="header-md leading-[145%]  title-space text-center lg:text-left">Python with Django Training in Nepal</p>
