@@ -159,7 +159,7 @@ export default function Home(props) {
                         }
                     }
                 >
-                    <div className="z-[999] relative container  pt-[100px] text-center md:text-left ">
+                    <div className="z-[999] relative container  pt-[50px] md:pt-[100px] text-center md:text-left ">
                         <p className="header-xl text-expanded-sm mb-[30px] uppercase lg:mb-[40px]">
                             Learn
                         </p>
@@ -185,13 +185,13 @@ export default function Home(props) {
                                 );
                             })}
                         </ul>
-                        <p className="mb-[30px] flex items-center gap-[11px] text-[20px] text-primary md:text-[24px]">
+                        <p className="mb-[30px] flex items-center gap-[5px] md:gap-[11px] text-[20px] text-primary md:text-[24px]">
                             <span>{`<h2>`}</span>
-                            <span className="header-lg text-expanded-sm !text-secondary  ">
+                            <span className="md:header-lg text-expanded-sm !text-secondary font-semibold  ">
                                 {" "}
                                 IT skills and expertise
                             </span>
-                            <span>{`<h2>`}</span>
+                            <span>{`</h2>`}</span>
                         </p>
                         <div className="flex flex-wrap items-center  justify-center gap-[20px] text-[36px] text-primary md:justify-start">
                             <span>and grow with</span>
@@ -223,7 +223,7 @@ export default function Home(props) {
                             </ul>
                             <p>
                                 <span
-                                    className={`relative -left-[40px] text-[32px] font-bold text-secondary `}
+                                    className={`relative md:-left-[40px] text-[32px] font-bold text-secondary `}
                                 >
                                     <Swoosh>Mindrisers</Swoosh>
                                 </span>
@@ -236,8 +236,8 @@ export default function Home(props) {
                             programming, design, and marketing to ensure your
                             success.
                         </p>
-                        <div className="mt-[7.5rem]">
-                            <Stats wrapperClass="bg-green-100 grid grid-cols-4 gap-lg max-w-[772px]  rounded-xl p-5" />
+                        <div className="mt-[3.2rem] md:mt-[7.5rem]">
+                            <Stats wrapperClass="bg-green-100 grid grid-cols-2 md:grid-cols-4 gap-lg max-w-[772px]  rounded-xl p-5" />
                         </div>
                     </div>
                 </section>
