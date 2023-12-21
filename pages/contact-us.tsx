@@ -70,7 +70,7 @@ export default function contact() {
                     </form>
                     <div className="">
                         <div className="title-space-3xl text-center lg:text-left ">
-                            <p className=" title-space sub-header-lg leading-[145%]">Contact us by Phone or Lcoation</p>
+                            <p className=" title-space sub-header-lg leading-[145%]">Contact us by Phone or Location</p>
                             <p className="text-lg">We are 24*7 available to help you out.</p>
                         </div>
                         <div className=" text-xl 2xl:text-2xl">

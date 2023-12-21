@@ -79,7 +79,7 @@
         @apply text-[20px] font-semibold text-primary
     }
     .sub-header-lg{
-        @apply sub-header text-[24px] 
+        @apply sub-header text-[20px] xl:text-[22px] 2xl:text-[24px] 
     }
 
     .transition{
@@ -177,16 +177,13 @@
         @apply  mb-[20px]
     }
 
+  
     .title-space-3xl{
-        @apply mb-[19px] md:mb-[23px] lg:mb-[27px] xl:mb-[33px] 2xl:mb-[40px]
-    }
-
-    .title-space-3xl{
-        @apply mb-[19px] md:mb-[23px] lg:mb-[27px] xl:mb-[33px] 2xl:mb-[40px]
+        @apply mb-[23px] md:mb-[23px] lg:mb-[27px] xl:mb-[33px] 2xl:mb-[40px]
     }
 
     .title-space-3xl-reverse{
-        @apply mt-[19px] md:mt-[23px] lg:mt-[27px] xl:mt-[33px] 2xl:mt-[40px]
+        @apply mt-[23px] md:mt-[23px] lg:mt-[27px] xl:mt-[33px] 2xl:mt-[40px]
     }
     
     .title-space-4xl{
@@ -197,6 +194,10 @@
     .title-space-5xl{
        @apply mb-[38px] md:mb-[46px] lg:mb-[55px] xl:mb-[67px] 2xl:mb-[80px]
     }
+    .title-space-5xl-reverse{
+       @apply mt-[38px] md:mt-[46px] lg:mt-[55px] xl:mt-[67px] 2xl:mt-[80px]
+    }
+
 
     .title-space-6xl-reverse{
         @apply mt-[30px] md:mt-[40px] lg:mt-[50px] xl:mt-[70px] 2xl:mt-[90px]

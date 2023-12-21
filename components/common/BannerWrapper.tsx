@@ -19,7 +19,7 @@ type bannerType = "big" | "normal" | "small";
 export default function BannerWrapper({
     size = "normal",
     children,
-    extendedClassName,
+    extendedClassName="",
 }: {
     size?: bannerType;
     children: React.ReactNode;
@@ -52,7 +52,7 @@ export default function BannerWrapper({
                     `,
                     { " h-[964px]": size == "big" },
                     { " h-[591px]": size == "normal" },
-                    { "h-[364px] ": size == "small" },
+                    { "min-h-[364px] ": size == "small" },
                     { [extendedClassName]: true },
                 )}
             >

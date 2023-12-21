@@ -83,7 +83,7 @@ const services = ({ successStoreis }) => {
                     </ul>
                 </div>
                 <div>
-                    <ul className="mt-[145px] grid gap-x-[40px] gap-y-[85px] md:grid-cols-2 xl:grid-cols-4">
+                    <ul className="mt-[65px] grid gap-x-[40px] gap-y-[85px] md:grid-cols-2 xl:grid-cols-4">
                         {new Array(12).fill(null).map((el) => {
                             return (
                                 <li className="hover:shadow-small relative rounded-xl border border-border p-5 pt-[80px] transition hover:border-primary ">

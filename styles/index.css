@@ -127,7 +127,7 @@ html {
 }
 
 .custom-swiper-dots .swiper-pagination {
-    bottom: -45px !important;
+    bottom: -40px !important;
 }
 
 @media(min-width:768px){

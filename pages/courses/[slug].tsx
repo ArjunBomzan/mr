@@ -49,7 +49,7 @@ export default function course(props) {
                     <div>
                         <p className="header-md leading-[145%]  title-space text-center lg:text-left">Python with Django Training in Nepal</p>
                         <p className="md:text-[20px] text-primary">Mind Risers offers Python training courses in Nepal with the goal of preparing participants to create and deploy dynamic web applications. In addition to covering the architecture, templates, forms, and models of the Django web framework...</p>
-                        <div className="mt-[30px] md:mt-[40px]">
+                        <div className="title-space-3xl-reverse">
                             <ul className=" relative grid md:grid-cols-2 gap-x-[40px] gap-y-[20px]  text-primary w-maxx
                             md:after:content-['']
                             md:after:absolute
@@ -77,7 +77,7 @@ export default function course(props) {
                                 }
                             </ul>
 
-                            <div className="title-space-3xl-reverse flex justify-center gap-base-half">
+                            <div className="title-space-3xl-reverse flex justify-center lg:justify-start gap-base-half">
                                 <button className="btn-simple">Get Admission</button>
                                 <button className="btn-simple-outline">Send Enquiry</button>
                             </div>

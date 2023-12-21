@@ -68,7 +68,7 @@ export default function Faqs({
 
 
     faqTitleStyle = faqTitleStyle || "capitalize border border-border p-5   flex justify-between items-center transition-all duration-[.3s] rounded-xl"
-    faqTitleOpenedStyle = faqTitleOpenedStyle || "rounded-bl-0 rounded-br-0"
+    faqTitleOpenedStyle = faqTitleOpenedStyle || "rounded-b-[0px]"
 
     closedIcon = closedIcon || <FaChevronDown />
     opendedIcon = opendedIcon || <FaChevronDown />
@@ -98,7 +98,7 @@ export default function Faqs({
                             {el.title}
                             
                             <span className={classNames(
-                                " transition-all duration-100  ",
+                                "   transition-all duration-100  ",
                                 { "rotate-180": openedIndexes.includes(index) }
                             )}>
                                 {

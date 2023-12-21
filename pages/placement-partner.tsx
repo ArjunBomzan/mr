@@ -79,7 +79,7 @@ export default function Home({ partners }) {
                 </div>
 
             </section>
-            <div className="div section-wrapper-m ">
+            <div className="container section-wrapper-m ">
                 <Opportunity />
             </div>
 

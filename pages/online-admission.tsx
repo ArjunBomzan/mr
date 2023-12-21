@@ -44,10 +44,10 @@ export default function admission() {
         </BannerWrapper>
 
         <section className="section-wrapper-m container">
-            <div>
+            <div className="title-space-5xl">
                 <p className="header-md text-center"><Swoosh type="secondary">Admission Form</Swoosh></p>
             </div>
-            <form className="bg-orange-100 p-[40px] rounded-xl mt-[80px]">
+            <form className="bg-orange-100 p-[40px] rounded-xl">
                 <div className="grid grid-cols-2 gap-x-5">
                     <div className="form-group">
                         <label htmlFor="" className="form-label required-field">Name</label>

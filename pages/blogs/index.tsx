@@ -69,7 +69,7 @@ export default function blogs({ blogs, total_data, current_page }) {
             </BannerWrapper>
             <div className="section-wrapper-m">
                 <div className="section-space container">
-                    <ul className="flex gap-[12px] flex-wrap  ">
+                    <ul className="flex gap-[12px] flex-wrap justify-center lg:justify-start  ">
                         {
                             ["all", "digital marketing", "flutter", "python"].map(el => {
                                 return <li className="rounded-xl capitalize p-[10px] bg-green-50 text-primary text-[14px] leading-[145%]">
