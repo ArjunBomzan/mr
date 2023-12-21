@@ -47,6 +47,12 @@ html {
     /* display: none; */
 
 }
+.banner-b-white-curve.small-curve::after {
+    height: 85px;
+    background-image: url("/assets/images/common/banner-b-white-curve-small.svg");
+   
+
+}
 
 .testimonial-card-clamp {
     display: -webkit-box;

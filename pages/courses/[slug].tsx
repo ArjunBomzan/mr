@@ -44,8 +44,8 @@ export default function course(props) {
     return (
 
         <div>
-            <BannerWrapper extendedClassName="after:h-[50px] md:">
-                <div className="container grid lg:grid-cols-[60%,40%] gap-[30px] items-center ">
+            <BannerWrapper extendedClassName="after:!h-[50px]]">
+                <div className="container grid lg:grid-cols-[60%,40%] gap-[30px] items-center relative z-10">
                     <div>
                         <p className="header-md leading-[145%]  title-space text-center lg:text-left">Python with Django Training in Nepal</p>
                         <p className="md:text-[20px] text-primary">Mind Risers offers Python training courses in Nepal with the goal of preparing participants to create and deploy dynamic web applications. In addition to covering the architecture, templates, forms, and models of the Django web framework...</p>
