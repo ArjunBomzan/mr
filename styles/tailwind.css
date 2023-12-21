@@ -129,7 +129,7 @@
     .section-wrapper-m-xxs{
         @apply my-[20px] md:my-[23px] lg:my-[27px]  xl:my-[33px] 2xl:my-[40px] 
     }
-    .section-wrapper-p-xs{
+    .section-wrapper-m-xs{
         @apply my-[20px] md:my-[23px] lg:my-[27px]  xl:my-[33px] 2xl:my-[40px] 
     }
     .section-wrapper-p{
@@ -195,7 +195,7 @@
     }
 
     .title-space-5xl{
-       @apply mb-[38] md:mb-[46] lg:mb-[55] xl:mb-[67px] 2xl:mb-[80px]
+       @apply mb-[38px] md:mb-[46px] lg:mb-[55px] xl:mb-[67px] 2xl:mb-[80px]
     }
 
     .title-space-6xl-reverse{
@@ -263,7 +263,7 @@
     }
     
     .gap-base-half {
-        @apply gap-[10px] md:gap-[12px] lg:gap-[14px] xl:gap-[17px] 2xl:gap-[20px]
+        @apply gap-[15px] xl:gap-[20px]
     }
     
     .gap-x-base-half {

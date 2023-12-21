@@ -2,6 +2,7 @@ import Image from "next/image"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, FreeMode, Scrollbar, A11y } from 'swiper/modules';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { GoArrowLeft,GoArrowRight } from "react-icons/go";
 
 
 import 'swiper/css';
@@ -17,10 +18,10 @@ export default function Partners() {
 
     /* TODO: slider used in multiple palces can be minimized?? */
     const size = useWindowSize({ useEffect, useState });
-    let commonClass = ` absolute top-0 left-0 bg-white text-black p-2 z-[200] top-[50%] -translate-y-[50%] hidden md:flex-center`
+    let commonClass = ` absolute top-0 left-0 text-black p-2 z-[200] top-[50%] -translate-y-[50%] hidden md:flex-center`
 
     return (
-        <section className='text-primary text-center container section-wrapper-m bg-primary-light section-wrapper-p-xs rounded-3xl'>
+        <section className='text-primary text-center container bg-primary-light section-wrapper-m section-wrapper-p-xs rounded-3xl'>
             <p className='header-lg title-space-lg text-expanded'>Our Top <Swoosh type="secondary"> Partnering</Swoosh> Companies</p>
             <p>We have partnered with Top companies in nepal to help you land in great <br /> internships, opportunities and Job placements.</p>
             {/* FIXME: istead of br we have to use max-width for mobile breakpoitns */}
@@ -53,11 +54,11 @@ export default function Partners() {
                     </Swiper>
                 </div>
 
-                <div className={`swiper-button-prev-cus h-[36] w-[36] rounded-full bg-green-100 flex-center ${commonClass} `}>
-                    <FaArrowLeft className="text-primary text-xl inline-block" />
+                <div className={`swiper-button-prev-cus h-[36px] w-[36px] rounded-full bg-green-100 flex-center ${commonClass} `}>
+                    <GoArrowLeft className="text-primary text-xl inline-block font-thin" />
                 </div>
-                <div className={`swiper-button-next-cus h-[36] w-[36] rounded-full bg-green-100 flex-center ${commonClass} right-0 left-[initial] `}>
-                    <FaArrowRight className="text-primary text-xl inline-block" />
+                <div className={`swiper-button-next-cus h-[36px] w-[36px] rounded-full bg-green-100 flex-center ${commonClass} right-0 left-[initial] `}>
+                    <GoArrowRight className="text-primary text-xl inline-block font-thin" />
                 </div>
             </div>
             <p>Our partnership includes companies in sectors like Fintech, Ed-tech, Banking,,<br /> SAAS companies, IT Companies, Corporates.</p>

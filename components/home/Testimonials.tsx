@@ -37,7 +37,11 @@ export default function Testimonials() {
     const size = useWindowSize({ useEffect, useState });
 
     return (
-        <section className='section-wrapper-m section-wrapper-p-double bg-gray'>
+        <section className='section-wrapper-m section-wrapper-p-double bg-gray bg-center'
+        style={{
+            backgroundImage:"url('/assets/images/testimonials/stroke-bg.svg')"
+        }}
+        >
             <p className='header-lg text-center title-space-4xl'>What our <Swoosh type="secondary"> Partnered</Swoosh> companies says about us</p>
             <div>
                 <Swiper

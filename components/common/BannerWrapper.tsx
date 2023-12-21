@@ -27,6 +27,12 @@ export default function BannerWrapper({
 }) {
     return (
         <>
+            <div className="hidden ">
+                <span className="inline-block !h-[182px] after:!h-[182px] after:content-[`_`] after:block "></span>
+                <span className="inline-block !h-[140px] after:!h-[140px] after:content-[`_`] after:block"></span>
+                <span className="inline-block !h-[100px] after:!h-[100px] after:content-[`_`] after:block"></span>
+
+            </div>
             {/* TODO different sizes for differnt breakpoints. */}
             <div
                 className={classNames(
@@ -36,10 +42,10 @@ export default function BannerWrapper({
                     after:bottom-0 
                     after:${
                         size === "big"
-                            ? "h-[182px]"
+                            ? "!h-[182px]"
                             : size === "normal"
-                              ? "h-[140px]"
-                              : "h-[100px]"
+                              ? "!h-[140px]"
+                              : "!h-[100px]"
                     }
                     after:w-full 
                     after:bg-cover 

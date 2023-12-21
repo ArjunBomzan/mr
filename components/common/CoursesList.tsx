@@ -25,7 +25,7 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
               <Image alt="" src={el.image} width={300} height={300} className='mb-5' />{/* Property 'image' does not exist on type '{ el: courseType; }'.t */}
               <p className='sub-header title-space-md text-expanded'>{el.title}</p>
               <p className='header-space-xs'>{el.duration}</p>
-              <button className='btn-gray hover:bg-green-50 hover:text-primary  transition '>Learn More</button>
+              <button className='btn-gray group-hover:bg-green-50 group-hover:text-primary  transition '>Learn More</button>
             </Link>
 
           </li>

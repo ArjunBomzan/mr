@@ -380,7 +380,7 @@ export default function Home(props) {
             <section className=" section-wrapper-m section-wrapper-p-half container">
                 <div className=" section-p  relative grid gap-[40px] overflow-hidden rounded-3xl   bg-orange-100 xl:grid-cols-[45%,55%]  xl:gap-0  ">
                     <article className="text-center text-secondary xl:pr-[40px] xl:text-left">
-                        <p className="header-lg  text-expanded mb-5">
+                        <p className="header-lg  text-expanded title-space-lg">
                             Request a <span className="swoosh">Callback</span>
                         </p>
                         <p>
@@ -438,7 +438,7 @@ export default function Home(props) {
                                     placeholder="Select your course"
                                 />
                             </div>
-                            <div className="flex justify-end">
+                            <div className="flex justify-center xl:justify-end">
                                 <button className="btn-secondary">
                                     Submit
                                 </button>
@@ -447,7 +447,7 @@ export default function Home(props) {
                     </article>
                 </div>
             </section>
-            <section className=" section-wrapper container">
+            <section className=" section-wrappe container">
                 <div className="text-center text-primary">
                     <p className="mb-[10px] uppercase ">be the part of</p>
                     <p className="header text-expanded">
@@ -465,7 +465,9 @@ export default function Home(props) {
                     />
                 </div>
             </section>
+            <div className="">
             <Partners />
+            </div>
             <Testimonials />
             <div className=" container my-[100px]">
                 <Opportunity />

@@ -91,7 +91,7 @@ export default function blogs({ blogs, total_data, current_page }) {
                 </section>
 
                 <div className="container">
-                    <section className="bg-green-100 section-wrapper-m-xxs p-[20px] md:p-[30px] lg:p-[40px]  rounded-3xl">  {/* TODO: 40px  = my-8 */}
+                    <section className="bg-green-50 section-wrapper-m-xxs p-[20px] md:p-[30px] lg:p-[40px]  rounded-3xl">  {/* TODO: 40px  = my-8 */}
                         <div className="flex flex-col md:flex-row justify-between items-center gap-[20px] md:gap-0">
                             <div>
                                 <p className="header-md mb-5">Getting <Swoosh type="secondary">interested ?</Swoosh></p>

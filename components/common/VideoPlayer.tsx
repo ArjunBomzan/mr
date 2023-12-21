@@ -1,39 +1,45 @@
-
-import classNames from 'classnames'
-import React, { useState } from 'react'
-import { AiOutlinePlayCircle } from 'react-icons/ai'
+import classNames from "classnames";
+import React, { useState } from "react";
+import { AiOutlinePlayCircle } from "react-icons/ai";
 
 export default function VideoPlayer({ className }: { className: string }) {
-
-    const [videoOpen, setVideoOpen] = useState(false)
+    const [videoOpen, setVideoOpen] = useState(false);
 
     return (
         <div className={className || ""}>
-            <div className="  flex justify-center items-center  object-cover object-center h-full "
+            <div
+                className="  flex h-full items-center  justify-center object-cover object-center "
                 style={{
-                    backgroundImage: `url('https://ooty-theme.myshopify.com/cdn/shop/files/video-sec-bg_1.jpg?v=1620132835')`
+                    backgroundImage: `url('https://ooty-theme.myshopify.com/cdn/shop/files/video-sec-bg_1.jpg?v=1620132835')`,
                 }}
             >
-                <AiOutlinePlayCircle className={`inline-block w-10 h-10 lg:w-20 lg:h-20 text-white ${classNames({ hidden: videoOpen })}`}
+                <AiOutlinePlayCircle
+                    className={`inline-block h-10 w-10 text-white lg:h-20 lg:w-20 ${classNames(
+                        { hidden: videoOpen },
+                    )}`}
                     onClick={() => {
-                        setVideoOpen(prev => !prev)
+                        setVideoOpen((prev) => !prev);
                     }}
                 />
                 <div
                     onClick={() => {
-                        setVideoOpen(false)
+                        setVideoOpen(false);
                     }}
-                    className={`fixed z-[999] top-0 right-0 bottom-0 left-0 flex justify-center items-center bg-[rgba(0,0,0,0.8)] ${classNames({ hidden: !videoOpen })}`}>
-                    {
-                        videoOpen
-                        &&
-                        < div className='relative'>
-                            <iframe className='max-w-full' width="560" height="315" src="https://www.youtube.com/embed/g8y7ALHjryY?si=CMM1Jux3C0XVjtaB&autoplay=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                        </div>
-                    }
+                    className={`flex-center fixed bottom-0 left-0 right-0 top-0 z-[999] h-screen max-h-screen w-full  bg-[rgba(0,0,0,0.8)] ${classNames(
+                        { hidden: !videoOpen },
+                    )}`}
+                >
+                    {videoOpen && (
+                        <iframe
+                            className="mx-auto  w-[95%] max-w-full aspect-video "
+                            src="https://www.youtube.com/embed/g8y7ALHjryY?si=CMM1Jux3C0XVjtaB&autoplay=1"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                        ></iframe>
+                    )}
                 </div>
             </div>
         </div>
-
-    )
+    );
 }
