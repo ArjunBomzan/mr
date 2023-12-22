@@ -1,226 +1,242 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @layer components {
     .container {
-        @apply px-3 w-full mx-auto sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px]
+        @apply mx-auto w-full px-3 sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px];
     }
 
     .flex-center {
-        @apply flex justify-center items-center
+        @apply flex items-center justify-center;
     }
 
     .btn {
-        @apply  capitalize focus:outline-1 focus:outline-black focus:outline focus:outline-offset-4  capitalize rounded-[30px] bg-primary text-white py-[10px] px-[16px] hover:bg-primary-dark after:content-['_➔']
+        @apply rounded-[30px] bg-primary px-[16px] py-[10px]  capitalize text-white after:content-['_➔'] hover:bg-primary-dark focus:outline focus:outline-1 focus:outline-offset-4 focus:outline-black;
     }
-    .btn-outline{
-        @apply btn border border-primary bg-transparent text-primary hover:text-white
+    .btn-outline {
+        @apply btn border border-primary bg-transparent text-primary hover:text-white;
     }
 
     .btn-simple {
-        @apply btn after:content-['']
+        @apply btn after:content-[''];
     }
     .btn-simple-outline {
-        @apply btn-outline after:content-['']
+        @apply btn-outline after:content-[''];
     }
-    .btn-gray{
-        @apply btn bg-gray  text-gray-600  hover:bg-primary-dark hover:text-white
+    .btn-gray {
+        @apply btn bg-gray  text-gray-600  hover:bg-primary-dark hover:text-white;
     }
-    .btn-secondary{
-        @apply btn bg-secondary  hover:bg-secondary-dark hover:text-white
+    .btn-secondary {
+        @apply btn bg-secondary  hover:bg-secondary-dark hover:text-white;
     }
-    .btn-secondary-simple{
-        @apply btn-secondary   after:content-['']
+    .btn-secondary-simple {
+        @apply btn-secondary   after:content-[''];
     }
 
     /* NOTE: while formatting, rgab(space between them will cause errors) */
     .shadow-extra-small {
-        @apply shadow-[0px_10px_15px_0px_rgba(211,192,214,0.07)]
+        @apply shadow-[0px_10px_15px_0px_rgba(211,192,214,0.07)];
     }
 
     .shadow-small {
-        @apply shadow-[0px_8px_16px_0px_rgba(62,19,77,0.07)]
+        @apply shadow-[0px_8px_16px_0px_rgba(62,19,77,0.07)];
     }
 
-    
     .shadow-medium {
-        @apply shadow-[0px_15px_30px_0px_rgba(62,19,77,0.09)]
+        @apply shadow-[0px_15px_30px_0px_rgba(62,19,77,0.09)];
     }
 
     /* large shadow for pop-up-widows */
     .shadow-large {
-        @apply shadow-[0px_10px_30px_0px_rgba(62,19,77,0.47)]
+        @apply shadow-[0px_10px_30px_0px_rgba(62,19,77,0.47)];
     }
 
     .shadow-input {
-        @apply shadow-[0px_4px_5px_0px_rgba(33,1,38,0.03)]
+        @apply shadow-[0px_4px_5px_0px_rgba(33,1,38,0.03)];
     }
 
-    .header { 
-        @apply text-[27px]  xl:text-[32px] font-semibold text-primary
+    .header-design {
+        @apply font-semibold text-primary;
     }
-    .header-md{
-        @apply header text-[25px] lg:text-[30px] xl:text-[36px]
+
+    .header {
+        @apply header-design   text-[27px] xl:text-[32px];
+    }
+    .header-md {
+        @apply header header-design text-[25px] lg:text-[30px] xl:text-[36px];
     }
 
     .header-lg {
-        @apply header  text-[30px] lg:text-[35px] xl:text-[42px]
+        @apply header  header-design text-[30px] lg:text-[35px] xl:text-[42px];
     }
     .header-xl {
-        @apply header  text-[38px] lg:text-[45px] xl:text-[54px]  /* typescale.com  original 54 px for 1920 */
+        @apply /* typescale.com original  54 px  for 1920 */ header-design text-[38px] lg:text-[45px] xl:text-[54px];
     }
 
-    .sub-header-sm{
-        @apply text-[18px] font-semibold text-primary
+    .sub-header-sm {
+        @apply header-design text-[18px];
     }
-    .sub-header{
-        @apply text-[20px] font-semibold text-primary
+    .sub-header {
+        @apply header-design text-[20px];
     }
-    .sub-header-lg{
-        @apply sub-header text-[20px] xl:text-[22px] 2xl:text-[24px] 
-    }
-
-    .transition{
-        @apply ease-linear  /* FIXME: for all transition ease linear timing function  --- this will be replaced by default tailwind   */
-    }
-    .transition-all{
-        @apply ease-linear
+    .sub-header-lg {
+        @apply header-design text-[20px] xl:text-[22px] 2xl:text-[24px];
     }
 
-    .required-field{
-        @apply after:content-['_*']
+    .title-xxs {
+        @apply text-[12x];
+    }
+    .title-xs {
+        @apply text-[14px];
+    }
+    .title-sm {
+        @apply text-[17px] xl:text-[18px];
+    }
+    .title {
+        @apply text-[18px] xl:text-[20px];
+    }
+    .title-lg {
+        @apply text-[20px] md:text-[22px] xl:text-[24px];
+    }
+    .title-xl {
+        @apply text-[22px] md:text-[24px] xl:text-[28px];
+    }
+    .title-2xl {
+        @apply text-[24px] md:text-[28px] xl:text-[30px] 2xl:text-[32px];
+    }
+    .title-3xl {
+        @apply text-[26px] md:text-[28px] lg:text-[32px] xl:text-[34px] 2xl:text-[36px];
     }
 
-    .form-group{
-        @apply mb-[20px]
-    }
-    .form-label{
-        @apply mb-[10px] block capitalize
-    }
-    .form-control{
-        @apply rounded-[12px] p-5 w-full bg-white
+    .required-field {
+        @apply after:content-['_*'];
     }
 
-    .font-regular{
-        @apply font-normal
+    .form-group {
+        @apply mb-[20px];
     }
-   
+    .form-label {
+        @apply mb-[10px] block capitalize;
+    }
+    .form-control {
+        @apply w-full rounded-[12px] bg-white p-5;
+    }
 
-    .text-expanded-sm{
-        @apply leading-[100%]
+    .font-regular {
+        @apply font-normal;
     }
-    .text-expanded{
+
+    .text-expanded-sm {
+        @apply leading-[100%];
+    }
+    .text-expanded {
         /* @apply leading-[130%] md:leading-[135%] lg:leading-[145%] */
-        @apply leading-[145%] md:leading-[135%] lg:leading-[145%]
+        @apply leading-[145%] md:leading-[135%] lg:leading-[145%];
     }
 
-    .section-wrapper-m{
-        @apply my-[60px] md:my-[60px] lg:my-[70px]  xl:my-[85px] 2xl:my-[100px] /* change in header-space accordigly */
+    .section-wrapper-m {
+        @apply /* change in  header-space accordigly */ my-[60px] md:my-[60px] lg:my-[70px] xl:my-[85px] 2xl:my-[100px];
     }
-    .section-wrapper-m-sm{
-        @apply my-[40px] md:my-[50px] lg:my-[60px]  xl:my-[70px] 2xl:my-[80px] 
+    .section-wrapper-m-sm {
+        @apply my-[40px] md:my-[50px] lg:my-[60px]  xl:my-[70px] 2xl:my-[80px];
     }
-    .section-wrapper-m-xs{
-        @apply my-[29px] md:my-[35px] lg:my-[42px]  xl:my-[50px] 2xl:my-[60px] 
-    }
-
-    .section-wrapper-m-xxs{
-        @apply my-[20px] md:my-[23px] lg:my-[27px]  xl:my-[33px] 2xl:my-[40px] 
-    }
-    .section-wrapper-m-xs{
-        @apply my-[20px] md:my-[23px] lg:my-[27px]  xl:my-[33px] 2xl:my-[40px] 
-    }
-    .section-wrapper-p{
-        @apply py-[40px] md:py-[50px] lg:py-[70px] xl:py-[85px]  2xl:py-[100px]
-    }
-    .section-wrapper-p-double{
-        @apply py-[80px] md:py-[100px] lg:py-[140px] xl:py-[170px]  2xl:py-[200px]
-    }
-    .section-wrapper-p-sm{
-        @apply py-[40px] md:py-[50px] lg:py-[60px]  xl:py-[70px] 2xl:py-[80px] 
-    }
-    .section-wrapper-p-xs{
-        @apply py-[29px] md:py-[35px] lg:py-[42px]  xl:py-[50px] 2xl:py-[60px] 
-    }
-    .section-wrapper-p-half{
-        @apply py-[20px] md:py-[25px] lg:py-[35px] xl:py-[42px]  2xl:py-[50px]
+    .section-wrapper-m-xs {
+        @apply my-[29px] md:my-[35px] lg:my-[42px]  xl:my-[50px] 2xl:my-[60px];
     }
 
-    .section-wrapper{
-        @apply section-wrapper-m section-wrapper-p
+    .section-wrapper-m-xxs {
+        @apply my-[20px] md:my-[23px] lg:my-[27px]  xl:my-[33px] 2xl:my-[40px];
+    }
+    .section-wrapper-m-xs {
+        @apply my-[20px] md:my-[23px] lg:my-[27px]  xl:my-[33px] 2xl:my-[40px];
+    }
+    .section-wrapper-p {
+        @apply py-[40px] md:py-[50px] lg:py-[70px] xl:py-[85px]  2xl:py-[100px];
+    }
+    .section-wrapper-p-double {
+        @apply py-[80px] md:py-[100px] lg:py-[140px] xl:py-[170px]  2xl:py-[200px];
+    }
+    .section-wrapper-p-sm {
+        @apply py-[40px] md:py-[50px] lg:py-[60px]  xl:py-[70px] 2xl:py-[80px];
+    }
+    .section-wrapper-p-xs {
+        @apply py-[29px] md:py-[35px] lg:py-[42px]  xl:py-[50px] 2xl:py-[60px];
+    }
+    .section-wrapper-p-half {
+        @apply py-[20px] md:py-[25px] lg:py-[35px] xl:py-[42px]  2xl:py-[50px];
     }
 
-    .section-p{
-        @apply py-[40px] px-[10px] md:px-[20px] lg:px-[30px] xl:p-[40px]
+    .section-wrapper {
+        @apply section-wrapper-m section-wrapper-p;
     }
 
+    .section-p {
+        @apply px-[10px] py-[40px] md:px-[20px] lg:px-[30px] xl:p-[40px];
+    }
 
     /* base md lg xl 2xl 3xl  */
-    .title-space{
-        @apply  mb-[10px]
+    .title-space {
+        @apply mb-[10px];
     }
-    
-    .title-space-md{
-        @apply  mb-[13px]
+
+    .title-space-md {
+        @apply mb-[13px];
     }
-    .title-space-lg{
-        @apply  mb-[20px]
+    .title-space-lg {
+        @apply mb-[20px];
     }
-    
+
     /* .title-space-lg{
         @apply mb-[30px] md:mb-[20px]
     } */
 
-    .title-space-xl{
-        @apply  mb-[20px]
+    .title-space-xl {
+        @apply mb-[20px];
     }
 
-  
-    .title-space-3xl{
-        @apply mb-[23px] md:mb-[23px] lg:mb-[27px] xl:mb-[33px] 2xl:mb-[40px]
+    .title-space-3xl {
+        @apply mb-[23px] md:mb-[23px] lg:mb-[27px] xl:mb-[33px] 2xl:mb-[40px];
     }
 
-    .title-space-3xl-reverse{
-        @apply mt-[23px] md:mt-[23px] lg:mt-[27px] xl:mt-[33px] 2xl:mt-[40px]
-    }
-    
-    .title-space-4xl{
-        @apply mb-[29px] md:mb-[35px] lg:mb-[42px]  xl:mb-[50px] 2xl:mb-[60px] 
-
+    .title-space-3xl-reverse {
+        @apply mt-[23px] md:mt-[23px] lg:mt-[27px] xl:mt-[33px] 2xl:mt-[40px];
     }
 
-    .title-space-5xl{
-       @apply mb-[38px] md:mb-[46px] lg:mb-[55px] xl:mb-[67px] 2xl:mb-[80px]
-    }
-    .title-space-5xl-reverse{
-       @apply mt-[38px] md:mt-[46px] lg:mt-[55px] xl:mt-[67px] 2xl:mt-[80px]
+    .title-space-4xl {
+        @apply mb-[29px] md:mb-[35px] lg:mb-[42px]  xl:mb-[50px] 2xl:mb-[60px];
     }
 
-
-    .title-space-6xl-reverse{
-        @apply mt-[30px] md:mt-[40px] lg:mt-[50px] xl:mt-[70px] 2xl:mt-[90px]
-     }
-
-
-    .title-space-6xl{
-       @apply mb-[30px] md:mb-[40px] lg:mb-[50px] xl:mb-[70px] 2xl:mb-[90px]
+    .title-space-5xl {
+        @apply mb-[38px] md:mb-[46px] lg:mb-[55px] xl:mb-[67px] 2xl:mb-[80px];
+    }
+    .title-space-5xl-reverse {
+        @apply mt-[38px] md:mt-[46px] lg:mt-[55px] xl:mt-[67px] 2xl:mt-[80px];
     }
 
-    .header-space{
-        @apply mb-[30px] md:mb-[40px] lg:mb-[50px] xl:mb-[70px] 2xl:mb-[90px]
+    .title-space-6xl-reverse {
+        @apply mt-[30px] md:mt-[40px] lg:mt-[50px] xl:mt-[70px] 2xl:mt-[90px];
     }
 
-    .header-space-xs{  /* convert this to title space-lg */
-        @apply mb-[19px] md:mb-[23px] lg:mb-[27px] xl:mb-[33px] 2xl:mb-[40px]
+    .title-space-6xl {
+        @apply mb-[30px] md:mb-[40px] lg:mb-[50px] xl:mb-[70px] 2xl:mb-[90px];
     }
 
-    .section-space-3xl{
-        @apply title-space-3xl
+    .header-space {
+        @apply mb-[30px] md:mb-[40px] lg:mb-[50px] xl:mb-[70px] 2xl:mb-[90px];
     }
 
-    .section-space{  /* 
+    .header-space-xs {
+        /* convert this to title space-lg */
+        @apply mb-[19px] md:mb-[23px] lg:mb-[27px] xl:mb-[33px] 2xl:mb-[40px];
+    }
+
+    .section-space-3xl {
+        @apply title-space-3xl;
+    }
+
+    .section-space {
+        /* 
         margin bottoms  for sections   TODO: but this doesnot work for gaps and paddings used in other section
 
         for flex and grid-gap also make re-usalbe classes.  cause used in multiple places 
@@ -233,52 +249,50 @@
         gap-xl 
 
          */
-         
-        @apply mb-[19px] md:mb-[23px] lg:mb-[27px] xl:mb-[33px] 2xl:mb-[40px]
+
+        @apply mb-[19px] md:mb-[23px] lg:mb-[27px] xl:mb-[33px] 2xl:mb-[40px];
     }
 
     /* its usually 40 px at 1920 */
-    .gap-sm{
-        @apply gap-[20px]  lg:gap-[22px] xl:gap-[27px] 2xl:gap-[32px] 
+    .gap-sm {
+        @apply gap-[20px]  lg:gap-[22px] xl:gap-[27px] 2xl:gap-[32px];
     }
-    .gap-base{
-        @apply gap-[19px] md:gap-[23px] lg:gap-[27px] xl:gap-[33px] 2xl:gap-[40px] 
-    }
-    
-    .gap-lg{
-       @apply gap-[29px] md:gap-[35px] lg:gap-[42px]  xl:gap-[50px] 2xl:gap-[60px]
+    .gap-base {
+        @apply gap-[19px] md:gap-[23px] lg:gap-[27px] xl:gap-[33px] 2xl:gap-[40px];
     }
 
-    .gap-base-double{
-        @apply gap-[38px] md:gap-[46px] lg:gap-[54px] xl:gap-[66px] 2xl:gap-[80px]
+    .gap-lg {
+        @apply gap-[29px] md:gap-[35px] lg:gap-[42px]  xl:gap-[50px] 2xl:gap-[60px];
     }
-    .gap-x-base{
-        @apply gap-x-[19px] md:gap-x-[23px] lg:gap-x-[27px] xl:gap-x-[33px] 2xl:gap-x-[40px]
+
+    .gap-base-double {
+        @apply gap-[38px] md:gap-[46px] lg:gap-[54px] xl:gap-[66px] 2xl:gap-[80px];
     }
-    .gap-y-base{
-        @apply gap-y-[19px] md:gap-y-[23px] lg:gap-y-[27px] xl:gap-y-[33px] 2xl:gap-y-[40px]
+    .gap-x-base {
+        @apply gap-x-[19px] md:gap-x-[23px] lg:gap-x-[27px] xl:gap-x-[33px] 2xl:gap-x-[40px];
     }
-   
+    .gap-y-base {
+        @apply gap-y-[19px] md:gap-y-[23px] lg:gap-y-[27px] xl:gap-y-[33px] 2xl:gap-y-[40px];
+    }
+
     .gap-y-base-double {
-        @apply gap-y-[38px] md:gap-y-[46px] lg:gap-y-[54px] xl:gap-y-[66px] 2xl:gap-y-[80px]
-    }
-    
-    .gap-base-half {
-        @apply gap-[15px] xl:gap-[20px]
-    }
-    
-    .gap-x-base-half {
-        @apply gap-x-[10px] md:gap-x-[12px] lg:gap-x-[14px] xl:gap-x-[17px] 2xl:gap-x-[20px]
-    }
-    
-    .gap-y-base-half {
-        @apply gap-y-[10px] md:gap-y-[12px] lg:gap-y-[14px] xl:gap-y-[17px] 2xl:gap-y-[20px]
+        @apply gap-y-[38px] md:gap-y-[46px] lg:gap-y-[54px] xl:gap-y-[66px] 2xl:gap-y-[80px];
     }
 
+    .gap-base-half {
+        @apply gap-[15px] xl:gap-[20px];
+    }
+
+    .gap-x-base-half {
+        @apply gap-x-[10px] md:gap-x-[12px] lg:gap-x-[14px] xl:gap-x-[17px] 2xl:gap-x-[20px];
+    }
+
+    .gap-y-base-half {
+        @apply gap-y-[10px] md:gap-y-[12px] lg:gap-y-[14px] xl:gap-y-[17px] 2xl:gap-y-[20px];
+    }
 }
 
-.transition,.transition-all{
+.transition,
+.transition-all {
     transition-timing-function: linear !important;
 }
-
-

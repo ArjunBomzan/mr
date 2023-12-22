@@ -31,7 +31,7 @@ export default function admission() {
                 <div className="text-center title-space-4xl">
                     <p className="text-secondary header-md font-normal leading-[145%]">Backed by Facts !</p>
                     <p className="mb-5 header-xl leadig-[145%]">We are Best in what we do</p>
-                    <p className="mb-5 text-[20px] text-primary">Fill the form and join mindrisers to elevate your expertise in your interest filed.</p>
+                    <p className="mb-5 title text-primary">Fill the form and join mindrisers to elevate your expertise in your interest filed.</p>
                     <button className="btn">Fill admission form</button>
                 </div>
 

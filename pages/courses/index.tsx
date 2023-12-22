@@ -125,7 +125,7 @@ const Courses = ({ courses_all }) => {
                             Learn Top IT Skills
                         </p>
 
-                        <p className="mb-[30px] flex items-center justify-center text-[20px]  text-primary md:gap-[11px] md:text-[24px] lg:justify-start">
+                        <p className="mb-[30px] flex items-center justify-center title-lg  text-primary md:gap-[11px]  lg:justify-start">
                             <span>{`<h2>`}</span>
                             <span className="xl:header-lg text-expanded-sm font-semibold !text-secondary  ">
                                 {" "}
@@ -164,7 +164,7 @@ const Courses = ({ courses_all }) => {
                         Explore our courses
                     </p>
                 </div>
-                <div className="title-space-6xl-reverse  !2xl:mt-[80px] container">
+                <div className="title-space-6xl-reverse  !2xl:title-space-5xl-reverse container">
                     <CoursesList courses={courses} />
                 </div>
             </section>

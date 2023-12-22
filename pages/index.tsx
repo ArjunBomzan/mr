@@ -159,7 +159,7 @@ export default function Home(props) {
                         }
                     }
                 >
-                    <div className="z-[999] relative container  pt-[50px] md:pt-[100px] text-center md:text-left ">
+                    <div className="container relative z-[999]  pt-[50px] text-center md:pt-[100px] md:text-left ">
                         <p className="header-xl text-expanded-sm mb-[30px] uppercase lg:mb-[40px]">
                             Learn
                         </p>
@@ -185,15 +185,15 @@ export default function Home(props) {
                                 );
                             })}
                         </ul>
-                        <p className="mb-[30px] flex items-center justify-center md:justify-start gap-[5px] md:gap-[11px] text-[20px] text-primary md:text-[24px]">
+                        <p className="title-lg mb-[30px] flex items-center justify-center gap-[5px] text-primary md:justify-start md:gap-[11px] ">
                             <span>{`<h2>`}</span>
-                            <span className="md:header-lg text-expanded-sm !text-secondary font-semibold  ">
+                            <span className="md:header-lg text-expanded-sm font-semibold !text-secondary  ">
                                 {" "}
                                 IT skills and expertise
                             </span>
                             <span>{`</h2>`}</span>
                         </p>
-                        <div className="flex flex-wrap items-center  justify-center gap-[20px] text-[36px] text-primary md:justify-start">
+                        <div className="flex flex-wrap items-center  justify-center gap-[20px] title-3xl text-primary md:justify-start">
                             <span>and grow with</span>
 
                             {/* tailwind cannot generate dynamic classnames values after build */}
@@ -201,34 +201,35 @@ export default function Home(props) {
                                 <li className="-left-[20px] -ml-[20px]"></li>
                                 <li className="-left-[40px] -ml-[40px]"></li>
                             </ul>
-                            <div className="flex gap-[20px] justify-center relative left-4">
-                            <ul className="inline-flex flex-gro justify-center md:flex-grow-0 md:justify-start">
-                                {growWithUsers.map((el, index) => {
-                                    return (
-                                        <li
-                                            className={`flex-center overflow-hidden rounded-full   -ml-[${
-                                                20 * 1
-                                            }px] relative z-[${index + 1}px] `}
-                                        >
-                                            <Image
-                                                alt=""
-                                                src={el.src}
-                                                height={50}
-                                                width={50}
-                                                className="h-[50px] rounded-full  border-4 border-green-600 "
-                                            />
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                            <p>
-                                <span
-                                    className={`relative md::-left-[40px] text-[32px] font-bold text-secondary `}
-                                >
-                                    <Swoosh>Mindrisers</Swoosh>
-                                </span>
-                            </p>
-
+                            <div className="relative left-4 flex justify-center gap-[20px]">
+                                <ul className="flex-gro inline-flex justify-center md:flex-grow-0 md:justify-start">
+                                    {growWithUsers.map((el, index) => {
+                                        return (
+                                            <li
+                                                className={`flex-center overflow-hidden rounded-full   -ml-[${
+                                                    20 * 1
+                                                }px] relative z-[${
+                                                    index + 1
+                                                }px] `}
+                                            >
+                                                <Image
+                                                    alt=""
+                                                    src={el.src}
+                                                    height={50}
+                                                    width={50}
+                                                    className="h-[50px] rounded-full  border-4 border-green-600 "
+                                                />
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                                <p>
+                                    <span
+                                        className={`md::-left-[40px] relative title-2xl font-bold text-secondary `}
+                                    >
+                                        <Swoosh>Mindrisers</Swoosh>
+                                    </span>
+                                </p>
                             </div>
                         </div>
                         <p className="mt-[30px] max-w-[983px] text-primary">
@@ -347,7 +348,7 @@ export default function Home(props) {
                                             <span className="header">
                                                 {el.number} +
                                             </span>
-                                            <span className="text-[20px] ">
+                                            <span className="title">
                                                 {el.title}
                                             </span>
                                         </p>
@@ -466,7 +467,7 @@ export default function Home(props) {
                 </div>
             </section>
             <div className="">
-            <Partners />
+                <Partners />
             </div>
             <Testimonials />
             <div className=" container my-[100px]">

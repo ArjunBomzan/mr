@@ -106,7 +106,7 @@ const Footer = () => {
         <div className="col-span-2 md:col-span-4 lg:col-span-1  text-center lg:text-left section-space-3xl xl:mb-0">
           <div className='flex gap-2 items-center justify-center lg:flex-col xl:flex-row lg:justify-start title-space-xl'>
             <Image src={Logo} className="h-[3.375rem] w-[3.375rem]" width={300} height={300} alt="" />
-            <p className={`${inter.className} text-[1.75rem]`}>mindrisers</p>
+            <p className={`${inter.className} title-xl`}>mindrisers</p>
           </div>
           <p>Mind Risers is the only IT training institute in Kathmandu, Nepal offering paid internships after the course completion</p>
         </div>

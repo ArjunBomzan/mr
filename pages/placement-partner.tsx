@@ -37,7 +37,7 @@ export default function Home({ partners }) {
                         <div className=' text-center lg:text-left'>
                             <p className='text-secondary header-md font-normal leading-[145%]'>We Make sure </p>
                             <p className='header-xl leading-[145%]'>You are fit in right place</p>
-                            <p className='mt-5 text-primary text-[20px]'>Join Mindrisers to gain access to exceptional placement program and expert’s support. Build competitive advantage and increase your offer value with Mindrisers. </p>
+                            <p className='mt-5 text-primary title]'>Join Mindrisers to gain access to exceptional placement program and expert’s support. Build competitive advantage and increase your offer value with Mindrisers. </p>
                             <button className='btn mt-5'>Explore Job placement partners</button>
                         </div>
                         <Image alt="" src="/assets/images/partners/feature-image.svg" width={600} height={600} className='w-full hidden lg:block' />

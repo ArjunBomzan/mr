@@ -17,7 +17,7 @@ export function BlogCard() {
                 className="h-[176px] w-full rounded-tr-xl rounded-tl-xl "
             />
             <div className="p-5 border border-border rounded-br-xl rounded-bl-xl ">
-                <p className="text-[20px] font-semibold leading-[145%]">MERN Stack project to grab your first Internship in Kathmandu? | Mindrisers</p>
+                <p className="title font-semibold leading-[145%]">MERN Stack project to grab your first Internship in Kathmandu? | Mindrisers</p>
                 <div className="flex justify-between mt-[13px] text-[14px]">
                     <span>Coding</span>
                     <span>.</span>
@@ -62,7 +62,7 @@ export default function blogs({ blogs, total_data, current_page }) {
                 <div className="container  ">
                     <div className="text-center">
                         <p className="header-xl title-space leading-[145%]">Blogs</p>
-                        <p className="text-primary font-semibold text-[20px]">Our Latest updates and hand-picked resources</p>
+                        <p className="text-primary font-semibold title">Our Latest updates and hand-picked resources</p>
                     </div>
 
                 </div>

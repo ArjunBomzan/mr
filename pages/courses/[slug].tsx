@@ -181,11 +181,11 @@ export default function course(props) {
                                             </div>
                                         </div>
                                         <div className="title-space-xl">
-                                            <p className="text-[12px] mb-[4px]">course taken</p>
+                                            <p className="title-xxs mb-[4px]">course taken</p>
                                             <p className="text-[18px] font-medium">Digital Marketing</p>
                                         </div>
                                         <div>
-                                            <p className="text-[12px] mb-[4px]">college</p>
+                                            <p className="title-xxs mb-[4px]">college</p>
                                             <p className="text-[18px] font-medium">xyz college</p>
                                         </div>
                                     </SwiperSlide>

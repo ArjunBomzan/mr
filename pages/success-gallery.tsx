@@ -44,7 +44,7 @@ const services = ({ successStoreis }) => {
                             <p className="header-xl leading-[145%] text-secondary">
                                 Hand !
                             </p>
-                            <p className=" mt-5 text-[20px] text-primary">
+                            <p className=" title mt-5 text-primary">
                                 We have provided more than 1000s of experts to
                                 the market. Know about few who are doing
                                 extraordinary in various companies in their
@@ -83,6 +83,7 @@ const services = ({ successStoreis }) => {
                     </ul>
                 </div>
                 <div>
+                    {/* mt-65 due to rouded images */}
                     <ul className="mt-[65px] grid gap-x-[40px] gap-y-[85px] md:grid-cols-2 xl:grid-cols-4">
                         {new Array(12).fill(null).map((el) => {
                             return (
@@ -95,7 +96,7 @@ const services = ({ successStoreis }) => {
                                         className="absolute left-0 right-0 top-0 mx-auto h-[130px]  w-[130px] -translate-y-[50%] rounded-full border-8 border-green-100 object-center"
                                     />
                                     <div className="mb-5 text-center leading-[28px]">
-                                        <p className="mb-[10px] text-[20px] font-semibold text-gray-950 ">
+                                        <p className="title mb-[10px] font-semibold text-gray-950 ">
                                             Kiran
                                         </p>
                                         <p className="mb-[4px]">Q&A Analyst</p>
@@ -108,7 +109,7 @@ const services = ({ successStoreis }) => {
                                     </div>
                                     <div className="border-t border-border">
                                         <div className="mt-5">
-                                            <p className="mb-[4px] text-[12px]">
+                                            <p className="title-xxs mb-[4px]">
                                                 Course taken
                                             </p>
                                             <p className="text-[18px] font-medium leading-[28px]">
@@ -116,7 +117,7 @@ const services = ({ successStoreis }) => {
                                             </p>
                                         </div>
                                         <div className="my-5">
-                                            <p className="mb-[4px] text-[12px]">
+                                            <p className="title-xxs mb-[4px]">
                                                 Tools learned
                                             </p>
                                             <ul className="flex gap-[20px]">
@@ -145,7 +146,7 @@ const services = ({ successStoreis }) => {
                                             </ul>
                                         </div>
                                         <div>
-                                            <p className="mb-[4px] text-[12px]">
+                                            <p className="title-xxs mb-[4px]">
                                                 {" "}
                                                 College
                                             </p>

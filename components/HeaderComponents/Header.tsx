@@ -114,7 +114,7 @@ const Header = () => {
                                 className="aspect-square h-[3.5rem] w-[3.5rem]"
                             />
                             <p
-                                className={`${inter.className} ml-[7px] text-[28px] xl:hidden 2xl:block`}
+                                className={`${inter.className} ml-[7px] title-xl xl:hidden 2xl:block`}
                             >
                                 mindrisers
                             </p>

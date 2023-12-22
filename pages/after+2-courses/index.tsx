@@ -64,7 +64,7 @@ const courses = ({ courses }) => {
                         <p className='header-md font-normal title-space capitalize text-secondary'>before bachelor starts</p>
                         <p className='header-xl capitalize title-space'>become industry ready</p>
                         <p className='header-xl'>with <span className='header text-secondary title-space-xl'><Swoosh>Mindrisers</Swoosh></span></p>
-                        <p className='text-[20px] text-primary'>We provide variety of market demand IT skill courses at Mindrisers. Explore courses and start your IT journey with us.</p>
+                        <p className='title text-primary'>We provide variety of market demand IT skill courses at Mindrisers. Explore courses and start your IT journey with us.</p>
                     </div>
                     <Image alt="" height={600} width={600} className='hidden lg:block w-auto w-full h-auto' src="/assets/images/courses/banner-image.svg" />
                 </div>
@@ -72,7 +72,7 @@ const courses = ({ courses }) => {
             <section className='section-wrapper-m'>
                 <div className='text-center'>
                     <p className='sub-header-lg title-space'>Explore <Swoosh type='secondary'>Skill Courses</Swoosh></p>
-                    <p className='text-[20px] text-primary'>Explore our courses</p>
+                    <p className='title text-primary'>Explore our courses</p>
                 </div>
                 <div className='container section-wrapper-m-sm'>
                     <CoursesList courses={courses} />

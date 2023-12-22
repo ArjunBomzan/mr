@@ -65,7 +65,7 @@ export default function BlogSlug(props) {
                         MERN Stack project to grab your first Internship in
                         Kathmandu? | Mindrisers
                     </p>
-                    <p className="text-center text-[20px] leading-[145%]">
+                    <p className="text-center title leading-[145%]">
                         Python is a simple to learn and popular programming
                         language that people use to write instructions for
                         computers. It's designed to be easy to read and write,
@@ -111,7 +111,7 @@ export default function BlogSlug(props) {
                                 <FaFacebook className="text-2xl" />
                             </div>
                             <div className="flex items-center gap-[5px] lg:gap-[10px] xl:flex-col ">
-                                <p className=" text-[20px] font-semibold leading-[145%]">
+                                <p className=" title font-semibold leading-[145%]">
                                     367
                                 </p>
                                 <p className="text-[14px] leading-[145%]">
@@ -303,7 +303,7 @@ export default function BlogSlug(props) {
                                 <ul>
                                     {[1, 2, 3, 4].map((el) => {
                                         return (
-                                            <li className="mb-10 flex items-start gap-[10px] text-[20px]">
+                                            <li className="mb-10 flex items-start gap-[10px] title">
                                                 <span className="flex-center min-h-[40px] min-w-[40px] rounded-xl bg-gray-100 font-bold">
                                                     01
                                                 </span>
