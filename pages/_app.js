@@ -20,8 +20,8 @@ import { useEffect } from "react";
 // import Head from 'next/head'
 import Script from "next/script"
 import Link from "next/link";
-import Header from "../components/HeaderComponents/Header";
-import Footer from "../components/FooterComponents/Footer";
+import Header from "../components/common/Header";
+import Footer from "../components/common/Footer";
 
 function MyApp({ Component, pageProps }) {
 

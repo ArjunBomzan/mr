@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/HomePage.jsx", "pages/services.jsx", "components/ServicesComponents/OurServices.jsx", "components/HomePageComponents/Jumpstart.jsx", "components/HeaderComponents/Header.tsx"  ],
+, "pages/HomePage.jsx", "pages/services.jsx", "components/ServicesComponents/OurServices.jsx", "components/HomePageComponents/Jumpstart.jsx", "components/common/Header.tsx"  ],
   "exclude": [
     "node_modules"
   ]

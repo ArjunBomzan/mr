@@ -1,12 +1,8 @@
 import Head from "next/head";
-import Header from "../../components/HeaderComponents/Header";
-import Trainings from "../../components/TrainingComponents/Trainings";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import BannerWrapper, {
-    BannerSize,
-} from "../../components/common/BannerWrapper";
+import BannerWrapper from "../../components/common/BannerWrapper";
 import Image from "next/image";
 import Swoosh from "../../components/common/Swoosh";
 import CoursesList from "../../components/common/CoursesList";

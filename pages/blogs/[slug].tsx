@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Blog from "../../components/BlogsComponents/Blog";
-import Header from "../../components/HeaderComponents/Header";
 import { useRouter } from "next/router";
 import BannerWrapper from "../../components/common/BannerWrapper";
 import Image from "next/image";

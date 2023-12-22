@@ -1,7 +1,6 @@
 @import url("./tailwind.css");
 @import url("./universal.css");
 
-
 html {
     font-size: 16px;
 }
@@ -25,16 +24,14 @@ html {
 }
 
 .swoosh-h-secondary {
-    background-color: #E27C00;
+    background-color: #e27c00;
 }
 
 /* TODO: swoosh should go behind the text  => seems like we cannot send element made using after like that ... make reusable component 
     and absolute !after will work.
 */
 
-
 .banner-b-white-curve::after {
- 
     height: 90px;
     background-image: url("/assets/images/common/banner-b-white-curve.svg");
     /* background-color: white; */
@@ -45,13 +42,10 @@ html {
     c-clip-path: ellipse(100% 99.6% at 50% 100%);
     c-background-color: teal; */
     /* display: none; */
-
 }
 .banner-b-white-curve.small-curve::after {
     height: 85px;
     background-image: url("/assets/images/common/banner-b-white-curve-small.svg");
-   
-
 }
 
 .testimonial-card-clamp {
@@ -78,7 +72,6 @@ html {
     -webkit-line-clamp: 7;
 }
 
-
 /* TODO: scrollbar is not changing .. change its desing */
 .testimonial-card-clamp-4::-webkit-scrollbar {
     width: 6px;
@@ -104,7 +97,6 @@ html {
     /* Set the color of the scrollbar thumb on hover */
 }
 
-
 /* for cruved ..arrow in home page */
 .target::after {
     position: absolute;
@@ -118,20 +110,42 @@ html {
     width: auto;
     height: 812px;
     width: 1561px;
-    transform: translate(-100%,100%);
+    transform: translate(-100%, 100%);
     z-index: -1;
 }
-.arrow-pointer{
+.arrow-pointer {
     background-image: url("/assets/images/home/banner/curve-stroke.svg");
-
 }
 
 .custom-swiper-dots .swiper-pagination {
     bottom: -40px !important;
 }
 
-@media(min-width:768px){
-    .hide-custom-swiper-dots .swiper-pagination{
-         display: none;
+@media (min-width: 768px) {
+    .hide-custom-swiper-dots .swiper-pagination {
+        display: none;
     }
+}
+
+@keyframes appear {
+    from {
+        /* opacity: 0; */
+        /* width: 0px; */
+        /* max-width: 10px; */
+        max-width: min-content
+        /* overflow: hidden; */
+        /* transform: scale(.5); */
+    }
+    to {
+        /* opacity: 1; */
+        max-width: 9999px;
+        /* max-width: ; */
+        /* transform: scale(1); */
+    }
+}
+
+.animateMe {
+    white-space: nowrap;
+    animation: appear 6s;
+    animation-timing-function: linear;
 }

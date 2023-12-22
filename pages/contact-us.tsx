@@ -1,6 +1,4 @@
 import Head from "next/head";
-import ContactUs from '../components/ContactUsComponents/ContactUs';
-import Header from "../components/HeaderComponents/Header";
 import BannerWrapper from "../components/common/BannerWrapper";
 import { IoLocationSharp } from "react-icons/io5";
 

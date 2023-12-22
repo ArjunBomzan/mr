@@ -1,6 +1,4 @@
 import Head from "next/head"
-import Admission from "../components/AdmissionComponents/Admission"
-import Header from "../components/HeaderComponents/Header"
 import BannerWrapper from "../components/common/BannerWrapper"
 import Swoosh from "../components/common/Swoosh"
 import Stats from "../components/common/Stats"

@@ -1,6 +1,4 @@
 import Head from 'next/head';
-import Header from '../../components/HeaderComponents/Header';
-import Trainings from "../../components/TrainingComponents/Trainings";
 import BannerWrapper from '../../components/common/BannerWrapper';
 import Image from 'next/image';
 import Swoosh from '../../components/common/Swoosh';

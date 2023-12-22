@@ -1,8 +1,6 @@
 import Head from "next/head";
-import Header from "../components/HeaderComponents/Header";
 import Image from "next/image";
 import Link from "next/link";
-import { MdOutlinePlayCircle } from "react-icons/md";
 import Partners from "../components/home/Partners";
 import Testimonials from "../components/home/Testimonials";
 import Swoosh from "../components/common/Swoosh";
@@ -13,6 +11,7 @@ import Faqs from "../components/common/Faqs";
 import classNames from "classnames";
 import VideoPlayer from "../components/common/VideoPlayer";
 import Stats from "../components/common/Stats";
+import TypeWriter from "../components/common/TypeWriter";
 
 export default function Home(props) {
     let meta_title =
@@ -150,6 +149,10 @@ export default function Home(props) {
                 {/* <meta name="twitter:image" content={meta_image} /> */}
             </Head>
 
+            {/* <div className="container my-7">
+                <TypeWriter contents={["one olne", "two"]} />
+            </div> */}
+
             <BannerWrapper size="big" extendedClassName="!py-0 zz-0">
                 <section
                     className="h-full w-full bg-no-repeat "
@@ -185,15 +188,19 @@ export default function Home(props) {
                                 );
                             })}
                         </ul>
-                        <p className="title-lg mb-[30px] flex items-center justify-center gap-[5px] text-primary md:justify-start md:gap-[11px] ">
+
+                        <p className="max-w-[30px]] w-min hover:w-[999px] duration-[10s] border  transition-all whitespace-nowrap overflow-hidden">Lorem ipsum dolor, sit amet conore. Quos cumqtam doloremque.</p>
+
+                        <TypeWriter contents={typeWriters} />
+
+                        {/* <p className="border title-lg mb-[30px] inline-flex transition-all duration-[6s] items-center justify-center gap-[5px] text-primary md:justify-start md:gap-[11px] ">
                             <span>{`<h2>`}</span>
-                            <span className="md:header-lg text-expanded-sm font-semibold !text-secondary  ">
-                                {" "}
-                                IT skills and expertise
+                            <span className="md:header-lg text-expanded-sm block  font-semibold !text-secondary  ">
+                                <TypeWriter contents={typeWriters} />
                             </span>
                             <span>{`</h2>`}</span>
-                        </p>
-                        <div className="flex flex-wrap items-center  justify-center gap-[20px] title-3xl text-primary md:justify-start">
+                        </p> */}
+                        <div className="title-3xl flex flex-wrap  items-center justify-center gap-[20px] text-primary md:justify-start">
                             <span>and grow with</span>
 
                             {/* tailwind cannot generate dynamic classnames values after build */}
@@ -225,7 +232,7 @@ export default function Home(props) {
                                 </ul>
                                 <p>
                                     <span
-                                        className={`md::-left-[40px] relative title-2xl font-bold text-secondary `}
+                                        className={`md::-left-[40px] title-2xl relative font-bold text-secondary `}
                                     >
                                         <Swoosh>Mindrisers</Swoosh>
                                     </span>

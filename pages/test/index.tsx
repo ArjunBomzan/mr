@@ -13,8 +13,12 @@ import 'swiper/css/scrollbar';
 import Opportunity from '../../public/assets/images/common/Opportunity';
 import Link from 'next/link';
 import Image from 'next/image';
+import TypeWriter from '../../components/common/TypeWriter';
 
 export default function index({ data }) {
+    return <>
+        <TypeWriter contents={["one","two","three","four","five"]}/>
+    </>
 
     return <>
 
