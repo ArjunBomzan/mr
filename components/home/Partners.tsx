@@ -66,11 +66,11 @@ export default function Partners({ partners }) {
                     >
                         {partners.map((el) => {
                             return (
-                                <SwiperSlide className="px-[10px] md:px-[25px] lg:px-[40px] xl:px-[40px] 2xl:px-[50px]">
+                                <SwiperSlide className="px-[10px] md:px-[25px] lg:px-[30px]  ">
                                     <Image
                                         src={makeFullUrl(el.image)}
                                         alt=""
-                                        className="h-[72px] w-full object-contain md:h-[36px] borderr border-border"
+                                        className="h-[72px] w-full object-contain md:h-[46px] borde border-border"
                                         width={200}
                                         height={200}
                                     />

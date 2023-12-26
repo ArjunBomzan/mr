@@ -428,13 +428,15 @@ export default function Home(props) {
                             Success Network
                         </Swoosh>
                     </p>
-                    <Image
-                        alt=""
-                        src={"/assets/images/home/success-stories.jpg"}
-                        className="mx-auto mt-[40px]"
-                        width={700}
-                        height={700}
-                    />
+                    <Link href={"/success-gallery"} className="inline-block">
+                        <Image
+                            alt=""
+                            src={"/assets/images/home/success-stories.jpg"}
+                            className="mx-auto mt-[40px]"
+                            width={700}
+                            height={700}
+                        />
+                    </Link>
                 </div>
             </section>
             <div className="">

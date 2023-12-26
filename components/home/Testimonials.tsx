@@ -40,10 +40,10 @@ export default function Testimonials() {
     const size = useWindowSize({ useEffect, useState });
 
     const testimonailasData = [
-        
         {
             starCount: 5,
             image: "img",
+            name: "",
             company: "Realpath Engineering Consulancy Pvt.Ltd.",
             position: "CEO",
             testimonial:
@@ -52,6 +52,7 @@ export default function Testimonials() {
         {
             starCount: 5,
             image: "img",
+            name: "",
             company: "Pentagram Consulting & Construction Pvt. Ltd.",
             position: "CEO",
             testimonial:
@@ -60,6 +61,7 @@ export default function Testimonials() {
         {
             starCount: 5,
             image: "img",
+            name: "",
             company: "Prabhu Group/Prabhu Pay",
             position: "CEO",
             testimonial:
@@ -68,7 +70,7 @@ export default function Testimonials() {
         {
             starCount: 5,
             image: "img",
-            name:"Samip ChudaL",
+            name: "Samip ChudaL",
             company: "Damak Nagar Palika",
             position: "IT Officer",
             testimonial:
@@ -79,7 +81,7 @@ export default function Testimonials() {
             image: "img",
             name: "Khushal Regmi",
             position: "Vice President",
-            company:"CAN",
+            company: "CAN",
             testimonial: "It provides good services and offers we need.",
         },
         {
@@ -87,7 +89,7 @@ export default function Testimonials() {
             image: "img",
             name: "Kritika Shah",
             position: "CEO",
-            company:"Tummy Truck",
+            company: "Tummy Truck",
             testimonial:
                 "Mind Risers is the best in town for providing sound knowledge to freshers.",
         },
@@ -96,24 +98,24 @@ export default function Testimonials() {
             image: "img",
             name: "Safal Sharma",
             position: "CEO",
-            company:"Rato Pati",
+            company: "Rato Pati",
             testimonial:
                 "Service is all what you expect when you are bound to work with providers and whom we are connected with it's MindRisers Consortium. The best team to provide efficient and timely service.",
         },
         {
             starCount: 5,
             image: "img",
-            name:"Niranjan Kandel ",
+            name: "Niranjan Kandel ",
             company: "Reliance Life Insurance",
             position: "Deputy CEO",
             testimonial:
                 "What makes you happy is when your business meets your customer's satisfaction. MindRisers Consortium made this part so easy and effective, thank you!",
         },
-        // TODO: fix below ones.
         {
             starCount: 5,
             image: "img",
-            name: "EVO Store",
+            name: "",
+            company: "EVO Store",
             position: "Digital Marketing Department",
             testimonial:
                 "We can positively say Mind Risers provides the best knowledge and services to our clients. We are very happy with the service we received from Mind Risers Consortium.",
@@ -121,15 +123,17 @@ export default function Testimonials() {
         {
             starCount: 5,
             image: "img",
-            name: "VEDA",
-            position: "Sanjan Piya | Co-founder",
+            compnay: "VEDA",
+            name: "Sanjan Piya",
+            position: "Co-founder",
             testimonial:
                 "Extremely satisfied with MindRisers Consortium. The best team to deal with, helpful, friendly, and service-oriented.",
         },
         {
             starCount: 5,
             image: "img",
-            name: "Samanantar Group",
+            name: "",
+            company: "Samanantar Group",
             position: "HR Department",
             testimonial:
                 "We greatly appreciate MindRisers Consortium, an amazing team who are keen to help in every step of the way to support with all the software.",
@@ -137,8 +141,9 @@ export default function Testimonials() {
         {
             starCount: 5,
             image: "img",
-            name: "Grow By Data",
-            position: "Suresh Thapa | Development Team Head",
+            company: "Grow By Data",
+            name: "Suresh Thapa",
+            position: "Development Team Head",
             testimonial: "Unbelievably helpful with great services you seek.",
         },
     ];
@@ -157,8 +162,8 @@ export default function Testimonials() {
             </p>
             <div>
                 <Swiper
-                    // className="custom-swiper-dots !overflow-x-clip !overflow-y-visible"
-                    className="items-stretch"
+                    className="custom-swiper-dots !overflow-x-clip !overflow-y-visible"
+                    // className="items-stretch"
                     loop={false}
                     slidesPerView={
                         size.width >= 1536
@@ -167,7 +172,9 @@ export default function Testimonials() {
                               ? 4
                               : size.width >= 768
                                 ? 3
-                                : 1
+                                : size.width >= 576
+                                  ? 2
+                                  : 1
                     }
                     spaceBetween={
                         size.width >= 1536
@@ -188,18 +195,20 @@ export default function Testimonials() {
                 >
                     {testimonailasData.map((el) => {
                         return (
-                            <SwiperSlide className="cursor-pointer h-full">
-                                <div className="rounded-xl bg-white p-5 text-gray-600">
+                            <SwiperSlide className="">
+                                <div className="relative min-h-[350px] cursor-pointer rounded-xl bg-white p-5 text-gray-600">
                                     <Rating rating={el.starCount} />
                                     <p className=" testimonial-card-clamp clamp-7  my-5">
                                         {el.testimonial}
                                     </p>
                                     <div className="h-1 w-1/5 rounded-2xl bg-border "></div>
-                                    <div className="mt-5">
+                                    <div className="absolute bottom-5 mt-5">
                                         <p className="mb-1 text-sm font-bold">
                                             {el.name}
                                         </p>
-                                        <p className="mb-1 text-sm">{el.position}</p>
+                                        <p className="mb-1 text-sm">
+                                            {el.position}
+                                        </p>
                                         <p>{el.company}</p>
                                     </div>
                                 </div>

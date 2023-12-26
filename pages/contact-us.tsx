@@ -4,6 +4,7 @@ import { IoLocationSharp } from "react-icons/io5";
 
 import { Inter } from '@next/font/google'
 import Swoosh from "../components/common/Swoosh";
+import DropMessage from "../components/ContactUsComponents/DropMessage";
 const inter = Inter({ subsets: ['latin'] })
 
 export default function contact() {
@@ -35,7 +36,8 @@ export default function contact() {
             </BannerWrapper>
             <section className="container section-wrapper-m">
                 <div className="grid  lg:grid-cols-2 gap-base-double !2xl:gap-[9.375rem]">
-                    <form className="section-p bg-orange-100 rounded-xl">
+                    <DropMessage/>
+                    <form className="section-p bg-orange-100 rounded-xl hidden">
                         <div className="text-center title-space-3xl">
                             <p className="header-md text-secondary title-space ">Tell us about yourself</p>
                             <p>Whether you have questions or you would just like to say hello, contact us.</p>
