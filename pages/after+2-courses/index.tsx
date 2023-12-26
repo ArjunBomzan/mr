@@ -16,10 +16,7 @@ export async function getStaticProps() {
 
     return {
         props: { courses: data },
-        // revalidate: 60 * 60 * 24  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it. 
-        revalidate: 60 * 1  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it. 
-
-
+        revalidate: 60 * 1 
     }
 }
 
@@ -27,15 +24,6 @@ export async function getStaticProps() {
 const courses = ({ courses }) => {
     let meta_title = "After +2 courses | mindrisers Nepal"
     let meta_description = ""
-    courses = [
-        {
-          title: "MERN stack training in nepal",
-          image: "https://mindrisers.com.np/_next/image?url=https%3A%2F%2Fmindrisers.com.np%2F%2Fstatic%2FImages%2Fcourses%2FMern_wiWtVlC.jpg&w=640&q=75",
-          duration: "3 months",
-          slug: "mern",
-        }
-      ]
-      courses = [...courses, ...courses, ...courses, ...courses]
 
     return (
         <>

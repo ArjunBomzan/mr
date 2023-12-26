@@ -3,6 +3,7 @@ import BannerWrapper from "../components/common/BannerWrapper";
 import Image from "next/image";
 import Swoosh from "../components/common/Swoosh";
 import Opportunity from "../public/assets/images/common/Opportunity";
+import { makeFullApiUrl } from "../utils/makeFullUrl";
 
 const services = ({ successStoreis }) => {
     let meta_title = " Internships | Job Placements | Mindrisers Nepal";
@@ -83,21 +84,21 @@ const services = ({ successStoreis }) => {
                 <div>
                     
                     <ul className="mt-[65px] grid gap-x-[40px] gap-y-[85px] md:grid-cols-2 xl:grid-cols-4">
-                        {new Array(12).fill(null).map((el) => {
+                        {successStoreis.map((el) => {
                             return (
                                 <li className="hover:shadow-small relative rounded-xl border border-border p-5 pt-[80px] transition hover:border-primary ">
                                     <Image
-                                        src={"/assets/images/person.jpg"}
+                                        src={el.image}
                                         alt=""
                                         height={400}
                                         width={400}
-                                        className="absolute left-0 right-0 top-0 mx-auto h-[130px]  w-[130px] -translate-y-[50%] rounded-full border-8 border-green-100 object-center"
+                                        className="absolute left-0 right-0 top-0 mx-auto h-[130px]  w-[130px] -translate-y-[50%] rounded-full border-8 border-green-100 object-cover"
                                     />
                                     <div className="mb-5 text-center leading-[28px]">
                                         <p className="mb-[10px] title font-semibold text-gray-950 ">
                                             Kiran
                                         </p>
-                                        <p className="mb-[4px]">Q&A Analyst</p>
+                                        <p className="mb-[4px]">{el.title}</p>
                                         <p className="font-medium">
                                             <span className="text-secondary">
                                                 @
@@ -169,7 +170,7 @@ const services = ({ successStoreis }) => {
 export async function getStaticProps() {
     let data = [];
     try {
-        const res = await fetch(`${process.env.DOMAIN_V1}successstoryhome/`);
+        const res = await fetch( makeFullApiUrl(`/successstoryhome/`));
         data = await res.json();
     } catch (err) {}
     return {

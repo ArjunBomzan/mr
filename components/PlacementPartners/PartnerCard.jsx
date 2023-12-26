@@ -2,7 +2,6 @@ import Link from "next/link"
 import Image from "next/image"
 
 const PartnerCard = (props) => {
-    console.log({props})
     return (
         <Link
             href={`${props?.course?.link}`}

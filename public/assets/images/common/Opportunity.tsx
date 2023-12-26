@@ -12,7 +12,6 @@ export default function Opportunity() {
                     <p className='text-gray-600 title-space-xl'>Have something to Ask ?</p>
                     <Link
                         className="btn inline-block"
-                        target="_blank"
                         href={"/online-admission"}>
                         get admission enquiry
                     </Link>

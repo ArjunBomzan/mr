@@ -20,7 +20,7 @@ export default function VideoPlayer({ className }: { className: string }) {
                     onClick={() => {
                         setVideoOpen((prev) => !prev);
                     }}
-                />
+            />
                 <div
                     onClick={() => {
                         setVideoOpen(false);
@@ -31,7 +31,7 @@ export default function VideoPlayer({ className }: { className: string }) {
                 >
                     {videoOpen && (
                         <iframe
-                            className="mx-auto  w-[95%] max-w-full aspect-video "
+                            className="mx-auto  w-[75%] max-w-full aspect-video "
                             src="https://www.youtube.com/embed/g8y7ALHjryY?si=CMM1Jux3C0XVjtaB&autoplay=1"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

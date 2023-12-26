@@ -81,7 +81,7 @@
         @apply header-design text-[20px];
     }
     .sub-header-lg {
-        @apply header-design text-[20px] xl:text-[22px] 2xl:text-[24px];
+        @apply header-design text-[22px] xl:text-[23px] 2xl:text-[24px];
     }
 
     .title-xxs {
@@ -112,6 +112,9 @@
     .required-field {
         @apply after:content-['_*'];
     }
+    .error-message{
+        @apply text-sm text-secondary mt-1 before:content-['_⚠']
+    }
 
     .form-group {
         @apply mb-[20px];
@@ -120,7 +123,8 @@
         @apply mb-[10px] block capitalize;
     }
     .form-control {
-        @apply w-full rounded-[12px] bg-white p-5;
+        /* @apply w-full rounded-[12px] bg-white p-5 focus::border-secondary focus::border focus:outline-transparent focus-visible::outline-none focus:shadow-none; */
+        @apply w-full rounded-[12px]  p-5  focus:outline-transparent  focus:shadow-none bg-gray-50
     }
 
     .font-regular {
@@ -290,6 +294,8 @@
     .gap-y-base-half {
         @apply gap-y-[10px] md:gap-y-[12px] lg:gap-y-[14px] xl:gap-y-[17px] 2xl:gap-y-[20px];
     }
+
+    
 }
 
 .transition,

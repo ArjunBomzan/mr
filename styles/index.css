@@ -97,6 +97,33 @@ html {
     /* Set the color of the scrollbar thumb on hover */
 }
 
+
+/* TODO: scrollbar is not changing .. change its desing */
+.custom-sidebar::-webkit-scrollbar {
+    width: 6px;
+    /* Set the width of the scrollbar */
+}
+
+.custom-sidebar::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* Set the background color of the track */
+    border-radius: 10px;
+    /* Set the border radius of the track */
+}
+
+.custom-sidebar::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 10px;
+    /* Set the border radius of the scrollbar thumb */
+}
+
+.custom-sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Set the color of the scrollbar thumb on hover */
+}
+
+
 /* for cruved ..arrow in home page */
 .target::after {
     position: absolute;
@@ -131,8 +158,8 @@ html {
     from {
         /* opacity: 0; */
         /* width: 0px; */
-        /* max-width: 10px; */
-        max-width: min-content
+        max-width: 0px;
+        /* max-width: min-content */
         /* overflow: hidden; */
         /* transform: scale(.5); */
     }
@@ -148,4 +175,16 @@ html {
     white-space: nowrap;
     animation: appear 6s;
     animation-timing-function: linear;
+}
+
+
+.editor-content h2{
+  /* TODO: fix header of editor-contents */
+}
+.editor-content a{
+  
+}
+.editor-content ul{
+    list-style: disc;
+    padding-left:40px
 }

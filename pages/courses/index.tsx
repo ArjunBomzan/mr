@@ -6,6 +6,7 @@ import BannerWrapper from "../../components/common/BannerWrapper";
 import Image from "next/image";
 import Swoosh from "../../components/common/Swoosh";
 import CoursesList from "../../components/common/CoursesList";
+import { makeFullApiUrl } from "../../utils/makeFullUrl";
 
 export async function getStaticProps() {
     // export async function getServerSideProps({query}) {
@@ -15,64 +16,46 @@ export async function getStaticProps() {
             `https://mindrisers.com.np/blog/api/v1/course/`,
         );
 
-        // const res = await fetch(`${process.env.DOMAIN_V1}course/?tag=` + (query.tag || ''))
-        // const res = await fetch(`${process.env.DOMAIN_V1}course/?tag=` + ("frontend" || ''))
-
         data = await res.json();
     } catch (err) {}
 
     return {
         props: { courses_all: data },
 
-        // revalidate: 60 * 60 * 24 * 1 // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
-        revalidate: 60 * 1, // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
+        revalidate: 60 * 1,
     };
 }
 
 const Courses = ({ courses_all }) => {
-    let [courses, setcourses] = useState(courses_all); /* FIXME */
-    courses = [
-        {
-            title: "MERN stack training in nepal",
-            image: "https://mindrisers.com.np/_next/image?url=https%3A%2F%2Fmindrisers.com.np%2F%2Fstatic%2FImages%2Fcourses%2FMern_wiWtVlC.jpg&w=640&q=75",
-            duration: "3 months",
-            slug: "mern",
-        },
-    ];
-    courses = [
-        ...courses,
-        ...courses,
-        ...courses,
-        ...courses,
-        ...courses,
-        ...courses,
-        ...courses,
-        ...courses,
-    ];
+    let [courses, setcourses] = useState(courses_all); 
+
     const router = useRouter();
 
-    useEffect(() => {
-        const fetchCourses = async () => {
-            if (router.isReady) {
-                // if (router.query.tag) {
-                //   console.log(router.query.tag)
-                try {
-                    let data = [];
-                    const res = await fetch(
-                        `${process.env.DOMAIN_V1}course/?tag=` +
-                            (router.query.tag || ""),
-                    );
-                    data = await res.json();
+    // useEffect(() => {
+    //     const fetchCourses = async () => {
+    //         if (router.isReady) {
+    //             try {
+    //                 console.log(
+    //                     makeFullApiUrl(
+    //                         `/course/?tag=` + (router.query.tag || ""),
+    //                     ),
+    //                 );
+    //                 let data = [];
+    //                 const res = await fetch(
+    //                     makeFullApiUrl(
+    //                         `/course/?tag=` + (router.query.tag || ""),
+    //                     ),
+    //                 );
+    //                 data = await res.json();
 
-                    setcourses(data);
-                } catch (err) {
-                    console.log(err);
-                }
-                // }
-            }
-        };
-        fetchCourses();
-    }, [router.isReady, router.query.tag]);
+    //                 setcourses(data);
+    //             } catch (err) {
+    //                 console.log(err);
+    //             }
+    //         }
+    //     };
+    //     fetchCourses();
+    // }, [router.isReady, router.query.tag]);
 
     let meta_description =
         "Are you searching for a Practical IT Training Center in Kathmandu Nepal then MindRisers is the perfect platform for you to learn Digital Skils";
@@ -121,7 +104,7 @@ const Courses = ({ courses_all }) => {
                             Learn Top IT Skills
                         </p>
 
-                        <p className="mb-[30px] flex items-center justify-center title-lg  text-primary md:gap-[11px]  lg:justify-start">
+                        <p className="title-lg mb-[30px] flex items-center justify-center  text-primary md:gap-[11px]  lg:justify-start">
                             <span>{`<h2>`}</span>
                             <span className="xl:header-lg text-expanded-sm font-semibold !text-secondary  ">
                                 {" "}

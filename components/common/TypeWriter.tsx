@@ -15,12 +15,12 @@ const CustomText = ({ el }) => {
             setDynamicClass("max-w-[0px]");
         };
     }, []);
-    
+
     return (
         <>
             <span
                 className={classNames(
-                    "  animate- duration-1000] animateMe animateMee inline-block  overflow-hidden transition-all duration-[6s]",
+                    "  animate- duration-1000] animateMee inline-block  overflow-hidden transition-all duration-[6s]",
                     { [dynamicClass]: true },
                 )}
             >
@@ -49,18 +49,14 @@ export default function TypeWriter({ contents }: { contents: string[] }) {
 
     return (
         <>
-            <p className="title-lg inline-flexx mb-[30px] max-w-full items-center justify-center gap-[5px] border text-primary transition-all duration-[6s] !ease-in md:justify-start md:gap-[11px] ">
-                <span>{`<h2>`}</span>
-                <span className="md:header-lg text-expanded-sm bloc  font-semibold !text-secondary  ">
-                    {contents.map((el, index) => {
-                        if (currentIndex === index) {
-                            return <CustomText el={el} key={index} />;
-                        }
-                        return null;
-                    })}
-                </span>
-                <span>{`</h2>`}</span>
-            </p>
+            <span className="md:header-lg text-expanded-sm bloc  font-semibold !text-secondary  ">
+                {contents.map((el, index) => {
+                    if (currentIndex === index) {
+                        return <CustomText el={el} key={index} />;
+                    }
+                    return null;
+                })}
+            </span>
         </>
     );
 }

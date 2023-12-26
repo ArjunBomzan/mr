@@ -8,7 +8,6 @@ const Trainings = (props) => {
   const router = useRouter()
   const pathname = router.pathname.split('/')[1]
 
-  console.log("tag",)
   let { tag } = router.query
 
 

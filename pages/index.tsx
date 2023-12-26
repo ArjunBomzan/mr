@@ -4,7 +4,7 @@ import Link from "next/link";
 import Partners from "../components/home/Partners";
 import Testimonials from "../components/home/Testimonials";
 import Swoosh from "../components/common/Swoosh";
-import BannerWrapper, { BannerSize } from "../components/common/BannerWrapper";
+import BannerWrapper from "../components/common/BannerWrapper";
 import CoursesList from "../components/common/CoursesList";
 import Opportunity from "../public/assets/images/common/Opportunity";
 import Faqs from "../components/common/Faqs";
@@ -12,6 +12,8 @@ import classNames from "classnames";
 import VideoPlayer from "../components/common/VideoPlayer";
 import Stats from "../components/common/Stats";
 import TypeWriter from "../components/common/TypeWriter";
+import HomeContact from "../components/HomePageComponents/HomeContact";
+import { makeFullApiUrl } from "../utils/makeFullUrl";
 
 export default function Home(props) {
     let meta_title =
@@ -68,24 +70,24 @@ export default function Home(props) {
         { src: "/assets/images/home/banner/person-1.jpg" },
     ];
 
-    let courses = [
-        {
-            title: "MERN stack training in nepal",
-            image: "https://mindrisers.com.np/_next/image?url=https%3A%2F%2Fmindrisers.com.np%2F%2Fstatic%2FImages%2Fcourses%2FMern_wiWtVlC.jpg&w=640&q=75",
-            duration: "3 months",
-            slug: "mern",
-        },
-    ];
-    courses = [
-        ...courses,
-        ...courses,
-        ...courses,
-        ...courses,
-        ...courses,
-        ...courses,
-        ...courses,
-        ...courses,
-    ];
+    // let courses = [
+    //     {
+    //         title: "MERN stack training in nepal",
+    //         image: "https://mindrisers.com.np/_next/image?url=https%3A%2F%2Fmindrisers.com.np%2F%2Fstatic%2FImages%2Fcourses%2FMern_wiWtVlC.jpg&w=640&q=75",
+    //         duration: "3 months",
+    //         slug: "mern",
+    //     },
+    // ];
+    // courses = [
+    //     ...courses,
+    //     ...courses,
+    //     ...courses,
+    //     ...courses,
+    //     ...courses,
+    //     ...courses,
+    //     ...courses,
+    //     ...courses,
+    // ];
 
     let faqs = [
         {
@@ -189,9 +191,16 @@ export default function Home(props) {
                             })}
                         </ul>
 
-                        <p className="max-w-[30px]] w-min hover:w-[999px] duration-[10s] border  transition-all whitespace-nowrap overflow-hidden">Lorem ipsum dolor, sit amet conore. Quos cumqtam doloremque.</p>
+                        {/* <p className="max-w-[30px]] w-min overflow-hidden whitespace-nowrap border  transition-all duration-[10s] hover:w-[999px]">
+                            Lorem ipsum dolor, sit amet conore. Quos cumqtam
+                            doloremque.
+                        </p> */}
 
-                        <TypeWriter contents={typeWriters} />
+                        <p className="title-lg borde mb-[30px] flex max-w-full items-center justify-center gap-[5px] text-primary transition-all duration-[6s] !ease-in md:justify-start md:gap-[11px] ">
+                            <span>{`<h2>`}</span>
+                            <TypeWriter contents={typeWriters} />
+                            <span>{`</h2>`}</span>
+                        </p>
 
                         {/* <p className="border title-lg mb-[30px] inline-flex transition-all duration-[6s] items-center justify-center gap-[5px] text-primary md:justify-start md:gap-[11px] ">
                             <span>{`<h2>`}</span>
@@ -200,9 +209,8 @@ export default function Home(props) {
                             </span>
                             <span>{`</h2>`}</span>
                         </p> */}
-                        <div className="title-3xl flex flex-wrap  items-center justify-center gap-[20px] text-primary md:justify-start">
+                        <div className="title-3xl flex flex-wrap  items-center justify-center gap-[20px] text-primary md:justify-start ">
                             <span>and grow with</span>
-
                             {/* tailwind cannot generate dynamic classnames values after build */}
                             <ul className="hidden ">
                                 <li className="-left-[20px] -ml-[20px]"></li>
@@ -296,7 +304,9 @@ export default function Home(props) {
                             provide internships and full-time job opportunities
                             to our Graduates
                         </p>
-                        <button className="btn">Contact us</button>
+                        <Link className="btn" href={"/contact-us"}>
+                            Contact us
+                        </Link>
                     </div>
                 </article>
             </section>
@@ -308,7 +318,7 @@ export default function Home(props) {
                     Popular <Swoosh type="secondary">Courses</Swoosh>{" "}
                 </p>
                 {/* Headless component */}
-                <CoursesList courses={courses} />
+                <CoursesList courses={props.courses} />
             </section>
             {/* About us */}
             <section className="section-wrapper-m section-wrapper-p-half container   ">
@@ -405,53 +415,7 @@ export default function Home(props) {
                         </div>
                     </article>
                     <article className="relative z-10 rounded-xl bg-white p-[40px]">
-                        <form action="">
-                            <div className="mb-5">
-                                <label htmlFor="" className="mb-[10px] block">
-                                    I am interested in*
-                                </label>
-                                <input
-                                    type="text"
-                                    className="w-full rounded-[12px] bg-gray-50 p-5"
-                                    placeholder="Select your course"
-                                />
-                            </div>
-                            <div className="mb-5">
-                                <label htmlFor="" className="mb-[10px] block">
-                                    I am interested in*
-                                </label>
-                                <input
-                                    type="text"
-                                    className="w-full rounded-[12px] bg-gray-50 p-5"
-                                    placeholder="Select your course"
-                                />
-                            </div>
-                            <div className="mb-5">
-                                <label htmlFor="" className="mb-[10px] block">
-                                    I am interested in*
-                                </label>
-                                <input
-                                    type="text"
-                                    className="w-full rounded-[12px] bg-gray-50 p-5"
-                                    placeholder="Select your course"
-                                />
-                            </div>
-                            <div className="mb-5">
-                                <label htmlFor="" className="mb-[10px] block">
-                                    I am interested in*
-                                </label>
-                                <input
-                                    type="text"
-                                    className="w-full rounded-[12px] bg-gray-50 p-5"
-                                    placeholder="Select your course"
-                                />
-                            </div>
-                            <div className="flex justify-center xl:justify-end">
-                                <button className="btn-secondary">
-                                    Submit
-                                </button>
-                            </div>
-                        </form>
+                        <HomeContact />
                     </article>
                 </div>
             </section>
@@ -466,7 +430,7 @@ export default function Home(props) {
                     </p>
                     <Image
                         alt=""
-                        src={"/assets/images/home/success-stories.svg"}
+                        src={"/assets/images/home/success-stories.jpg"}
                         className="mx-auto mt-[40px]"
                         width={700}
                         height={700}
@@ -474,7 +438,7 @@ export default function Home(props) {
                 </div>
             </section>
             <div className="">
-                <Partners />
+                <Partners partners={props.partners} />
             </div>
             <Testimonials />
             <div className=" container my-[100px]">
@@ -488,6 +452,7 @@ export async function getStaticProps() {
     let data = [];
     let gallery_data = [];
     let successStoreis = [];
+    let partners = [];
 
     try {
         const res = await fetch(
@@ -504,6 +469,9 @@ export async function getStaticProps() {
             `https://mindrisers.com.np/blog/api/v1/successstoryhome/`,
         );
         successStoreis = await successStoreis_res.json();
+
+        const partners_res = await fetch(makeFullApiUrl(`/placementpartner/`));
+        partners = await partners_res.json();
     } catch (err) {}
 
     return {
@@ -511,6 +479,7 @@ export async function getStaticProps() {
             courses: data,
             gallery_data: gallery_data,
             successStoreis,
+            partners,
         },
         // revalidate: 60 * 60 * 24 * 1  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
         revalidate: 60 * 1, // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.

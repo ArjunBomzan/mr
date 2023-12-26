@@ -9,17 +9,158 @@
   <style>
     .child {
       border: 1px solid;
+    }
+
+
+    .editor-content * {
+      /* all: initial !important; */
+      /* font:inherit !important; */
+      /* display: unset !important; */
+    }
+
+    .editor-content h2 {
+      text-align: center !important;
+    }
+
+    .editor-content a {
+      color: blue !important;
+      text-decoration: underline !important;
+    }
+
+    @keyframes shine {
+      form {
+        opacity: 0;
+        width: 10%;
+        transform: scale(0);
       }
+
+      to {
+        transform: scale(1);
+        opacity: 0;
+        width: 100%;
+        animation-timing-function: linear;
+        animation-duration: 6s;
+      }
+    }
+
+    @keyframes bounceAnimation {
+
+      50% {
+        transform: translateY(-20px);
+      }
+
+      100% {
+        transform: translateY(-10px);
+      }
+    }
+
+
+    @keyframes sshine {
+
+      0% {
+        width: 0px;
+      }
+
+
+      100% {
+        width: 100%;
+      }
+    }
+
+
+    /* Define shimmer animation */
+    @keyframes shimmerAnimation {
+      0% {
+        background-position: -200%;
+      }
+
+      100% {
+        background-position: 200%;
+      }
+    }
+
+    /* Apply shimmer animation to an element */
+    .shimmerElement {
+      
+      animation: shimmerAnimation 2s infinite;
+      /* Other styling properties for the element */
+      width: 100%;
+      height: ;
+    }
+
+
+    .card:hover::after {
+      content: "";
+      height: 100%;
+      width: 50%;
+      background-color: white;
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      animation: sshine 1s infinite;
+      animation: shimmerAnimation;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+      background-size: cover;
+      /* background-size: 100% 100%; */
+    }
+
+    .animateMe {
+      animation: bounceAnimation;
+      animation-duration: 6s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes bounceAnimation {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-30px);
+      }
+
+      60% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* Apply bounce animation to an element */
+    .bouncingElement {
+      animation: bounceAnimation 1s infinite;
+      /* Other styling properties for the element */
+      /* width: 50px; */
+      /* height: 50px; */
+      background-color: #3498db;
+    }
   </style>
 </head>
 
 <body>
 
+  <div class="card relative inline-block border ">
+    <img src="https://fastly.picsum.photos/id/427/536/354.jpg?hmac=L9xt4dPYu1OBmkl4Md1KF51PpeBgp_mqgmsi4TxU0Mw" alt="">
+  </div>
 
 
-  <div class="parent relative h-20 w-20 border bottom-1  m-20 overflow-hidden rounded-xl rounded-bl-0">
-    <div class="child inline-block">one</div>
-    <div class="child inline-block absolute top-0 -right-20">two</div>
+  <a href="hello" class="animateMe bouncingElementt">hello</a>
+
+
+  <div class="editor-content text-2xl text-orange-500 font-serif">
+    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima et fugiat laudantium tempore magni natus eum
+      qui molestiae laborum. Repudiandae officiis ipsum tempora excepturi eius esse optio voluptates animi quisquam.</p>
+    <hr class="h-5 my-3 border-4 " />
+    <h2 class="bouncingElementt">hello</h2>
+    <p class="text-5xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, quo nemo eos laboriosam architecto
+      dignissimos eligendi recusandae facilis debitis perspiciatis officiis molestiae repudiandae voluptates beatae est
+      iste aperiam. Recusandae, illo!</p>
+    <a href="adf" class="bouncingElemen block">ook</a>
   </div>
 
 

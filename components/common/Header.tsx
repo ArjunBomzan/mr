@@ -11,7 +11,6 @@ const inter = Inter({ subsets: ["latin"] });
 const Header = () => {
     const router = useRouter();
     const route = router.route; //  eg: /courses /blogs
-    console.log(route);
 
     let navLinks = [
         // split middlenav and right nav
@@ -73,10 +72,8 @@ const Header = () => {
     useEffect(() => {
         const elementHeight = myElementRef.current.clientHeight;
         const elementHeightSecond = myElementRefSecond.current.clientHeight;
-        // console.log({ elementHeight }, { elementHeightSecond });
 
         if (menuOpen) {
-            console.log("here");
             myElementParent.current.style.maxHeight = `${
                 elementHeight + 30 + elementHeightSecond
             }px`; // 30 being gap between them

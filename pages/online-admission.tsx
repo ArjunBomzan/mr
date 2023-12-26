@@ -2,6 +2,7 @@ import Head from "next/head"
 import BannerWrapper from "../components/common/BannerWrapper"
 import Swoosh from "../components/common/Swoosh"
 import Stats from "../components/common/Stats"
+import AdmissionForm from "../components/AdmissionComponents/AdmissionForm"
 
 export default function admission() {
     let meta_title = "Admission Form"
@@ -30,7 +31,7 @@ export default function admission() {
                     <p className="text-secondary header-md font-normal leading-[145%]">Backed by Facts !</p>
                     <p className="mb-5 header-xl leadig-[145%]">We are Best in what we do</p>
                     <p className="mb-5 title text-primary">Fill the form and join mindrisers to elevate your expertise in your interest filed.</p>
-                    <button className="btn">Fill admission form</button>
+                    <a href="#admission-form" className="btn">Fill admission form</a>
                 </div>
 
                 {/* TODO: used in home... make headleas component */}
@@ -43,31 +44,9 @@ export default function admission() {
 
         <section className="section-wrapper-m container">
             <div className="title-space-5xl">
-                <p className="header-md text-center"><Swoosh type="secondary">Admission Form</Swoosh></p>
+                <p className="header-md text-center" id="admission-form"><Swoosh type="secondary">Admission Form</Swoosh></p>
             </div>
-            <form className="bg-orange-100 p-[40px] rounded-xl">
-                <div className="grid grid-cols-2 gap-x-5">
-                    <div className="form-group">
-                        <label htmlFor="" className="form-label required-field">Name</label>
-                        <input type="text" className="form-control" placeholder="Enter name" />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="" className="form-label required-field">Email</label>
-                        <input type="text" className="form-control" />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="" className="form-label">Name</label>
-                        <input type="text" className="form-control" />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="" className="form-label">Name</label>
-                        <input type="text" className="form-control" />
-                    </div>
-                </div>
-                <div className="flex justify-end mt-5">
-                    <button className="btn-secondary-simple">submit Form</button>
-                </div>
-            </form>
+            <AdmissionForm/>
         </section>
 
         {/* <Header /> */}
