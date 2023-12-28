@@ -21,7 +21,7 @@ const HomeContact = () => {
         <div className=' flex items-center justify-center'>
             <div className='flex flex-col lg:flex-row w-full px-5 py-16 sm:px-20 lg:px-44 gap-6'>
                 <div className='min-w-1/2'>
-                    <h2 className=" text-xl font-bold sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl mb-4 ">Request a call back</h2>
+                    <p className=" text-xl font-bold sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl mb-4 ">Request a call back</p>
                     <p>Would you like to speak to one of our adviser over the phone?</p>
                     <p>Just submit your details and will be in touch shortly. You can also email us if you would prefer.</p>
                 </div>

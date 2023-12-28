@@ -41,87 +41,100 @@ const DropMessage = () => {
                     hello, contact us.
                 </p>
             </div>
-            <div className="title-space-3xl  grid gap-x-5 md:grid-cols-2"></div>
-            <div className="form-group">
-                <label className="form-label">Name</label>
-                <input
-                    className="form-control"
-                    type="text"
-                    name="name"
-                    {...register("name", { required: true })}
-                />
-                {errors?.name?.type === "required" && (
-                    <small>This field is required</small>
-                )}
+            <div className="title-space-3xl  grid gap-x-5 md:grid-cols-2">
+                <div className="form-group">
+                    <label className="form-label required-field">Name</label>
+                    <input
+                        className="form-control"
+                        placeholder="Name"
+                        type="text"
+                        name="name"
+                        {...register("name", { required: true })}
+                    />
+                    {errors?.name?.type === "required" && (
+                        <small className="error-message">This field is required</small>
+                    )}
+                </div>
+
+                <div className="form-group">
+                    <label className="form-label required-field">Email</label>
+                    <input
+                        placeholder="Email"
+                        className="form-control"
+                        type="email"
+                        name="email"
+                        {...register("email", { required: true })}
+                    />
+                    {errors?.name?.type === "required" && (
+                        <small className="error-message">This field is required</small>
+                    )}
+                </div>
+                <div className="form-group">
+                    <label className="form-label required-field">Phone</label>
+                    <input
+                        placeholder="Phone"
+                        className="form-control"
+                        type="number"
+                        name="mobile_no"
+                        {...register("mobile_no", { required: true })}
+                    />
+                    {errors?.name?.type === "required" && (
+                        <small className="error-message">This field is required</small>
+                    )}
+                </div>
+                <div className="form-group">
+                    <label className="form-label required-field">Subject</label>
+                    <input
+                        placeholder="Subject"
+                        className="form-control"
+                        type="text"
+                        name="subject"
+                        {...register("subject", { required: true })}
+                    />
+                    {errors?.name?.type === "required" && (
+                        <small className="error-message">This field is required</small>
+                    )}
+                </div>
+                <div className="form-group col-span-2 ">
+                    <label className="form-label required-field">
+                        Any Queries
+                    </label>
+                    <textarea
+                        className="form-control"
+                        placeholder="Queries"
+                        name="message"
+                        rows={5}
+                        {...register("message", { required: true })}
+                    />
+                    {errors?.name?.type === "required" && (
+                        <small className="error-message">This field is required</small>
+                    )}
+                </div>
+                <div>
+                    <ReCAPTCHA
+                        sitekey="6LdOx-IlAAAAAOvVO0qqqq6_EFe6V1Rqip_s55QN"
+                        onChange={(e) => {
+                            setToken(e);
+                            setError("");
+                        }}
+                    />
+                    {error && <p>{error}</p>}
+                </div>
             </div>
 
-            <div className="form-group">
-                <label className="form-label">Email</label>
-                <input
-                    className="form-control"
-                    type="email"
-                    name="email"
-                    {...register("email", { required: true })}
-                />
-                {errors?.name?.type === "required" && (
-                    <small>This field is required</small>
-                )}
-            </div>
-            <div className="form-group">
-                <label className="form-label">Phone</label>
-                <input
-                    className="form-control"
-                    type="number"
-                    name="mobile_no"
-                    {...register("mobile_no", { required: true })}
-                />
-                {errors?.name?.type === "required" && (
-                    <small>This field is required</small>
-                )}
-            </div>
-            <div className="form-group">
-                <label className="form-label">Subject</label>
-                <input
-                    className="form-control"
-                    type="text"
-                    name="subject"
-                    {...register("subject", { required: true })}
-                />
-                {errors?.name?.type === "required" && (
-                    <small>This field is required</small>
-                )}
-            </div>
-            <div className="form-group">
-                <label className="form-label">Any Queries</label>
-                <textarea
-                    name="message"
-                    {...register("message", { required: true })}
-                />
-                {errors?.name?.type === "required" && (
-                    <small>This field is required</small>
-                )}
-            </div>
-            <div>
-                <ReCAPTCHA
-                    sitekey="6LdOx-IlAAAAAOvVO0qqqq6_EFe6V1Rqip_s55QN"
-                    onChange={(e) => {
-                        setToken(e);
-                        setError("");
-                    }}
-                />
-                {error && <p>{error}</p>}
-            </div>
-            <button type="submit" name="name" disabled={submiting}>
-                {submiting ? (
-                    <div>
-                        <div role="status">
-                            <span>Submitting...</span>
+            <div className="flex justify-end ">
+                <button type="submit" name="name" className="btn-secondary-simple btn" disabled={submiting}>
+                    {submiting ? (
+                        <div>
+                            <div role="status">
+                                <span>Submitting...</span>
+                            </div>
                         </div>
-                    </div>
-                ) : (
-                    <>Submit</>
-                )}
-            </button>
+                    ) : (
+                        <>Submit</>
+                    )}
+                </button>
+            </div>
         </form>
     );
 };

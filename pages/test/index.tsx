@@ -30,7 +30,7 @@ export default function index({ data }) {
         </div>
     </>
     return <>
-        <h1 className='container opacity-10 '>hello</h1>
+        <p className='container opacity-10 '>hello</p>
         {/* <Opportunity/> */}
         <div className="parent relative h-5 w-5 border p-5 ml-10 scale-100 opacity-100">
             <div className="child absolute -top-20 -left-20">cont</div>

@@ -230,7 +230,7 @@ function MyApp({ Component, pageProps }) {
       defer
     />
 
-    <span id="scroll-to-top" className="bg-primary hidden" onClick={() => {
+    <span id="scroll-to-top" className="bg-primary" onClick={() => {
       window.scroll(0, 0)
     }}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

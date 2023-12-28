@@ -320,17 +320,18 @@ export default function BlogSlug(props) {
                     </div>
                 </section>
 
-                <section className="container section-wrapper-m-sm">
+                {/* <section className="container section-wrapper-m-sm">
                     <div className="mb-5 flex justify-between">
                         <p className="sub-header-lg">Recent Post</p>
                         <p>View All</p>
                     </div>
                     <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-5 gap-base-half">
                         {new Array(4).fill(null).map((el) => {
-                            return <BlogCard />;
+                            return <BlogCard
+                             />;
                         })}
                     </ul>
-                </section>
+                </section> */}
                 <section className="container">
                     <Opportunity />
                 </section>

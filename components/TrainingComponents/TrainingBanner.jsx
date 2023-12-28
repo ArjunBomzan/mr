@@ -33,7 +33,7 @@ const TrainingBanner = (props) => {
                     }} alt={course?.title} />
                 <div className="text-white text-right flex flex-col items-end gap-8 lg:p-16 sm:p-12 p-6">
                     <span className=''><Link href="/">Home</Link> / {course?.title}</span>
-                    <h1 className=' text-3xl '>{course?.title}</h1>
+                    <p className=' text-3xl '>{course?.title}</p>
                     {
                         course?.banner_desc && <p className=''>{course?.banner_desc}</p>
                     }

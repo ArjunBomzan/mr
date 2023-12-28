@@ -12,9 +12,9 @@ const BlogsBanner = (props) => {
       className='w-full bg-blogs relative'
     >
       <div className='w-full h-full  py-28 flex flex-col justify-center items-center bg-light-mask text-white'>
-        <h1 className=' text-4xl sm:text-6xl w-ma font-bold text-center'>
+        <p className=' text-4xl sm:text-6xl w-ma font-bold text-center'>
           {props?.title}
-        </h1>
+        </p>
       </div>
     </div>
   )

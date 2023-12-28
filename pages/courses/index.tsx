@@ -106,7 +106,7 @@ const Courses = ({ courses_all }) => {
 
                         <p className="title-lg mb-[30px] flex items-center justify-center  text-primary md:gap-[11px]  lg:justify-start">
                             <span>{`<h2>`}</span>
-                            <span className="xl:header-lg text-expanded-sm font-semibold !text-secondary  ">
+                            <span className="xl:header-lg text-expanded-sm uppercase font-semibold !text-secondary  ">
                                 {" "}
                                 IT skills and expertise
                             </span>

@@ -5,7 +5,7 @@ const TrainingSyllabus = (props) => {
     {
       props?.course?.data?.syllabus[0] && (
         <div className=' mt-10' id="course_syllabus">
-          <h2 className='font-bold'>Syllabus of {props?.course?.data?.course[0].title}</h2>
+          <p className='font-bold'>Syllabus of {props?.course?.data?.course[0].title}</p>
           <hr className='my-2' />
           <TrainingAccordion syllabus={props?.course?.data?.syllabus} />
         </div >

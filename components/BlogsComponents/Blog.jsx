@@ -38,9 +38,9 @@ const Blog = (props) => {
               />
             </div >
             <div className='px-6 lg:px-44 pb-20 ' >
-              <h1 className=' text-xl sm:text-2xl md:text-3xl  w-ma font-bold  mt-8 md:mt-12 lg:mt-14 mb-4   '>
+              <p className=' text-xl sm:text-2xl md:text-3xl  w-ma font-bold  mt-8 md:mt-12 lg:mt-14 mb-4   '>
                 {props?.blog?.title}
-              </h1>
+              </p>
               <main className='blogs-container bg-white '>
 
                 <div className='w-full h-full flex justify-center'>

@@ -255,7 +255,8 @@ export default function Home(props) {
                             success.
                         </p>
                         <div className="mt-[3.2rem] md:mt-[7.5rem]">
-                            <Stats wrapperClass="bg-green-100 grid grid-cols-2 md:grid-cols-4 gap-lg max-w-[772px]  rounded-xl p-5" />
+                            {/* <Stats wrapperClass="bg-green-100 grid grid-cols-2 md:grid-cols-4 gap-lg max-w-[772px]  rounded-xl p-5" /> */}
+                            <Stats wrapperClass="bg-green-100 grid grid-cols-2 md:flex md:justify-between md:grid-cols-4 gap-lg max-w-[772px] mmx-auto rounded-xl p-5" />
                         </div>
                     </div>
                 </section>

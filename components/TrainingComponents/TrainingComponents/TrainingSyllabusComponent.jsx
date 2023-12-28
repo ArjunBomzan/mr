@@ -6,7 +6,7 @@ const TrainingSyllabusComponent = (props) => {
         <div className="accordion-item bg-white border border-gray-200"
             key={props?.syllable?.id}
         >
-            <h2 className="accordion-header mb-0"
+            <p className="accordion-header mb-0"
                 id={`heading${props?.syllable?.id}`}
             >
                 <button
@@ -17,7 +17,7 @@ const TrainingSyllabusComponent = (props) => {
                 >
                     {props?.syllable?.heading}
                 </button>
-            </h2>
+            </p>
             <div
                 className="accordion-collapse collapse p-4 px-6"
                 id={`collapse${props?.syllable?.id}`}

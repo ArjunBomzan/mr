@@ -202,7 +202,7 @@ export default function Testimonials() {
                                         {el.testimonial}
                                     </p>
                                     <div className="h-1 w-1/5 rounded-2xl bg-border "></div>
-                                    <div className="absolute bottom-5 mt-5">
+                                    <div className="absolute bottom-5 mt-5 right-5 left-5">
                                         <p className="mb-1 text-sm font-bold">
                                             {el.name}
                                         </p>

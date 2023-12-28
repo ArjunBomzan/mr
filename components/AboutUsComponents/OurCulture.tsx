@@ -5,7 +5,7 @@ const OurCulture = () => {
     <section className='h-max flex flex-col py-20 sm:pt-24 sm:px-10 md:px-20 lg:px-40 xl:px-48 px-5 space-y-12'>
       <div className='flex flex-col'>
         <p className="w-full text-center text-green-500 text-sm tracking-widest font-medium mb-5">OUR CULTURE</p>
-        <h3 className='w-full text-center font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-5'>Our Fundamental Principles</h3>
+        <p className='w-full text-center font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-5'>Our Fundamental Principles</p>
       </div>
       <div className="flex flex-col items-center space-y-9 md:space-y-0 md:flex-row md:space-x-5 flex-nowrap py-7 justify-between ">
         <CultureCard

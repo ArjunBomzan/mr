@@ -6,9 +6,7 @@ const Mission = () => {
     <section className='flex flex-col w-full px-5 py-16 sm:px-20 lg:px-44 h-max gap-8' id="why-us-container">
       {/* <div className='flex flex-col justify-between w-full lg:flex-row gap-8'>
         <div className='w-full space-y-8 lg:w-full'>
-          <h2 className=' text-3xl font-bold md:text-4xl'>
-            WHY US?
-          </h2>
+          
           <p className="text-justify">
             Mind Risers is the only IT training institute in Kathmandu, Nepal that offers paid internships and job placement after course completion. To enhance the careers of our students, we provide IT courses that are in high demand in the industry. We have a team serving as a tutor that consists of creative thinkers, quick engineers, vigilant program managers, and active web marketers. Our instructors provide students with a fantastic opportunity to learn from them since they are real-time developers who stay active with emerging technological advancements. Students learn about the topic thoroughly and practically thanks to our excellent educational method. Due to this distinctiveness, Mind Risers become the best IT training institute in Kathmandu, Nepal.
           </p>

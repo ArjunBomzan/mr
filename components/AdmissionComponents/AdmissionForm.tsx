@@ -34,14 +34,14 @@ const AdmissionForm = () => {
         DropDownOptions({ setCourse, setSchedule, setQualification });
     }, []);
 
-    console.log(schedule)
+    console.log(schedule);
     return (
         <>
             <form
                 onSubmit={handleSubmit(onSubmit)}
-                className="rounded-xl bg-orange-100 p-[40px]"
+                className="rounded-xl bg-orange-100 p-[20px] md:p-[40px]"
             >
-                <div className="grid grid-cols-2 gap-x-5">
+                <div className="gap-x-5 md:grid md:grid-cols-2 ">
                     <div className="form-group">
                         <label
                             className="form-label required-field"
@@ -58,7 +58,9 @@ const AdmissionForm = () => {
                             {...register("full_name", { required: true })}
                         />
                         {errors?.full_name?.type === "required" && (
-                           <p className="error-message">This field is required</p>
+                            <p className="error-message">
+                                This field is required
+                            </p>
                         )}
                     </div>
 
@@ -82,7 +84,9 @@ const AdmissionForm = () => {
                             })}
                         />
                         {errors?.email?.type === "required" && (
-                           <p className="error-message">This field is required</p>
+                            <p className="error-message">
+                                This field is required
+                            </p>
                         )}
                         {errors?.email?.type === "pattern" && (
                             <p>Invalid Email</p>
@@ -105,7 +109,9 @@ const AdmissionForm = () => {
                             {...register("mobile_no", { required: true })}
                         />
                         {errors?.mobile_no?.type === "required" && (
-                           <p className="error-message">This field is required</p>
+                            <p className="error-message">
+                                This field is required
+                            </p>
                         )}
                     </div>
 
@@ -125,7 +131,9 @@ const AdmissionForm = () => {
                             {...register("college", { required: true })}
                         />
                         {errors?.college?.type === "required" && (
-                           <p className="error-message">This field is required</p>
+                            <p className="error-message">
+                                This field is required
+                            </p>
                         )}
                     </div>
 
@@ -154,7 +162,9 @@ const AdmissionForm = () => {
                                 ))}
                             </select>
                             {errors?.qualification?.type === "required" && (
-                               <p className="error-message">This field is required</p>
+                                <p className="error-message">
+                                    This field is required
+                                </p>
                             )}
                             <div></div>
                         </div>
@@ -181,7 +191,9 @@ const AdmissionForm = () => {
                                 ))}
                             </select>
                             {errors?.course?.type === "required" && (
-                               <p className="error-message">This field is required</p>
+                                <p className="error-message">
+                                    This field is required
+                                </p>
                             )}
                             <div></div>
                         </div>
@@ -209,13 +221,15 @@ const AdmissionForm = () => {
                                 ))}
                             </select>
                             {errors?.schedule?.type === "required" && (
-                               <p className="error-message">This field is required</p>
+                                <p className="error-message">
+                                    This field is required
+                                </p>
                             )}
                             <div></div>
                         </div>
                     </div>
 
-                    <div style={{ flex: "100%" }}>
+                    <div className="form-group">
                         <label
                             className="form-label required-field"
                             htmlFor="remarks"
@@ -251,15 +265,14 @@ const AdmissionForm = () => {
                             </div>
                         </div>
                         {errors?.remarks?.type === "required" && (
-                           <p className="error-message">This field is required</p>
+                            <p className="error-message">
+                                This field is required
+                            </p>
                         )}
                     </div>
 
-                    <div className="form-group">
-                        <label
-                            className="form-label "
-                            htmlFor="question"
-                        >
+                    <div className="form-group col-span-2">
+                        <label className="form-label " htmlFor="question">
                             Any queries?
                         </label>
                         <textarea
@@ -270,9 +283,10 @@ const AdmissionForm = () => {
                             {...register("question")}
                         />
                     </div>
+                </div>
 
-                    <div style={{ flexBasis: "100%" }} className="form-group">
-                        <label htmlFor="" className="invisible form-label ">some</label>
+                <div className="md:mt-5 md:flex items-end justify-between ">
+                    <div className="">
                         <ReCAPTCHA
                             sitekey="6LdOx-IlAAAAAOvVO0qqqq6_EFe6V1Rqip_s55QN"
                             onChange={(e) => {
@@ -282,26 +296,22 @@ const AdmissionForm = () => {
                         />
                         {error && <p>{error}</p>}
                     </div>
-
-                    <div className="mt-5 flex justify-end">
-                        <button
-                            className="btn-secondary-simple"
-                            type="submit"
-                            name="name"
-                            disabled={submiting}
-                        >
-                            {submiting ? (
-                                <div role="status">
-                                    <span>Loading...</span>
-                                </div>
-                            ) : (
-                                <>Submit</>
-                            )}
-                        </button>
-                    </div>
+                    <button
+                        className="  mt-5  btn-secondary-simple"
+                        type="submit"
+                        name="name"
+                        disabled={submiting}
+                    >
+                        {submiting ? (
+                            <div role="status">
+                                <span>Loading...</span>
+                            </div>
+                        ) : (
+                            <>Submit</>
+                        )}
+                    </button>
                 </div>
             </form>
-            ;
         </>
     );
 };

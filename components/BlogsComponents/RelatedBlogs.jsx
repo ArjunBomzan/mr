@@ -24,9 +24,9 @@ const RelatedBlogs = (props) => {
             {
                 blogs?.filter(blog => slug != blog.slug)?.length > 0
                 &&
-                <h2 className='text-4xl font-bold'>
+                <p className='text-4xl font-bold'>
                     {type == "blogs" && <span> Recent Blogs</span>}
-                </h2>
+                </p>
             }
             <div className='grid gap-8 grid-cols-1 sm:grid-cols-2 sm:gap-4 lg:gap-10 lg:grid-cols-3 my-10'>
                 {

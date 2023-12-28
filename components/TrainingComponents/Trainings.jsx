@@ -13,7 +13,7 @@ const Trainings = (props) => {
 
   return (
     <>
-      <h1 className='w-full  text-2xl text-center md:text-3xl lg:text-4xl mt-10 mb-5 md:mt-16 md:mb-8'>
+      <p className='w-full  text-2xl text-center md:text-3xl lg:text-4xl mt-10 mb-5 md:mt-16 md:mb-8'>
         {pathname == "courses" && <> <span>Courses</span>
           &nbsp;
           {
@@ -31,7 +31,7 @@ const Trainings = (props) => {
         </>
         }
         {pathname == "after+2-courses" && <span>After +2 Courses</span>}
-      </h1>
+      </p>
       {
         props?.courses ?
           // <section className={`bg-white flex flex-col py-10 px-6 sm:px-12 md:px-14 lg:px-18 `}>

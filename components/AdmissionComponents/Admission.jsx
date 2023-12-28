@@ -41,7 +41,7 @@ const Admission = () => {
         <div className="w-full flex justify-center items-center sm:p-6">
           <form className="bg-white card-shadow rounded px-8 pt-6 pb-8 sm:mb-4 lg:w-[50%] md:w-[60%] sm:w-[70%] sm:my-10 admission-container form" onSubmit={handleSubmit(onSubmit)}>
 
-            <h1 className="block text-gray-700 text-2xl text-center md:text-3xl lg:text-4xl  my-6  text-center w-full">Admission Form</h1>
+            <p className="block text-gray-700 text-2xl text-center md:text-3xl lg:text-4xl  my-6  text-center w-full">Admission Form</p>
             <div>
               <label className="admission-form-label required-field" htmlFor="full_name">Name</label>
               <input

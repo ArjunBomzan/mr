@@ -62,8 +62,8 @@ const Statistics = () => {
     <section className="bg-fixed h-max bg-no-repeat bg-auto" style={{ backgroundImage: `url(${StatisticsBg.src})` }}>
       <div className='flex flex-col items-center w-full h-full px-5 py-20 space-y-12 bg-mask lg:flex-row sm:py-32 sm:px-32 lg:space-y-0'>
         <div className='flex flex-col w-full px-4 pl-10 lg:w-1/2 space-y-9'>
-          <h4 className=' font-medium tracking-widest text-green-500 text-md'>STATISTICS</h4>
-          <h2 className='w-5/6 text-xl font-bold text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl' >Consumer insights. Market innovation.</h2>
+          <p className=' font-medium tracking-widest text-green-500 text-md'>STATISTICS</p>
+          <p className='w-5/6 text-xl font-bold text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl' >Consumer insights. Market innovation.</p>
           <p className='text-white'>
             Each of our solutions are tailored to your business.
           </p>

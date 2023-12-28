@@ -188,3 +188,98 @@ html {
     list-style: disc;
     padding-left:40px
 }
+
+.contact-us svg{
+    color:#018343;
+    fill:#018343;
+}
+
+
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100000000000;
+    width: 40px;
+    height: 40px;
+    color: white;
+    fill: currentColor;
+    border: 1px solid white;
+    border-radius: 100%;
+    box-shadow: 0px 0px 5px 2px rgba(208, 208, 208, 0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer
+  }
+  
+  #scroll-to-top svg {
+    width: 20px;
+  }
+
+  
+
+.paginate-wrapper li[title] {
+    font-size: .8rem;
+    margin-right: .3rem;
+    border-radius: 50%;
+    text-align: center;
+    min-width: 2rem;
+    aspect-ratio: 1/1;
+    user-select: none;
+    display: inline-block;
+    border: 1px solid gray;
+    padding: .3rem;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .paginate-wrapper li *{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .paginate-wrapper li:has(button) {
+    margin:0 !important;
+    border:none !important;
+    border-top: 0 !important; 
+    border-bottom: 0 !important;
+    position: relative;
+  }
+  
+  .paginate-wrapper li:has(button)::after {
+    content: "•••";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  
+  .paginate-wrapper li.disabled,.rc-pagination-disabled {
+    /* background-color: gray; */
+    opacity: .4;
+    cursor: no-drop;
+  }
+  
+  .paginate-wrapper li.disabled *,
+  .rc-pagination-disabled {
+    cursor: no-drop;
+  }
+  
+  .paginate-wrapper li.selected ,.rc-pagination-item-active {
+    color: white;
+    background-color: #EEEFFB;
+    background-color:#018343;
+    border-color: #018343
+  }
+  
+  
+  .rc-pagination-total-text{
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+  }
+  

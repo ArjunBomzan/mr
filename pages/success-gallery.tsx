@@ -6,6 +6,9 @@ import Opportunity from "../public/assets/images/common/Opportunity";
 import { makeFullApiUrl } from "../utils/makeFullUrl";
 
 const services = ({ successStoreis }) => {
+
+    console.log(successStoreis)
+    
     let meta_title = " Internships | Job Placements | Mindrisers Nepal";
     let meta_description = "";
     return (

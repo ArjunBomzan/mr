@@ -6,7 +6,7 @@ const TrainingsHomePage = (props) => {
 
     return (
         <div className='p-4 lg:py-20 lg:px-44 md:px-20 sm:p-16 relative'>
-            <h2 className='w-5/6 text-xl font-semibold sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl mb-6'>Popular Courses</h2>
+            <p className='w-5/6 text-xl font-semibold sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl mb-6'>Popular Courses</p>
             <div
                 className='grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 mt-6'
             >
