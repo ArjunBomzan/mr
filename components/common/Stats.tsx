@@ -37,7 +37,6 @@ export default function Stats({ wrapperClass }: { wrapperClass?: string }) {
                         <p className="title text-center uppercase ">
                             {el.title}
                         </p>{" "}
-                        {/* TODO: fixme for proper data. */}
                     </li>
                 );
             })}

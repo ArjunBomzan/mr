@@ -120,7 +120,8 @@ export default function Home(props) {
         <>
             <Head>
                 <title>
-                    Best IT Training Institute in kathmandu, Nepal | Mindrisers Institute of Technology
+                    Best IT Training Institute in kathmandu, Nepal | Mindrisers
+                    Institute of Technology
                 </title>
                 <meta
                     name="title"
@@ -154,7 +155,7 @@ export default function Home(props) {
             {/* <div className="container my-7">
                 <TypeWriter contents={["one olne", "two"]} />
             </div> */}
-             <BannerWrapper size="big" extendedClassName="!py-0 zz-0">
+            <BannerWrapper size="big" extendedClassName="!py-0 zz-0">
                 <section
                     className="h-full w-full bg-no-repeat "
                     style={
@@ -227,6 +228,7 @@ export default function Home(props) {
                                                 }px] `}
                                             >
                                                 <Image
+                                                    priority
                                                     alt=""
                                                     src={el.src}
                                                     height={50}
@@ -399,7 +401,7 @@ export default function Home(props) {
                 <div className=" section-p  relative grid gap-[40px] overflow-hidden rounded-3xl   bg-orange-100 xl:grid-cols-[45%,55%]  xl:gap-0  ">
                     <article className="text-center text-secondary xl:pr-[40px] xl:text-left">
                         <h2 className="header-lg  text-expanded title-space-lg">
-                            Request a <Swoosh type="secondary">Callback</Swoosh> 
+                            Request a <Swoosh type="secondary">Callback</Swoosh>
                         </h2>
                         <p>
                             Would you like to speak to one of our adviser over

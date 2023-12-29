@@ -162,7 +162,6 @@ export default function blogs({ blogs, total_data, current_page }) {
                 <div className="container">
                     <section className="section-wrapper-m-xxs rounded-3xl bg-green-50 p-[20px] md:p-[30px]  lg:p-[40px]">
                         {" "}
-                        {/* TODO: 40px  = my-8 */}
                         <div className="flex flex-col items-center justify-between gap-[20px] md:flex-row md:gap-0">
                             <div>
                                 <p className="header-md mb-5">

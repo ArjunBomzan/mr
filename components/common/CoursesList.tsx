@@ -72,7 +72,6 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                         dynamicBullets: true,
                         dynamicMainBullets: 3,
                     }}
-                    /* TODO: add dots in both screens  */
                     modules={[Pagination]}
                 >
                     {courses.map((el) => {

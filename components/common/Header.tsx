@@ -130,7 +130,6 @@ const Header = () => {
                                     "!max-h-0 xl:!max-h-[999px]": !menuOpen,
                                     "max-h-[988px]] mt-[1.875rem]    ":
                                         menuOpen,
-                                    /* TODO: max-h-calculate via javascript and useRef and  put both nav-links part in single ul -- else -- it will take time to close the navbar  */
                                 },
                             )}
                         >
@@ -168,8 +167,6 @@ const Header = () => {
                                     );
                                 })}
                                 <li>
-                                    {/* TODO: show popups or redirect to admission page */}
-                                    {/* TODO: why is the absolute arrow displaying over ohter.. even wehen zindex very low */}
                                     <Link
                                         className="btn-simple targe relative inline-block overflow-visible"
                                         href={"/online-admission"}
