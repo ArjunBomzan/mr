@@ -23,7 +23,9 @@ jobs:
             run: |
                 npm install
 
-       
+          - name: Build App
+            run: |
+                npm run build
 
           - name: Archive Artifacts
             uses: actions/upload-artifact@v2
