@@ -154,9 +154,7 @@ const AdmissionForm = () => {
                                     required: true,
                                 })}
                             >
-                                <option value=""  className="text-red-500 ttext-[rgb(104,97,99)]">Select one</option>
-                                <option value="" selected className="text-red-500 ttext-[rgb(104,97,99)]">Select two</option>
-
+                                <option value=""  className="">Select one</option>
                                 {qualification?.map((item) => (
                                     <option key={item.id} value={item.id}>
                                         {item.qualification}
@@ -236,7 +234,7 @@ const AdmissionForm = () => {
                             className="form-label required-field"
                             htmlFor="remarks"
                         >
-                            I want to join MindRisers Internship program after
+                            I want to join Mindrisers Internship program after
                             my training is over
                         </label>
                         <div className="flex gap-[30px]">

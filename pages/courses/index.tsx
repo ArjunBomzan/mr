@@ -58,7 +58,7 @@ const Courses = ({ courses_all }) => {
     // }, [router.isReady, router.query.tag]);
 
     let meta_description =
-        "Are you searching for a Practical IT Training Center in Kathmandu Nepal then MindRisers is the perfect platform for you to learn Digital Skils";
+        "Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers is the perfect platform for you to learn Digital Skils";
     let meta_image = `${process.env.NEXT_PUBLIC_DOMAIN}/assets/images/courses.png`;
 
     return (
@@ -74,7 +74,7 @@ const Courses = ({ courses_all }) => {
                 <meta
                     property="og:title"
                     content={
-                        "MindRisers Courses | IT related courses in Kathmandu, Nepal"
+                        "Mindrisers Courses | IT related courses in Kathmandu, Nepal"
                     }
                 />
                 <meta property="og:description" content={meta_description} />
@@ -87,7 +87,7 @@ const Courses = ({ courses_all }) => {
                 <meta
                     property="twitter:title"
                     content={
-                        "MindRisers Courses | IT related courses in Kathmandu, Nepal"
+                        "Mindrisers Courses | IT related courses in Kathmandu, Nepal"
                     }
                 />
                 <meta

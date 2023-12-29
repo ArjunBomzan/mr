@@ -10,7 +10,7 @@ const FooterContactUs = () => {
             <ul className='text-neutral-300  text-sm '>
                 <li className='cursor-pointer hover:text-neutral-400 mb-1'>
                     <Link href='/'>
-                        MindRisers
+                        Mindrisers
                     </Link>
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400 mb-1'>

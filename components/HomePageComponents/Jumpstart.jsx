@@ -17,7 +17,7 @@ const Jumpstart = () => {
     <section className='flex flex-col px-5 py-20 md:space-y-9 h-max sm:pt-24 sm:px-10 md:px-20 lg:px-40 xl:px-48'>
       <div className='flex flex-col'>
         {/* <p className="w-full mb-5 text-sm font-medium tracking-widest text-center text-green-500">WHY BUSINESSES CHOOSE US</p> */}
-        <p className='w-full mb-5 text-2xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>Benifits of joining MindRisers</p>
+        <p className='w-full mb-5 text-2xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>Benifits of joining Mindrisers</p>
         {/* <p className='w-full text-center'>
           A few things we can boast about
         </p> */}

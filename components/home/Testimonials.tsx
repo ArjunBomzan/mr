@@ -47,7 +47,7 @@ export default function Testimonials() {
             company: "Realpath Engineering Consulancy Pvt.Ltd.",
             position: "CEO",
             testimonial:
-                "Thank you MindRisers for making our job easy for Human resource (HR) department.",
+                "Thank you Mindrisers for making our job easy for Human resource (HR) department.",
         },
         {
             starCount: 5,
@@ -56,7 +56,7 @@ export default function Testimonials() {
             company: "Pentagram Consulting & Construction Pvt. Ltd.",
             position: "CEO",
             testimonial:
-                "In only 5-6 months we have experienced rapid growth in our social media marketing. All thanks to MindRisers Consortium, the best team with the best manpower to uplift your Business.",
+                "In only 5-6 months we have experienced rapid growth in our social media marketing. All thanks to Mindrisers Consortium, the best team with the best manpower to uplift your Business.",
         },
         {
             starCount: 5,
@@ -65,7 +65,7 @@ export default function Testimonials() {
             company: "Prabhu Group/Prabhu Pay",
             position: "CEO",
             testimonial:
-                "We chose MindRisers Consortium because we simply could not find any other providers that offered all the services we needed. Great Team with great services.",
+                "We chose Mindrisers Consortium because we simply could not find any other providers that offered all the services we needed. Great Team with great services.",
         },
         {
             starCount: 5,
@@ -74,7 +74,7 @@ export default function Testimonials() {
             company: "Damak Nagar Palika",
             position: "IT Officer",
             testimonial:
-                "We chose MindRisers Consortium because it provides good services and offers we need.",
+                "We chose Mindrisers Consortium because it provides good services and offers we need.",
         },
         {
             starCount: 5,
@@ -91,7 +91,7 @@ export default function Testimonials() {
             position: "CEO",
             company: "Tummy Truck",
             testimonial:
-                "MindRisers is the best in town for providing sound knowledge to freshers.",
+                "Mindrisers is the best in town for providing sound knowledge to freshers.",
         },
         {
             starCount: 5,
@@ -100,7 +100,7 @@ export default function Testimonials() {
             position: "CEO",
             company: "Rato Pati",
             testimonial:
-                "Service is all what you expect when you are bound to work with providers and whom we are connected with it's MindRisers Consortium. The best team to provide efficient and timely service.",
+                "Service is all what you expect when you are bound to work with providers and whom we are connected with it's Mindrisers Consortium. The best team to provide efficient and timely service.",
         },
         {
             starCount: 5,
@@ -109,7 +109,7 @@ export default function Testimonials() {
             company: "Reliance Life Insurance",
             position: "Deputy CEO",
             testimonial:
-                "What makes you happy is when your business meets your customer's satisfaction. MindRisers Consortium made this part so easy and effective, thank you!",
+                "What makes you happy is when your business meets your customer's satisfaction. Mindrisers Consortium made this part so easy and effective, thank you!",
         },
         {
             starCount: 5,
@@ -118,7 +118,7 @@ export default function Testimonials() {
             company: "EVO Store",
             position: "Digital Marketing Department",
             testimonial:
-                "We can positively say MindRisers provides the best knowledge and services to our clients. We are very happy with the service we received from MindRisers Consortium.",
+                "We can positively say Mindrisers provides the best knowledge and services to our clients. We are very happy with the service we received from Mindrisers Consortium.",
         },
         {
             starCount: 5,
@@ -127,7 +127,7 @@ export default function Testimonials() {
             name: "Sanjan Piya",
             position: "Co-founder",
             testimonial:
-                "Extremely satisfied with MindRisers Consortium. The best team to deal with, helpful, friendly, and service-oriented.",
+                "Extremely satisfied with Mindrisers Consortium. The best team to deal with, helpful, friendly, and service-oriented.",
         },
         {
             starCount: 5,
@@ -136,7 +136,7 @@ export default function Testimonials() {
             company: "Samanantar Group",
             position: "HR Department",
             testimonial:
-                "We greatly appreciate MindRisers Consortium, an amazing team who are keen to help in every step of the way to support with all the software.",
+                "We greatly appreciate Mindrisers Consortium, an amazing team who are keen to help in every step of the way to support with all the software.",
         },
         {
             starCount: 5,

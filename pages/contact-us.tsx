@@ -23,7 +23,7 @@ export default function contact() {
                 <meta
                     property="og:title"
                     content={
-                        "MindRisers Contact | IT related courses in Kathmandu, Nepal"
+                        "Mindrisers Contact | IT related courses in Kathmandu, Nepal"
                     }
                 />
                 <meta property="og:description" content={meta_description} />
@@ -36,7 +36,7 @@ export default function contact() {
                 <meta
                     property="twitter:title"
                     content={
-                        "MindRisers contact | IT related courses in Kathmandu, Nepal"
+                        "Mindrisers contact | IT related courses in Kathmandu, Nepal"
                     }
                 />
                 <meta

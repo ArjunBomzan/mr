@@ -65,9 +65,9 @@ export default function Home(props) {
     ];
 
     let growWithUsers = [
-        { src: "/assets/images/home/banner/person-1.jpg" },
-        { src: "/assets/images/home/banner/person-1.jpg" },
-        { src: "/assets/images/home/banner/person-1.jpg" },
+        { src: "/assets/images/home/banner/alija.jpg" },
+        { src: "/assets/images/home/banner/deepa.jpg" },
+        { src: "/assets/images/home/banner/nikita.jpg" },
     ];
 
     // let courses = [
@@ -247,7 +247,7 @@ export default function Home(props) {
                             </div>
                         </div>
                         <p className="mt-[30px] max-w-[983px] text-primary">
-                            MindRisers, Nepal's sole IT training institute,
+                            Mindrisers, Nepal's sole IT training institute,
                             provides paid internships post-course. Our diverse
                             courses, led by expert instructors, span
                             programming, design, and marketing to ensure your
@@ -329,7 +329,7 @@ export default function Home(props) {
                                 <Swoosh type="secondary">About us</Swoosh>
                             </h2>
                             <p className="title-space-lg text-primary ">
-                                MindRisers is a parent company of mindrisers
+                                Mindrisers is a parent company of mindrisers
                                 technology pvt.ltd, tummytruck, digitalpalika,
                                 and the training institute. We are the only
                                 company in Nepal where we guarantee paid

@@ -13,19 +13,19 @@ export default function Stats({ wrapperClass }: { wrapperClass?: string }) {
     let data:statsType[] = [
         {
             title: "courses",
-            number: 42,
+            number: 10,
         },
         {
             title: "students",
-            number: 5100,
+            number: 10000,
         },
         {
             title: "job placments",
-            number: 1000,
+            number: 4500,
         },
         {
             title: "years experience",
-            number: 42,
+            number: 7,
         },
     ];
     return (

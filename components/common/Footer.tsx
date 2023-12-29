@@ -153,9 +153,9 @@ const Footer = () => {
                         </p>
                     </div>
                     <p>
-                        MindRisers is the only IT training institute in
-                        Kathmandu, Nepal offering paid internships after the
-                        course completion
+                        Mindrisers Institute of Technology is the only IT
+                        training institute in Kathmandu, Nepal offering paid
+                        internships after the course completion
                     </p>
                 </div>
                 <FooterLinks data={data} />
@@ -163,7 +163,7 @@ const Footer = () => {
                 <FooterLinks data={resourcesData} />
                 <FooterLinks data={aboutData} />
             </div>
-            <div className="containe flex flex-col md:flex-row flex-wrap gap-5 px-3 justify-around border-t border-green-700 py-[1.875rem] text-sm font-medium">
+            <div className="containe flex flex-col flex-wrap justify-around gap-5 border-t border-green-700 px-3 py-[1.875rem] text-sm font-medium md:flex-row">
                 <p className="text-center">
                     <span>&copy;{currentYear} Mindrisers</span>
                 </p>
@@ -172,7 +172,11 @@ const Footer = () => {
                     <span>Cookies</span>
                     <span>Privacy Policies</span>
                 </p>
-                <FooterLinks showTitle={false} data={socialData} extendedGroupClassName={"flex gap-5"} />
+                <FooterLinks
+                    showTitle={false}
+                    data={socialData}
+                    extendedGroupClassName={"flex gap-5"}
+                />
             </div>
         </footer>
     );

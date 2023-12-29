@@ -85,6 +85,7 @@ export default function Home({ partners }) {
                             return (
                                 <li className="group rounded-xl border border-border p-5 transition hover:border-green-50 hover:bg-green-50 ">
                                     <Link
+                                        rel="nofollow"
                                         href={el.link}
                                         target="_blank"
                                         className="cursor-pointer"

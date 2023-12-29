@@ -7,7 +7,7 @@ const ServicesBanner = () => {
           Services
         </p>
         <p className='w-4/5 pt-4 pb-12 text-center text-gray-200 sm:pb-28 md:w-1/3'>
-          Our team is capable of making applications as sophisticated as you can imagine. We do not only make top-of-the-line mobile applications, web applications, and enterprise applications, but also specialize in digital marketing, and teaching you modern technologies. MindRisers is known as the best IT services provider and IT training centre in Kathmandu Nepal.
+          Our team is capable of making applications as sophisticated as you can imagine. We do not only make top-of-the-line mobile applications, web applications, and enterprise applications, but also specialize in digital marketing, and teaching you modern technologies. Mindrisers is known as the best IT services provider and IT training centre in Kathmandu Nepal.
         </p>
       </div>
     </div>

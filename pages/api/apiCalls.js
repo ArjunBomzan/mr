@@ -144,15 +144,17 @@ export async function DropDownOptions(props) {
                 console.log(err);
             });
 
-    props?.setSchedule &&
+    props?.setShedule &&
         publicRequest
             .get("shedule/")
             .then((res) => {
-                props?.setSchedule(res.data);
+                props?.setShedule(res.data);
             })
             .catch((err) => {
-                console.log(err);
+                console.log("shedule",err);
             });
+
+
     props?.setQualification &&
         publicRequest
             .get("qualification/")

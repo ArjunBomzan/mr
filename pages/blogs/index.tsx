@@ -66,7 +66,7 @@ export default function blogs({ blogs, total_data, current_page }) {
 
     const router = useRouter();
     let meta_description =
-        "Are you searching for a Practical IT Training Center in Kathmandu Nepal then MindRisers is the perfect platform for you to learn Digital Skils";
+        "Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers is the perfect platform for you to learn Digital Skils";
     let meta_image = `${process.env.NEXT_PUBLIC_DOMAIN}/assets/images/blogs.png`;
 
     let blogsContainerClass =
@@ -88,7 +88,7 @@ export default function blogs({ blogs, total_data, current_page }) {
                 <meta property="og:type" content="website" />
                 <meta
                     property="og:title"
-                    content={"Blogs | MindRisers Nepal"}
+                    content={"Blogs | Mindrisers Nepal"}
                 />
                 <meta property="og:description" content={meta_description} />
                 <meta property="og:image" content={meta_image} />
@@ -99,7 +99,7 @@ export default function blogs({ blogs, total_data, current_page }) {
                 <meta name="twitter:creator" content="@mindrisers" />
                 <meta
                     property="twitter:title"
-                    content={"Blogs | MindRisers Nepal"}
+                    content={"Blogs | Mindrisers Nepal"}
                 />
                 <meta
                     property="twitter:description"

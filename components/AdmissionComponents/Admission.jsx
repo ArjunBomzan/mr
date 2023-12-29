@@ -165,7 +165,7 @@ const Admission = () => {
             </div>
 
             <div style={{ flex: "100%" }}>
-              <label className="admission-form-label required-field" htmlFor="remarks">I want to join MindRisers Internship program after my training is over</label>
+              <label className="admission-form-label required-field" htmlFor="remarks">I want to join Mindrisers Internship program after my training is over</label>
               <div className="flex items-center gap-2">
                 <input
                   type="radio"

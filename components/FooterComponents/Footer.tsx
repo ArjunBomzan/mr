@@ -108,7 +108,7 @@ const Footer = () => {
             <Image src={Logo} className="h-[3.375rem] w-[3.375rem]" width={300} height={300} alt="" />
             <p className={`${inter.className} text-[1.75rem]`}>mindrisers</p>
           </div>
-          <p>MindRisers is the only IT training institute in Kathmandu, Nepal offering paid internships after the course completion</p>
+          <p>Mindrisers Institute of Technology is the only IT training institute in Kathmandu, Nepal offering paid internships after the course completion</p>
         </div>
         <FooterLinks data={data} />
         <FooterLinks data={socialData} />
