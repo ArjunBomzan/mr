@@ -68,6 +68,7 @@ export default function Partners({ partners }) {
                             return (
                                 <SwiperSlide className="px-[10px] md:px-[25px] lg:px-[30px]  ">
                                     <Image
+                                        priority={true}
                                         src={makeFullUrl(el.image)}
                                         alt=""
                                         className="h-[72px] w-full object-contain md:h-[46px] borde border-border"

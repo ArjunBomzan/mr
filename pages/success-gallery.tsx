@@ -40,10 +40,10 @@ const services = ({ successStoreis }) => {
                     <div className=" gap-base  grid   items-center lg:grid-cols-[60%,40%]">
                         <div className="text-center lg:text-left">
                             <h1>
-                                <span className="block header-xl leading-[145%]">
+                                <span className="header-xl block leading-[145%]">
                                     You are at great
                                 </span>
-                                <span className="block header-xl leading-[145%] text-secondary">
+                                <span className="header-xl block leading-[145%] text-secondary">
                                     Hand !
                                 </span>
                             </h1>
@@ -92,6 +92,7 @@ const services = ({ successStoreis }) => {
                             return (
                                 <li className="hover:shadow-small relative rounded-xl border border-border p-5 pt-[80px] transition hover:border-primary ">
                                     <Image
+                                        priority
                                         src={el.image}
                                         alt=""
                                         height={400}

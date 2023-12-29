@@ -14,7 +14,7 @@ const AdmissionForm = () => {
     const router = useRouter();
     const [submiting, setSubmiting] = useState(false);
     const [course, setCourse] = useState([]);
-    const [schedule, setSchedule] = useState([]);
+    const [shedule, setShedule] = useState([]);
     const [qualification, setQualification] = useState([]);
     const [token, setToken] = useState("");
     const [error, setError] = useState("");
@@ -31,10 +31,10 @@ const AdmissionForm = () => {
         setToken("");
     };
     useEffect(() => {
-        DropDownOptions({ setCourse, setSchedule, setQualification });
+        DropDownOptions({ setCourse, setShedule, setQualification });
     }, []);
 
-    console.log(schedule);
+    console.log(shedule);
     return (
         <>
             <form
@@ -154,7 +154,9 @@ const AdmissionForm = () => {
                                     required: true,
                                 })}
                             >
-                                <option value="">Select</option>
+                                <option value=""  className="text-red-500 ttext-[rgb(104,97,99)]">Select one</option>
+                                <option value="" selected className="text-red-500 ttext-[rgb(104,97,99)]">Select two</option>
+
                                 {qualification?.map((item) => (
                                     <option key={item.id} value={item.id}>
                                         {item.qualification}
@@ -202,25 +204,25 @@ const AdmissionForm = () => {
                     <div className="form-group">
                         <label
                             className="form-label required-field"
-                            htmlFor="schedule"
+                            htmlFor="shedule"
                         >
                             Preferred Schedule
                         </label>
                         <div>
                             <select
                                 className="form-control"
-                                id="schedule"
-                                name="schedule"
-                                {...register("schedule", { required: true })}
+                                id="shedule"
+                                name="shedule"
+                                {...register("shedule", { required: true })}
                             >
                                 <option value="">Select</option>
-                                {schedule?.map((item) => (
+                                {shedule?.map((item) => (
                                     <option key={item.id} value={item.id}>
                                         {item.shedule}
                                     </option>
                                 ))}
                             </select>
-                            {errors?.schedule?.type === "required" && (
+                            {errors?.shedule?.type === "required" && (
                                 <p className="error-message">
                                     This field is required
                                 </p>

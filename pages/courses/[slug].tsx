@@ -52,7 +52,7 @@ export default function course(props) {
             ),
         };
     });
-    
+
     return (
         <div>
             <BannerWrapper extendedClassName="after:!h-[50px]]">
@@ -102,10 +102,16 @@ export default function course(props) {
                             </ul>
 
                             <div className="title-space-3xl-reverse gap-base-half flex justify-center lg:justify-start">
-                                <Link href={"/online-admission"}  className="btn-simple">
+                                <Link
+                                    href={"/online-admission"}
+                                    className="btn-simple"
+                                >
                                     Get Admission
                                 </Link>
-                                <a href="#quick-enquiry" className="btn-simple-outline">
+                                <a
+                                    href="#quick-enquiry"
+                                    className="btn-simple-outline"
+                                >
                                     Send Enquiry
                                 </a>
                             </div>
@@ -130,13 +136,18 @@ export default function course(props) {
                                     <span className="inline-block border-b-[3px] border-primary  p-[10px] text-center font-medium text-primary">
                                         Course Overview
                                     </span>
-                                    <a href="#syllabus" className="inline-block p-[10px] text-center">
+                                    <a
+                                        href="#syllabus"
+                                        className="inline-block p-[10px] text-center"
+                                    >
                                         Syllabus
                                     </a>
                                 </div>
                             </section>
                             <section className="title-space-3xl-reverse title-space-xl">
-                                <h2 className="sub-header-lg">Course Overview</h2>
+                                <h2 className="sub-header-lg">
+                                    Course Overview
+                                </h2>
                                 <div
                                     className="editor-content "
                                     dangerouslySetInnerHTML={{
@@ -145,7 +156,7 @@ export default function course(props) {
                                 ></div>
                             </section>
 
-                            <section className="" >
+                            <section className="">
                                 <article className="title-space-3xl-reverse  title-space-xl">
                                     <h2 className="sub-header-lg" id="syllabus">
                                         Syllabus
@@ -206,6 +217,7 @@ export default function course(props) {
                                     <SwiperSlide className="max-w-full cursor-grab select-none rounded-xl border border-green-200 bg-green-50 p-5 md:min-w-[407px] ">
                                         <div className="gap-base-half title-space-xl grid grid-cols-[40%,60%]">
                                             <Image
+                                                priority
                                                 src={el.image}
                                                 className=" aspect-square rounded-full border-4 border-primary bg-cover object-cover"
                                                 alt=""

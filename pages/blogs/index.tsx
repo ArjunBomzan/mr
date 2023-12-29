@@ -11,12 +11,15 @@ import { makeFullUrl } from "../../utils/makeFullUrl";
 import formatDate from "../../utils/formatDate";
 import Link from "next/link";
 
-const PrevIcon = () =>{
-    return <span>{`<`}</span>
-}
-const NextIcon = () =>{
-    return <span>{`>`}</span>
-}
+
+const perPage = 16
+
+const PrevIcon = () => {
+    return <span>{`<`}</span>;
+};
+const NextIcon = () => {
+    return <span>{`>`}</span>;
+};
 
 export function BlogCard({
     thumbnail,
@@ -31,16 +34,17 @@ export function BlogCard({
     const router = useRouter();
     const type = router.pathname.split("/")[1];
     return (
-        <li className=" hover:shadow-small rounded-bl-xl rounded-br-xl rounded-tl-xl rounded-tr-xl border border-border transition-all hover:border-primary">
-            <Link href={"/blogs/" + slug}>
+        <li className=" hover:shadow-small   group  transition-all">
+            <Link href={"/blogs/" + slug} className="flex h-full flex-col">
                 <Image
+                    priority
                     src={makeFullUrl(thumbnail)}
                     alt=""
                     width={500}
                     height={500}
                     className="h-[176px] w-full rounded-tl-xl rounded-tr-xl "
                 />
-                <div className="borderr border-borderr rounded-bl-xl rounded-br-xl p-5 ">
+                <div className="flex-grow rounded-bl-xl rounded-br-xl border border-t-0 border-border p-5 transition-all group-hover:border-primary ">
                     <h2 className="title font-semibold leading-[145%]">
                         {title}
                     </h2>
@@ -209,7 +213,7 @@ export default function blogs({ blogs, total_data, current_page }) {
                     <>
                         <div className="paginate-wrapper   section-wrapper-m text-center  ">
                             <Pagination
-                                pageSize={12}
+                                pageSize={perPage}
                                 current={current_page}
                                 showTotal={(total, range) =>
                                     `${range[0]} - ${range[1]} of ${total} items`
@@ -225,8 +229,8 @@ export default function blogs({ blogs, total_data, current_page }) {
                                 // prevIcon={() => {
                                 //     return "<";
                                 // }}
-                                prevIcon ={PrevIcon}
-                                nextIcon ={NextIcon}
+                                prevIcon={PrevIcon}
+                                nextIcon={NextIcon}
                                 // nextIcon={() => {
                                 //     return ">";
                                 // }}
@@ -275,7 +279,7 @@ export const getServerSideProps = async ({ query }) => {
     let searchTerm = query.q || "";
 
     const res = await fetch(
-        `${process.env.DOMAIN_V1}singleblog/?size=12&search=${searchTerm}&page=${page}`,
+        `${process.env.DOMAIN_V1}singleblog/?size=${perPage}&search=${searchTerm}&page=${page}`,
     );
     const data = await res.json();
 

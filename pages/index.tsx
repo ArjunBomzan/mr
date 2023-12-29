@@ -154,8 +154,7 @@ export default function Home(props) {
             {/* <div className="container my-7">
                 <TypeWriter contents={["one olne", "two"]} />
             </div> */}
-
-            <BannerWrapper size="big" extendedClassName="!py-0 zz-0">
+             <BannerWrapper size="big" extendedClassName="!py-0 zz-0">
                 <section
                     className="h-full w-full bg-no-repeat "
                     style={
@@ -440,6 +439,7 @@ export default function Home(props) {
                     </Link>
                 </div>
             </section>
+
             <div className="">
                 <Partners partners={props.partners} />
             </div>

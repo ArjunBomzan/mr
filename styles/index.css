@@ -1,6 +1,10 @@
 @import url("./tailwind.css");
 @import url("./universal.css");
 
+:root {
+    --primary-color: #018343;
+}
+
 html {
     font-size: 16px;
 }
@@ -20,7 +24,7 @@ html {
     background-position: center; */
     clip-path: polygon(0 0, 0% 100%, 100% 0);
     /*but clip-path not support by all yet */
-    background-color: #018343;
+    background-color: var(--primary-color);
 }
 
 .swoosh-h-secondary {
@@ -97,7 +101,6 @@ html {
     /* Set the color of the scrollbar thumb on hover */
 }
 
-
 /* TODO: scrollbar is not changing .. change its desing */
 .custom-sidebar::-webkit-scrollbar {
     width: 6px;
@@ -122,7 +125,6 @@ html {
     background-color: #555;
     /* Set the color of the scrollbar thumb on hover */
 }
-
 
 /* for cruved ..arrow in home page */
 .target::after {
@@ -177,23 +179,69 @@ html {
     animation-timing-function: linear;
 }
 
+/* .sub-header-lg {
+    @apply header-design text-[22px] xl:text-[23px] 2xl:text-[24px];
+} */
 
-.editor-content h2{
-  /* TODO: fix header of editor-contents */
+.editor-content strong,
+.editor-content b {
+    font-weight: inherit;
+    font-weight: 600;
 }
-.editor-content a{
-  
+
+.editor-content h2 {
+    margin-top: 2rem;
+    margin-bottom:1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 22px;
 }
-.editor-content ul{
+
+@media (min-width: 1280px) {
+    .editor-content h2 {
+        font-size: 23px;
+    }
+}
+@media (min-width: 1536px) {
+    .editor-content h2 {
+        font-size: 24px;
+    }
+}
+
+.editor-content h3 {
+    margin-top: 2rem;
+    margin-bottom:.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+@media (min-width: 1280px) {
+    .editor-content h2 {
+        font-size: 21px;
+    }
+}
+@media (min-width: 1536px) {
+    .editor-content h2 {
+        font-size: 22px;
+    }
+}
+
+.editor-content a {
+    color: #1a0dab;
+}
+.editor-content a:hover {
+    text-decoration: underline;
+}
+.editor-content ul, .editor-content ol {
     list-style: disc;
-    padding-left:40px
+    padding-left: 40px;
 }
 
-.contact-us svg{
-    color:#018343;
-    fill:#018343;
+.contact-us svg {
+    color: var(--primary-color);
+    fill: var(--primary-color);
 }
-
 
 #scroll-to-top {
     position: fixed;
@@ -210,18 +258,16 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer
-  }
-  
-  #scroll-to-top svg {
-    width: 20px;
-  }
+    cursor: pointer;
+}
 
-  
+#scroll-to-top svg {
+    width: 20px;
+}
 
 .paginate-wrapper li[title] {
-    font-size: .8rem;
-    margin-right: .3rem;
+    font-size: 0.8rem;
+    margin-right: 0.3rem;
     border-radius: 50%;
     text-align: center;
     min-width: 2rem;
@@ -229,57 +275,61 @@ html {
     user-select: none;
     display: inline-block;
     border: 1px solid gray;
-    padding: .3rem;
+    padding: 0.3rem;
     vertical-align: middle;
     position: relative;
     cursor: pointer;
-  }
-  
-  .paginate-wrapper li *{
+}
+
+.paginate-wrapper li * {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
-  }
-  .paginate-wrapper li:has(button) {
-    margin:0 !important;
-    border:none !important;
-    border-top: 0 !important; 
+    transform: translate(-50%, -50%);
+}
+.paginate-wrapper li:has(button) {
+    margin: 0 !important;
+    border: none !important;
+    border-top: 0 !important;
     border-bottom: 0 !important;
     position: relative;
-  }
-  
-  .paginate-wrapper li:has(button)::after {
+}
+
+.paginate-wrapper li:has(button)::after {
     content: "•••";
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
-  }
-  
-  
-  .paginate-wrapper li.disabled,.rc-pagination-disabled {
+    transform: translate(-50%, -50%);
+}
+
+.paginate-wrapper li.disabled,
+.rc-pagination-disabled {
     /* background-color: gray; */
-    opacity: .4;
+    opacity: 0.4;
     cursor: no-drop;
-  }
-  
-  .paginate-wrapper li.disabled *,
-  .rc-pagination-disabled {
+}
+
+.paginate-wrapper li.disabled *,
+.rc-pagination-disabled {
     cursor: no-drop;
-  }
-  
-  .paginate-wrapper li.selected ,.rc-pagination-item-active {
+}
+
+.paginate-wrapper li.selected,
+.rc-pagination-item-active {
     color: white;
-    background-color: #EEEFFB;
-    background-color:#018343;
-    border-color: #018343
-  }
-  
-  
-  .rc-pagination-total-text{
+    background-color: #eeeffb;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.rc-pagination-total-text {
     font-size: 1rem;
-    margin-bottom: .5rem;
-    margin-top: .5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+
+select option:checked {
+    color: #ff0000; /* Change this to your selected text color */
   }
-  
