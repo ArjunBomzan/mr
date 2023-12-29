@@ -144,7 +144,7 @@ function MyApp({ Component, pageProps }) {
     {/* <Footer /> */}
 
 
-    <div className="admission-modal hidden" id="admission-modal" style={{
+    <div className="admission-modal" id="admission-modal" style={{
       width: "100%",
       height: "100vh",
       backgroundColor: "rgba(0,0,0,0.6)",
@@ -203,7 +203,7 @@ function MyApp({ Component, pageProps }) {
           color: "white"
         }}> View Courses ! </Link>
         <hr className=" mt-2 mb-2" />
-        <Link href="/" className="text-green-500 underline" style={{
+        <Link href="/" className="text-green-500 underline my-5" style={{
           textUnderlinePosition: "under"
         }}>Home</Link>
       </div>
@@ -222,9 +222,7 @@ function MyApp({ Component, pageProps }) {
         })
         document.getElementById("admission-modal-box").addEventListener("click",(event)=>{
           event.stopPropagation();
-
         })
-       
         `
       }}
       defer

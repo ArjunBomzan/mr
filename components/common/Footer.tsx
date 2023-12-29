@@ -40,17 +40,17 @@ let socialData = {
     menus: [
         {
             title: "facebook",
-            url: "https://ww.facebook.com",
+            url: "https://www.facebook.com/MindRisersConsortium",
             icon: <FaFacebook className="inline" />,
         },
         {
             title: "youtube",
-            url: "https://ww.facebook.com",
+            url: "https://www.youtube.com/@mindrisers",
             icon: <FaYoutube className="inline" />,
         },
         {
             title: "instagram",
-            url: "https://ww.facebook.com",
+            url: "https://www.instagram.com/tech.mindrisers/?hl=en",
             icon: <FaInstagram className="inline" />,
         },
     ],

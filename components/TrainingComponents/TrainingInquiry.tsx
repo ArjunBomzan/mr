@@ -12,11 +12,11 @@ const TrainingInquiry = (props) => {
     } = useForm();
 
     const router = useRouter();
-    const [submitting, setSubmitting] = useState(false);
+    const [submitting, setSubmiting] = useState(false);
 
     const onSubmit = (data) => {
-        setSubmitting(true);
-        ContactListApi({ setSubmitting, data, reset, router });
+        setSubmiting(true);
+        ContactListApi({ setSubmiting, data, reset, router });
     };
 
     return (
@@ -24,7 +24,7 @@ const TrainingInquiry = (props) => {
             style={{}}
             id="quick_inquiry"
             onSubmit={handleSubmit(onSubmit)}
-            className="custom-sidebar sticky top-[10px] max-h-screen self-start overflow-y-auto rounded-xl bg-orange-100 p-5"
+            className="custom-sidebar sticky top-[10px] lg:max-h-screen self-start overflow-y-auto rounded-xl bg-orange-100 p-5"
         >
             <h2 className="sub-header mb-5 font-semibold text-secondary" id="quick-enquiry">
                 Quick Enquiry

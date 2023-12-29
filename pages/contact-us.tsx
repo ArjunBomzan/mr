@@ -61,38 +61,7 @@ export default function contact() {
                 <div className="gap-base-double  !2xl:gap-[9.375rem] grid lg:grid-cols-2">
                     <DropMessage />
                     <ContactDetails />
-                    <div className="hidden">
-                        <div className="title-space-3xl text-center lg:text-left ">
-                            <h2 className=" title-space sub-header-lg leading-[145%]">
-                                Contact us by Phone or Location
-                            </h2>
-                            <p className="text-lg">
-                                We are 24*7 available to help you out.
-                            </p>
-                        </div>
-                        <div className=" text-xl 2xl:text-2xl">
-                            <ul className="flex flex-col items-center lg:items-start">
-                                <li className=" flex items-center gap-5 font-medium">
-                                    <IoLocationSharp className="text-primary" />
-                                    <span className={inter.className}>
-                                        Kumari Galli 2, Kathmandu 44600
-                                    </span>
-                                </li>
-                                <li className=" flex items-center gap-5 font-medium">
-                                    <IoLocationSharp className="text-primary" />
-                                    <span className={inter.className}>
-                                        Kumari Galli 2, Kathmandu 44600
-                                    </span>
-                                </li>
-                                <li className=" flex items-center gap-5 font-medium">
-                                    <IoLocationSharp className="text-primary" />
-                                    <span className={inter.className}>
-                                        Kumari Galli 2, Kathmandu 44600
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                 </div>
             </section>
 

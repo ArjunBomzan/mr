@@ -17,9 +17,9 @@ import { makeFullApiUrl } from "../utils/makeFullUrl";
 
 export default function Home(props) {
     let meta_title =
-        "Best IT Training Institute in kathmandu, Nepal | Mind Risers";
+        "Best IT Training Institute in kathmandu, Nepal | Mindrisers Institute of Technology";
     let meta_description =
-        "Are you searching for a Practical IT Training Center in Kathmandu Nepal then MindRisers is the perfect platform for you to learn Digital Skills";
+        "Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers Institute of Technology is the perfect platform for you to learn Digital Skills";
 
     let tags = [
         {
@@ -120,12 +120,12 @@ export default function Home(props) {
         <>
             <Head>
                 <title>
-                    Best IT Training Institute in kathmandu, Nepal | Mind Risers
+                    Best IT Training Institute in kathmandu, Nepal | Mindrisers Institute of Technology
                 </title>
                 <meta
                     name="title"
                     content={
-                        "Best IT Training Institute in kathmandu, Nepal | Mind Risers"
+                        "Best IT Training Institute in kathmandu, Nepal | Mindrisers Institute of Technology"
                     }
                 />
                 <meta name="description" content={meta_description} />
