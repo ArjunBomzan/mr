@@ -204,7 +204,7 @@ const AdmissionForm = () => {
                             className="form-label required-field"
                             htmlFor="shedule"
                         >
-                            Preferred Schedule
+                            Preferred Shedule
                         </label>
                         <div>
                             <select

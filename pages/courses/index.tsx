@@ -113,14 +113,20 @@ const Courses = ({ courses_all }) => {
                             Learn Top IT Skills
                         </h1>
 
-                        <p className="title-lg mb-[30px] flex items-center justify-center  text-primary md:gap-[11px]  lg:justify-start">
+                        {/* <p className="title-lg mb-[30px] flex items-center justify-center  text-primary md:gap-[11px]  lg:justify-start">
                             <span>{`<h2>`}</span>
                             <span className="xl:header-lg text-expanded-sm uppercase font-semibold !text-secondary  ">
                                 {" "}
                                 <TypeWriter contents={typeWriters} />
                             </span>
                             <span>{`</h2>`}</span>
+                        </p> */}
+                        <p className="title-lg borde mb-[30px] flex max-w-full items-center justify-center gap-[5px] text-primary transition-all duration-[6s] !ease-in lg:justify-start md:gap-[11px] ">
+                            <span>{`<h2>`}</span>
+                            <TypeWriter contents={typeWriters} />
+                            <span>{`</h2>`}</span>
                         </p>
+
 
                         <p className=" mb-5 flex items-center justify-center gap-[10px] lg:justify-start">
                             <span className="header-xl">with</span>

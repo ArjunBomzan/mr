@@ -10,7 +10,7 @@ const Admission = () => {
   const router = useRouter();
   const [submiting, setSubmiting] = useState(false);
   const [course, setCourse] = useState([]);
-  const [schedule, setSchedule] = useState([]);
+  const [shedule, setShedule] = useState([]);
   const [qualification, setQualification] = useState([]);
   const [token, setToken] = useState("")
   const [error, setError] = useState("")
@@ -30,7 +30,7 @@ const Admission = () => {
     setToken("")
   }
   useEffect(() => {
-    DropDownOptions({ setCourse, setSchedule, setQualification })
+    DropDownOptions({ setCourse, setShedule, setQualification })
   }, []);
   return (
     <>
@@ -152,7 +152,7 @@ const Admission = () => {
                 >
                   <option value="">Select</option>
                   {
-                    schedule?.map((item) => {
+                    shedule?.map((item) => {
                       return <option key={item.id} value={item.id}>{item.shedule}</option>
                     })
                   }

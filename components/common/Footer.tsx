@@ -163,7 +163,7 @@ const Footer = () => {
                 <FooterLinks data={resourcesData} />
                 <FooterLinks data={aboutData} />
             </div>
-            <div className="containe flex flex-col flex-wrap justify-around gap-5 border-t border-green-700 px-3 py-[1.875rem] text-sm font-medium md:flex-row">
+            <div className="containe flex flex-col flex-wrap items-center md:items-stretch justify-around gap-5 border-t border-green-700 px-3 py-[1.875rem] text-sm font-medium md:flex-row">
                 <p className="text-center">
                     <span>&copy;{currentYear} Mindrisers</span>
                 </p>

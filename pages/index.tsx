@@ -399,7 +399,7 @@ export default function Home(props) {
                 <div className=" section-p  relative grid gap-[40px] overflow-hidden rounded-3xl   bg-orange-100 xl:grid-cols-[45%,55%]  xl:gap-0  ">
                     <article className="text-center text-secondary xl:pr-[40px] xl:text-left">
                         <h2 className="header-lg  text-expanded title-space-lg">
-                            Request a <span className="swoosh">Callback</span>
+                            Request a <Swoosh type="secondary">Callback</Swoosh> 
                         </h2>
                         <p>
                             Would you like to speak to one of our adviser over

@@ -8,9 +8,11 @@ export default function VideoPlayer({ className }: { className: string }) {
     return (
         <div className={className || ""}>
             <div
-                className="  flex h-full items-center  justify-center object-cover object-center "
+                className="  flex h-full items-center  justify-center bg-cover bg-left md:bg-center "
                 style={{
-                    backgroundImage: `url('https://ooty-theme.myshopify.com/cdn/shop/files/video-sec-bg_1.jpg?v=1620132835')`,
+                    // backgroundImage: `url('https://ooty-theme.myshopify.com/cdn/shop/files/video-sec-bg_1.jpg?v=1620132835')`,
+                    backgroundImage: `url('/assets/images/home/wow.jpg')`,
+
                 }}
             >
                 <AiOutlinePlayCircle

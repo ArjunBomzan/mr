@@ -66,7 +66,7 @@ export default function Partners({ partners }) {
                     >
                         {partners.map((el) => {
                             return (
-                                <SwiperSlide className="px-[10px] md:px-[25px] lg:px-[30px]  ">
+                                <SwiperSlide className="px-[10px] md:px-[25px] lg:px-[30px]  cursor-grab ">
                                     <Image
                                         priority={true}
                                         src={makeFullUrl(el.image)}
@@ -82,12 +82,12 @@ export default function Partners({ partners }) {
                 </div>
 
                 <div
-                    className={`swiper-button-prev-cus flex-center h-[36px] w-[36px] rounded-full bg-green-100 ${commonClass} `}
+                    className={`swiper-button-prev-cus flex-center h-[36px] w-[36px] rounded-full bg-green-100 ${commonClass} cursor-pointer `}
                 >
                     <GoArrowLeft className="inline-block text-xl font-thin text-primary" />
                 </div>
                 <div
-                    className={`swiper-button-next-cus flex-center h-[36px] w-[36px] rounded-full bg-green-100 ${commonClass} left-[initial] right-0 `}
+                    className={`swiper-button-next-cus flex-center h-[36px] w-[36px] rounded-full bg-green-100 ${commonClass} left-[initial] right-0 cursor-pointer `}
                 >
                     <GoArrowRight className="inline-block text-xl font-thin text-primary" />
                 </div>
