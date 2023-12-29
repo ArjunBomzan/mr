@@ -34,9 +34,9 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                                 className="mb-5"
                             />
                             {/* Property 'image' does not exist on type '{ el: courseType; }'.t */}
-                            <p className="sub-header title-space-md text-expanded">
+                            <h3 className="sub-header title-space-md text-expanded">
                                 {el.title}
-                            </p>
+                            </h3>
                             <p className="header-space-xs">{el.duration}</p>
                             <button className="btn-gray transition group-hover:bg-green-50  group-hover:text-primary ">
                                 Learn More

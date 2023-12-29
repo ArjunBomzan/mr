@@ -47,23 +47,25 @@ export default function contact() {
             </Head>
             <BannerWrapper size="small">
                 <div className="container text-center">
-                    <p className="header-xl title-space leading-[145%]">
-                        Contact us
-                    </p>
-                    <p className="text-xl font-semibold text-primary">
-                        We would love to talk to you
-                    </p>
+                    <h1>
+                        <span className="header-xl title-space block leading-[145%]">
+                            Contact us
+                        </span>
+                        <span className="block text-xl font-semibold text-primary">
+                            We would love to talk to you
+                        </span>
+                    </h1>
                 </div>
             </BannerWrapper>
             <section className="section-wrapper-m container">
                 <div className="gap-base-double  !2xl:gap-[9.375rem] grid lg:grid-cols-2">
                     <DropMessage />
-                    <ContactDetails/>
+                    <ContactDetails />
                     <div className="hidden">
                         <div className="title-space-3xl text-center lg:text-left ">
-                            <p className=" title-space sub-header-lg leading-[145%]">
+                            <h2 className=" title-space sub-header-lg leading-[145%]">
                                 Contact us by Phone or Location
-                            </p>
+                            </h2>
                             <p className="text-lg">
                                 We are 24*7 available to help you out.
                             </p>
@@ -95,9 +97,9 @@ export default function contact() {
             </section>
 
             <section className="section-wrapper-m container">
-                <p className="header-md title-space-3xl text-center">
+                <h2 className="header-md title-space-3xl text-center">
                     <Swoosh type="secondary">Visit us at</Swoosh>
-                </p>
+                </h2>
                 <div className="overflow-hidden rounded-xl bg-orange-100 p-[0.625rem]">
                     <iframe
                         className="w-full bg-gray-100"

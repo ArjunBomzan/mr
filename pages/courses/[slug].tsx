@@ -41,7 +41,7 @@ export default function course(props) {
 
     let faqs = course.syllabus.map((el: any) => {
         return {
-            title: el.heading,
+            title: <h3>{el.heading}</h3>,
             content: (
                 <div
                     className="editor-content"
@@ -58,9 +58,9 @@ export default function course(props) {
             <BannerWrapper extendedClassName="after:!h-[50px]]">
                 <div className="container relative z-10 grid items-center gap-[30px] lg:grid-cols-[60%,40%]">
                     <div>
-                        <p className="header-md title-space  text-center leading-[145%] lg:text-left">
+                        <h1 className="header-md title-space  text-center leading-[145%] lg:text-left">
                             {course.title}
-                        </p>
+                        </h1>
                         <div
                             className="text-editor !line-clamp-5 text-primary md:text-[20px]"
                             dangerouslySetInnerHTML={{
@@ -102,12 +102,12 @@ export default function course(props) {
                             </ul>
 
                             <div className="title-space-3xl-reverse gap-base-half flex justify-center lg:justify-start">
-                                <button className="btn-simple">
+                                <Link href={"/online-admission"}  className="btn-simple">
                                     Get Admission
-                                </button>
-                                <button className="btn-simple-outline">
+                                </Link>
+                                <a href="#quick-enquiry" className="btn-simple-outline">
                                     Send Enquiry
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -126,17 +126,17 @@ export default function course(props) {
                     <div className="gap-base-half grid lg:grid-cols-[70%,30%]">
                         <div>
                             <section>
-                                <p className="gap-base-half flex border-b border-border">
+                                <div className="gap-base-half flex border-b border-border">
                                     <span className="inline-block border-b-[3px] border-primary  p-[10px] text-center font-medium text-primary">
                                         Course Overview
                                     </span>
                                     <a href="#syllabus" className="inline-block p-[10px] text-center">
                                         Syllabus
                                     </a>
-                                </p>
+                                </div>
                             </section>
                             <section className="title-space-3xl-reverse title-space-xl">
-                                <p className="sub-header-lg">Course Overview</p>
+                                <h2 className="sub-header-lg">Course Overview</h2>
                                 <div
                                     className="editor-content "
                                     dangerouslySetInnerHTML={{
@@ -147,9 +147,9 @@ export default function course(props) {
 
                             <section className="" >
                                 <article className="title-space-3xl-reverse  title-space-xl">
-                                    <p className="sub-header-lg" id="syllabus">
+                                    <h2 className="sub-header-lg" id="syllabus">
                                         Syllabus
-                                    </p>
+                                    </h2>
                                 </article>
                             </section>
                             <section>
@@ -168,10 +168,10 @@ export default function course(props) {
                             </Link>
                         </p>
                     </div>
-                    <p className="sub-header-lg max-w-[633px]">
+                    <h2 className="sub-header-lg max-w-[633px]">
                         See how <Swoosh type="secondary">Mindrisers</Swoosh> is
                         helping learners get expertise and pursue their future.
-                    </p>
+                    </h2>
                     <div className="title-space-3xl-reverse">
                         <Swiper
                             className="custom-swiper-dots !overflow-x-clip !overflow-y-visible "
@@ -217,29 +217,29 @@ export default function course(props) {
                                                     Diya Manandhar
                                                 </p>
                                                 <p>{el.title}</p>
-                                                <p className="mt-[4px] font-medium">
+                                                <h3 className="mt-[4px] font-medium">
                                                     <span className="text-secondary">
                                                         @
                                                     </span>{" "}
                                                     Global Vicors pvt ltd
-                                                </p>
+                                                </h3>
                                             </div>
                                         </div>
                                         <div className="title-space-xl">
                                             <p className="title-xxs mb-[4px]">
                                                 course taken
                                             </p>
-                                            <p className="text-[18px] font-medium">
+                                            <h3 className="text-[18px] font-medium">
                                                 Digital Marketing
-                                            </p>
+                                            </h3>
                                         </div>
                                         <div>
                                             <p className="title-xxs mb-[4px]">
                                                 college
                                             </p>
-                                            <p className="text-[18px] font-medium">
+                                            <h3 className="text-[18px] font-medium">
                                                 xyz college
-                                            </p>
+                                            </h3>
                                         </div>
                                     </SwiperSlide>
                                 );

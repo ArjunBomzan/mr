@@ -47,8 +47,10 @@ const courses = ({ courses }) => {
             <BannerWrapper>
                 <div className='grid lg:grid-cols-[55%,45%] lg:gap-[40px] container  items-center text-center lg:text-left'>
                     <div>
-                        <p className='header-md font-normal title-space capitalize text-secondary'>before bachelor starts</p>
-                        <p className='header-xl capitalize title-space'>become industry ready</p>
+                        <h1>
+                        <span className='block header-md font-normal title-space capitalize text-secondary'>before bachelor starts</span>
+                        <span className='block header-xl capitalize title-space'>become industry ready</span>
+                        </h1>
                         <p className='header-xl'>with <span className='header text-secondary title-space-xl'><Swoosh>Mindrisers</Swoosh></span></p>
                         <p className='title text-primary'>We provide variety of market demand IT skill courses at Mindrisers. Explore courses and start your IT journey with us.</p>
                     </div>
@@ -57,7 +59,7 @@ const courses = ({ courses }) => {
             </BannerWrapper>
             <section className='section-wrapper-m'>
                 <div className='text-center'>
-                    <p className='sub-header-lg title-space'>Explore <Swoosh type='secondary'>Skill Courses</Swoosh></p>
+                    <h2 className='sub-header-lg title-space'>Explore <Swoosh type='secondary'>Skill Courses</Swoosh></h2>
                     <p className='title text-primary'>Explore our courses</p>
                 </div>
                 <div className='container section-wrapper-m-sm'>

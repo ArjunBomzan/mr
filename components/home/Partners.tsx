@@ -27,9 +27,9 @@ export default function Partners({ partners }) {
 
     return (
         <section className="section-wrapper-m section-wrapper-p-xs container rounded-3xl bg-primary-light text-center text-primary">
-            <p className="header-lg title-space-lg text-expanded">
+            <h2 className="header-lg title-space-lg text-expanded">
                 Our Top <Swoosh type="secondary"> Partnering</Swoosh> Companies
-            </p>
+            </h2>
             <p>
                 We have partnered with Top companies in nepal to help you land
                 in great <br /> internships, opportunities and Job placements.

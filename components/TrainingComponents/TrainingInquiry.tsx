@@ -26,9 +26,9 @@ const TrainingInquiry = (props) => {
             onSubmit={handleSubmit(onSubmit)}
             className="custom-sidebar sticky top-[10px] max-h-screen self-start overflow-y-auto rounded-xl bg-orange-100 p-5"
         >
-            <p className="sub-header mb-5 font-semibold text-secondary">
+            <h2 className="sub-header mb-5 font-semibold text-secondary" id="quick-enquiry">
                 Quick Enquiry
-            </p>
+            </h2>
             <div className="">
                 <div className="form-group">
                     <label htmlFor="name" className="form-label required-field">

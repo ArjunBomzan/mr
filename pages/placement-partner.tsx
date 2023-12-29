@@ -40,12 +40,14 @@ export default function Home({ partners }) {
                 <div className="container flex h-full items-center ">
                     <div className=" title-space-xl grid   items-center lg:grid-cols-[55%,45%]">
                         <div className=" text-center lg:text-left">
-                            <p className="header-md font-normal leading-[145%] text-secondary">
-                                We Make sure{" "}
-                            </p>
-                            <p className="header-xl leading-[145%]">
-                                You are fit in right place
-                            </p>
+                            <h1>
+                                <span className="header-md block font-normal leading-[145%] text-secondary">
+                                    We Make sure{" "}
+                                </span>
+                                <span className="header-xl block leading-[145%]">
+                                    You are fit in right place
+                                </span>
+                            </h1>
                             <p className="title] mt-5 text-primary">
                                 Join Mindrisers to gain access to exceptional
                                 placement program and expert’s support. Build
@@ -71,10 +73,10 @@ export default function Home({ partners }) {
 
             <section className="section-wrapper-m container">
                 <div className="title-space-3xl text-center">
-                    <p className="sub-header-lg" id="partnered-companies">
+                    <h2 className="sub-header-lg" id="partnered-companies">
                         Our Partnered{" "}
                         <Swoosh type="secondary">Companies</Swoosh>
-                    </p>
+                    </h2>
                 </div>
                 <div>
                     <ul className="gap-x-base-half gap-y-base grid md:grid-cols-2 xl:grid-cols-3">
@@ -96,11 +98,11 @@ export default function Home({ partners }) {
                                                 className="h-[96px] w-[96px] rounded-xl border border-border object-contain"
                                             />
                                             <div>
-                                                <p className="mb-[13px] text-[18px] font-semibold leading-[145%] text-gray-950 transition group-hover:text-primary">
+                                                <h3 className="mb-[13px] text-[18px] font-semibold leading-[145%] text-gray-950 transition group-hover:text-primary">
                                                     {el.name}
-                                                </p>
+                                                </h3>
 
-                                                <p className="mt-3 text-[14px] leading-[145%] flex items-center">
+                                                <p className="mt-3 flex items-center text-[14px] leading-[145%]">
                                                     <Image
                                                         className="mr-[10px] inline"
                                                         src={
@@ -112,7 +114,7 @@ export default function Home({ partners }) {
                                                     />
                                                     Tech Company
                                                 </p>
-                                                <p className="mt-3 text-[14px] leading-[145%] flex items-center">
+                                                <p className="mt-3 flex items-center text-[14px] leading-[145%]">
                                                     <Image
                                                         className="mr-[10px] inline"
                                                         src={
@@ -134,9 +136,13 @@ export default function Home({ partners }) {
                                                         width={20}
                                                         alt=""
                                                     />
-                                                    <span className=" line-clamp-1 inline hyphens-auto " style={{
-                                                        wordBreak:"break-all"
-                                                    }}>
+                                                    <span
+                                                        className=" line-clamp-1 inline hyphens-auto "
+                                                        style={{
+                                                            wordBreak:
+                                                                "break-all",
+                                                        }}
+                                                    >
                                                         {el.link}
                                                     </span>
                                                 </p>

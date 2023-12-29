@@ -33,9 +33,9 @@ const DropMessage = () => {
             className="section-p rounded-xl bg-orange-100"
         >
             <div className="title-space-3xl text-center">
-                <p className="header-md title-space text-secondary ">
+                <h2 className="header-md title-space text-secondary ">
                     Tell us about yourself
-                </p>
+                </h2>
                 <p>
                     Whether you have questions or you would just like to say
                     hello, contact us.

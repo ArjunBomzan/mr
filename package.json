@@ -10,6 +10,7 @@
     "dev": "node server.js"
   },
   "scripts": {
+    "lighthouse":"lighthouse http://localhost:3000/",
     "analyze": "cross-env ANALYZE=true next build",
     "dev": "next dev",
     "build": "next build",

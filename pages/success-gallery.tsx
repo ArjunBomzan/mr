@@ -6,9 +6,8 @@ import Opportunity from "../public/assets/images/common/Opportunity";
 import { makeFullApiUrl } from "../utils/makeFullUrl";
 
 const services = ({ successStoreis }) => {
+    console.log(successStoreis);
 
-    console.log(successStoreis)
-    
     let meta_title = " Internships | Job Placements | Mindrisers Nepal";
     let meta_description = "";
     return (
@@ -40,13 +39,16 @@ const services = ({ successStoreis }) => {
                 <div className="container ">
                     <div className=" gap-base  grid   items-center lg:grid-cols-[60%,40%]">
                         <div className="text-center lg:text-left">
-                            <p className="header-xl leading-[145%]">
-                                You are at great
-                            </p>
-                            <p className="header-xl leading-[145%] text-secondary">
-                                Hand !
-                            </p>
-                            <p className=" mt-5 title text-primary">
+                            <h1>
+                                <span className="block header-xl leading-[145%]">
+                                    You are at great
+                                </span>
+                                <span className="block header-xl leading-[145%] text-secondary">
+                                    Hand !
+                                </span>
+                            </h1>
+
+                            <p className=" title mt-5 text-primary">
                                 We have provided more than 1000s of experts to
                                 the market. Know about few who are doing
                                 extraordinary in various companies in their
@@ -66,10 +68,10 @@ const services = ({ successStoreis }) => {
             <section className="section-wrapper-m container">
                 <div className="text-center">
                     <p className="text-primary">Success Stories</p>
-                    <p className="title-space sub-header-lg mx-auto max-w-[633px] ">
+                    <h2 className="title-space sub-header-lg mx-auto max-w-[633px] ">
                         See how <Swoosh type="secondary">Mindrisers</Swoosh> is
                         helping learners get expertise and pursue their future.
-                    </p>
+                    </h2>
                 </div>
                 <div className="section-wrapper-p-sm">
                     <ul className="flex flex-wrap justify-center gap-[12px] ">
@@ -85,7 +87,6 @@ const services = ({ successStoreis }) => {
                     </ul>
                 </div>
                 <div>
-                    
                     <ul className="mt-[65px] grid gap-x-[40px] gap-y-[85px] md:grid-cols-2 xl:grid-cols-4">
                         {successStoreis.map((el) => {
                             return (
@@ -98,10 +99,10 @@ const services = ({ successStoreis }) => {
                                         className="absolute left-0 right-0 top-0 mx-auto h-[130px]  w-[130px] -translate-y-[50%] rounded-full border-8 border-green-100 object-cover"
                                     />
                                     <div className="mb-5 text-center leading-[28px]">
-                                        <p className="mb-[10px] title font-semibold text-gray-950 ">
+                                        <p className="title mb-[10px] font-semibold text-gray-950 ">
                                             Kiran
                                         </p>
-                                        <p className="mb-[4px]">{el.title}</p>
+                                        <h2 className="mb-[4px]">{el.title}</h2>
                                         <p className="font-medium">
                                             <span className="text-secondary">
                                                 @
@@ -111,7 +112,7 @@ const services = ({ successStoreis }) => {
                                     </div>
                                     <div className="border-t border-border">
                                         <div className="mt-5">
-                                            <p className="mb-[4px] title-xxs">
+                                            <p className="title-xxs mb-[4px]">
                                                 Course taken
                                             </p>
                                             <p className="text-[18px] font-medium leading-[28px]">
@@ -119,9 +120,9 @@ const services = ({ successStoreis }) => {
                                             </p>
                                         </div>
                                         <div className="my-5">
-                                            <p className="mb-[4px] title-xxs">
+                                            <h3 className="title-xxs mb-[4px]">
                                                 Tools learned
-                                            </p>
+                                            </h3>
                                             <ul className="flex gap-[20px]">
                                                 <li>
                                                     <Image
@@ -148,7 +149,7 @@ const services = ({ successStoreis }) => {
                                             </ul>
                                         </div>
                                         <div>
-                                            <p className="mb-[4px] title-xxs">
+                                            <p className="title-xxs mb-[4px]">
                                                 {" "}
                                                 College
                                             </p>
@@ -173,7 +174,7 @@ const services = ({ successStoreis }) => {
 export async function getStaticProps() {
     let data = [];
     try {
-        const res = await fetch( makeFullApiUrl(`/successstoryhome/`));
+        const res = await fetch(makeFullApiUrl(`/successstoryhome/`));
         data = await res.json();
     } catch (err) {}
     return {

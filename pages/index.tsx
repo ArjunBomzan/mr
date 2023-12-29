@@ -294,12 +294,12 @@ export default function Home(props) {
                     </div>
 
                     <div className="">
-                        <p className="header-lg title-space-lg text-expanded ">
+                        <h1 className="header-lg title-space-lg text-expanded ">
                             <Swoosh hideInMob type="secondary">
                                 100% Intern
                             </Swoosh>
                             ship/Job Placement
-                        </p>
+                        </h1>
                         <p className="mb-[40px]">
                             Mindrisers have partnered with leading companies to
                             provide internships and full-time job opportunities
@@ -315,9 +315,9 @@ export default function Home(props) {
             {/* vercel test */}
 
             <section className=" section-wrapper container">
-                <p className="header title-space-5xl text-center">
+                <h2 className="header title-space-5xl text-center">
                     Popular <Swoosh type="secondary">Courses</Swoosh>{" "}
-                </p>
+                </h2>
                 {/* Headless component */}
                 <CoursesList courses={props.courses} />
             </section>
@@ -326,9 +326,9 @@ export default function Home(props) {
                 <div className="grid  items-center gap-[40px] rounded-[24px]  bg-primary-light px-[10px] py-[40px]  md:px-[20px] lg:px-[30px] xl:grid-cols-[45%,55%] xl:gap-0 xl:p-[40px]">
                     <article className=" text-center xl:pr-[40px] xl:text-left">
                         <div>
-                            <p className="header-lg title-space-lg text-expanded">
+                            <h2 className="header-lg title-space-lg text-expanded">
                                 <Swoosh type="secondary">About us</Swoosh>
-                            </p>
+                            </h2>
                             <p className="title-space-lg text-primary ">
                                 Mind Risers is a parent company of mindrisers
                                 technology pvt.ltd, tummytruck, digitalpalika,
@@ -362,14 +362,14 @@ export default function Home(props) {
                             faqs={faqs.map((el) => {
                                 return {
                                     title: (
-                                        <p className="flex items-center gap-[10px]">
+                                        <h3 className="flex items-center gap-[10px]">
                                             <span className="header">
                                                 {el.number} +
                                             </span>
                                             <span className="title">
                                                 {el.title}
                                             </span>
-                                        </p>
+                                        </h3>
                                     ),
                                     content: el.content,
                                 };
@@ -399,9 +399,9 @@ export default function Home(props) {
             <section className=" section-wrapper-m section-wrapper-p-half container">
                 <div className=" section-p  relative grid gap-[40px] overflow-hidden rounded-3xl   bg-orange-100 xl:grid-cols-[45%,55%]  xl:gap-0  ">
                     <article className="text-center text-secondary xl:pr-[40px] xl:text-left">
-                        <p className="header-lg  text-expanded title-space-lg">
+                        <h2 className="header-lg  text-expanded title-space-lg">
                             Request a <span className="swoosh">Callback</span>
-                        </p>
+                        </h2>
                         <p>
                             Would you like to speak to one of our adviser over
                             the phone? Just submit your details and will be in
@@ -423,12 +423,12 @@ export default function Home(props) {
             <section className=" section-wrappe container">
                 <div className="text-center text-primary">
                     <p className="mb-[10px] uppercase ">be the part of</p>
-                    <p className="header text-expanded">
+                    <h2 className="header text-expanded">
                         Mindrisers{" "}
                         <Swoosh type="secondary" hideInMob>
                             Success Network
                         </Swoosh>
-                    </p>
+                    </h2>
                     <Link href={"/success-gallery"} className="inline-block">
                         <Image
                             alt=""

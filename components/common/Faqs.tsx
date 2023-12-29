@@ -103,7 +103,7 @@ export default function Faqs({
                                 setOpenedIndexes(temp);
                             }}
                             className={classNames(
-                                "select-none",
+                                "select-none cursor-pointer",
                                 faqTitleStyle,
                                 {
                                     [faqTitleOpenedStyle]:

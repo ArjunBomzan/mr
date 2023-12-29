@@ -100,9 +100,9 @@ const Courses = ({ courses_all }) => {
             <BannerWrapper>
                 <div className="lg:pt-[30px]] container grid items-center gap-[20px] text-center  lg:grid-cols-[55%,45%] lg:text-left xl:gap-[40px]">
                     <div>
-                        <p className="header-xl title-space">
+                        <h1 className="header-xl title-space">
                             Learn Top IT Skills
-                        </p>
+                        </h1>
 
                         <p className="title-lg mb-[30px] flex items-center justify-center  text-primary md:gap-[11px]  lg:justify-start">
                             <span>{`<h2>`}</span>
@@ -136,9 +136,9 @@ const Courses = ({ courses_all }) => {
             </BannerWrapper>
             <section className="section-wrapper-m">
                 <div className="text-center">
-                    <p className="sub-header-lg title-space">
+                    <h2 className="sub-header-lg title-space">
                         Explore <Swoosh type="secondary">Skill Courses</Swoosh>
-                    </p>
+                    </h2>
                     <p className="text-[20px] text-primary">
                         Explore our courses
                     </p>

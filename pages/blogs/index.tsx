@@ -41,9 +41,9 @@ export function BlogCard({
                     className="h-[176px] w-full rounded-tl-xl rounded-tr-xl "
                 />
                 <div className="borderr border-borderr rounded-bl-xl rounded-br-xl p-5 ">
-                    <p className="title font-semibold leading-[145%]">
+                    <h2 className="title font-semibold leading-[145%]">
                         {title}
-                    </p>
+                    </h2>
                     <div className="mt-[13px] flex justify-between text-[14px]">
                         <span>Coding</span>
                         <span>.</span>
@@ -107,9 +107,9 @@ export default function blogs({ blogs, total_data, current_page }) {
             <BannerWrapper size="small">
                 <div className="container  ">
                     <div className="text-center">
-                        <p className="header-xl title-space leading-[145%]">
+                        <h1 className="header-xl title-space leading-[145%]">
                             Blogs
-                        </p>
+                        </h1>
                         <p className="title font-semibold text-primary">
                             Our Latest updates and hand-picked resources
                         </p>

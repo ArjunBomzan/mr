@@ -6,7 +6,7 @@ export default function Opportunity() {
         <section className=' text-center py-[40px] px-[10px] md:px-[20px] lg:px-[30px] xl:px-[40px] bg-primary-light rounded-3xl relative overflow-hidden borde '>
             <div className="relative z-20">
                 <p className='font-medium text-gray-900 title-space'>Never miss an Opportunity !</p>
-                <p className='header-lg title-space text-expanded'>Want to learn TOP 2024 IT Skills ?</p>
+                <h2 className='header-lg title-space text-expanded'>Want to learn TOP 2024 IT Skills ?</h2>
                 <p className='text-gray-600'>We open IT skill classes Monthly in Design, Development, Deployment, Data etc.</p>
                 <div className='title-space-3xl-reverse '>
                     <p className='text-gray-600 title-space-xl'>Have something to Ask ?</p>
