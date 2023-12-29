@@ -153,7 +153,7 @@ const Footer = () => {
                         </p>
                     </div>
                     <p>
-                        Mind Risers is the only IT training institute in
+                        MindRisers is the only IT training institute in
                         Kathmandu, Nepal offering paid internships after the
                         course completion
                     </p>

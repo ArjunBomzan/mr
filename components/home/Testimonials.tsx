@@ -47,7 +47,7 @@ export default function Testimonials() {
             company: "Realpath Engineering Consulancy Pvt.Ltd.",
             position: "CEO",
             testimonial:
-                "Thank you Mind Risers for making our job easy for Human resource (HR) department.",
+                "Thank you MindRisers for making our job easy for Human resource (HR) department.",
         },
         {
             starCount: 5,
@@ -91,7 +91,7 @@ export default function Testimonials() {
             position: "CEO",
             company: "Tummy Truck",
             testimonial:
-                "Mind Risers is the best in town for providing sound knowledge to freshers.",
+                "MindRisers is the best in town for providing sound knowledge to freshers.",
         },
         {
             starCount: 5,
@@ -118,7 +118,7 @@ export default function Testimonials() {
             company: "EVO Store",
             position: "Digital Marketing Department",
             testimonial:
-                "We can positively say Mind Risers provides the best knowledge and services to our clients. We are very happy with the service we received from Mind Risers Consortium.",
+                "We can positively say MindRisers provides the best knowledge and services to our clients. We are very happy with the service we received from MindRisers Consortium.",
         },
         {
             starCount: 5,

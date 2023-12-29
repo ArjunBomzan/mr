@@ -8,7 +8,7 @@ const Mission = () => {
         <div className='w-full space-y-8 lg:w-full'>
           
           <p className="text-justify">
-            Mind Risers is the only IT training institute in Kathmandu, Nepal that offers paid internships and job placement after course completion. To enhance the careers of our students, we provide IT courses that are in high demand in the industry. We have a team serving as a tutor that consists of creative thinkers, quick engineers, vigilant program managers, and active web marketers. Our instructors provide students with a fantastic opportunity to learn from them since they are real-time developers who stay active with emerging technological advancements. Students learn about the topic thoroughly and practically thanks to our excellent educational method. Due to this distinctiveness, Mind Risers become the best IT training institute in Kathmandu, Nepal.
+            MindRisers is the only IT training institute in Kathmandu, Nepal that offers paid internships and job placement after course completion. To enhance the careers of our students, we provide IT courses that are in high demand in the industry. We have a team serving as a tutor that consists of creative thinkers, quick engineers, vigilant program managers, and active web marketers. Our instructors provide students with a fantastic opportunity to learn from them since they are real-time developers who stay active with emerging technological advancements. Students learn about the topic thoroughly and practically thanks to our excellent educational method. Due to this distinctiveness, MindRisers become the best IT training institute in Kathmandu, Nepal.
           </p>
         </div>
       </div> */}

@@ -236,7 +236,7 @@ const AdmissionForm = () => {
                             className="form-label required-field"
                             htmlFor="remarks"
                         >
-                            I want to join Mind Risers Internship program after
+                            I want to join MindRisers Internship program after
                             my training is over
                         </label>
                         <div className="flex gap-[30px]">
