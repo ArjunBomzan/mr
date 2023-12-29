@@ -7,6 +7,7 @@ import Image from "next/image";
 import Swoosh from "../../components/common/Swoosh";
 import CoursesList from "../../components/common/CoursesList";
 import { makeFullApiUrl } from "../../utils/makeFullUrl";
+import TypeWriter from "../../components/common/TypeWriter";
 
 export async function getStaticProps() {
     // export async function getServerSideProps({query}) {
@@ -61,6 +62,14 @@ const Courses = ({ courses_all }) => {
         "Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers is the perfect platform for you to learn Digital Skils";
     let meta_image = `${process.env.NEXT_PUBLIC_DOMAIN}/assets/images/courses.png`;
 
+    let typeWriters = [
+        "IT skills and expertise",
+        "Javascript",
+        "Django",
+        "Figma",
+        "Flutter",
+    ];
+
     return (
         <>
             <Head>
@@ -98,7 +107,7 @@ const Courses = ({ courses_all }) => {
             </Head>
 
             <BannerWrapper>
-                <div className="lg:pt-[30px]] container grid items-center gap-[20px] text-center  lg:grid-cols-[55%,45%] lg:text-left xl:gap-[40px]">
+                <div className="lg:pt-[30px]] container grid items-center gap-[20px] text-center  lg:grid-cols-[60%,40%] lg:text-left xl:gap-[40px]">
                     <div>
                         <h1 className="header-xl title-space">
                             Learn Top IT Skills
@@ -108,7 +117,7 @@ const Courses = ({ courses_all }) => {
                             <span>{`<h2>`}</span>
                             <span className="xl:header-lg text-expanded-sm uppercase font-semibold !text-secondary  ">
                                 {" "}
-                                IT skills and expertise
+                                <TypeWriter contents={typeWriters} />
                             </span>
                             <span>{`</h2>`}</span>
                         </p>

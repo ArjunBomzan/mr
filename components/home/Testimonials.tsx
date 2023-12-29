@@ -156,10 +156,12 @@ export default function Testimonials() {
                     "url('/assets/images/testimonials/stroke-bg.svg')",
             }}
         >
-            <h2 className="header-lg title-space-4xl text-center">
-                What our <Swoosh type="secondary"> Partnered</Swoosh> companies
-                says about us
-            </h2>
+            <div className="container">
+                <h2 className="header-lg title-space-4xl text-center">
+                    What our <Swoosh type="secondary"> Partnered</Swoosh>{" "}
+                    companies says about us
+                </h2>
+            </div>
             <div>
                 <Swiper
                     className="custom-swiper-dots !overflow-x-clip !overflow-y-visible"
@@ -202,7 +204,7 @@ export default function Testimonials() {
                                         {el.testimonial}
                                     </p>
                                     <div className="h-1 w-1/5 rounded-2xl bg-border "></div>
-                                    <div className="absolute bottom-5 mt-5 right-5 left-5">
+                                    <div className="absolute bottom-5 left-5 right-5 mt-5">
                                         <p className="mb-1 text-sm font-bold">
                                             {el.name}
                                         </p>

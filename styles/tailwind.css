@@ -12,7 +12,7 @@
     }
 
     .btn {
-        @apply rounded-[30px] bg-primary px-[16px] py-[10px]  capitalize text-white after:content-['_➔'] hover:bg-primary-dark focus:outline focus:outline-1 focus:outline-offset-4 focus:outline-black;
+        @apply rounded-[30px] bg-primary px-[16px] py-[10px]  capitalize text-white after:content-['_➔']  hover:bg-primary-dark focus:outline focus:outline-1 focus:outline-offset-4 focus:outline-black;
     }
     .btn-outline {
         @apply btn border border-primary bg-transparent text-primary hover:text-white;

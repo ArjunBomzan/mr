@@ -55,7 +55,7 @@ export default function admission() {
                     {/* TODO: used in home... make headleas component */}
                     <div>
                         {/* <Stats wrapperClass="bg-green-100 grid grid-cols-2  md:grid-cols-4 gap-lg max-w-[772px] mx-auto rounded-xl p-5"/> */}
-                        <Stats wrapperClass="bg-green-100 grid grid-cols-2 md:flex md:justify-between md:grid-cols-4 gap-lg max-w-[772px] mx-auto rounded-xl p-5" />
+                        <Stats wrapperClass="bg-green-100 grid grid-cols-2 md:flex md:justify-between md:grid-cols-4 gap-lg xl:max-w-[900px] mx-auto rounded-xl p-5" />
                     </div>
                 </div>
             </BannerWrapper>

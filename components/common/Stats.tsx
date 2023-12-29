@@ -33,7 +33,7 @@ export default function Stats({ wrapperClass }: { wrapperClass?: string }) {
             {data.map((el) => {
                 return (
                     <li className="">
-                        <p className="header-md text-center">{el.number} +</p>
+                        <p className="header-md text-center">{el.number.toLocaleString()} +</p>
                         <p className="title text-center uppercase ">
                             {el.title}
                         </p>{" "}

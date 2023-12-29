@@ -92,27 +92,27 @@ export default function Home(props) {
     let faqs = [
         {
             title: "courses",
-            number: 42,
+            number: 10,
             content:
-                "Our Experts at Mindrisers have thoroughly curated IT based skill courses which we provide in our institution. Currently we are offering 42+ courses in our institution.",
+                "From cutting-edge programming languages to content writing expertise to desiging website, our diverse range of courses equips you with the skills employers crave.",
         },
         {
-            title: "courses",
-            number: 42,
+            title: "Placement",
+            number: 4000,
             content:
-                "Our Experts at Mindrisers have thoroughly curated IT based skill courses which we provide in our institution. Currently we are offering 42+ courses in our institution.",
+                "We don't just teach, we guide you towards your dream career. 4,000+ successful placements speak for themselves, proving our dedication to your employability.",
         },
         {
-            title: "courses",
-            number: 42,
+            title: "experience",
+            number: 7,
             content:
-                "Our Experts at Mindrisers have thoroughly curated IT based skill courses which we provide in our institution. Currently we are offering 42+ courses in our institution.",
+                "Backed by 7+ years of refining our curriculum and teaching methods, we offer industry-aligned courses that cater to the ever-evolving demands of the IT sector.",
         },
         {
-            title: "courses",
-            number: 42,
+            title: "students",
+            number: 10000,
             content:
-                "Our Experts at Mindrisers have thoroughly curated IT based skill courses which we provide in our institution. Currently we are offering 42+ courses in our institution.",
+                "Over 10,000 graduates stand as a testament to our commitment to excellence. Join a thriving alumni network and connect with future colleagues.",
         },
     ];
 
@@ -255,7 +255,7 @@ export default function Home(props) {
                         </p>
                         <div className="mt-[3.2rem] md:mt-[7.5rem]">
                             {/* <Stats wrapperClass="bg-green-100 grid grid-cols-2 md:grid-cols-4 gap-lg max-w-[772px]  rounded-xl p-5" /> */}
-                            <Stats wrapperClass="bg-green-100 grid grid-cols-2 md:flex md:justify-between md:grid-cols-4 gap-lg max-w-[772px] mmx-auto rounded-xl p-5" />
+                            <Stats wrapperClass="bg-green-100 grid grid-cols-2 md:flex md:justify-between md:grid-cols-4 gap-lg max-w-[772px] xl:max-w-[900px] mmx-auto rounded-xl p-5" />
                         </div>
                     </div>
                 </section>
