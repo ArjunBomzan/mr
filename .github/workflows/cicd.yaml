@@ -30,6 +30,10 @@ jobs:
             with:
                 name: download frontend artifact
                 path: ./.next
+          
+          - name: Verify
+            run: |
+                 ls -al 
 
     
     test-frontend:
