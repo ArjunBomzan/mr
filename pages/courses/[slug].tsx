@@ -15,7 +15,11 @@ import { makeFullApiUrl, makeFullUrl } from "../../utils/makeFullUrl";
 import { clearStyle } from "../../utils/clearStyle";
 import TrainingInquiry from "../../components/TrainingComponents/TrainingInquiry";
 import Link from "next/link";
+import classNames from "classnames";
 // import { Autoplay, FreeMode, Navigation, Pagination } from "swiper";
+
+// import DownArrow from "/assets/images/courses/iconmonstr-arrow-down-thin-48-_1_.webp"
+// import UpArrow from "/assets/images/courses/iconmonstr-arrow-up-thin-48-_1_.webp"
 
 type courseType = {
     title: string;
@@ -32,9 +36,11 @@ export default function course(props) {
 
     const size = useWindowSize({ useEffect, useState });
 
+    const [limitOverView, setlimitOverView] = useState(true);
+
     let specs = [
         { title: "Training Level", ans: "Beginner to Expert" },
-        { title: "Foramte", ans: "Physical Class" },
+        { title: "Foramte", ans: "Physical/Online Class" },
         { title: "Duration", ans: course.duration },
         { title: "Career Prospect", ans: course.career },
     ];
@@ -148,13 +154,71 @@ export default function course(props) {
                                 <h2 className="sub-header-lg">
                                     Course Overview
                                 </h2>
+
                                 <div
-                                    className="editor-content "
-                                    dangerouslySetInnerHTML={{
-                                        __html: clearStyle(course.description),
-                                    }}
-                                ></div>
+                                    className={`overview__wrapper relative ${
+                                        limitOverView ? "limited" : ""
+                                    }`}
+                                >
+                                    <div
+                                        className={classNames(
+                                            "editor-content  ",
+                                        )}
+                                        dangerouslySetInnerHTML={{
+                                            __html: clearStyle(
+                                                course.description,
+                                            ),
+                                        }}
+                                    ></div>
+                                    <div className="fader absolute"></div>
+                                </div>
                             </section>
+
+                            <div
+                                className="m-8 text-center font-bold"
+                                id="overview__min_max"
+                                style={{
+                                    cursor: "pointer",
+                                    textTransform: "uppercase",
+                                }}
+                                onClick={() => {
+                                    setlimitOverView(!limitOverView);
+                                }}
+                            >
+                                {limitOverView ? (
+                                    <>
+                                        <span>
+                                            {" "}
+                                            <Image
+                                                alt="arrow-down-icon"
+                                                src={
+                                                    "/assets/images/courses/iconmonstr-arrow-down-thin-48-_1_.webp"
+                                                }
+                                                height={16}
+                                                width={16}
+                                                className="inline"
+                                            />{" "}
+                                        </span>{" "}
+                                        <p className="inline">Read More</p>
+                                    </>
+                                ) : (
+                                    <>
+                                        <span>
+                                            {" "}
+                                            <Image
+                                                alt="arrow-up-icon"
+                                                src={
+                                                    "/assets/images/courses/iconmonstr-arrow-up-thin-48-_1_.webp"
+                                                }
+                                                height={16}
+                                                width={16}
+                                                className="inline"
+                                            />{" "}
+                                        </span>{" "}
+                                        <p className="inline">Read Less</p>
+                                    </>
+                                )}
+                            </div>
 
                             <section className="">
                                 <article className="title-space-3xl-reverse  title-space-xl">

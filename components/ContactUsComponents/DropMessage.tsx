@@ -41,7 +41,7 @@ const DropMessage = () => {
                     hello, contact us.
                 </p>
             </div>
-            <div className="title-space-3xl  grid gap-x-5 md:grid-cols-2">
+            <div className="title-space-3xl  gap-x-5 md:grid md:grid-cols-2">
                 <div className="form-group">
                     <label className="form-label required-field">Name</label>
                     <input
@@ -52,7 +52,9 @@ const DropMessage = () => {
                         {...register("name", { required: true })}
                     />
                     {errors?.name?.type === "required" && (
-                        <small className="error-message">This field is required</small>
+                        <small className="error-message">
+                            This field is required
+                        </small>
                     )}
                 </div>
 
@@ -66,7 +68,9 @@ const DropMessage = () => {
                         {...register("email", { required: true })}
                     />
                     {errors?.name?.type === "required" && (
-                        <small className="error-message">This field is required</small>
+                        <small className="error-message">
+                            This field is required
+                        </small>
                     )}
                 </div>
                 <div className="form-group">
@@ -79,7 +83,9 @@ const DropMessage = () => {
                         {...register("mobile_no", { required: true })}
                     />
                     {errors?.name?.type === "required" && (
-                        <small className="error-message">This field is required</small>
+                        <small className="error-message">
+                            This field is required
+                        </small>
                     )}
                 </div>
                 <div className="form-group">
@@ -92,7 +98,9 @@ const DropMessage = () => {
                         {...register("subject", { required: true })}
                     />
                     {errors?.name?.type === "required" && (
-                        <small className="error-message">This field is required</small>
+                        <small className="error-message">
+                            This field is required
+                        </small>
                     )}
                 </div>
                 <div className="form-group col-span-2 ">
@@ -107,7 +115,9 @@ const DropMessage = () => {
                         {...register("message", { required: true })}
                     />
                     {errors?.name?.type === "required" && (
-                        <small className="error-message">This field is required</small>
+                        <small className="error-message">
+                            This field is required
+                        </small>
                     )}
                 </div>
                 <div>
@@ -122,8 +132,13 @@ const DropMessage = () => {
                 </div>
             </div>
 
-            <div className="flex justify-end ">
-                <button type="submit" name="name" className="btn-secondary-simple btn" disabled={submiting}>
+            <div className="flex justify-center md:justify-end ">
+                <button
+                    type="submit"
+                    name="name"
+                    className="btn-secondary-simple btn"
+                    disabled={submiting}
+                >
                     {submiting ? (
                         <div>
                             <div role="status">

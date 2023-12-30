@@ -101,14 +101,14 @@ const services = ({ successStoreis }) => {
                                     />
                                     <div className="mb-5 text-center leading-[28px]">
                                         <p className="title mb-[10px] font-semibold text-gray-950 ">
-                                            Kiran
+                                            {el.content.split("-")[0]}
                                         </p>
                                         <h2 className="mb-[4px]">{el.title}</h2>
                                         <p className="font-medium">
                                             <span className="text-secondary">
                                                 @
                                             </span>
-                                            Varosa Technology
+                                            {el.content.split("-")[1].replace("working at","").replace("Course Taken","").replace("Working at","").replace("working  at","").replace("Course Taken","").trim()}
                                         </p>
                                     </div>
                                     <div className="border-t border-border">
@@ -117,7 +117,7 @@ const services = ({ successStoreis }) => {
                                                 Course taken
                                             </p>
                                             <p className="text-[18px] font-medium leading-[28px]">
-                                                Q&A Automation
+                                                {el.content.split("-")[2]}
                                             </p>
                                         </div>
                                         <div className="my-5">
