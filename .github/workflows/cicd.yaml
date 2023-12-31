@@ -41,7 +41,7 @@ jobs:
     test-frontend:
         name: Testing frontend
         needs: build-frontend
-        runs-on: ubuntu-20.04.4
+        runs-on: ubuntu-latest
         steps:
     
             - name: Run the Test
