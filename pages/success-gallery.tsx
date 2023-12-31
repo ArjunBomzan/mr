@@ -108,7 +108,14 @@ const services = ({ successStoreis }) => {
                                             <span className="text-secondary">
                                                 @
                                             </span>
-                                            {el.content.split("-")[1].replace("working at","").replace("Course Taken","").replace("Working at","").replace("working  at","").replace("Course Taken","").trim()}
+                                            {el.content
+                                                .split("-")[1]
+                                                .replace("working at", "")
+                                                .replace("Course Taken", "")
+                                                .replace("Working at", "")
+                                                .replace("working  at", "")
+                                                .replace("Course Taken", "")
+                                                .trim()}
                                         </p>
                                     </div>
                                     <div className="border-t border-border">
