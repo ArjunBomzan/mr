@@ -18,8 +18,10 @@ export default function BlogSlug(props) {
     let meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${props?.blog?.data?.blog[0]?.banner}`;
     let current_url = `${process.env.NEXT_PUBLIC_DOMAIN}${router.asPath}`;
     console.log(current_url);
-
+    
     let blog = props.blog.data.blog[0];
+
+    
 
     console.log(blog);
 

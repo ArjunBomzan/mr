@@ -44,8 +44,7 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                 })}
             >
                 <Swiper
-                    className="custom-swiper-dots !overflow-x-clip !overflow-y-visible select-none h-full"
-                    // className="items-stretch"
+                    className="custom-swiper-dots h-full select-none !overflow-x-clip !overflow-y-visible "
                     loop={false}
                     slidesPerView={
                         size.width >= 1536
@@ -56,8 +55,9 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                                 ? 2.5
                                 : size.width >= 576
                                   ? 2
-                                  : 1
+                                  : 1.7
                     }
+                    // slidesPerView={1.7}
                     spaceBetween={
                         size.width >= 1536
                             ? 40
@@ -74,9 +74,9 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                     }}
                     modules={[Pagination]}
                 >
-                    {courses.map((el) => {
+                    {courses.map((el, index) => {
                         return (
-                            <SwiperSlide className="h-full cursor">
+                            <SwiperSlide className="h-full">
                                 <li className="h-full">
                                     <Link
                                         href={`/courses/${el.slug}`}
@@ -117,12 +117,20 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                     { "grid md:grid": route != "/" },
                 )}
             >
-                {courses.map((el) => {
+                {courses.map((el, index) => {
+                    // console.log({ size });
+
+                    if (
+                        index >= (size.width >= 1280 ? 8 : 6) &&
+                        route === "/"
+                    ) {
+                        return null;
+                    }
                     return (
-                        <li className="   ">
+                        <li className=" h-full  ">
                             <Link
                                 href={`/courses/${el.slug}`}
-                                className="hover:shadow-medium group block rounded-xl border border-border p-5 transition hover:border-primary"
+                                className="hover:shadow-medium group block rounded-xl border border-border p-5 transition hover:border-primary h-full"
                             >
                                 <Image
                                     priority
@@ -147,6 +155,23 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                     );
                 })}
             </ul>
+            {route == "/" && (
+                <div
+                    className={classNames("flex mt-5 justify-end mr-3 ", {
+                        hidden: route != "/",
+                        "hidden lg:flex": route != "/",
+                    })}
+                >
+                    <Link
+                        href={"/courses"}
+                        className="is- btn-gray group transition  hover:bg-green-50 hover:text-primary "
+                    >
+                        <span className="transition-all group-hover:mr-2">
+                            view All
+                        </span>
+                    </Link>
+                </div>
+            )}
         </div>
     );
 }

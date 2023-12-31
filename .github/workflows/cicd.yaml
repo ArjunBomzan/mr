@@ -60,16 +60,6 @@ jobs:
                   name: download frontend artifact
                   path: ./.next
 
-            # - name: executing remote ssh commands using password
-            #   uses: appleboy/ssh-action@v1.0.1
-            #   with:
-            #       host: ${{ secrets.FTP_SERVER}}
-            #       username: ${{ secrets.FTP_USER }}
-            #       password: ${{ secrets.FTP_PASSWORD }}
-            #       port: ${{ secrets.FTP_PORT }}
-            #       script: |
-            #           cd ${{secrets.path}}
-            #           ./deploy.sh
             - name: Sync Files
               uses: wlixcc/SFTP-Deploy-Action@v1.2.4
               with:

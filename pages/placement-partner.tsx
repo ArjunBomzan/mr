@@ -83,7 +83,7 @@ export default function Home({ partners }) {
                         {partners.map((el) => {
                             /* TODO: what about shadow on hover */
                             return (
-                                <li className="group rounded-xl border border-border p-5 transition hover:border-green-50 hover:bg-green-50 hover:shadow-medium ">
+                                <li className="hover:shadow-medium group rounded-xl border border-border p-5 transition hover:border-green-50 hover:bg-green-50 ">
                                     <Link
                                         rel="nofollow"
                                         href={el.link}
@@ -113,7 +113,7 @@ export default function Home({ partners }) {
                                                         width={20}
                                                         alt=""
                                                     />
-                                                    Tech Company
+                                                    {el.type || "Tech Company"}
                                                 </p>
                                                 <p className="mt-3 flex items-center text-[14px] leading-[145%]">
                                                     <Image
@@ -125,7 +125,8 @@ export default function Home({ partners }) {
                                                         width={20}
                                                         alt=""
                                                     />
-                                                    Maitighar-13, Kathmandu
+                                                    {el.location ||
+                                                        "Maitighar-13, Kathmandu"}
                                                 </p>
                                                 <p className="mt-3 flex items-center text-[14px] leading-[145%] ">
                                                     <Image
