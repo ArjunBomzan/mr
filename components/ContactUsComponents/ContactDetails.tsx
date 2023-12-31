@@ -69,7 +69,7 @@ const ContactDetails = () => {
                 <Link
                     className="flex flex-row items-center space-x-3"
                     target="_blank"
-                    href="https://www.facebook.com/MindRisersConsortium"
+                    href="https://www.facebook.com/MindrisersInstituteofTechnology"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

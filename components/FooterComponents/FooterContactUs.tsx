@@ -35,7 +35,7 @@ const FooterContactUs = () => {
                     </Link>
                 </li>
                 <li className='cursor-pointer hover:text-neutral-400 mb-1'>
-                    <Link href='https://www.facebook.com/MindRisersConsortium'>
+                    <Link href='https://www.facebook.com/MindrisersInstituteofTechnology'>
                         Facebook
                     </Link>
                 </li>

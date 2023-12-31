@@ -40,7 +40,7 @@ let socialData = {
     menus: [
         {
             title: "facebook",
-            url: "https://www.facebook.com/MindRisersConsortium",
+            url: "https://www.facebook.com/MindrisersInstituteofTechnology",
             icon: <FaFacebook className="inline" />,
         },
         {
