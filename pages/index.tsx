@@ -165,9 +165,9 @@ export default function Home(props) {
                     }
                 >
                     <div className="container relative z-[999]  pt-[50px] text-center md:pt-[100px] md:text-left ">
-                        <p className="header-xl text-expanded-sm mb-[30px] uppercase lg:mb-[40px]">
+                        <h1 className="header-xl text-expanded-sm mb-[30px] uppercase lg:mb-[40px]">
                             Learn
-                        </p>
+                        </h1>
                         <ul className="title-space inline-flex flex-wrap justify-center gap-[20px] rounded-[12px] bg-primary px-[20px] py-[10px] md:gap-[37px]">
                             {tags.map((el) => {
                                 return (

@@ -16,12 +16,15 @@ import { clearStyle } from "../../utils/clearStyle";
 import TrainingInquiry from "../../components/TrainingComponents/TrainingInquiry";
 import Link from "next/link";
 import classNames from "classnames";
+import Head from "next/head";
+import { useRouter } from "next/router";
 // import { Autoplay, FreeMode, Navigation, Pagination } from "swiper";
 
 // import DownArrow from "/assets/images/courses/iconmonstr-arrow-down-thin-48-_1_.webp"
 // import UpArrow from "/assets/images/courses/iconmonstr-arrow-up-thin-48-_1_.webp"
 
 type courseType = {
+    meta: any;
     title: string;
     banner: string;
     image: string;
@@ -33,6 +36,7 @@ type courseType = {
 
 export default function course(props) {
     let course: courseType = props.course;
+    const router = useRouter();
 
     const size = useWindowSize({ useEffect, useState });
 
@@ -59,8 +63,58 @@ export default function course(props) {
         };
     });
 
+    let meta_description =
+        course.meta?.find((meta) => meta.name == "description")?.content || "";
+    let meta_image = course.banner;
+    if (meta_image) {
+        meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${meta_image}`;
+    }
+    let current_url = `${process.env.NEXT_PUBLIC_DOMAIN}${router.asPath}`;
+
     return (
         <div>
+            <Head>
+                <title>{course.title}</title>
+                <meta
+                    name="title"
+                    content={props?.course?.data?.course[0]?.title}
+                />
+
+                {course.meta?.map((meta) => {
+                    return (
+                        <meta
+                            key={meta?.id}
+                            name={meta?.name}
+                            content={meta?.content}
+                            property={meta?.property}
+                        />
+                    );
+                })}
+
+                {/* facebook og tags */}
+                <meta property="og:url" content={current_url} />
+                <meta property="og:type" content="website" />
+                <meta
+                    property="og:title"
+                    content={props?.course?.data?.course[0]?.title}
+                />
+                <meta property="og:description" content={meta_description} />
+                <meta property="og:image" content={meta_image} />
+
+                {/* twitter og tags */}
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:site" content="@mindrisers" />
+                <meta name="twitter:creator" content="@mindrisers" />
+                <meta
+                    property="twitter:title"
+                    content={props?.course?.data?.course[0]?.title}
+                />
+                <meta
+                    property="twitter:description"
+                    content={meta_description}
+                />
+                <meta name="twitter:image" content={meta_image} />
+            </Head>
             <BannerWrapper extendedClassName="after:!h-[50px]]">
                 <div className="container relative z-10 grid items-center gap-[30px] lg:grid-cols-[60%,40%]">
                     <div>
