@@ -176,7 +176,7 @@ export default function Testimonials() {
                                 ? 3
                                 : size.width >= 576
                                   ? 2
-                                  : 1
+                                  : 1.1
                     }
                     spaceBetween={
                         size.width >= 1536
