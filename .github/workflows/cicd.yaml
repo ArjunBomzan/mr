@@ -11,84 +11,72 @@ jobs:
         name: Build Fronend
         runs-on: ubuntu-latest
         steps:
-          - name: checkout code
-            uses: actions/checkout@v2
-        
-          - name: Setup Node.js
-            uses: actions/setup-node@v2
-            with:
-              node-version: "20.9.x"
-            
-          - name: Install Dependecies
-            run: |
-                npm install
+            - name: checkout code
+              uses: actions/checkout@v2
 
-          - name: Build App
-            run: |
-                npm run build
+            - name: Setup Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "20.9.x"
 
-          - name: Archive Artifacts
-            uses: actions/upload-artifact@v2
-            with:
-                name: download frontend artifact
-                path: ./.next
-          
-          - name: Verify
-            run: |
-                 ls -al 
+            - name: Install Dependecies
+              run: |
+                  npm install
 
-    
+            - name: Build App
+              run: |
+                  npm run build
+
+            - name: Archive Artifacts
+              uses: actions/upload-artifact@v2
+              with:
+                  name: download frontend artifact
+                  path: ./.next
+
+            - name: Verify
+              run: |
+                  ls -al
+
     test-frontend:
         name: Testing frontend
         needs: build-frontend
         runs-on: ubuntu-latest
         steps:
-    
             - name: Run the Test
               run: |
-                # running test
-                # to do it later
+                  # running test
+                  # to do it later
 
-    
     deploy-production:
-        name: Deploy Production 
+        name: Deploy Production
         needs: [build-frontend, test-frontend]
         if: github.event_name == 'push' &&  (github.ref == 'refs/heads/production')
         runs-on: ubuntu-latest
 
         steps:
-            - name: Download artifacts from the build job
-              uses: actions/download-artifact@v2
-              with:
-                name: download frontend artifact
-                path: ./.next
-        
-            - name: executing remote ssh commands using password
-              uses: appleboy/ssh-action@v1.0.1
-              with:
-                  host: ${{ secrets.FTP_SERVER}}
-                  username: ${{ secrets.FTP_USER }}
-                  password: ${{ secrets.FTP_PASSWORD }}
-                  port: ${{ secrets.FTP_PORT }}
-                  script: |
-                    cd ${{secrets.path}}
-                    ./deploy.sh
+            # - name: Download artifacts from the build job
+            #   uses: actions/download-artifact@v2
+            #   with:
+            #       name: download frontend artifact
+            #       path: ./.next
+
+            # - name: executing remote ssh commands using password
+            #   uses: appleboy/ssh-action@v1.0.1
+            #   with:
+            #       host: ${{ secrets.FTP_SERVER}}
+            #       username: ${{ secrets.FTP_USER }}
+            #       password: ${{ secrets.FTP_PASSWORD }}
+            #       port: ${{ secrets.FTP_PORT }}
+            #       script: |
+            #           cd ${{secrets.path}}
+            #           ./deploy.sh
             - name: Sync Files
               uses: wlixcc/SFTP-Deploy-Action@v1.2.4
               with:
-                username: ${{secrets.FTP_USER}}
-                server: ${{secrets.FTP_SERVER}}
-                password: ${{secrets.FTP_PASSWORD}}
-                port: 22
-                local_path: ".next/*"
-                remote_path: /var/www/beta.mindrisers.com.np/frontend/project-mr
-                sftp_only: true
-
-
-              
-
-
-
-    
-        
-            
+                  username: ${{secrets.FTP_USER}}
+                  server: ${{secrets.FTP_SERVER}}
+                  password: ${{secrets.FTP_PASSWORD}}
+                  port: 22
+                  local_path: ".next/*"
+                  remote_path: /var/www/beta.mindrisers.com.np/frontend/project-mr
+                  sftp_only: true
