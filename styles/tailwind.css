@@ -295,6 +295,10 @@
         @apply gap-y-[10px] md:gap-y-[12px] lg:gap-y-[14px] xl:gap-y-[17px] 2xl:gap-y-[20px];
     }
 
+
+    .is-link{
+        @apply hover:text-[#1a0dab] hover:underline transition-all hover:cursor-pointer
+    }
     
 }
 

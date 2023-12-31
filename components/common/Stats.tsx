@@ -13,7 +13,7 @@ export default function Stats({ wrapperClass }: { wrapperClass?: string }) {
     let data:statsType[] = [
         {
             title: "courses",
-            number: 10,
+            number: 50,
         },
         {
             title: "students",

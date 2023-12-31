@@ -20,7 +20,7 @@ const CustomText = ({ el }) => {
         <>
             <span
                 className={classNames(
-                    "  animate- duration-1000] animateMee inline-block  overflow-hidden transition-all duration-[6s]",
+                    "  animate- duration-1000] animateMee inline-block transition-all duration-[6s] overflow-visible",
                     { [dynamicClass]: true },
                 )}
             >

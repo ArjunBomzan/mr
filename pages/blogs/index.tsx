@@ -7,12 +7,11 @@ import React from "react";
 import Blogs from "../../components/BlogsComponents/Blogs";
 import Pagination from "rc-pagination";
 import { useRouter } from "next/router";
-import { makeFullUrl } from "../../utils/makeFullUrl";
+import { makeFullApiUrl, makeFullUrl } from "../../utils/makeFullUrl";
 import formatDate from "../../utils/formatDate";
 import Link from "next/link";
 
-
-const perPage = 16
+const perPage = 16;
 
 const PrevIcon = () => {
     return <span>{`<`}</span>;
@@ -34,7 +33,10 @@ export function BlogCard({
     const router = useRouter();
     const type = router.pathname.split("/")[1];
     return (
-        <li className=" hover:shadow-small   group  transition-all">
+        <li
+            className=" hover:shadow-small   group  transition-all"
+            title={title}
+        >
             <Link href={"/blogs/" + slug} className="flex h-full flex-col">
                 <Image
                     priority
@@ -44,16 +46,18 @@ export function BlogCard({
                     height={500}
                     className="h-[176px] w-full rounded-tl-xl rounded-tr-xl "
                 />
-                <div className="flex-grow rounded-bl-xl rounded-br-xl border border-t-0 border-border p-5 transition-all group-hover:border-primary ">
+                <div className="relative flex-grow rounded-bl-xl rounded-br-xl border border-t-0 border-border p-5 pb-14 transition-all group-hover:border-primary ">
                     <h2 className="title font-semibold leading-[145%]">
                         {title}
                     </h2>
-                    <div className="mt-[13px] flex justify-between text-[14px]">
-                        <span>Coding</span>
-                        <span>.</span>
-                        <span>{formatDate(created_at)}</span>
-                        <span>.</span>
-                        <span>365 Views</span>
+                    <div>
+                        <div className="hidde absolute bottom-5 flex justify-between text-[14px] left-0 right-0 w-full px-5">
+                            <span>Coding</span>
+                            <span>.</span>
+                            <span>{formatDate(created_at)}</span>
+                            <span>.</span>
+                            <span>365 Views</span>
+                        </div>
                     </div>
                 </div>
             </Link>
@@ -277,9 +281,7 @@ export const getServerSideProps = async ({ query }) => {
     let page = parseInt(query.page) || 1;
     let searchTerm = query.q || "";
 
-    const res = await fetch(
-        `${process.env.DOMAIN_V1}singleblog/?size=${perPage}&search=${searchTerm}&page=${page}`,
-    );
+    const res = await fetch(makeFullApiUrl(`/singleblog/?size=${perPage}&search=${searchTerm}&page=${page}`));
     const data = await res.json();
 
     return {
