@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{html,js,jsx,ts,tsx}',
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -9,13 +10,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens:{
-        "mine":"361px", // landscape view mobiles
-        "sm":"576px", // landscape view mobiles
-        "md":"768px", // tabs
-        "lg":"1024px", //  small laptops
-        "xl":"1280px", // desktops
-        "2xl":"1536px", // large monitors
+      screens: {
+        "mine": "361px", // landscape view mobiles
+        "sm": "576px", // landscape view mobiles
+        "md": "768px", // tabs
+        "lg": "1024px", //  small laptops
+        "xl": "1280px", // desktops
+        "2xl": "1536px", // large monitors
       },
       colors: {
         primary: "#018343", // 800
@@ -57,7 +58,7 @@ module.exports = {
         "gray-400": "#9C9496",
         "gray-500": "#80777A",
         "gray-600": "#686163",// body color
-        "gray-700": "#554F51", 
+        "gray-700": "#554F51",
         "gray-800": "#484445",
         "gray-900": "#433F40",
         "gray-950": "#2A2728",

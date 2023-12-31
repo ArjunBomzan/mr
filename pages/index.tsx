@@ -16,6 +16,16 @@ import HomeContact from "../components/HomePageComponents/HomeContact";
 import { makeFullApiUrl } from "../utils/makeFullUrl";
 import { useState } from "react";
 
+export let typeWriters = [
+    "IT skills and expertise",
+    "Javascript",
+    "Django",
+    "Figma",
+    "Flutter",
+    "Devops"
+];
+
+
 export default function Home(props) {
     // const [showVideo, setshowVideo] = useState(false)
     const [videoOpen, setVideoOpen] = useState(false);
@@ -56,13 +66,7 @@ export default function Home(props) {
         },
     ];
 
-    let typeWriters = [
-        "IT skills and expertise",
-        "Javascript",
-        "Django",
-        "Figma",
-        "Flutter",
-    ];
+    
 
     let growWithUsers = [
         { src: "/assets/images/home/banner/alija.jpg" },

@@ -8,6 +8,7 @@ import Swoosh from "../../components/common/Swoosh";
 import CoursesList from "../../components/common/CoursesList";
 import { makeFullApiUrl } from "../../utils/makeFullUrl";
 import TypeWriter from "../../components/common/TypeWriter";
+import { typeWriters } from "..";
 
 export async function getStaticProps() {
     // export async function getServerSideProps({query}) {
@@ -62,14 +63,7 @@ const Courses = ({ courses_all }) => {
         "Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers is the perfect platform for you to learn Digital Skils";
     let meta_image = `${process.env.NEXT_PUBLIC_DOMAIN}/assets/images/courses.png`;
 
-    let typeWriters = [
-        "IT skills and expertise",
-        "Javascript",
-        "Django",
-        "Figma",
-        "Flutter",
-    ];
-
+   
     return (
         <>
             <Head>

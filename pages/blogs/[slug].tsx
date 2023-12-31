@@ -14,14 +14,12 @@ import { FaLinkedin, FaTwitter } from "react-icons/fa";
 export default function BlogSlug(props) {
     const router = useRouter();
 
-    let meta_description = props?.blog?.data?.blog[0]?.short_desc || "";
-    let meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${props?.blog?.data?.blog[0]?.banner}`;
+    let meta_description = props?.blog?.data?.blog?.short_desc || "";
+    let meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${props?.blog?.data?.blog?.banner}`;
     let current_url = `${process.env.NEXT_PUBLIC_DOMAIN}${router.asPath}`;
     console.log(current_url);
-    
-    let blog = props.blog.data.blog[0];
 
-    
+    let blog = props.blog.data.blog;
 
     console.log(blog);
 
@@ -30,15 +28,15 @@ export default function BlogSlug(props) {
             <Head>
                 <meta
                     name="keywords"
-                    content={`mindrisers nepal, blogs, it training center, kathmandu,${props?.blog?.data?.blog?.[0]?.page_title}`}
+                    content={`mindrisers nepal, blogs, it training center, kathmandu,${props?.blog?.data?.blog?.page_title}`}
                 />
-                <title>{props?.blog?.data?.blog?.[0]?.page_title}</title>
+                <title>{props?.blog?.data?.blog?.page_title}</title>
                 {/* facebook og tags */}
                 <meta property="og:url" content={current_url} />
                 <meta property="og:type" content="website" />
                 <meta
                     property="og:title"
-                    content={`${props?.blog?.data?.blog?.[0]?.page_title}`}
+                    content={`${props?.blog?.data?.blog?.page_title}`}
                 />
                 <meta property="og:description" content={meta_description} />
                 <meta property="og:image" content={meta_image} />
@@ -49,7 +47,7 @@ export default function BlogSlug(props) {
                 <meta name="twitter:creator" content="@mindrisers" />
                 <meta
                     property="twitter:title"
-                    content={`${props?.blog?.data?.blog?.[0]?.page_title}`}
+                    content={`${props?.blog?.data?.blog?.page_title}`}
                 />
                 <meta
                     property="twitter:description"
@@ -138,7 +136,7 @@ export default function BlogSlug(props) {
                             </Link>
                             <div className="flex items-center gap-[5px] lg:gap-[10px] xl:flex-col ">
                                 <p className=" title font-semibold leading-[145%]">
-                                    367
+                                {blog.views}
                                 </p>
                                 <p className="text-[14px] leading-[145%]">
                                     views
@@ -179,13 +177,16 @@ export default function BlogSlug(props) {
                             </h2>
                             <div>
                                 <ul>
-                                    {props.recentBlogs.map((blog,index) => {
+                                    {props.recentBlogs.map((blog, index) => {
                                         return (
                                             <li className="title mb-10 flex items-start gap-[10px]">
                                                 <span className="flex-center min-h-[40px] min-w-[40px] rounded-xl bg-gray-100 font-bold">
-                                                    0{index+1}
+                                                    0{index + 1}
                                                 </span>
-                                                <Link href={`/blogs/${blog.slug}`} className=" leading-[145%]">
+                                                <Link
+                                                    href={`/blogs/${blog.slug}`}
+                                                    className=" leading-[145%]"
+                                                >
                                                     {blog.title}
                                                 </Link>
                                             </li>
@@ -201,7 +202,9 @@ export default function BlogSlug(props) {
                 <section className="section-wrapper-m-sm container">
                     <div className="mb-5 flex justify-between">
                         <p className="sub-header-lg">Recent Post</p>
-                        <Link href={"/blogs"} className="is-link">View All</Link>
+                        <Link href={"/blogs"} className="is-link">
+                            View All
+                        </Link>
                     </div>
                     <ul className="gap-base-half grid grid-cols-1 gap-x-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                         {props.recentBlogs?.map((blog) => {
@@ -234,7 +237,6 @@ export default function BlogSlug(props) {
 export async function getServerSideProps({ params }) {
     const res = await fetch(makeFullApiUrl(`/singleblogslug/${params.slug}/`));
 
-
     if (!res.ok) {
         return {
             notFound: true,
@@ -242,19 +244,26 @@ export async function getServerSideProps({ params }) {
     }
 
     const blog = await res.json();
+    console.log("blog", blog);
 
-    let page =  1;
-    let searchTerm =  "";
+    let page = 1;
+    let searchTerm = "";
 
-    const blogsres = await fetch(makeFullApiUrl(`/singleblog/?size=4&search=${searchTerm}&page=${page}`));
-    const data = await blogsres.json();
-    let blogs = data?.navigation?.data ||[]
+    let blogs = [];
+    try {
+        const blogsres = await fetch(
+            makeFullApiUrl(
+                `/singleblog/?size=4&search=${searchTerm}&page=${page}`,
+            ),
+        );
+
+        const data = await blogsres.json();
+        blogs = data?.navigation?.data || [];
+    } catch (err) {}
 
     return {
-        props: { blog,recentBlogs:blogs },
+        props: { blog, recentBlogs: blogs },
         // revalidate: 60 * 60 * 24  // even when the content is not changed.. it revalidates...
         // revalidate: 60 * 1  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
     };
 }
-
-

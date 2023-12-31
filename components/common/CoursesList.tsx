@@ -44,7 +44,7 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                 })}
             >
                 <Swiper
-                    className="custom-swiper-dots h-full select-none !overflow-x-clip !overflow-y-visible "
+                    className="custom-swiper-dots h-full select-none !overflow-x-clip !overflow-y-visible custom "
                     loop={false}
                     slidesPerView={
                         size.width >= 1536
@@ -55,9 +55,9 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                                 ? 2.5
                                 : size.width >= 576
                                   ? 2
-                                  : 1.7
+                                  : 1.15
+                                //   : 3
                     }
-                    // slidesPerView={1.7}
                     spaceBetween={
                         size.width >= 1536
                             ? 40
@@ -76,7 +76,10 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                 >
                     {courses.map((el, index) => {
                         return (
-                            <SwiperSlide className="h-full">
+                            <SwiperSlide className="h-full !w-[296px]]"
+                            style={{
+                                height:"100%"
+                            }}>
                                 <li className="h-full">
                                     <Link
                                         href={`/courses/${el.slug}`}
