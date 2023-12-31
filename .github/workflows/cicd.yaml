@@ -9,7 +9,7 @@ on:
 jobs:
     build-frontend:
         name: Build Fronend
-        runs-on: ubuntu-20.04.4
+        runs-on: ubuntu-latest
         steps:
           - name: checkout code
             uses: actions/checkout@v2
@@ -81,7 +81,7 @@ jobs:
                 password: ${{secrets.FTP_PASSWORD}}
                 port: 22
                 local_path: ".next/*"
-                remote_path: ${{secrets.path}}
+                remote_path: /var/www/beta.mindrisers.com.np/project-mr/.next/
                 sftp_only: true
               
 
