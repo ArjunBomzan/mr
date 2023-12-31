@@ -14,6 +14,7 @@ import Stats from "../components/common/Stats";
 import TypeWriter from "../components/common/TypeWriter";
 import HomeContact from "../components/HomePageComponents/HomeContact";
 import { makeFullApiUrl } from "../utils/makeFullUrl";
+import Success from "./Success";
 
 export default function Home(props) {
     let meta_title =
@@ -92,7 +93,7 @@ export default function Home(props) {
     let faqs = [
         {
             title: "courses",
-            number: 10,
+            number: 50,
             content:
                 "From cutting-edge programming languages to content writing expertise to desiging website, our diverse range of courses equips you with the skills employers crave.",
         },
@@ -430,7 +431,9 @@ export default function Home(props) {
                             Success Network
                         </Swoosh>
                     </h2>
-                    <Link href={"/success-gallery"} className="inline-block">
+                    <Success/>
+
+                    {/* <Link href={"/success-gallery"} className="inline-block">
                         <Image
                             alt=""
                             src={"/assets/images/home/success-stories.jpg"}
@@ -438,7 +441,7 @@ export default function Home(props) {
                             width={700}
                             height={700}
                         />
-                    </Link>
+                    </Link> */}
                 </div>
             </section>
 

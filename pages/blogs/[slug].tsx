@@ -7,7 +7,9 @@ import Opportunity from "../../public/assets/images/common/Opportunity";
 
 import { FaFacebook } from "react-icons/fa6";
 import { clearStyle } from "../../utils/clearStyle";
-import { makeFullUrl } from "../../utils/makeFullUrl";
+import { makeFullApiUrl, makeFullUrl } from "../../utils/makeFullUrl";
+import Link from "next/link";
+import { FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export default function BlogSlug(props) {
     const router = useRouter();
@@ -15,10 +17,12 @@ export default function BlogSlug(props) {
     let meta_description = props?.blog?.data?.blog[0]?.short_desc || "";
     let meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${props?.blog?.data?.blog[0]?.banner}`;
     let current_url = `${process.env.NEXT_PUBLIC_DOMAIN}${router.asPath}`;
+    console.log(current_url);
 
     let blog = props.blog.data.blog[0];
 
     console.log(blog);
+
     return (
         <div>
             <Head>
@@ -103,15 +107,33 @@ export default function BlogSlug(props) {
                 <section className="container">
                     <div className="flex flex-col gap-[35px] xl:flex-row xl:items-start ">
                         <div className="flex flex-row items-center justify-center gap-5 xl:flex-col">
-                            <div className="flex-center h-[44px] w-[44px] rounded-[9px] border border-border">
-                                <FaFacebook className="text-2xl" />
-                            </div>
-                            <div className="flex-center h-[44px] w-[44px] rounded-[9px] border border-border">
-                                <FaFacebook className="text-2xl" />
-                            </div>
-                            <div className="flex-center h-[44px] w-[44px] rounded-[9px] border border-border">
-                                <FaFacebook className="text-2xl" />
-                            </div>
+                            <Link
+                                href={`https://www.facebook.com/sharer/sharer.php?u=${current_url}`}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <div className="flex-center h-[44px] w-[44px] rounded-[9px] border border-border">
+                                    <FaFacebook className="text-2xl" />
+                                </div>
+                            </Link>
+                            <Link
+                                href={`https://twitter.com/intent/tweet?url=${current_url}`}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <div className="flex-center h-[44px] w-[44px] rounded-[9px] border border-border">
+                                    <FaTwitter className="text-2xl" />
+                                </div>
+                            </Link>
+                            <Link
+                                href={`https://www.linkedin.com/shareArticle?mini=true&url=${current_url}`}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <div className="flex-center h-[44px] w-[44px] rounded-[9px] border border-border">
+                                    <FaLinkedin className="text-2xl" />
+                                </div>
+                            </Link>
                             <div className="flex items-center gap-[5px] lg:gap-[10px] xl:flex-col ">
                                 <p className=" title font-semibold leading-[145%]">
                                     367
@@ -155,17 +177,15 @@ export default function BlogSlug(props) {
                             </h2>
                             <div>
                                 <ul>
-                                    {[1, 2, 3, 4].map((el) => {
+                                    {props.recentBlogs.map((blog,index) => {
                                         return (
                                             <li className="title mb-10 flex items-start gap-[10px]">
                                                 <span className="flex-center min-h-[40px] min-w-[40px] rounded-xl bg-gray-100 font-bold">
-                                                    01
+                                                    0{index+1}
                                                 </span>
-                                                <span className=" leading-[145%]">
-                                                    Fonepay just launches its
-                                                    own Teller Machine. Learn
-                                                    what’s new.
-                                                </span>
+                                                <Link href={`/blogs/${blog.slug}`} className=" leading-[145%]">
+                                                    {blog.title}
+                                                </Link>
                                             </li>
                                         );
                                     })}
@@ -176,18 +196,29 @@ export default function BlogSlug(props) {
                     </div>
                 </section>
 
-                {/* <section className="container section-wrapper-m-sm">
+                <section className="section-wrapper-m-sm container">
                     <div className="mb-5 flex justify-between">
                         <p className="sub-header-lg">Recent Post</p>
-                        <p>View All</p>
+                        <Link href={"/blogs"} className="is-link">View All</Link>
                     </div>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-5 gap-base-half">
-                        {new Array(4).fill(null).map((el) => {
-                            return <BlogCard
-                             />;
+                    <ul className="gap-base-half grid grid-cols-1 gap-x-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        {props.recentBlogs?.map((blog) => {
+                            return (
+                                <BlogCard
+                                    index={true}
+                                    title={blog.title}
+                                    blurb={blog.short_desc}
+                                    thumbnail={blog.img ? blog.img : blog.image}
+                                    url={blog.slug}
+                                    imgAlt={blog.title}
+                                    key={blog.slug}
+                                    slug={blog.slug}
+                                    created_at={blog.created_at}
+                                />
+                            );
                         })}
                     </ul>
-                </section> */}
+                </section>
                 <section className="container">
                     <Opportunity />
                 </section>
@@ -199,9 +230,8 @@ export default function BlogSlug(props) {
 }
 
 export async function getServerSideProps({ params }) {
-    const res = await fetch(
-        `${process.env.DOMAIN_V1}singleblogslug/${params.slug}/`,
-    );
+    const res = await fetch(makeFullApiUrl(`/singleblogslug/${params.slug}/`));
+
 
     if (!res.ok) {
         return {
@@ -210,9 +240,19 @@ export async function getServerSideProps({ params }) {
     }
 
     const blog = await res.json();
+
+    let page =  1;
+    let searchTerm =  "";
+
+    const blogsres = await fetch(makeFullApiUrl(`/singleblog/?size=4&search=${searchTerm}&page=${page}`));
+    const data = await blogsres.json();
+    let blogs = data?.navigation?.data ||[]
+
     return {
-        props: { blog },
+        props: { blog,recentBlogs:blogs },
         // revalidate: 60 * 60 * 24  // even when the content is not changed.. it revalidates...
         // revalidate: 60 * 1  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
     };
 }
+
+
