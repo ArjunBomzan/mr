@@ -54,11 +54,11 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            # - name: Download artifacts from the build job
-            #   uses: actions/download-artifact@v2
-            #   with:
-            #       name: download frontend artifact
-            #       path: ./.next
+            - name: Download artifacts from the build job
+              uses: actions/download-artifact@v2
+              with:
+                  name: download frontend artifact
+                  path: ./.next
 
             # - name: executing remote ssh commands using password
             #   uses: appleboy/ssh-action@v1.0.1
