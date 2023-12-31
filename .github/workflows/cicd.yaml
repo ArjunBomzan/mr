@@ -81,7 +81,7 @@ jobs:
                 password: ${{secrets.FTP_PASSWORD}}
                 port: 22
                 local_path: ".next/*"
-                remote_path: /var/www/beta.mindrisers.com.np/project-mr/.next/
+                remote_path: /var/www/beta.mindrisers.com.np/frontend/project-mr
                 sftp_only: true
 
 
