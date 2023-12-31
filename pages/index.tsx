@@ -14,8 +14,12 @@ import Stats from "../components/common/Stats";
 import TypeWriter from "../components/common/TypeWriter";
 import HomeContact from "../components/HomePageComponents/HomeContact";
 import { makeFullApiUrl } from "../utils/makeFullUrl";
+import { useState } from "react";
 
 export default function Home(props) {
+    // const [showVideo, setshowVideo] = useState(false)
+    const [videoOpen, setVideoOpen] = useState(false);
+
     let meta_title =
         "Best IT Training Institute in kathmandu, Nepal | Mindrisers Institute of Technology";
     let meta_description =
@@ -41,10 +45,6 @@ export default function Home(props) {
         {
             title: "photshop",
             icon: "/assets/images/home/banner/iconoir_adobe-photoshop-solid.svg",
-        },
-        {
-            title: "node.js",
-            icon: "/assets/images/home/banner/nonicons_node-16.svg",
         },
         {
             title: "database",
@@ -315,10 +315,12 @@ export default function Home(props) {
 
             {/* vercel test */}
 
-            <section className=" section-wrapper container">
-                <h2 className="header title-space-5xl text-center">
-                    Popular <Swoosh type="secondary">Courses</Swoosh>{" "}
-                </h2>
+            <section className=" section-wrapper-m-sm lg:section-wrapper-m md:container pl-1">
+                {/* <div className="flex justify-between"> */}
+                    <h2 className="header title-space-5xl text-center">
+                        Popular <Swoosh type="secondary">Courses</Swoosh>{" "}
+                    </h2>
+                {/* </div> */}
                 {/* Headless component */}
                 <CoursesList courses={props.courses} />
             </section>
@@ -342,12 +344,23 @@ export default function Home(props) {
                                 institution continuously does research and
                                 development in the same place.
                             </p>
-                            <button className="btn">Learn More</button>
+                            <button
+                                className="btn"
+                                onClick={() => {
+                                    setVideoOpen(true);
+                                }}
+                            >
+                                Learn More
+                            </button>
                         </div>
                         <div className="relative mt-[40px] h-[292px] overflow-hidden rounded-[24px] bg-green-400 p-[10px]">
                             {/* <Image src={"https://picsum.photos/200/300"} width={500} height={500} className='' alt="" /> */}
                             <div className="h-full">
-                                <VideoPlayer className="h-full max-h-full w-full max-w-full overflow-hidden rounded-[24px] object-cover" />
+                                <VideoPlayer
+                                    videoOpen={videoOpen}
+                                    setVideoOpen={setVideoOpen}
+                                    className="h-full max-h-full w-full max-w-full overflow-hidden rounded-[24px] object-cover"
+                                />
                             </div>
                             <p className="absolute right-[28px] top-[38px] font-semibold text-white  md:text-xl lg:text-2xl">
                                 Best IT Institute in Nepal

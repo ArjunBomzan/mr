@@ -198,7 +198,7 @@ export default function Testimonials() {
                     {testimonailasData.map((el) => {
                         return (
                             <SwiperSlide className="">
-                                <div className="relative min-h-[350px] cursor-pointer rounded-xl bg-white p-5 text-gray-600">
+                                <div className="relative min-h-[350px] cursor-move rounded-xl bg-white p-5 text-gray-600">
                                     <Rating rating={el.starCount} />
                                     <p className=" testimonial-card-clamp clamp-7  my-5">
                                         {el.testimonial}

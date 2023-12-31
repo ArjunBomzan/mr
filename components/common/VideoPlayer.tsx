@@ -2,8 +2,16 @@ import classNames from "classnames";
 import React, { useState } from "react";
 import { AiOutlinePlayCircle } from "react-icons/ai";
 
-export default function VideoPlayer({ className }: { className: string }) {
-    const [videoOpen, setVideoOpen] = useState(false);
+export default function VideoPlayer({
+    className,
+    videoOpen,
+    setVideoOpen,
+}: {
+    className: string;
+    videoOpen: any;
+    setVideoOpen: any;
+}) {
+    // const [videoOpen, setVideoOpen] = useState(false);
 
     return (
         <div className={className || ""}>
@@ -12,7 +20,6 @@ export default function VideoPlayer({ className }: { className: string }) {
                 style={{
                     // backgroundImage: `url('https://ooty-theme.myshopify.com/cdn/shop/files/video-sec-bg_1.jpg?v=1620132835')`,
                     backgroundImage: `url('/assets/images/home/wow.jpg')`,
-
                 }}
             >
                 <AiOutlinePlayCircle
@@ -22,7 +29,7 @@ export default function VideoPlayer({ className }: { className: string }) {
                     onClick={() => {
                         setVideoOpen((prev) => !prev);
                     }}
-            />
+                />
                 <div
                     onClick={() => {
                         setVideoOpen(false);
@@ -33,7 +40,7 @@ export default function VideoPlayer({ className }: { className: string }) {
                 >
                     {videoOpen && (
                         <iframe
-                            className="mx-auto  w-[75%] max-w-full aspect-video "
+                            className="mx-auto  aspect-video w-[75%] max-w-full "
                             src="https://www.youtube.com/embed/cSp1WBB7gvI?si=-TyP3g1KDIvucer2"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
