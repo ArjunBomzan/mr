@@ -219,6 +219,7 @@ export default function BlogSlug(props) {
                                     key={blog.slug}
                                     slug={blog.slug}
                                     created_at={blog.created_at}
+                                    views = {blog.views}
                                 />
                             );
                         })}

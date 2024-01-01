@@ -28,12 +28,13 @@ export function BlogCard({
     index,
     slug,
     created_at,
+    views
 }) {
     const router = useRouter();
     const type = router.pathname.split("/")[1];
     return (
         <li
-            className=" hover:shadow-small   group  transition-all"
+            className=" hover:shadow-medium   group  transition-all hover:-translate-y-1 hover:translate-x-1"
             title={title}
         >
             <Link href={"/blogs/" + slug} className="flex h-full flex-col">
@@ -45,17 +46,17 @@ export function BlogCard({
                     height={500}
                     className="h-[176px] w-full rounded-tl-xl rounded-tr-xl "
                 />
-                <div className="relative flex-grow rounded-bl-xl rounded-br-xl border border-t-0 border-border p-5 pb-14 transition-all group-hover:border-primary ">
+                <div className="relative flex-grow rounded-bl-xl rounded-br-xl border border-t-0 border-border p-5 pb-14 transition-all duration-1000 group-hover:border-primary ">
                     <h2 className="title font-semibold leading-[145%]">
                         {title}
                     </h2>
                     <div>
                         <div className="hidde absolute bottom-5 left-0 right-0 flex w-full justify-between px-5 text-[14px]">
-                            <span>Coding</span>
-                            <span>.</span>
+                            {/* <span>Coding</span>
+                            <span>.</span> */}
                             <span>{formatDate(created_at)}</span>
                             <span>.</span>
-                            <span>365 Views</span>
+                            <span>{views} Views</span>
                         </div>
                     </div>
                 </div>
@@ -63,7 +64,6 @@ export function BlogCard({
         </li>
     );
 }
-
 
 export default function blogs({
     blogs: data,
@@ -108,7 +108,7 @@ export default function blogs({
         if (changedOnce) {
             fetchData();
         }
-        setChangedOnce(true)
+        setChangedOnce(true);
         // }
     }, [current_page]);
 
@@ -200,6 +200,7 @@ export default function blogs({
                                     key={blog.slug}
                                     slug={blog.slug}
                                     created_at={blog.created_at}
+                                    views={blog.views}
                                 />
                             );
                         })}
@@ -249,6 +250,7 @@ export default function blogs({
                                     key={blog.slug}
                                     slug={blog.slug}
                                     created_at={blog.created_at}
+                                    views={blog.views}
                                 />
                             );
                         })}
