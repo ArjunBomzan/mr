@@ -3,8 +3,7 @@ import BannerWrapper from "../../components/common/BannerWrapper";
 import Image from "next/image";
 import Swoosh from "../../components/common/Swoosh";
 
-import React from "react";
-import Blogs from "../../components/BlogsComponents/Blogs";
+import React, { useEffect, useState } from "react";
 import Pagination from "rc-pagination";
 import { useRouter } from "next/router";
 import { makeFullApiUrl, makeFullUrl } from "../../utils/makeFullUrl";
@@ -51,7 +50,7 @@ export function BlogCard({
                         {title}
                     </h2>
                     <div>
-                        <div className="hidde absolute bottom-5 flex justify-between text-[14px] left-0 right-0 w-full px-5">
+                        <div className="hidde absolute bottom-5 left-0 right-0 flex w-full justify-between px-5 text-[14px]">
                             <span>Coding</span>
                             <span>.</span>
                             <span>{formatDate(created_at)}</span>
@@ -65,10 +64,54 @@ export function BlogCard({
     );
 }
 
-export default function blogs({ blogs, total_data, current_page }) {
-    console.log(blogs);
+
+export default function blogs({
+    blogs: data,
+    total_data: td,
+    current_page: cp,
+}) {
+    const [blogs, setBlogs] = useState(data);
+    const [total_data, setTotalData] = useState(td);
+    const [current_page, setCurrentPage] = useState(cp);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [showSpinner, setShowSpinner] = useState(false);
+    const [changedOnce, setChangedOnce] = useState(false);
 
     const router = useRouter();
+
+    const fetchData = async () => {
+        setShowSpinner(true);
+        try {
+            const res = await fetch(
+                makeFullApiUrl(
+                    `/singleblog/?size=${perPage}&search=${searchTerm}&page=${current_page}&client-side`,
+                ),
+            );
+            const data = await res.json();
+            setBlogs(data?.navigation?.data || []);
+            setTotalData(data?.navigation?.total_data || 0);
+        } catch (err) {}
+        setShowSpinner(false);
+    };
+
+    useEffect(() => {
+        if (router.query.page) {
+            setCurrentPage(parseInt(`${router.query.page}`));
+        }
+        if (router.query.q) {
+            setSearchTerm(`${router.query.q || ""}`);
+        }
+    }, [router.isReady]);
+
+    useEffect(() => {
+        // if ( (router.query.page || router.query.q)) {
+        if (changedOnce) {
+            fetchData();
+        }
+        setChangedOnce(true)
+        // }
+    }, [current_page]);
+
     let meta_description =
         "Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers is the perfect platform for you to learn Digital Skils";
     let meta_image = `${process.env.NEXT_PUBLIC_DOMAIN}/assets/images/blogs.png`;
@@ -223,11 +266,18 @@ export default function blogs({ blogs, total_data, current_page }) {
                                 }
                                 total={total_data}
                                 onChange={(e) => {
-                                    if (router.isReady) {
-                                        let query = router.query;
-                                        query.page = e.toString();
-                                        router.push(`/blogs?page=${e}`);
-                                    }
+                                    console.log("pagei n pagin", e);
+                                    // if (router.isReady) {
+                                    // let query = router.query;
+                                    // query.page = e.toString();
+                                    router.replace({
+                                        query: {
+                                            page: e,
+                                        },
+                                    });
+                                    // router.push(`/blogs?page=${e}`);
+                                    setCurrentPage(() => e);
+                                    // }
                                 }}
                                 // prevIcon={() => {
                                 //     return "<";
@@ -273,15 +323,20 @@ export default function blogs({ blogs, total_data, current_page }) {
                     </div>
                 </section>
             </div>
+
+            {showSpinner && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black  bg-opacity-60">
+                    <div className="h-16 w-16 animate-spin rounded-full border-t-4 border-white"></div>
+                </div>
+            )}
         </div>
     );
 }
 
-export const getServerSideProps = async ({ query }) => {
-    let page = parseInt(query.page) || 1;
-    let searchTerm = query.q || "";
-
-    const res = await fetch(makeFullApiUrl(`/singleblog/?size=${perPage}&search=${searchTerm}&page=${page}`));
+export const getStaticProps = async ({ query }) => {
+    const res = await fetch(
+        makeFullApiUrl(`/singleblog/?size=${perPage}&search=${""}&page=${1}`),
+    );
     const data = await res.json();
 
     return {
@@ -290,7 +345,6 @@ export const getServerSideProps = async ({ query }) => {
             total_data: data?.navigation?.total_data || 0,
             current_page: data?.navigation?.current_page || 1,
         },
-        // revalidate: 60 * 60 * 24   // 1 day
-        // revalidate: 60 * 1  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
+        revalidate: 60 * 1,
     };
 };

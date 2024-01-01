@@ -234,7 +234,18 @@ export default function BlogSlug(props) {
     );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+    // const res = await fetch(makeFullApiUrl("/course"))
+    // const courses = await res.json()
+    // const paths = courses?.map((course) => ({
+    //     params: { slug: course.slug },
+    // }))
+    let paths = [];
+    return { paths, fallback: "blocking" };
+}
+
+
+export async function getStaticProps({ params }) {
     const res = await fetch(makeFullApiUrl(`/singleblogslug/${params.slug}/`));
 
     if (!res.ok) {
@@ -263,7 +274,6 @@ export async function getServerSideProps({ params }) {
 
     return {
         props: { blog, recentBlogs: blogs },
-        // revalidate: 60 * 60 * 24  // even when the content is not changed.. it revalidates...
-        // revalidate: 60 * 1  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
+        revalidate: 60 * 1  
     };
 }
