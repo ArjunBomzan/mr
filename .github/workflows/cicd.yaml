@@ -63,4 +63,5 @@ jobs:
                   port: 22
                   script: |
                       cd /var/www/beta.mindrisers.com.np/frontend
-                      ./deploy.sh
+                      pwd
+                      ls -al
