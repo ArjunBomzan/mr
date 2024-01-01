@@ -62,7 +62,7 @@ export default function Home({ partners }) {
                         </div>
                         <Image
                             alt=""
-                            src="/assets/images/partners/feature-image.svg"
+                            src="/assets/images/partners/feature-image.jpg"
                             width={600}
                             height={600}
                             className="hidden w-full lg:block"
