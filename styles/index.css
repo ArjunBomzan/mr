@@ -371,6 +371,7 @@ html {
 
 .custom .swiper-wrapper .swiper-slide {
     height: unset;
+    height: auto;
 }
 
 .custom .swiper-wrapper {

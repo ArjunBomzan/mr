@@ -65,7 +65,8 @@ export default function course(props) {
 
     let meta_description =
         course.meta?.find((meta) => meta.name == "description")?.content || "";
-    let meta_image = course.banner;
+
+    let meta_image = course.image;
     if (meta_image) {
         meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${meta_image}`;
     }
