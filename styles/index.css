@@ -102,6 +102,8 @@ html {
 }
 
 /* TODO: scrollbar is not changing .. change its desing */
+
+
 .custom-sidebar::-webkit-scrollbar {
     width: 6px;
     /* Set the width of the scrollbar */

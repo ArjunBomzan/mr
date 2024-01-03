@@ -462,7 +462,7 @@ export default function Home(props) {
             <div className="">
                 <Partners partners={props.partners} />
             </div>
-            <Testimonials />
+            <Testimonials testimonials={props.testimonials} />
             <div className=" container my-[100px]">
                 <Opportunity />
             </div>
@@ -475,6 +475,7 @@ export async function getStaticProps() {
     let gallery_data = [];
     let successStoreis = [];
     let partners = [];
+    let testimonials = [];
 
     try {
         const res = await fetch(
@@ -494,6 +495,8 @@ export async function getStaticProps() {
 
         const partners_res = await fetch(makeFullApiUrl(`/placementpartner/`));
         partners = await partners_res.json();
+        const testimonials_res = await fetch(makeFullApiUrl(`/studenttestimonial/`));
+        testimonials = await testimonials_res.json();
     } catch (err) {}
 
     return {
@@ -502,6 +505,7 @@ export async function getStaticProps() {
             gallery_data: gallery_data,
             successStoreis,
             partners,
+            testimonials
         },
         // revalidate: 60 * 60 * 24 * 1  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
         revalidate: 60 * 1, // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.

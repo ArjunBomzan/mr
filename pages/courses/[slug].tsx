@@ -55,7 +55,7 @@ export default function course(props) {
             title: <h3>{el.heading}</h3>,
             content: (
                 <div
-                    className="editor-content"
+                    className="editor-content text-justify"
                     dangerouslySetInnerHTML={{
                         __html: clearStyle(el.description),
                     }}
@@ -218,7 +218,7 @@ export default function course(props) {
                                 >
                                     <div
                                         className={classNames(
-                                            "editor-content  ",
+                                            "editor-content text-justify  ",
                                         )}
                                         dangerouslySetInnerHTML={{
                                             __html: clearStyle(

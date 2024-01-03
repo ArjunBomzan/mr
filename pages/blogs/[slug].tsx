@@ -146,7 +146,7 @@ export default function BlogSlug(props) {
                         <div className="flex-grow pb-[40px]">
                             <div className="text-[18px] leading-[145%]">
                                 <div
-                                    className="editor-content "
+                                    className="editor-content text-justify "
                                     dangerouslySetInnerHTML={{
                                         __html: clearStyle(blog.description),
                                     }}

@@ -8,6 +8,7 @@ import {
     A11y,
 } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import Image from "next/image"
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -36,10 +37,10 @@ export function useWindowSize(props) {
     return windowSize;
 }
 
-export default function Testimonials() {
+export default function Testimonials({testimonials:testimonailasData}) {
     const size = useWindowSize({ useEffect, useState });
 
-    const testimonailasData = [
+    const testimonailasData1 = [
         {
             starCount: 5,
             image: "img",
@@ -199,19 +200,22 @@ export default function Testimonials() {
                         return (
                             <SwiperSlide className="">
                                 <div className="relative min-h-[350px] cursor-move rounded-xl bg-white p-5 text-gray-600">
-                                    <Rating rating={el.starCount} />
-                                    <p className=" testimonial-card-clamp clamp-7  my-5">
+                                    <Rating rating={el.review} />
+                                    <p className=" testimonial-card-clamp clamp-7  my-5 custom-sidebar">
                                         {el.testimonial}
                                     </p>
                                     <div className="h-1 w-1/5 rounded-2xl bg-border "></div>
                                     <div className="absolute bottom-5 left-5 right-5 mt-5">
-                                        <p className="mb-1 text-sm font-bold">
-                                            {el.name}
+                                        <p className="mb-1 text-sm font-bold flex items-center">
+                                            <Image alt={el.student_photo} src={el.student_photo} width={32} height={32}/>
+                                            &nbsp;
+                                            &nbsp;
+                                            <span>{el.student_name}</span>
                                         </p>
-                                        <p className="mb-1 text-sm">
-                                            {el.position}
-                                        </p>
-                                        <p>{el.company}</p>
+                                        {/* <p className="mb-1 text-sm">
+                                            {el.course_taken}
+                                        </p> */}
+                                        {/* <p>{el.company}</p> */}
                                     </div>
                                 </div>
                             </SwiperSlide>

@@ -50,8 +50,8 @@ export default function BannerWrapper({
                     after:content-["_"] 
                     md:after:bg-top
                     `,
-                    { " h-[964px]": size == "big" },
-                    { " h-[591px]": size == "normal" },
+                    { " min-h-[964px]": size == "big" },
+                    { " min-h-[591px]": size == "normal" },
                     { "min-h-[364px] ": size == "small" },
                     { [extendedClassName]: true },
                 )}
