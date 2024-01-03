@@ -29,6 +29,7 @@ type courseType = {
     banner: string;
     image: string;
     description: string;
+    short_desc: string;
     duration: string;
     career: string;
     syllabus: {}[];
@@ -123,9 +124,9 @@ export default function course(props) {
                             {course.title}
                         </h1>
                         <div
-                            className="text-editor !line-clamp-5 text-primary md:text-[20px]"
+                            className="text-editor  text-primary md:text-[20px]"
                             dangerouslySetInnerHTML={{
-                                __html: clearStyle(course.description),
+                                __html: clearStyle(course.short_desc),
                             }}
                         ></div>
                         <div className="title-space-3xl-reverse">
@@ -289,7 +290,7 @@ export default function course(props) {
                         <TrainingInquiry course_list={props.courses_list} />
                     </div>
                 </section>
-                <section className="section-wrapper-m">
+                <section className="section-wrapper-m hidden">
                     <div className="title-space flex justify-between text-primary">
                         <p>Success Stories</p>
                         <p>
