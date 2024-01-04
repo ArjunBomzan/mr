@@ -244,6 +244,13 @@ html {
     padding-left: 40px;
 }
 
+.editor-content{
+    text-align: justify;
+}
+.editor-content h1, .editor-content h2, .editor-content h3{
+    text-align: left !important;
+}
+
 .contact-us svg {
     color: var(--primary-color);
     fill: var(--primary-color);
