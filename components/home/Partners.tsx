@@ -19,6 +19,7 @@ import Swoosh from "../common/Swoosh";
 import { useEffect, useState } from "react";
 import { useWindowSize } from "./Testimonials";
 import { makeFullUrl } from "../../utils/makeFullUrl";
+import Link from "next/link"
 
 export default function Partners({ partners }) {
     /* TODO: slider used in multiple palces can be minimized?? */
@@ -40,7 +41,7 @@ export default function Partners({ partners }) {
                 <div className="flex h-full items-center bg-green-100 ">
                     {/* TODO: fixme ; dots in mboile and no arrow while  arrow in bigg but no dots */}
                     <Swiper
-                        className=" borderr hide-custom-swiper-dots !overflow-x-clipp !overflow-y-visiblee "
+                        className=" borderr hide-custom-swiper-dots !overflow-x-clipp !overflow-y-visiblee cursor-grab "
                         loop={false}
                         slidesPerView={
                             size.width > 1535
@@ -66,15 +67,16 @@ export default function Partners({ partners }) {
                     >
                         {partners.map((el) => {
                             return (
-                                <SwiperSlide className="px-[10px] md:px-[25px] lg:px-[30px]  cursor-grab ">
+                                <SwiperSlide className="px-[10px] md:px-[25px] lg:px-[30px]  ">
+                                    <Link href={el.link} className="h-[72px] w-full object-contain md:h-[46px] borde border-border">
                                     <Image
                                         priority={true}
                                         src={makeFullUrl(el.image)}
                                         alt=""
-                                        className="h-[72px] w-full object-contain md:h-[46px] borde border-border"
-                                        width={200}
+                                        className="h-[72px] w-full object-contain md:h-[46px] borde border-border cursor-pointer "                                        width={200}
                                         height={200}
                                     />
+                                    </Link>
                                 </SwiperSlide>
                             );
                         })}

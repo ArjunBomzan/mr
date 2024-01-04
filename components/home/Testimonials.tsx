@@ -159,8 +159,8 @@ export default function Testimonials({testimonials:testimonailasData}) {
         >
             <div className="container">
                 <h2 className="header-lg title-space-4xl text-center">
-                    What our <Swoosh type="secondary"> Partnered</Swoosh>{" "}
-                    companies says about us
+                    What our <Swoosh type="secondary"> Students</Swoosh>{" "}
+                    says about us
                 </h2>
             </div>
             <div>

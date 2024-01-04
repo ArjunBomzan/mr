@@ -4,10 +4,9 @@ import Image from "next/image";
 import Swoosh from "../components/common/Swoosh";
 import Opportunity from "../public/assets/images/common/Opportunity";
 import { makeFullApiUrl } from "../utils/makeFullUrl";
+import Link from "next/link";
 
 const services = ({ successStoreis }) => {
-    console.log(successStoreis);
-
     let meta_title = " Internships | Job Placements | Mindrisers Nepal";
     let meta_description = "";
     return (
@@ -87,7 +86,7 @@ const services = ({ successStoreis }) => {
                     </ul>
                 </div>
                 <div>
-                    <ul className="mt-[65px] grid gap-x-[40px] gap-y-[85px] md:grid-cols-2 xl:grid-cols-4">
+                    <ul className="mt-[65px] grid gap-x-[20px] 2xl:gap-x-[40px] gap-y-[85px] md:grid-cols-2 xl:grid-cols-4">
                         {successStoreis.map((el) => {
                             return (
                                 <li className="hover:shadow-small relative rounded-xl border border-border p-5 pt-[80px] transition hover:border-primary ">
@@ -101,21 +100,16 @@ const services = ({ successStoreis }) => {
                                     />
                                     <div className="mb-5 text-center leading-[28px]">
                                         <p className="title mb-[10px] font-semibold text-gray-950 ">
-                                            {el.content.split("-")[0]}
+                                            {el.title}
                                         </p>
-                                        <h2 className="mb-[4px]">{el.title}</h2>
+                                        <h2 className="mb-[4px]">
+                                            {el.position}
+                                        </h2>
                                         <p className="font-medium">
                                             <span className="text-secondary">
                                                 @
                                             </span>
-                                            {el.content
-                                                .split("-")[1]
-                                                .replace("working at", "")
-                                                .replace("Course Taken", "")
-                                                .replace("Working at", "")
-                                                .replace("working  at", "")
-                                                .replace("Course Taken", "")
-                                                .trim()}
+                                            {el.working_at}
                                         </p>
                                     </div>
                                     <div className="border-t border-border">
@@ -124,7 +118,7 @@ const services = ({ successStoreis }) => {
                                                 Course taken
                                             </p>
                                             <p className="text-[18px] font-medium leading-[28px]">
-                                                {el.content.split("-")[2]}
+                                                {el.course.page_title}
                                             </p>
                                         </div>
                                         <div className="my-5">
@@ -132,28 +126,28 @@ const services = ({ successStoreis }) => {
                                                 Tools learned
                                             </h3>
                                             <ul className="flex gap-[20px]">
-                                                <li>
-                                                    <Image
-                                                        className="rounded"
-                                                        src={
-                                                            "/assets/images/gallery/fa6-brands_square-js.svg"
-                                                        }
-                                                        height={24}
-                                                        width={24}
-                                                        alt=""
-                                                    />
-                                                </li>
-                                                <li>
-                                                    <Image
-                                                        className="rounded"
-                                                        src={
-                                                            "/assets/images/gallery/fa6-brands_square-js.svg"
-                                                        }
-                                                        height={24}
-                                                        width={24}
-                                                        alt=""
-                                                    />
-                                                </li>
+                                                {el.course.tools.map((tool) => {
+                                                    return (
+                                                        <li>
+                                                            <Link
+                                                                href={`/courses?tag=${tool?.name}`}
+                                                            >
+                                                                <Image
+                                                                    className="rounded"
+                                                                    src={
+                                                                        tool?.image ||
+                                                                        ""
+                                                                    }
+                                                                    height={24}
+                                                                    width={24}
+                                                                    alt={
+                                                                        tool?.name
+                                                                    }
+                                                                />
+                                                            </Link>
+                                                        </li>
+                                                    );
+                                                })}
                                             </ul>
                                         </div>
                                         <div>
@@ -162,7 +156,7 @@ const services = ({ successStoreis }) => {
                                                 College
                                             </p>
                                             <p className="text-[18px] font-medium leading-[28px]">
-                                                Global Capital College
+                                                {el.college}
                                             </p>
                                         </div>
                                     </div>

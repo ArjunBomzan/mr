@@ -290,7 +290,7 @@ export default function course(props) {
                         <TrainingInquiry course_list={props.courses_list} />
                     </div>
                 </section>
-                <section className="section-wrapper-m hidden">
+                <section className="section-wrapper-m">
                     <div className="title-space flex justify-between text-primary">
                         <p>Success Stories</p>
                         <p>
@@ -346,14 +346,14 @@ export default function course(props) {
                                             />
                                             <div>
                                                 <p className="title-space text-[18px] font-semibold leading-[28px] text-gray-800">
-                                                    Diya Manandhar
+                                                    {el.title}
                                                 </p>
-                                                <p>{el.title}</p>
+                                                <p>{el.position}</p>
                                                 <h3 className="mt-[4px] font-medium">
                                                     <span className="text-secondary">
                                                         @
                                                     </span>{" "}
-                                                    Global Vicors pvt ltd
+                                                    {el.working_at}
                                                 </h3>
                                             </div>
                                         </div>
@@ -362,7 +362,7 @@ export default function course(props) {
                                                 course taken
                                             </p>
                                             <h3 className="text-[18px] font-medium">
-                                                Digital Marketing
+                                                {el.course.page_title}
                                             </h3>
                                         </div>
                                         <div>
@@ -370,7 +370,7 @@ export default function course(props) {
                                                 college
                                             </p>
                                             <h3 className="text-[18px] font-medium">
-                                                xyz college
+                                               {el.college}
                                             </h3>
                                         </div>
                                     </SwiperSlide>

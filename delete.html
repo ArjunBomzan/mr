@@ -5,33 +5,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="https://cdn.taislwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .flex-item {
-      border: 1px solid;
-      padding: 1rem;
+    *{
+      background-color: rgba(255, 0, 0, 0.05);
     }
 
-    .flex-box {
-      display: flex;
+    html{
+      background-color: rgb(165, 145, 121);
     }
+
+    .tabs li{
+      min-width: 200px;
+      text-align: center;
+      border-top: 3px solid white;
+      border-left: 3px solid white;
+      border-right: 3px solid white;
+      /* border-bottom: 3px solid white; */
+      /* border-left: 5px solid transparent; */
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      position: relative;
+    }
+    .tabs li::before{
+      content: "";
+      display: block;
+      height: 3px;
+      width: 3px;
+      position: absolute;
+      background-color: white;
+      bottom: 0;
+      transform: translate(-200%,0%);
+      /* border-top-left-radius: 50px; */
+      border-top: 2px solid red;
+      border-left: 2px solid red;
+      left: 0;
+    }
+    .tabs li::after{
+      content: "";
+      display: block;
+      height: 3px;
+      width: 3px;
+      position: absolute;
+      background-color: white;
+      bottom: 0;
+      transform: translate(190%,0%);
+      border-top-right-radius: 50px;
+      right: 0;
+    }
+  
   </style>
 
 </head>
 
 <body>
 
-  <div class="flex-box">
-    <div class="flex-item">item-1</div>
-    <div class="flex-item">item-2</div>
-    <div class="flex-item">item-3</div>
-    <div class="flex-item">item-4</div>
-    <div class="flex-item">item-5</div>
-    <div class="flex-item">item-6</div>
-    <div class="flex-item">item-7</div>
-    <div class="flex-item">item-8</div>
-    <div class="flex-item">item-9</div>
-    <div class="flex-item">item-10</div>
+
+  <div class="tabs px-4 w-[800px] mx-auto mt-14">
+      <ul class="flex flex-wrap justify-center">
+        <li>one</li>
+        <li>one</li>
+        <li>one</li>
+        <li>one</li>
+        <li>one</li>
+      </ul>
   </div>
 
 </body>
