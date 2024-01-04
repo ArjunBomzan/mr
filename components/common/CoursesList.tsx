@@ -38,6 +38,12 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
 
     return (
         <div>
+            {
+                courses.length == 0
+                &&
+                <p className="my-10">0 course found matching your search key / tag </p>
+            }
+
             <div
                 className={classNames("lg:hidden", {
                     hidden: route != "/",

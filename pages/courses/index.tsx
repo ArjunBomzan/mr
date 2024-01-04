@@ -9,6 +9,7 @@ import CoursesList from "../../components/common/CoursesList";
 import { makeFullApiUrl } from "../../utils/makeFullUrl";
 import TypeWriter from "../../components/common/TypeWriter";
 import { typeWriters } from "..";
+import { FaSearch } from "react-icons/fa";
 
 export async function getStaticProps() {
     // export async function getServerSideProps({query}) {
@@ -29,41 +30,68 @@ export async function getStaticProps() {
 }
 
 const Courses = ({ courses_all }) => {
-    let [courses, setcourses] = useState(courses_all); 
+    const [allCourses, setAllCourses] = useState(courses_all);
+    const [courses, setcourses] = useState(courses_all);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [tag, setTag] = useState("");
+    const [showSpinner, setShowSpinner] = useState(false);
+    const [changedOnce, setChangedOnce] = useState(false);
 
     const router = useRouter();
 
-    // useEffect(() => {
-    //     const fetchCourses = async () => {
-    //         if (router.isReady) {
-    //             try {
-    //                 console.log(
-    //                     makeFullApiUrl(
-    //                         `/course/?tag=` + (router.query.tag || ""),
-    //                     ),
-    //                 );
-    //                 let data = [];
-    //                 const res = await fetch(
-    //                     makeFullApiUrl(
-    //                         `/course/?tag=` + (router.query.tag || ""),
-    //                     ),
-    //                 );
-    //                 data = await res.json();
+    const fetchCourses = async () => {
+        setShowSpinner(true);
 
-    //                 setcourses(data);
-    //             } catch (err) {
-    //                 console.log(err);
-    //             }
-    //         }
-    //     };
-    //     fetchCourses();
-    // }, [router.isReady, router.query.tag]);
+        try {
+            let data = [];
+            const res = await fetch(
+                makeFullApiUrl(
+                    `/course/?tag=` +
+                        (router.query.tag || "") +
+                        `&search=${router.query.q || ""}`,
+                ),
+            );
+            data = await res.json();
+
+            setcourses(data);
+        } catch (err) {
+            console.log(err);
+        }
+        setShowSpinner(false);
+    };
+    useEffect(() => {
+        if (router.query.tag) {
+            setTag(`${router.query.tag || ""}`);
+        }
+        if (router.query.q) {
+            setSearchTerm(`${router.query.q || ""}`);
+        }
+        console.log("router-query", router.query);
+    }, [router.isReady]);
+
+    useEffect(() => {
+        if (changedOnce) {
+            fetchCourses();
+        }
+        setChangedOnce(true);
+    }, [router.query.tag, router.query.q]);
+    // }, [tag, searchTerm]);
 
     let meta_description =
         "Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers is the perfect platform for you to learn Digital Skils";
     let meta_image = `${process.env.NEXT_PUBLIC_DOMAIN}/assets/images/courses.png`;
 
-   
+    let recommendedCourses = allCourses.filter((el) => {
+        if (courses.find((existing) => existing.id == el.id)) {
+            return false;
+        }
+        return true;
+    });
+
+    // if(courses.length == 0){
+    //     recommendedCourses =
+    // }
+
     return (
         <>
             <Head>
@@ -99,7 +127,6 @@ const Courses = ({ courses_all }) => {
                 />
                 <meta name="twitter:image" content={meta_image} />
             </Head>
-
             <BannerWrapper>
                 <div className="lg:pt-[30px]] container grid items-center gap-[20px] text-center  lg:grid-cols-[60%,40%] lg:text-left xl:gap-[40px]">
                     <div>
@@ -115,12 +142,11 @@ const Courses = ({ courses_all }) => {
                             </span>
                             <span>{`</h2>`}</span>
                         </p> */}
-                        <p className="title-lg borde mb-[30px] flex max-w-full items-center justify-center gap-[5px] text-primary transition-all duration-[6s] !ease-in lg:justify-start md:gap-[11px] ">
+                        <p className="title-lg borde mb-[30px] flex max-w-full items-center justify-center gap-[5px] text-primary transition-all duration-[6s] !ease-in md:gap-[11px] lg:justify-start ">
                             <span>{`<h2>`}</span>
                             <TypeWriter contents={typeWriters} />
                             <span>{`</h2>`}</span>
                         </p>
-
 
                         <p className=" mb-5 flex items-center justify-center gap-[10px] lg:justify-start">
                             <span className="header-xl">with</span>
@@ -143,6 +169,59 @@ const Courses = ({ courses_all }) => {
                     />
                 </div>
             </BannerWrapper>
+            {/* searchTerm{searchTerm}
+            tag{tag} */}
+            <div className=" section-wrapper-m container flex flex-col lg:flex-row gap-[24px] justify-between">
+                <ul className="flex flex-wrap justify-center gap-[12px] lg:justify-start   ">
+                    {[
+                        "digital marketing",
+                        "flutter",
+                        "python",
+                        "frontend",
+                        "database",
+                    ].map((el) => {
+                        return (
+                            <li
+                                onClick={() => {
+                                    router.replace({
+                                        query: {
+                                            tag: el,
+                                        },
+                                    });
+                                    setTag(el);
+                                }}
+                                className="cursor-pointer rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary"
+                            >
+                                {el}
+                            </li>
+                        );
+                    })}
+                </ul>
+                <form
+                    className="flex items-center gap-2 "
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        router.replace({
+                            query: {
+                                q: (e.target as HTMLFormElement).searchTerm
+                                    .value, //Property 'searchTerm' does not exist on type 'EventTarget
+                            },
+                        });
+                        setSearchTerm(
+                            (e.target as HTMLFormElement).searchTerm.value,
+                        );
+                    }}
+                >
+                    <input
+                        name="searchTerm"
+                        type="text"
+                        className=" lg:min-w-52 form-control border border-border px-4 py-2 focus:border-primary focus:text-primary focus:outline-none"
+                    />
+                    <button className="btn-simple">
+                        <FaSearch />
+                    </button>
+                </form>
+            </div>
             <section className="section-wrapper-m">
                 <div className="text-center">
                     <h2 className="sub-header-lg title-space">
@@ -156,6 +235,24 @@ const Courses = ({ courses_all }) => {
                     <CoursesList courses={courses} />
                 </div>
             </section>
+            {recommendedCourses.length != 0 && (
+                <section className="section-wrapper-m">
+                    <div className="text-center">
+                        <h2 className="sub-header-lg title-space">
+                            Recommended For{" "}
+                            <Swoosh type="secondary">You</Swoosh>
+                        </h2>
+                    </div>
+                    <div className="title-space-6xl-reverse  !2xl:title-space-5xl-reverse container">
+                        <CoursesList courses={recommendedCourses} />
+                    </div>
+                </section>
+            )}
+            {showSpinner && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black  bg-opacity-60">
+                    <div className="h-16 w-16 animate-spin rounded-full border-t-4 border-white"></div>
+                </div>
+            )}
         </>
     );
 };

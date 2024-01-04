@@ -159,9 +159,9 @@ export default function Home(props) {
             {/* <div className="container my-7">
                 <TypeWriter contents={["one olne", "two"]} />
             </div> */}
-            <BannerWrapper size="big" extendedClassName="!py-0 zz-0">
+            <BannerWrapper size="big" extendedClassName="!py-0 zz-0 !items-start ">
                 <section
-                    className="h-full w-full bg-no-repeat "
+                    className="h-full w-full bg-no-repeat  "
                     style={
                         {
                             // backgroundImage: `url("/assets/images/home/banner/curve-stroke.svg")`,
