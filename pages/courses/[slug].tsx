@@ -305,7 +305,7 @@ export default function course(props) {
                     </h2>
                     <div className="title-space-3xl-reverse">
                         <Swiper
-                            className="custom-swiper-dots !overflow-x-clip !overflow-y-visible "
+                            className="custom-swiper-dots !overflow-x-clip !overflow-y-visible custom "
                             loop={false}
                             slidesPerView={
                                 size.width >= 1536

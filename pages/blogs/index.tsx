@@ -34,7 +34,7 @@ export function BlogCard({
     const type = router.pathname.split("/")[1];
     return (
         <li
-            className=" hover:shadow-medium   group  transition-all hover:-translate-y-1 hover:translate-x-1"
+            className=" hover:shadow-medium   group  transition-all hover:-translate-y-1 hover:translate-x-1 rounded-bl-xl rounded-br-xl rounded-tl-xl rounded-tr-xl"
             title={title}
         >
             <Link href={"/blogs/" + slug} className="flex h-full flex-col">
@@ -46,7 +46,7 @@ export function BlogCard({
                     height={500}
                     className="h-[176px] w-full rounded-tl-xl rounded-tr-xl "
                 />
-                <div className="relative flex-grow rounded-bl-xl rounded-br-xl border border-t-0 border-border p-5 pb-14 transition-all duration-1000 group-hover:border-primary ">
+                <div className="relative flex-grow rounded-bl-xl rounded-br-xl border border-t-0 border-border p-5 pb-14 transition-all duration-1000  ">
                     <h2 className="title font-semibold leading-[145%]">
                         {title}
                     </h2>

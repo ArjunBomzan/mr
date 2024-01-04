@@ -9,7 +9,9 @@ import CoursesList from "../../components/common/CoursesList";
 import { makeFullApiUrl } from "../../utils/makeFullUrl";
 import TypeWriter from "../../components/common/TypeWriter";
 import { typeWriters } from "..";
-import { FaSearch } from "react-icons/fa";
+import { FaCross, FaSearch } from "react-icons/fa";
+import { IoCloseOutline } from "react-icons/io5";
+import classNames from "classnames";
 
 export async function getStaticProps() {
     // export async function getServerSideProps({query}) {
@@ -92,6 +94,22 @@ const Courses = ({ courses_all }) => {
     //     recommendedCourses =
     // }
 
+    let tags = [
+        "digital marketing",
+        "flutter",
+        "python",
+        "frontend",
+        "database",
+    ];
+
+    // tags = tags.filter((el) => {
+    //     return el.toLowerCase() != router.query.tag;
+    // });
+    if (router.query.tag && `${router.query.tag}`.trim()) {
+        // tags.unshift(`${router.query.tag}`);
+        tags.unshift(`clear`);
+    }
+
     return (
         <>
             <Head>
@@ -142,7 +160,7 @@ const Courses = ({ courses_all }) => {
                             </span>
                             <span>{`</h2>`}</span>
                         </p> */}
-                        <p className="title-lg borde mb-[30px] flex max-w-full items-center justify-center gap-[5px] text-primary transition-all duration-[6s] !ease-in md:gap-[11px] lg:justify-start ">
+                        <p className="title-lg borde mb-5 flex max-w-full items-center justify-center gap-[5px] text-primary transition-all duration-[6s] !ease-in md:gap-[11px] lg:justify-start ">
                             <span>{`<h2>`}</span>
                             <TypeWriter contents={typeWriters} />
                             <span>{`</h2>`}</span>
@@ -171,18 +189,22 @@ const Courses = ({ courses_all }) => {
             </BannerWrapper>
             {/* searchTerm{searchTerm}
             tag{tag} */}
-            <div className=" section-wrapper-m container flex flex-col lg:flex-row gap-[24px] justify-between">
+            <div className=" section-wrapper-m container flex flex-col justify-between gap-[24px] lg:flex-row">
                 <ul className="flex flex-wrap justify-center gap-[12px] lg:justify-start   ">
-                    {[
-                        "digital marketing",
-                        "flutter",
-                        "python",
-                        "frontend",
-                        "database",
-                    ].map((el) => {
+                    {tags.map((el) => {
                         return (
                             <li
                                 onClick={() => {
+                                    console.log("hello world");
+                                    if (el.toLocaleLowerCase() == "clear") {
+                                        router.replace({
+                                            query: {
+                                                tag: "",
+                                            },
+                                        });
+                                        setTag("");
+                                        return;
+                                    }
                                     router.replace({
                                         query: {
                                             tag: el,
@@ -190,9 +212,35 @@ const Courses = ({ courses_all }) => {
                                     });
                                     setTag(el);
                                 }}
-                                className="cursor-pointer rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary"
+                                className={classNames(
+                                    "hover:shadow-small relative cursor-pointer rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary hover:bg-gray-200",
+                                    {
+                                        "bg-red-400 text-white hover:!bg-red-500":
+                                            el.toLocaleLowerCase() === "clear",
+                                    },
+                                    {
+                                        "bg-green-200 cursor-text hover:!bg-green-200":
+                                            el.toLocaleLowerCase() ===
+                                            router.query.tag,
+                                    },
+                                )}
                             >
                                 {el}
+                                {/* {el.toLocaleLowerCase() == router.query.tag && (
+                                    <IoCloseOutline
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            console.log("hello tag");
+                                            setTag("");
+                                            router.replace({
+                                                query: {
+                                                    tag: "",
+                                                },
+                                            });
+                                        }}
+                                        className="clickable absolute right-0 top-0 -translate-y-[50%] translate-x-[50%] rounded-full border text-xl font-bold hover:border-red-500 hover:bg-red-500 hover:text-white"
+                                    />
+                                )} */}
                             </li>
                         );
                     })}
@@ -212,11 +260,31 @@ const Courses = ({ courses_all }) => {
                         );
                     }}
                 >
-                    <input
-                        name="searchTerm"
-                        type="text"
-                        className=" lg:min-w-52 form-control border border-border px-4 py-2 focus:border-primary focus:text-primary focus:outline-none"
-                    />
+                    <div className="relative inline-block ">
+                        <input
+                            value={searchTerm}
+                            onChange={(e) => {
+                                setSearchTerm(e.target.value);
+                            }}
+                            name="searchTerm"
+                            type="text"
+                            className=" form-control border border-border px-4 py-2 focus:border-primary focus:text-primary focus:outline-none lg:w-64"
+                        />
+                        {searchTerm.length > 0 && (
+                            <IoCloseOutline
+                                onClick={() => {
+                                    setSearchTerm("");
+                                    router.replace({
+                                        query: {
+                                            q: "",
+                                        },
+                                    });
+                                }}
+                                className="clickable absolute right-2 top-[50%] -translate-y-[50%] text-2xl font-bold"
+                            />
+                        )}
+                    </div>
+
                     <button className="btn-simple">
                         <FaSearch />
                     </button>
@@ -239,8 +307,8 @@ const Courses = ({ courses_all }) => {
                 <section className="section-wrapper-m">
                     <div className="text-center">
                         <h2 className="sub-header-lg title-space">
-                            Recommended For{" "}
-                            <Swoosh type="secondary">You</Swoosh>
+                            Recommended{" "}
+                            <Swoosh type="secondary">For You</Swoosh>
                         </h2>
                     </div>
                     <div className="title-space-6xl-reverse  !2xl:title-space-5xl-reverse container">

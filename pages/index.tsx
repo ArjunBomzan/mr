@@ -96,7 +96,7 @@ export default function Home(props) {
     let faqs = [
         {
             title: "courses",
-            number: 50,
+            number: 10,
             content:
                 "From cutting-edge programming languages to content writing expertise to desiging website, our diverse range of courses equips you with the skills employers crave.",
         },

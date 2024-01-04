@@ -38,11 +38,11 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
 
     return (
         <div>
-            {
-                courses.length == 0
-                &&
-                <p className="my-10">0 course found matching your search key / tag </p>
-            }
+            {courses.length == 0 && (
+                <p className="my-10">
+                    0 course found matching your search key / tag{" "}
+                </p>
+            )}
 
             <div
                 className={classNames("lg:hidden", {
@@ -50,7 +50,7 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                 })}
             >
                 <Swiper
-                    className="custom-swiper-dots h-fulll select-none !overflow-x-clip !overflow-y-visible custom "
+                    className="custom-swiper-dots h-fulll custom select-none !overflow-x-clip !overflow-y-visible "
                     loop={false}
                     slidesPerView={
                         size.width >= 1536
@@ -62,7 +62,7 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                                 : size.width >= 576
                                   ? 2
                                   : 1.15
-                                //   : 3
+                        //   : 3
                     }
                     spaceBetween={
                         size.width >= 1536
@@ -82,14 +82,18 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                 >
                     {courses.map((el, index) => {
                         return (
-                            <SwiperSlide className="h-fulll !w-[296px]]"
-                            style={{
-                                // height:"100%"
-                            }}>
+                            <SwiperSlide
+                                className="h-fulll !w-[296px]]"
+                                style={
+                                    {
+                                        // height:"100%"
+                                    }
+                                }
+                            >
                                 <li className="h-full">
                                     <Link
                                         href={`/courses/${el.slug}`}
-                                        className="h-full hover:shadow-medium group block rounded-xl border border-border p-5 transition hover:border-primary"
+                                        className="hover:shadow-medium group block h-full rounded-xl border border-border p-5 transition hover:border-primary"
                                     >
                                         <Image
                                             priority
@@ -136,10 +140,10 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                         return null;
                     }
                     return (
-                        <li className=" h-full  ">
+                        <li className=" relative h-full  ">
                             <Link
                                 href={`/courses/${el.slug}`}
-                                className="hover:shadow-medium group block rounded-xl border border-border p-5 transition hover:border-primary h-full"
+                                className="hover:shadow-medium group block h-full rounded-xl border border-border p-5 transition hover:border-primary"
                             >
                                 <Image
                                     priority
@@ -154,7 +158,13 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                                     {el.title}
                                 </h3>
                                 <p className="header-space-xs">{el.duration}</p>
-                                <button className="btn-gray transition group-hover:bg-green-50  group-hover:text-primary ">
+
+                                {/* this is for mainting space */}
+                                <span className="btn-gray invisible inline-block opacity-70 ">
+                                    <span className="">Learn More</span>
+                                </span>
+
+                                <button className="btn-gray absolute bottom-5  left-5 transition group-hover:bg-green-50 group-hover:text-primary ">
                                     <span className="transition-all group-hover:mr-2">
                                         Learn More
                                     </span>
@@ -166,7 +176,7 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
             </ul>
             {route == "/" && (
                 <div
-                    className={classNames("flex mt-5 justify-end mr-3 ", {
+                    className={classNames("mr-3 mt-5 flex justify-end ", {
                         hidden: route != "/",
                         "hidden lg:flex": route != "/",
                     })}

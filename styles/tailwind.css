@@ -4,7 +4,7 @@
 
 @layer components {
     .container {
-        @apply mx-auto w-full px-3 max-w-[100%] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px];
+        @apply mx-auto w-full px-5 md:px-3 max-w-[100%] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px];
     }
 
     .flex-center {
@@ -12,7 +12,9 @@
     }
 
     .btn {
-        @apply rounded-[30px] bg-primary px-[16px] py-[10px]  capitalize text-white after:content-['_➔']  hover:bg-primary-dark focus:outline focus:outline-1 focus:outline-offset-4 focus:outline-black;
+        @apply rounded-[30px] bg-primary px-[16px] py-[10px]  capitalize text-white after:content-['_➔']  hover:bg-primary-dark 
+        /* @apply rounded-[30px] bg-primary px-[16px] py-[10px]  capitalize text-white after:content-['_➔']  hover:bg-primary-dark focus:outline focus:outline-1 focus:outline-offset-4 focus:outline-black; */
+        /* TODO: what to do on focus? */
     }
     .btn-outline {
         @apply btn border border-primary bg-transparent text-primary hover:text-white;
@@ -299,6 +301,10 @@
 
     .is-link{
         @apply hover:text-[#1a0dab] hover:text-primary hover:underline transition-all hover:cursor-pointer
+    }
+
+    .clickable{
+        @apply cursor-pointer
     }
     
 }
