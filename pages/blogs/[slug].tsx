@@ -72,7 +72,7 @@ export default function BlogSlug(props) {
                         {blog.title}
                     </h1>
                     <div
-                        className="text-editor title !line-clamp-4 text-center leading-[145%] md:text-[20px]"
+                        className="editor-content title !line-clamp-4 text-center leading-[145%] md:text-[20px]"
                         dangerouslySetInnerHTML={{
                             __html: clearStyle(blog.short_desc),
                         }}

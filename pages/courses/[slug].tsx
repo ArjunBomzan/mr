@@ -32,6 +32,7 @@ type courseType = {
     short_desc: string;
     duration: string;
     career: string;
+    tag: {}[];
     syllabus: {}[];
 };
 
@@ -45,7 +46,7 @@ export default function course(props) {
 
     let specs = [
         { title: "Training Level", ans: "Beginner to Expert" },
-        { title: "Foramte", ans: "Physical/Online Class" },
+        { title: "Format", ans: "Physical/Online Class" },
         { title: "Duration", ans: course.duration },
         { title: "Career Prospect", ans: course.career },
     ];
@@ -124,7 +125,7 @@ export default function course(props) {
                             {course.title}
                         </h1>
                         <div
-                            className="text-editor  text-primary md:text-[20px]"
+                            className="editor-content  text-primary md:text-[20px]"
                             dangerouslySetInnerHTML={{
                                 __html: clearStyle(course.short_desc),
                             }}
@@ -290,6 +291,22 @@ export default function course(props) {
                         <TrainingInquiry course_list={props.courses_list} />
                     </div>
                 </section>
+                <ul className="flex flex-wrap justify-center gap-[12px]   ">
+                    {course.tag.map((el: any) => {
+                        return (
+                            <li
+                                key={el.id}
+                                className={classNames(
+                                    "hover:shadow-small relative cursor-pointer rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary hover:bg-gray-100",
+                                )}
+                            >
+                                <Link href={`/courses?tag=${el.name}`}>
+                                    {el.name}
+                                </Link>
+                            </li>
+                        );
+                    })}
+                </ul>
                 <section className="section-wrapper-m">
                     <div className="title-space flex justify-between text-primary">
                         <p>Success Stories</p>
@@ -305,7 +322,7 @@ export default function course(props) {
                     </h2>
                     <div className="title-space-3xl-reverse">
                         <Swiper
-                            className="custom-swiper-dots !overflow-x-clip !overflow-y-visible custom "
+                            className="custom-swiper-dots custom !overflow-x-clip !overflow-y-visible "
                             loop={false}
                             slidesPerView={
                                 size.width >= 1536
@@ -370,7 +387,7 @@ export default function course(props) {
                                                 college
                                             </p>
                                             <h3 className="text-[18px] font-medium">
-                                               {el.college}
+                                                {el.college}
                                             </h3>
                                         </div>
                                     </SwiperSlide>

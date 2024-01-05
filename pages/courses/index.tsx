@@ -49,8 +49,8 @@ const Courses = ({ courses_all }) => {
             const res = await fetch(
                 makeFullApiUrl(
                     `/course/?tag=` +
-                        (router.query.tag || "") +
-                        `&search=${router.query.q || ""}`,
+                        (tag || "") +
+                        `&search=${searchTerm || ""}`,
                 ),
             );
             data = await res.json();
@@ -76,8 +76,8 @@ const Courses = ({ courses_all }) => {
             fetchCourses();
         }
         setChangedOnce(true);
-    }, [router.query.tag, router.query.q]);
-    // }, [tag, searchTerm]);
+    // }, [router.query.tag, router.query.q]);
+    }, [tag, searchTerm]);
 
     let meta_description =
         "Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers is the perfect platform for you to learn Digital Skils";
@@ -213,7 +213,7 @@ const Courses = ({ courses_all }) => {
                                     setTag(el);
                                 }}
                                 className={classNames(
-                                    "hover:shadow-small relative cursor-pointer rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary hover:bg-gray-200",
+                                    "hover:shadow-small relative cursor-pointer rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary hover:bg-gray-100",
                                     {
                                         "bg-red-400 text-white hover:!bg-red-500":
                                             el.toLocaleLowerCase() === "clear",
