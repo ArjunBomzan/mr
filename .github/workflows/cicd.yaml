@@ -25,17 +25,17 @@ jobs:
 
             - name: Build App
               run: |
-                  npm run build
+                 # npm run build
 
-            - name: Archive Artifacts
-              uses: actions/upload-artifact@v2
-              with:
-                  name: download frontend artifact
-                  path: ./.next
+            # - name: Archive Artifacts
+            #   uses: actions/upload-artifact@v2
+            #   with:
+            #       name: download frontend artifact
+            #       path: ./.next
 
-            - name: Verify
-              run: |
-                  ls -al
+            # - name: Verify
+            #   run: |
+            #       ls -al
 
     test-frontend:
         name: Testing frontend
@@ -46,6 +46,7 @@ jobs:
               run: |
                   # running test
                   # to do it later
+           
 
     deploy-production:
         name: Deploy Production
@@ -54,12 +55,15 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Download artifacts from the build job
-              uses: actions/download-artifact@v2
-              with:
-                  name: download frontend artifact
-                  path: ./.next
-
+            # - name: Download artifacts from the build job
+            #   uses: actions/download-artifact@v2
+            #   with:
+            #       name: download frontend artifact
+            #       path: ./.next
+            - name: Build App
+              run: |
+                  npm run build
+                  
             - name: Sync Files
               uses: wlixcc/SFTP-Deploy-Action@v1.2.4
               with:
