@@ -99,13 +99,13 @@ const services = ({ successStoreis }) => {
                                         className="absolute left-0 right-0 top-0 mx-auto h-[130px]  w-[130px] -translate-y-[50%] rounded-full border-8 border-green-100 object-cover group-hover:border-primary"
                                     />
                                     <div className="mb-5 text-center leading-[28px]">
-                                        <p className="title mb-[10px] font-semibold text-gray-950 ">
+                                        <p className="title mb-[10px] font-semibold text-gray-950 -ml-4 -mr-4 line-clamp-1 " title={el.title}>
                                             {el.title}
                                         </p>
-                                        <h2 className="mb-[4px]">
+                                        <h2 className="mb-[4px] -ml-4 -mr-4 line-clamp-1" title={el.position}>
                                             {el.position}
                                         </h2>
-                                        <p className="font-medium">
+                                        <p className="font-medium -ml-4 -mr-4 line-clamp-1" title={el.working_at?.name}>
                                             <span className="text-secondary">
                                                 @
                                             </span>
@@ -117,16 +117,28 @@ const services = ({ successStoreis }) => {
                                             <p className="title-xxs mb-[4px]">
                                                 Course taken
                                             </p>
-                                            <p className="text-[18px] font-medium leading-[28px]">
+                                            <div className="relative">
+                                            <p className="text-[18px] font-medium leading-[28px] invisible">
+                                                one
+                                            </p>
+                                            <p className="text-[18px] font-medium leading-[28px] invisible ">
+                                                two
+                                            </p>
+                                            <p className="text-[18px] font-medium leading-[28px] line-clamp-2 absolute top-0">
                                                 {el.course.page_title}
                                             </p>
+
+                                            </div>
                                         </div>
                                         <div className="my-5">
                                             <h3 className="title-xxs mb-[4px]">
                                                 Tools learned
                                             </h3>
                                             <ul className="flex gap-[20px]] gap-x-[20px] gap-y-[10px] flex-wrap">
-                                                {el.course.tools.map((tool) => {
+                                                {el.course.tools.slice(0,5).map((tool) => {
+                                                    if(!tool.image){
+                                                        return null;
+                                                    }
                                                     return (
                                                         <li>
                                                             <Link
@@ -155,7 +167,7 @@ const services = ({ successStoreis }) => {
                                                 {" "}
                                                 College
                                             </p>
-                                            <p className="text-[18px] font-medium leading-[28px]">
+                                            <p className="text-[18px] font-medium leading-[28px] line-clamp-1" title={el.college}>
                                                 {el.college}
                                             </p>
                                         </div>
