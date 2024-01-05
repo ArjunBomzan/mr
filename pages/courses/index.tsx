@@ -35,6 +35,7 @@ const Courses = ({ courses_all }) => {
     const [allCourses, setAllCourses] = useState(courses_all);
     const [courses, setcourses] = useState(courses_all);
     const [searchTerm, setSearchTerm] = useState("");
+    const [tempSearchTerm, setTempSearchTerm] = useState("");
     const [tag, setTag] = useState("");
     const [showSpinner, setShowSpinner] = useState(false);
     const [changedOnce, setChangedOnce] = useState(false);
@@ -48,11 +49,10 @@ const Courses = ({ courses_all }) => {
             let data = [];
             const res = await fetch(
                 makeFullApiUrl(
-                    `/course/?tag=` +
-                        (tag || "") +
-                        `&search=${searchTerm || ""}`,
+                    `/course/?tag=${tag || ""}&search=${searchTerm || ""}`,
                 ),
             );
+
             data = await res.json();
 
             setcourses(data);
@@ -61,12 +61,14 @@ const Courses = ({ courses_all }) => {
         }
         setShowSpinner(false);
     };
+
     useEffect(() => {
         if (router.query.tag) {
             setTag(`${router.query.tag || ""}`);
         }
         if (router.query.q) {
             setSearchTerm(`${router.query.q || ""}`);
+            setTempSearchTerm(`${router.query.q || ""}`);
         }
         console.log("router-query", router.query);
     }, [router.isReady]);
@@ -76,7 +78,7 @@ const Courses = ({ courses_all }) => {
             fetchCourses();
         }
         setChangedOnce(true);
-    // }, [router.query.tag, router.query.q]);
+        // }, [router.query.tag, router.query.q]);
     }, [tag, searchTerm]);
 
     let meta_description =
@@ -107,7 +109,25 @@ const Courses = ({ courses_all }) => {
     // });
     if (router.query.tag && `${router.query.tag}`.trim()) {
         // tags.unshift(`${router.query.tag}`);
-        tags.unshift(`clear`);
+        tags.unshift(`clear tag filter`);
+    }
+
+    function clearFilter(except?: string) {
+        switch (except) {
+            case "tag":
+                setSearchTerm("");
+                setTempSearchTerm("");
+                break;
+            case "q":
+                setTag("");
+                break;
+
+            default:
+                setTag("");
+                setSearchTerm("");
+                setTempSearchTerm("");
+                break;
+        }
     }
 
     return (
@@ -189,20 +209,22 @@ const Courses = ({ courses_all }) => {
             </BannerWrapper>
             {/* searchTerm{searchTerm}
             tag{tag} */}
-            <div className=" section-wrapper-m container flex flex-col justify-between gap-[24px] lg:flex-row">
+            <div className=" section-wrapper-m container flex flex-col items-center justify-between gap-[24px] lg:flex-row">
                 <ul className="flex flex-wrap justify-center gap-[12px] lg:justify-start   ">
                     {tags.map((el) => {
                         return (
                             <li
                                 onClick={() => {
                                     console.log("hello world");
-                                    if (el.toLocaleLowerCase() == "clear") {
+                                    if (
+                                        el.toLowerCase() == "clear tag filter"
+                                    ) {
                                         router.replace({
                                             query: {
                                                 tag: "",
                                             },
                                         });
-                                        setTag("");
+                                        clearFilter();
                                         return;
                                     }
                                     router.replace({
@@ -210,17 +232,19 @@ const Courses = ({ courses_all }) => {
                                             tag: el,
                                         },
                                     });
+                                    clearFilter("tag");
                                     setTag(el);
                                 }}
                                 className={classNames(
                                     "hover:shadow-small relative cursor-pointer rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary hover:bg-gray-100",
                                     {
                                         "bg-red-400 text-white hover:!bg-red-500":
-                                            el.toLocaleLowerCase() === "clear",
+                                            el.toLowerCase() ===
+                                            "clear tag filter",
                                     },
                                     {
-                                        "bg-green-200 cursor-text hover:!bg-green-200":
-                                            el.toLocaleLowerCase() ===
+                                        "cursor-text !bg-green-200 hover:!bg-green-200":
+                                            el.toLowerCase() ===
                                             router.query.tag,
                                     },
                                 )}
@@ -255,6 +279,7 @@ const Courses = ({ courses_all }) => {
                                     .value, //Property 'searchTerm' does not exist on type 'EventTarget
                             },
                         });
+                        clearFilter("q")
                         setSearchTerm(
                             (e.target as HTMLFormElement).searchTerm.value,
                         );
@@ -262,18 +287,19 @@ const Courses = ({ courses_all }) => {
                 >
                     <div className="relative inline-block ">
                         <input
-                            value={searchTerm}
+                            value={tempSearchTerm}
                             onChange={(e) => {
-                                setSearchTerm(e.target.value);
+                                // setSearchTerm(e.target.value);
+                                setTempSearchTerm(e.target.value);
                             }}
                             name="searchTerm"
                             type="text"
                             className=" form-control border border-border px-4 py-2 focus:border-primary focus:text-primary focus:outline-none lg:w-64"
                         />
-                        {searchTerm.length > 0 && (
+                        {tempSearchTerm.length > 0 && (
                             <IoCloseOutline
                                 onClick={() => {
-                                    setSearchTerm("");
+                                    clearFilter();
                                     router.replace({
                                         query: {
                                             q: "",
