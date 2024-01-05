@@ -62,7 +62,7 @@ jobs:
             #       path: ./.next
             - name: Build App
               run: |
-                  npm run build
+                npm run build
                   
             - name: Sync Files
               uses: wlixcc/SFTP-Deploy-Action@v1.2.4
