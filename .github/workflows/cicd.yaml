@@ -60,6 +60,10 @@ jobs:
             #   with:
             #       name: download frontend artifact
             #       path: ./.next
+            - name: Install dependencies
+              run: |
+                npm install
+
             - name: Build App
               run: |
                 npm run build
