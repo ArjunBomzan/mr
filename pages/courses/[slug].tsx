@@ -307,7 +307,7 @@ export default function course(props) {
                         );
                     })}
                 </ul>
-                {/* <section className="section-wrapper-m">
+                <section className="section-wrapper-m">
                     <div className="title-space flex justify-between text-primary">
                         <p>Success Stories</p>
                         <p>
@@ -370,7 +370,7 @@ export default function course(props) {
                                                     <span className="text-secondary">
                                                         @
                                                     </span>{" "}
-                                                    {el.working_at}
+                                                    {el.working_at?.name}
                                                 </h3>
                                             </div>
                                         </div>
@@ -395,7 +395,7 @@ export default function course(props) {
                             })}
                         </Swiper>
                     </div>
-                </section> */}
+                </section>
             </main>
         </div>
     );
