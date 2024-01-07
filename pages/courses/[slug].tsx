@@ -307,7 +307,7 @@ export default function course(props) {
                         );
                     })}
                 </ul>
-                <section className="section-wrapper-m">
+                {/* <section className="section-wrapper-m">
                     <div className="title-space flex justify-between text-primary">
                         <p>Success Stories</p>
                         <p>
@@ -395,7 +395,7 @@ export default function course(props) {
                             })}
                         </Swiper>
                     </div>
-                </section>
+                </section> */}
             </main>
         </div>
     );
