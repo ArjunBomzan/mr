@@ -336,9 +336,9 @@ export default function Home(props) {
                             <h2 className="header-lg title-space-lg text-expanded">
                                 <Swoosh type="secondary">About us</Swoosh>
                             </h2>
-                            <p className="title-space-lg text-primary ">
+                            <p className="title-space-lg text-primary text-justify ">
                                 Mindrisers is a parent company of mindrisers
-                                technology pvt.ltd, tummytruck, digitalpalika,
+                                technology pvt.ltd, <Link className="is-link underline" href='https://tummytruck.com.np/'>tummytruck</Link>, <Link className="is-link underline" href='https://digitalpalika.org/'>digitalpalika</Link>,
                                 and the training institute. We are the only
                                 company in Nepal where we guarantee paid
                                 internship and job placement after the course is
