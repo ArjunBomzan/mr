@@ -354,7 +354,7 @@ export default function course(props) {
                                     <SwiperSlide className="max-w-full cursor-grab select-none rounded-xl border border-green-200 bg-green-50 p-5 md:min-w-[407px] ">
                                         <div className="gap-base-half title-space-xl grid grid-cols-[40%,60%]">
                                             <Image
-                                                priority
+                                                
                                                 src={el.image}
                                                 className=" aspect-square rounded-full border-4 border-primary bg-cover object-cover"
                                                 alt=""

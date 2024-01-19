@@ -6,6 +6,7 @@ import Link from "next/link";
 export default function index() {
     return (
         <>
+            <p>test page</p>
             <Link href={"/blogs?page=2"}> /blogs?page=2</Link>
             <br/>
             <Link href={"/blogs?page=3"}> /blogs?page=3</Link>

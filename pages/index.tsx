@@ -232,7 +232,7 @@ export default function Home(props) {
                                                 }px] `}
                                             >
                                                 <Image
-                                                    priority
+                                                    
                                                     alt=""
                                                     src={el.src}
                                                     height={50}
@@ -275,8 +275,8 @@ export default function Home(props) {
                         className="w-full"
                         src={"/assets/images/home/internship-job.jpg"}
                         alt=""
-                        width={1000}
-                        height={1000}
+                        width={500}
+                        height={500}
                     />
                 </div>
 

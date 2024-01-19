@@ -39,7 +39,7 @@ export function BlogCard({
         >
             <Link href={"/blogs/" + slug} className="flex h-full flex-col">
                 <Image
-                    priority
+                    
                     src={makeFullUrl(thumbnail)}
                     alt=""
                     width={500}

@@ -96,7 +96,7 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                                         className="hover:shadow-medium group block h-full rounded-xl border border-border p-5 transition hover:border-primary"
                                     >
                                         <Image
-                                            priority
+                                            
                                             alt=""
                                             src={makeFullUrl(el.image)}
                                             width={300}
@@ -146,7 +146,7 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                                 className="hover:shadow-medium group block h-full rounded-xl border border-border p-5 transition hover:border-primary"
                             >
                                 <Image
-                                    priority
+                                    
                                     alt=""
                                     src={makeFullUrl(el.image)}
                                     width={300}

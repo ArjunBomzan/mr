@@ -96,7 +96,7 @@ export default function BlogSlug(props) {
 
                 <section className="title-space-5xl container  lg:px-[40px] ">
                     <Image
-                        priority
+                        
                         src={makeFullUrl(blog.banner)}
                         height={1000}
                         width={1000}

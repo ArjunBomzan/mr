@@ -91,7 +91,7 @@ const services = ({ successStoreis }) => {
                             return (
                                 <li className="hover:shadow-small relative rounded-xl border border-border p-5 pt-[80px] transition hover:border-primary ">
                                     <Image
-                                        priority
+                                        
                                         src={el.image}
                                         alt=""
                                         height={400}
