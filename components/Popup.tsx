@@ -12,7 +12,6 @@ export default function Popup() {
         settemp((state) => !state);
         setisActive(false);
     }, [route]);
-    console.log({ isActive });
 
     return (
         <section
