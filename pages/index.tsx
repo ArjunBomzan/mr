@@ -15,6 +15,7 @@ import TypeWriter from "../components/common/TypeWriter";
 import HomeContact from "../components/HomePageComponents/HomeContact";
 import { makeFullApiUrl } from "../utils/makeFullUrl";
 import { useState } from "react";
+import Popup from "../components/Popup";
 
 export let typeWriters = [
     "IT skills and expertise",
@@ -156,6 +157,7 @@ export default function Home(props) {
                 {/* <meta name="twitter:image" content={meta_image} /> */}
             </Head>
 
+                    {/* <Popup/> */}
             {/* <div className="container my-7">
                 <TypeWriter contents={["one olne", "two"]} />
             </div> */}

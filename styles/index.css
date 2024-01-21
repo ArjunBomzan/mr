@@ -260,7 +260,7 @@ html {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 100000000000;
+    z-index: 900000;
     width: 40px;
     height: 40px;
     color: white;
@@ -342,18 +342,13 @@ html {
     margin-top: 0.5rem;
 }
 
-.admission-modal {
+#admission-modal {
     display: none;
 }
 
-.admission-modal.active {
-    display: flex;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1050;
+#admission-modal.active {
+    display: flex !important;
+    position: fixed !important;
 }
 
 .overview__wrapper.limited {

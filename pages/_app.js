@@ -20,6 +20,7 @@ import Script from "next/script";
 import Link from "next/link";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
+import Popup from "../components/Popup"
 
 function MyApp({ Component, pageProps }) {
     useEffect(() => {
@@ -170,10 +171,10 @@ function MyApp({ Component, pageProps }) {
             </div>
 
             {/* <Footer /> */}
+            <Popup/>
 
-            <div
+            {/* <div
                 className="admission-modal"
-                id="admission-modal"
                 style={{
                     width: "100%",
                     height: "100vh",
@@ -274,8 +275,8 @@ function MyApp({ Component, pageProps }) {
                         Home
                     </Link>
                 </div>
-            </div>
-            <Script
+            </div> */}
+            {/* <Script
                 id="nine"
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{
@@ -292,7 +293,7 @@ function MyApp({ Component, pageProps }) {
         `,
                 }}
                 defer
-            />
+            /> */}
 
             <span
                 id="scroll-to-top"
