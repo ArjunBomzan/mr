@@ -103,9 +103,9 @@ const Header = () => {
                         )}
                     >
                         <Link href={"/"} className="inline-flex items-center">
-                            <Image
+                            <img
                                 alt="company-logo"
-                                src={Logo}
+                                src={"/mindrisers.png"}
                                 height={200}
                                 width={200}
                                 className="aspect-square h-[3.5rem] w-[3.5rem]"

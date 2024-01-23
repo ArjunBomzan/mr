@@ -450,7 +450,7 @@ export default function Home(props) {
                         </Swoosh>
                     </h2>
                     <Link href={"/success-gallery"} className="inline-block">
-                        <Image
+                        <img
                             alt=""
                             src={"/assets/images/home/success-stories.jpg"}
                             className="mx-auto mt-[40px]"
