@@ -8,10 +8,16 @@ export default function Popup() {
     const [isActive, setisActive] = useState(false);
     const [temp, settemp] = useState(true);
 
+
+  
+
+    const handleClose = () =>{
+        settemp((state) => !state)
+        setisActive(false)
+    }
     useEffect(() => {
-        settemp((state) => !state);
-        setisActive(false);
-    }, [route]);
+        handleClose()
+    }, [route])
 
     return (
         <section
@@ -20,7 +26,7 @@ export default function Popup() {
                 temp ? "temp" : ""
             }bottom-0 left-0 right-0 py-[20px] top-0 z-[100000000000] hidden h-screen overflow-hidden  w-full cursor-pointer items-center justify-center  bg-[rgba(0,0,0,0.8)] `}
             onClick={() => {
-              setisActive(false)
+              handleClose()
             }}
         >
             <div
@@ -34,7 +40,7 @@ export default function Popup() {
                         className="absolutee right-8 top-8 h-[42px] w-[42px] cursor-pointer"
                         src="/assets/images/popup/basil_cross-solid.png"
                         onClick={() => {
-                            setisActive(false)
+                            handleClose()
                         }}
                     />
                 </div>
