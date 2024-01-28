@@ -8,39 +8,38 @@ export default function Popup() {
     const [isActive, setisActive] = useState(false);
     const [temp, settemp] = useState(true);
 
+    const handleClose = () => {
+        settemp((state) => !state);
+        setisActive(false);
+    };
 
-  
-
-    const handleClose = () =>{
-        settemp((state) => !state)
-        setisActive(false)
-    }
     useEffect(() => {
-        handleClose()
-    }, [route])
+        handleClose();
+    }, [route]);
 
+    let className = `${isActive ? "active" : ""}  ${
+        temp ? "temp" : ""
+    } bottom-0 left-0 right-0 py-[20px] top-0 z-[100000000000] hidden h-screen overflow-hidden  w-full cursor-pointer items-center justify-center  bg-[rgba(0,0,0,0.8)] `;
     return (
         <section
             id="admission-modal"
-            className={`${isActive ? "active" : ""}  ${
-                temp ? "temp" : ""
-            }bottom-0 left-0 right-0 py-[20px] top-0 z-[100000000000] hidden h-screen overflow-hidden  w-full cursor-pointer items-center justify-center  bg-[rgba(0,0,0,0.8)] `}
+            className={className}
             onClick={() => {
-              handleClose()
+                handleClose();
             }}
         >
             <div
-                className="relative  max-w-[90%] max-h-[657px] cursor-auto rounded-[24px] bg-[#edfff5] py-[20px] md:py-[40px] overflow-hidden"
+                className="relative  max-h-[657px] max-w-[90%] cursor-auto overflow-hidden rounded-[24px] bg-[#edfff5] py-[20px] md:py-[40px]"
                 onClick={(e) => {
                     e.stopPropagation();
                 }}
             >
-                <div className="mb-[40px]] flex justify-end pr-8 z-20 relative">
+                <div className="mb-[40px]] relative z-20 flex justify-end pr-8">
                     <img
                         className="absolutee right-8 top-8 h-[42px] w-[42px] cursor-pointer"
                         src="/assets/images/popup/basil_cross-solid.png"
                         onClick={() => {
-                            handleClose()
+                            handleClose();
                         }}
                     />
                 </div>
@@ -64,9 +63,9 @@ export default function Popup() {
                     className="absolute -bottom-14 right-0 z-10"
                     src="/assets/images/popup/Ellipse 15.png"
                 />
-                <div className="flex flex-col gap-[20px] relative z-20">
+                <div className="relative z-20 flex flex-col gap-[20px]">
                     <img
-                        className="max-h-[150px] md:max-h-[200px] lg:max-h-[250px] w-full max-w-[500px] self-center object-contain"
+                        className="max-h-[150px] w-full max-w-[500px] self-center object-contain md:max-h-[200px] lg:max-h-[250px]"
                         src="/assets/images/popup//vector.png"
                     />
                     <div>
@@ -80,7 +79,7 @@ export default function Popup() {
                             </h2>
                         </div>
                         <div className="mt-[20px]">
-                            <p className="max-w-[550px] text-center text-[20px] px-3 font-normal leading-7 text-[#686163]">
+                            <p className="max-w-[550px] px-3 text-center text-[20px] font-normal leading-7 text-[#686163]">
                                 Your form have been submitted successfully.
                                 We'll reach out to you soon
                             </p>
