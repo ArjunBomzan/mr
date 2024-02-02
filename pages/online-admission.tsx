@@ -4,9 +4,11 @@ import Swoosh from "../components/common/Swoosh";
 import Stats from "../components/common/Stats";
 import AdmissionForm from "../components/AdmissionComponents/AdmissionForm";
 
-export default function admission() {
+export default function admission(props) {
     let meta_title = "Admission Form";
-    let meta_description = "";
+    let meta_description =
+        "Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers Institute of Technology is the perfect platform for you to learn Digital Skills";
+
     return (
         <>
             <Head>
@@ -53,7 +55,10 @@ export default function admission() {
                     </div>
 
                     <div>
-                        <Stats wrapperClass="bg-green-100 grid grid-cols-2 md:flex md:justify-between md:grid-cols-4 gap-lg xl:max-w-[900px] mx-auto rounded-xl p-5" />
+                        <Stats
+                            coursesCount={props.courses.length}
+                            wrapperClass="bg-green-100 grid grid-cols-2 md:flex md:justify-between md:grid-cols-4 gap-lg xl:max-w-[900px] mx-auto rounded-xl p-5"
+                        />
                     </div>
                 </div>
             </BannerWrapper>
@@ -71,4 +76,23 @@ export default function admission() {
             {/* <Admission /> */}
         </>
     );
+}
+
+export async function getStaticProps() {
+    let data = [];
+
+    try {
+        const res = await fetch(
+            `https://mindrisers.com.np/blog/api/v1/course/`,
+        );
+        data = await res.json();
+    } catch (err) {}
+
+    return {
+        props: {
+            courses: data,
+        },
+        // revalidate: 60 * 60 * 24 * 1  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
+        revalidate: 60 * 1, // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
+    };
 }

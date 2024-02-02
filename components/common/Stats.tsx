@@ -4,7 +4,7 @@
  * @returns
  */
 
-export default function Stats({ wrapperClass }: { wrapperClass?: string }) {
+export default function Stats({ coursesCount, wrapperClass }: { coursesCount?:number, wrapperClass?: string }) {
     type statsType ={
         title:string,
         number:number
@@ -13,7 +13,7 @@ export default function Stats({ wrapperClass }: { wrapperClass?: string }) {
     let data:statsType[] = [
         {
             title: "courses",
-            number: 10,
+            number: coursesCount | 10,
         },
         {
             title: "students",

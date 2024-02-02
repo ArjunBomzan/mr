@@ -41,7 +41,7 @@ export default function VideoPlayer({
                     {videoOpen && (
                         <iframe
                             className="mx-auto  aspect-video w-[75%] max-w-full "
-                            src="https://www.youtube.com/embed/cSp1WBB7gvI?si=-TyP3g1KDIvucer2&autoplay=1"
+                            src="https://www.youtube.com/embed/PYPnovnDSt8?si=tmUDfh20T7dM6kdw2&autoplay=1"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen

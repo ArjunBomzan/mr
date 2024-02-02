@@ -8,7 +8,10 @@ import Link from "next/link";
 
 const services = ({ successStoreis }) => {
     let meta_title = " Internships | Job Placements | Mindrisers Nepal";
-    let meta_description = "";
+    let meta_description =
+    "Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers Institute of Technology is the perfect platform for you to learn Digital Skills";
+
+    
     return (
         <>
             <Head>
