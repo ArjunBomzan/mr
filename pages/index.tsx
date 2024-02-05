@@ -273,7 +273,8 @@ export default function Home(props) {
                 <div
                     className={classNames("lg:pr-[40px]", "order-2 lg:order-1")}
                 >
-                    <Image
+                    <img
+                        loading="lazy"
                         className="w-full"
                         src={"/assets/images/home/internship-job.jpg"}
                         alt=""
