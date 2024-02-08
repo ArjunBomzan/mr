@@ -9,6 +9,7 @@ import { makeFullApiUrl, makeFullUrl } from '../../utils/makeFullUrl'
 import Link from 'next/link'
 import { FaLinkedin, FaTwitter } from 'react-icons/fa'
 import Opportunity from '../../components/common/Opportunity'
+import formatDate from '../../utils/formatDate'
 
 export default function BlogSlug(props) {
     const router = useRouter()
@@ -67,19 +68,19 @@ export default function BlogSlug(props) {
             </Head>
             <BannerWrapper size="small">
                 <div className="container ">
-                    <h1 className="header-md title-space text-center leading-[145%]">
+                    <h1 className=" header-md title-space text-center  leading-[145%]">
                         {blog.title}
                     </h1>
                     <div
-                        className="editor-content title !line-clamp-4 text-center leading-[145%] md:text-[20px]"
+                        className="editor-content title mx-auto !line-clamp-4 max-w-[1000px] !text-center  leading-[145%] md:text-[20px]"
                         dangerouslySetInnerHTML={{
                             __html: clearStyle(blog.short_desc)
                         }}
                     ></div>
                 </div>
             </BannerWrapper>
-            <div className="section-wrapper-m ">
-                <div className=" title-space-3xl container">
+            <div className="section-wrapper-m  ">
+                <div className=" title-space-3xl container hidden">
                     <ul className="flex flex-wrap justify-center gap-[12px]  ">
                         {['all', 'digital marketing', 'flutter', 'python'].map(
                             (el) => {
@@ -93,7 +94,7 @@ export default function BlogSlug(props) {
                     </ul>
                 </div>
 
-                <section className="title-space-5xl container  lg:px-[40px] ">
+                <section className="title-space-5xl lg:px-[40px]] container  relative ">
                     <Image
                         src={makeFullUrl(blog.banner)}
                         height={1000}
@@ -142,6 +143,12 @@ export default function BlogSlug(props) {
                             </div>
                         </div>
                         <div className="flex-grow pb-[40px]">
+                            <div className="flex items-center justify-between pb-3  text-base text-primary md:text-lg   ">
+                                <p>{blog.auth_name} - Author </p>
+                                <p className="text-sm text-body">
+                                    {formatDate(blog.created_at)}
+                                </p>
+                            </div>
                             <div className="text-[18px] leading-[145%]">
                                 <div
                                     className="editor-content "
@@ -151,7 +158,7 @@ export default function BlogSlug(props) {
                                 ></div>
                             </div>
                             <div>
-                                <div className=" mt-[20px]">
+                                <div className=" mt-[20px] hidden">
                                     <ul className="flex flex-wrap gap-[12px]  ">
                                         {[
                                             'all',
@@ -177,7 +184,7 @@ export default function BlogSlug(props) {
                                 <ul>
                                     {props.recentBlogs.map((blog, index) => {
                                         return (
-                                            <li className="title mb-10 flex items-start gap-[10px]">
+                                            <li className="title mb-10 flex items-start gap-[10px] hover:text-primary">
                                                 <span className="flex-center min-h-[40px] min-w-[40px] rounded-xl bg-gray-100 font-bold">
                                                     0{index + 1}
                                                 </span>

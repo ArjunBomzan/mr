@@ -1,23 +1,23 @@
-import Head from "next/head";
-import BannerWrapper from "../../components/common/BannerWrapper";
-import Image from "next/image";
-import Swoosh from "../../components/common/Swoosh";
+import Head from 'next/head'
+import BannerWrapper from '../../components/common/BannerWrapper'
+import Image from 'next/image'
+import Swoosh from '../../components/common/Swoosh'
 
-import React, { useEffect, useState } from "react";
-import Pagination from "rc-pagination";
-import { useRouter } from "next/router";
-import { makeFullApiUrl, makeFullUrl } from "../../utils/makeFullUrl";
-import formatDate from "../../utils/formatDate";
-import Link from "next/link";
+import React, { useEffect, useState } from 'react'
+import Pagination from 'rc-pagination'
+import { useRouter } from 'next/router'
+import { makeFullApiUrl, makeFullUrl } from '../../utils/makeFullUrl'
+import formatDate from '../../utils/formatDate'
+import Link from 'next/link'
 
-const perPage = 16;
+const perPage = 16
 
 const PrevIcon = () => {
-    return <span>{`<`}</span>;
-};
+    return <span>{`<`}</span>
+}
 const NextIcon = () => {
-    return <span>{`>`}</span>;
-};
+    return <span>{`>`}</span>
+}
 
 export function BlogCard({
     thumbnail,
@@ -30,16 +30,15 @@ export function BlogCard({
     created_at,
     views
 }) {
-    const router = useRouter();
-    const type = router.pathname.split("/")[1];
+    const router = useRouter()
+    const type = router.pathname.split('/')[1]
     return (
         <li
-            className=" hover:shadow-medium   group  transition-all hover:-translate-y-1 hover:translate-x-1 rounded-bl-xl rounded-br-xl rounded-tl-xl rounded-tr-xl"
+            className=" hover:shadow-medium   group  rounded-bl-xl rounded-br-xl rounded-tl-xl rounded-tr-xl transition-all hover:-translate-y-1 hover:translate-x-1"
             title={title}
         >
-            <Link href={"/blogs/" + slug} className="flex h-full flex-col">
+            <Link href={'/blogs/' + slug} className="flex h-full flex-col">
                 <Image
-                    
                     src={makeFullUrl(thumbnail)}
                     alt=""
                     width={500}
@@ -47,7 +46,7 @@ export function BlogCard({
                     className="h-[176px] w-full rounded-tl-xl rounded-tr-xl "
                 />
                 <div className="relative flex-grow rounded-bl-xl rounded-br-xl border border-t-0 border-border p-5 pb-14 transition-all duration-1000  ">
-                    <h2 className="title font-semibold leading-[145%]">
+                    <h2 className="title line-clamp-4 font-semibold leading-[145%]">
                         {title}
                     </h2>
                     <div>
@@ -62,66 +61,66 @@ export function BlogCard({
                 </div>
             </Link>
         </li>
-    );
+    )
 }
 
 export default function blogs({
     blogs: data,
     total_data: td,
-    current_page: cp,
+    current_page: cp
 }) {
-    const [blogs, setBlogs] = useState(data);
-    const [total_data, setTotalData] = useState(td);
-    const [current_page, setCurrentPage] = useState(cp);
-    const [searchTerm, setSearchTerm] = useState("");
-    const [showSpinner, setShowSpinner] = useState(false);
-    const [changedOnce, setChangedOnce] = useState(false);
+    const [blogs, setBlogs] = useState(data)
+    const [total_data, setTotalData] = useState(td)
+    const [current_page, setCurrentPage] = useState(cp)
+    const [searchTerm, setSearchTerm] = useState('')
+    const [showSpinner, setShowSpinner] = useState(false)
+    const [changedOnce, setChangedOnce] = useState(false)
 
-    const router = useRouter();
+    const router = useRouter()
 
     const fetchData = async () => {
-        setShowSpinner(true);
+        setShowSpinner(true)
         try {
             const res = await fetch(
                 makeFullApiUrl(
-                    `/singleblog/?size=${perPage}&search=${searchTerm}&page=${current_page}&client-side`,
-                ),
-            );
-            const data = await res.json();
-            setBlogs(data?.navigation?.data || []);
-            setTotalData(data?.navigation?.total_data || 0);
+                    `/singleblog/?size=${perPage}&search=${searchTerm}&page=${current_page}&client-side`
+                )
+            )
+            const data = await res.json()
+            setBlogs(data?.navigation?.data || [])
+            setTotalData(data?.navigation?.total_data || 0)
         } catch (err) {}
-        setShowSpinner(false);
-    };
+        setShowSpinner(false)
+    }
 
     useEffect(() => {
         if (router.query.page) {
-            setCurrentPage(parseInt(`${router.query.page}`));
+            setCurrentPage(parseInt(`${router.query.page}`))
         }
         if (router.query.q) {
-            setSearchTerm(`${router.query.q || ""}`);
+            setSearchTerm(`${router.query.q || ''}`)
         }
-    }, [router.isReady]);
+    }, [router.isReady])
 
     useEffect(() => {
         // if ( (router.query.page || router.query.q)) {
         if (changedOnce) {
-            fetchData();
+            fetchData()
         }
-        setChangedOnce(true);
+        setChangedOnce(true)
         // }
-    }, [current_page]);
+    }, [current_page])
 
     let meta_description =
-        "Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers is the perfect platform for you to learn Digital Skils";
-    let meta_image = `${process.env.NEXT_PUBLIC_DOMAIN}/assets/images/blogs.png`;
+        'Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers is the perfect platform for you to learn Digital Skils'
+    let meta_image = `${process.env.NEXT_PUBLIC_DOMAIN}/assets/images/blogs.png`
 
     let blogsContainerClass =
-        "grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-x-base-half gap-y-base ";
+        'grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-x-base-half gap-y-base '
 
-    const middleIndex = Math.ceil(blogs.length / 2);
-    const firstHalf = blogs.slice(0, middleIndex);
-    const secondHalf = blogs.slice(middleIndex);
+    const middleIndex = Math.ceil(blogs.length / 2)
+    const firstHalf = blogs.slice(0, middleIndex)
+    const secondHalf = blogs.slice(middleIndex)
 
     return (
         <div>
@@ -135,7 +134,7 @@ export default function blogs({
                 <meta property="og:type" content="website" />
                 <meta
                     property="og:title"
-                    content={"Blogs | Mindrisers Nepal"}
+                    content={'Blogs | Mindrisers Nepal'}
                 />
                 <meta property="og:description" content={meta_description} />
                 <meta property="og:image" content={meta_image} />
@@ -146,7 +145,7 @@ export default function blogs({
                 <meta name="twitter:creator" content="@mindrisers" />
                 <meta
                     property="twitter:title"
-                    content={"Blogs | Mindrisers Nepal"}
+                    content={'Blogs | Mindrisers Nepal'}
                 />
                 <meta
                     property="twitter:description"
@@ -171,14 +170,14 @@ export default function blogs({
             <div className="section-wrapper-m ">
                 <div className="section-space container">
                     <ul className="flex flex-wrap justify-center gap-[12px] lg:justify-start  ">
-                        {["all", "digital marketing", "flutter", "python"].map(
+                        {['all', 'digital marketing', 'flutter', 'python'].map(
                             (el) => {
                                 return (
                                     <li className="rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary">
                                         {el}
                                     </li>
-                                );
-                            },
+                                )
+                            }
                         )}
                     </ul>
                 </div>
@@ -202,18 +201,18 @@ export default function blogs({
                                     created_at={blog.created_at}
                                     views={blog.views}
                                 />
-                            );
+                            )
                         })}
                     </ul>
                 </section>
 
                 <div className="container">
                     <section className="section-wrapper-m-xxs rounded-3xl bg-green-50 p-[20px] md:p-[30px]  lg:p-[40px]">
-                        {" "}
+                        {' '}
                         <div className="flex flex-col items-center justify-between gap-[20px] md:flex-row md:gap-0">
                             <div>
                                 <p className="header-md mb-5">
-                                    Getting{" "}
+                                    Getting{' '}
                                     <Swoosh type="secondary">
                                         interested ?
                                     </Swoosh>
@@ -224,7 +223,7 @@ export default function blogs({
                                     great job.
                                 </p>
                             </div>
-                            <Link href={"/courses"}>
+                            <Link href={'/courses'}>
                                 <button className="btn" type="button">
                                     View Courses
                                 </button>
@@ -252,7 +251,7 @@ export default function blogs({
                                     created_at={blog.created_at}
                                     views={blog.views}
                                 />
-                            );
+                            )
                         })}
                     </ul>
                 </section>
@@ -268,17 +267,17 @@ export default function blogs({
                                 }
                                 total={total_data}
                                 onChange={(e) => {
-                                    console.log("pagei n pagin", e);
+                                    console.log('pagei n pagin', e)
                                     // if (router.isReady) {
                                     // let query = router.query;
                                     // query.page = e.toString();
                                     router.replace({
                                         query: {
-                                            page: e,
-                                        },
-                                    });
+                                            page: e
+                                        }
+                                    })
                                     // router.push(`/blogs?page=${e}`);
-                                    setCurrentPage(() => e);
+                                    setCurrentPage(() => e)
                                     // }
                                 }}
                                 // prevIcon={() => {
@@ -332,21 +331,21 @@ export default function blogs({
                 </div>
             )}
         </div>
-    );
+    )
 }
 
 export const getStaticProps = async ({ query }) => {
     const res = await fetch(
-        makeFullApiUrl(`/singleblog/?size=${perPage}&search=${""}&page=${1}`),
-    );
-    const data = await res.json();
+        makeFullApiUrl(`/singleblog/?size=${perPage}&search=${''}&page=${1}`)
+    )
+    const data = await res.json()
 
     return {
         props: {
             blogs: data?.navigation?.data || [],
             total_data: data?.navigation?.total_data || 0,
-            current_page: data?.navigation?.current_page || 1,
+            current_page: data?.navigation?.current_page || 1
         },
-        revalidate: 60 * 1,
-    };
-};
+        revalidate: 60 * 1
+    }
+}
