@@ -108,7 +108,7 @@ export default function Home(props) {
                 "We don't just teach, we guide you towards your dream career. 4,000+ successful placements speak for themselves, proving our dedication to your employability.",
         },
         {
-            title: "experience",
+            title: "years experience",
             number: 7,
             content:
                 "Backed by 7+ years of refining our curriculum and teaching methods, we offer industry-aligned courses that cater to the ever-evolving demands of the IT sector.",
@@ -120,6 +120,8 @@ export default function Home(props) {
                 "Over 10,000 graduates stand as a testament to our commitment to excellence. Join a thriving alumni network and connect with future colleagues.",
         },
     ];
+
+    faqs[0].number = props.courses.length
 
     return (
         <>
