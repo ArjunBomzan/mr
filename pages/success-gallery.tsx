@@ -1,17 +1,16 @@
-import Head from "next/head";
-import BannerWrapper from "../components/common/BannerWrapper";
-import Image from "next/image";
-import Swoosh from "../components/common/Swoosh";
-import Opportunity from "../public/assets/images/common/Opportunity";
-import { makeFullApiUrl } from "../utils/makeFullUrl";
-import Link from "next/link";
+import Head from 'next/head'
+import BannerWrapper from '../components/common/BannerWrapper'
+import Image from 'next/image'
+import Swoosh from '../components/common/Swoosh'
+import Opportunity from '../components/common/Opportunity'
+import { makeFullApiUrl } from '../utils/makeFullUrl'
+import Link from 'next/link'
 
 const services = ({ successStoreis }) => {
-    let meta_title = " Internships | Job Placements | Mindrisers Nepal";
+    let meta_title = ' Internships | Job Placements | Mindrisers Nepal'
     let meta_description =
-    "Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers Institute of Technology is the perfect platform for you to learn Digital Skills";
+        'Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers Institute of Technology is the perfect platform for you to learn Digital Skills'
 
-    
     return (
         <>
             <Head>
@@ -58,7 +57,7 @@ const services = ({ successStoreis }) => {
                             </p>
                         </div>
                         <Image
-                            src={"/assets/images/gallery/people-chatting 1.svg"}
+                            src={'/assets/images/gallery/people-chatting 1.svg'}
                             alt=""
                             height={500}
                             width={500}
@@ -77,24 +76,23 @@ const services = ({ successStoreis }) => {
                 </div>
                 <div className="section-wrapper-p-sm">
                     <ul className="flex flex-wrap justify-center gap-[12px] ">
-                        {["all", "digital marketing", "flutter", "python"].map(
+                        {['all', 'digital marketing', 'flutter', 'python'].map(
                             (el) => {
                                 return (
                                     <li className="rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary">
                                         {el}
                                     </li>
-                                );
-                            },
+                                )
+                            }
                         )}
                     </ul>
                 </div>
                 <div>
-                    <ul className="mt-[65px] grid gap-x-[20px] 2xl:gap-x-[40px] gap-y-[85px] md:grid-cols-2 xl:grid-cols-4">
+                    <ul className="mt-[65px] grid gap-x-[20px] gap-y-[85px] md:grid-cols-2 xl:grid-cols-4 2xl:gap-x-[40px]">
                         {successStoreis.map((el) => {
                             return (
                                 <li className="hover:shadow-small relative rounded-xl border border-border p-5 pt-[80px] transition hover:border-primary ">
                                     <Image
-                                        
                                         src={el.image}
                                         alt=""
                                         height={400}
@@ -102,13 +100,22 @@ const services = ({ successStoreis }) => {
                                         className="absolute left-0 right-0 top-0 mx-auto h-[130px]  w-[130px] -translate-y-[50%] rounded-full border-8 border-green-100 object-cover group-hover:border-primary"
                                     />
                                     <div className="mb-5 text-center leading-[28px]">
-                                        <p className="title mb-[10px] font-semibold text-gray-950 -ml-4 -mr-4 line-clamp-1 " title={el.title}>
+                                        <p
+                                            className="title -ml-4 -mr-4 mb-[10px] line-clamp-1 font-semibold text-gray-950 "
+                                            title={el.title}
+                                        >
                                             {el.title}
                                         </p>
-                                        <h2 className="mb-[4px] -ml-4 -mr-4 line-clamp-1" title={el.position}>
+                                        <h2
+                                            className="-ml-4 -mr-4 mb-[4px] line-clamp-1"
+                                            title={el.position}
+                                        >
                                             {el.position}
                                         </h2>
-                                        <p className="font-medium -ml-4 -mr-4 line-clamp-1" title={el.working_at?.name}>
+                                        <p
+                                            className="-ml-4 -mr-4 line-clamp-1 font-medium"
+                                            title={el.working_at?.name}
+                                        >
                                             <span className="text-secondary">
                                                 @
                                             </span>
@@ -121,62 +128,70 @@ const services = ({ successStoreis }) => {
                                                 Course taken
                                             </p>
                                             <div className="relative">
-                                            <p className="text-[18px] font-medium leading-[28px] invisible">
-                                                one
-                                            </p>
-                                            <p className="text-[18px] font-medium leading-[28px] invisible ">
-                                                two
-                                            </p>
-                                            <p className="text-[18px] font-medium leading-[28px] line-clamp-2 absolute top-0">
-                                                {el.course.page_title}
-                                            </p>
-
+                                                <p className="invisible text-[18px] font-medium leading-[28px]">
+                                                    one
+                                                </p>
+                                                <p className="invisible text-[18px] font-medium leading-[28px] ">
+                                                    two
+                                                </p>
+                                                <p className="absolute top-0 line-clamp-2 text-[18px] font-medium leading-[28px]">
+                                                    {el.course.page_title}
+                                                </p>
                                             </div>
                                         </div>
                                         <div className="my-5">
                                             <h3 className="title-xxs mb-[4px]">
                                                 Tools learned
                                             </h3>
-                                            <ul className="flex gap-[20px]] gap-x-[20px] gap-y-[10px] flex-wrap">
-                                                {el.course.tools.slice(0,5).map((tool) => {
-                                                    if(!tool.image){
-                                                        return null;
-                                                    }
-                                                    return (
-                                                        <li>
-                                                            <Link
-                                                                href={`/courses?tag=${tool?.name}`}
-                                                            >
-                                                                <Image
-                                                                    className="rounded"
-                                                                    src={
-                                                                        tool?.image ||
-                                                                        ""
-                                                                    }
-                                                                    height={24}
-                                                                    width={24}
-                                                                    alt={
-                                                                        tool?.name
-                                                                    }
-                                                                />
-                                                            </Link>
-                                                        </li>
-                                                    );
-                                                })}
+                                            <ul className="gap-[20px]] flex flex-wrap gap-x-[20px] gap-y-[10px]">
+                                                {el.course.tools
+                                                    .slice(0, 5)
+                                                    .map((tool) => {
+                                                        if (!tool.image) {
+                                                            return null
+                                                        }
+                                                        return (
+                                                            <li>
+                                                                <Link
+                                                                    href={`/courses?tag=${tool?.name}`}
+                                                                >
+                                                                    <Image
+                                                                        className="rounded"
+                                                                        src={
+                                                                            tool?.image ||
+                                                                            ''
+                                                                        }
+                                                                        height={
+                                                                            24
+                                                                        }
+                                                                        width={
+                                                                            24
+                                                                        }
+                                                                        alt={
+                                                                            tool?.name
+                                                                        }
+                                                                    />
+                                                                </Link>
+                                                            </li>
+                                                        )
+                                                    })}
                                             </ul>
                                         </div>
                                         <div>
                                             <p className="title-xxs mb-[4px]">
-                                                {" "}
+                                                {' '}
                                                 College
                                             </p>
-                                            <p className="text-[18px] font-medium leading-[28px] line-clamp-1" title={el.college}>
+                                            <p
+                                                className="line-clamp-1 text-[18px] font-medium leading-[28px]"
+                                                title={el.college}
+                                            >
                                                 {el.college}
                                             </p>
                                         </div>
                                     </div>
                                 </li>
-                            );
+                            )
                         })}
                     </ul>
                 </div>
@@ -185,20 +200,20 @@ const services = ({ successStoreis }) => {
                 <Opportunity />
             </section>
         </>
-    );
-};
+    )
+}
 
 export async function getStaticProps() {
-    let data = [];
+    let data = []
     try {
-        const res = await fetch(makeFullApiUrl(`/successstoryhome/`));
-        data = await res.json();
+        const res = await fetch(makeFullApiUrl(`/successstoryhome/`))
+        data = await res.json()
     } catch (err) {}
     return {
         props: { successStoreis: data },
         // revalidate: 60 * 60 * 24  //  1 day
-        revalidate: 60 * 1, // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
-    };
+        revalidate: 60 * 1 // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
+    }
 }
 
-export default services;
+export default services

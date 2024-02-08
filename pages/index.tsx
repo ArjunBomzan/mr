@@ -6,7 +6,7 @@ import Testimonials from "../components/home/Testimonials";
 import Swoosh from "../components/common/Swoosh";
 import BannerWrapper from "../components/common/BannerWrapper";
 import CoursesList from "../components/common/CoursesList";
-import Opportunity from "../public/assets/images/common/Opportunity";
+import Opportunity from "../components/common/Opportunity";
 import Faqs from "../components/common/Faqs";
 import classNames from "classnames";
 import VideoPlayer from "../components/common/VideoPlayer";

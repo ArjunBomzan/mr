@@ -1,27 +1,26 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
-import BannerWrapper from "../../components/common/BannerWrapper";
-import Image from "next/image";
-import { BlogCard } from "./index";
-import Opportunity from "../../public/assets/images/common/Opportunity";
-
-import { FaFacebook } from "react-icons/fa6";
-import { clearStyle } from "../../utils/clearStyle";
-import { makeFullApiUrl, makeFullUrl } from "../../utils/makeFullUrl";
-import Link from "next/link";
-import { FaLinkedin, FaTwitter } from "react-icons/fa";
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import BannerWrapper from '../../components/common/BannerWrapper'
+import Image from 'next/image'
+import { BlogCard } from './index'
+import { FaFacebook } from 'react-icons/fa6'
+import { clearStyle } from '../../utils/clearStyle'
+import { makeFullApiUrl, makeFullUrl } from '../../utils/makeFullUrl'
+import Link from 'next/link'
+import { FaLinkedin, FaTwitter } from 'react-icons/fa'
+import Opportunity from '../../components/common/Opportunity'
 
 export default function BlogSlug(props) {
-    const router = useRouter();
+    const router = useRouter()
 
-    let meta_description = props?.blog?.data?.blog?.short_desc || "";
-    let meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${props?.blog?.data?.blog?.banner}`;
-    let current_url = `${process.env.NEXT_PUBLIC_DOMAIN}${router.asPath}`;
-    console.log(current_url);
+    let meta_description = props?.blog?.data?.blog?.short_desc || ''
+    let meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${props?.blog?.data?.blog?.banner}`
+    let current_url = `${process.env.NEXT_PUBLIC_DOMAIN}${router.asPath}`
+    console.log(current_url)
 
-    let blog = props.blog.data.blog;
+    let blog = props.blog.data.blog
 
-    console.log(blog);
+    console.log(blog)
 
     return (
         <div>
@@ -63,7 +62,7 @@ export default function BlogSlug(props) {
                             content={meta?.content}
                             property={meta?.property}
                         />
-                    );
+                    )
                 })}
             </Head>
             <BannerWrapper size="small">
@@ -74,7 +73,7 @@ export default function BlogSlug(props) {
                     <div
                         className="editor-content title !line-clamp-4 text-center leading-[145%] md:text-[20px]"
                         dangerouslySetInnerHTML={{
-                            __html: clearStyle(blog.short_desc),
+                            __html: clearStyle(blog.short_desc)
                         }}
                     ></div>
                 </div>
@@ -82,21 +81,20 @@ export default function BlogSlug(props) {
             <div className="section-wrapper-m ">
                 <div className=" title-space-3xl container">
                     <ul className="flex flex-wrap justify-center gap-[12px]  ">
-                        {["all", "digital marketing", "flutter", "python"].map(
+                        {['all', 'digital marketing', 'flutter', 'python'].map(
                             (el) => {
                                 return (
                                     <li className="rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary">
                                         {el}
                                     </li>
-                                );
-                            },
+                                )
+                            }
                         )}
                     </ul>
                 </div>
 
                 <section className="title-space-5xl container  lg:px-[40px] ">
                     <Image
-                        
                         src={makeFullUrl(blog.banner)}
                         height={1000}
                         width={1000}
@@ -136,7 +134,7 @@ export default function BlogSlug(props) {
                             </Link>
                             <div className="flex items-center gap-[5px] lg:gap-[10px] xl:flex-col ">
                                 <p className=" title font-semibold leading-[145%]">
-                                {blog.views}
+                                    {blog.views}
                                 </p>
                                 <p className="text-[14px] leading-[145%]">
                                     views
@@ -148,7 +146,7 @@ export default function BlogSlug(props) {
                                 <div
                                     className="editor-content "
                                     dangerouslySetInnerHTML={{
-                                        __html: clearStyle(blog.description),
+                                        __html: clearStyle(blog.description)
                                     }}
                                 ></div>
                             </div>
@@ -156,16 +154,16 @@ export default function BlogSlug(props) {
                                 <div className=" mt-[20px]">
                                     <ul className="flex flex-wrap gap-[12px]  ">
                                         {[
-                                            "all",
-                                            "digital marketing",
-                                            "flutter",
-                                            "python",
+                                            'all',
+                                            'digital marketing',
+                                            'flutter',
+                                            'python'
                                         ].map((el) => {
                                             return (
                                                 <li className="rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary">
                                                     {el}
                                                 </li>
-                                            );
+                                            )
                                         })}
                                     </ul>
                                 </div>
@@ -190,7 +188,7 @@ export default function BlogSlug(props) {
                                                     {blog.title}
                                                 </Link>
                                             </li>
-                                        );
+                                        )
                                     })}
                                 </ul>
                             </div>
@@ -202,7 +200,7 @@ export default function BlogSlug(props) {
                 <section className="section-wrapper-m-sm container">
                     <div className="mb-5 flex justify-between">
                         <p className="sub-header-lg">Recent Post</p>
-                        <Link href={"/blogs"} className="is-link">
+                        <Link href={'/blogs'} className="is-link">
                             View All
                         </Link>
                     </div>
@@ -219,9 +217,9 @@ export default function BlogSlug(props) {
                                     key={blog.slug}
                                     slug={blog.slug}
                                     created_at={blog.created_at}
-                                    views = {blog.views}
+                                    views={blog.views}
                                 />
-                            );
+                            )
                         })}
                     </ul>
                 </section>
@@ -232,7 +230,7 @@ export default function BlogSlug(props) {
         </div>
 
         /* TODO: get in touch missing */
-    );
+    )
 }
 
 export async function getStaticPaths() {
@@ -241,40 +239,39 @@ export async function getStaticPaths() {
     // const paths = courses?.map((course) => ({
     //     params: { slug: course.slug },
     // }))
-    let paths = [];
-    return { paths, fallback: "blocking" };
+    let paths = []
+    return { paths, fallback: 'blocking' }
 }
 
-
 export async function getStaticProps({ params }) {
-    const res = await fetch(makeFullApiUrl(`/singleblogslug/${params.slug}/`));
+    const res = await fetch(makeFullApiUrl(`/singleblogslug/${params.slug}/`))
 
     if (!res.ok) {
         return {
-            notFound: true,
-        };
+            notFound: true
+        }
     }
 
-    const blog = await res.json();
-    console.log("blog", blog);
+    const blog = await res.json()
+    console.log('blog', blog)
 
-    let page = 1;
-    let searchTerm = "";
+    let page = 1
+    let searchTerm = ''
 
-    let blogs = [];
+    let blogs = []
     try {
         const blogsres = await fetch(
             makeFullApiUrl(
-                `/singleblog/?size=4&search=${searchTerm}&page=${page}`,
-            ),
-        );
+                `/singleblog/?size=4&search=${searchTerm}&page=${page}`
+            )
+        )
 
-        const data = await blogsres.json();
-        blogs = data?.navigation?.data || [];
+        const data = await blogsres.json()
+        blogs = data?.navigation?.data || []
     } catch (err) {}
 
     return {
         props: { blog, recentBlogs: blogs },
-        revalidate: 60 * 1  
-    };
+        revalidate: 60 * 1
+    }
 }

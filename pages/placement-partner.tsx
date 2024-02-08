@@ -1,19 +1,16 @@
 // import axios from 'axios'
-import Head from "next/head";
-import BannerWrapper from "../components/common/BannerWrapper";
-import Image from "next/image";
-import Swoosh from "../components/common/Swoosh";
-import Opportunity from "../public/assets/images/common/Opportunity";
-import { makeFullApiUrl, makeFullUrl } from "../utils/makeFullUrl";
-import Link from "next/link";
+import Head from 'next/head'
+import BannerWrapper from '../components/common/BannerWrapper'
+import Image from 'next/image'
+import Swoosh from '../components/common/Swoosh'
+import Opportunity from '../components/common/Opportunity'
+import { makeFullApiUrl, makeFullUrl } from '../utils/makeFullUrl'
+import Link from 'next/link'
 
 export default function Home({ partners }) {
-    let meta_title = "Placement Partners | Internships | Mindrisers Nepal";
+    let meta_title = 'Placement Partners | Internships | Mindrisers Nepal'
     let meta_description =
-    "Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers Institute of Technology is the perfect platform for you to learn Digital Skills";
-
-
-
+        'Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers Institute of Technology is the perfect platform for you to learn Digital Skills'
 
     return (
         <>
@@ -46,7 +43,7 @@ export default function Home({ partners }) {
                         <div className=" text-center lg:text-left">
                             <h1>
                                 <span className="header-md block font-normal leading-[145%] text-secondary">
-                                    We Make sure{" "}
+                                    We Make sure{' '}
                                 </span>
                                 <span className="header-xl block leading-[145%]">
                                     You are fit in right place
@@ -56,7 +53,7 @@ export default function Home({ partners }) {
                                 Join Mindrisers to gain access to exceptional
                                 placement program and expert’s support. Build
                                 competitive advantage and increase your offer
-                                value with Mindrisers.{" "}
+                                value with Mindrisers.{' '}
                             </p>
                             <a href="#partnered-companies">
                                 <button className="btn mt-5">
@@ -78,7 +75,7 @@ export default function Home({ partners }) {
             <section className="section-wrapper-m container">
                 <div className="title-space-3xl text-center">
                     <h2 className="sub-header-lg" id="partnered-companies">
-                        Our Partnered{" "}
+                        Our Partnered{' '}
                         <Swoosh type="secondary">Companies</Swoosh>
                     </h2>
                 </div>
@@ -111,32 +108,32 @@ export default function Home({ partners }) {
                                                     <Image
                                                         className="mr-[10px] inline"
                                                         src={
-                                                            "/assets/images/partners/Vector-1.svg"
+                                                            '/assets/images/partners/Vector-1.svg'
                                                         }
                                                         height={20}
                                                         width={20}
                                                         alt=""
                                                     />
-                                                    {el.type || "Tech Company"}
+                                                    {el.type || 'Tech Company'}
                                                 </p>
                                                 <p className="mt-3 flex items-center text-[14px] leading-[145%]">
                                                     <Image
                                                         className="mr-[10px] inline"
                                                         src={
-                                                            "/assets/images/partners/mdi_location.svg"
+                                                            '/assets/images/partners/mdi_location.svg'
                                                         }
                                                         height={20}
                                                         width={20}
                                                         alt=""
                                                     />
                                                     {el.location ||
-                                                        "Maitighar-13, Kathmandu"}
+                                                        'Maitighar-13, Kathmandu'}
                                                 </p>
                                                 <p className="mt-3 flex items-center text-[14px] leading-[145%] ">
                                                     <Image
                                                         className="mr-[10px] inline"
                                                         src={
-                                                            "/assets/images/partners/streamline_web.svg"
+                                                            '/assets/images/partners/streamline_web.svg'
                                                         }
                                                         height={20}
                                                         width={20}
@@ -146,7 +143,7 @@ export default function Home({ partners }) {
                                                         className=" line-clamp-1 inline hyphens-auto "
                                                         style={{
                                                             wordBreak:
-                                                                "break-all",
+                                                                'break-all'
                                                         }}
                                                     >
                                                         {el.link}
@@ -156,7 +153,7 @@ export default function Home({ partners }) {
                                         </div>
                                     </Link>
                                 </li>
-                            );
+                            )
                         })}
                     </ul>
                 </div>
@@ -165,18 +162,18 @@ export default function Home({ partners }) {
                 <Opportunity />
             </div>
         </>
-    );
+    )
 }
 
 export async function getStaticProps() {
-    let data = [];
+    let data = []
     try {
-        const res = await fetch(makeFullApiUrl(`/placementpartner/`));
-        data = await res.json();
+        const res = await fetch(makeFullApiUrl(`/placementpartner/`))
+        data = await res.json()
     } catch (err) {}
 
     return {
         props: { partners: data },
-        revalidate: 60 * 1,
-    };
+        revalidate: 60 * 1
+    }
 }
