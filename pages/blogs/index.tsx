@@ -9,6 +9,8 @@ import { useRouter } from 'next/router'
 import { makeFullApiUrl, makeFullUrl } from '../../utils/makeFullUrl'
 import formatDate from '../../utils/formatDate'
 import Link from 'next/link'
+import { FaSearch } from 'react-icons/fa'
+import { IoCloseOutline } from 'react-icons/io5'
 
 const perPage = 16
 
@@ -46,7 +48,7 @@ export function BlogCard({
                     className="h-[176px] w-full rounded-tl-xl rounded-tr-xl "
                 />
                 <div className="relative flex-grow rounded-bl-xl rounded-br-xl border border-t-0 border-border p-5 pb-14 transition-all duration-1000  ">
-                    <h2 className="title line-clamp-4 font-semibold leading-[145%]">
+                    <h2 className="title  line-clamp-4  font-semibold leading-[145%]">
                         {title}
                     </h2>
                     <div>
@@ -73,10 +75,14 @@ export default function blogs({
     const [total_data, setTotalData] = useState(td)
     const [current_page, setCurrentPage] = useState(cp)
     const [searchTerm, setSearchTerm] = useState('')
+    const [tempSearchTerm, setTempSearchTerm] = useState('')
+
     const [showSpinner, setShowSpinner] = useState(false)
     const [changedOnce, setChangedOnce] = useState(false)
 
     const router = useRouter()
+
+    const currentQuery = router.query
 
     const fetchData = async () => {
         setShowSpinner(true)
@@ -99,6 +105,7 @@ export default function blogs({
         }
         if (router.query.q) {
             setSearchTerm(`${router.query.q || ''}`)
+            setTempSearchTerm(`${router.query.q || ''}`)
         }
     }, [router.isReady])
 
@@ -109,7 +116,14 @@ export default function blogs({
         }
         setChangedOnce(true)
         // }
-    }, [current_page])
+    }, [current_page, searchTerm])
+
+
+    function clearFilter(except?: string) {
+        setSearchTerm('')
+        setTempSearchTerm('')
+        setCurrentPage(1)
+    }
 
     let meta_description =
         'Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers is the perfect platform for you to learn Digital Skils'
@@ -118,9 +132,11 @@ export default function blogs({
     let blogsContainerClass =
         'grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-x-base-half gap-y-base '
 
-    const middleIndex = Math.ceil(blogs.length / 2)
+    const middleIndex = Math.ceil(blogs.length / (blogs.length > 4 ? 2 : 1))
     const firstHalf = blogs.slice(0, middleIndex)
     const secondHalf = blogs.slice(middleIndex)
+
+
 
     return (
         <div>
@@ -168,7 +184,7 @@ export default function blogs({
             </BannerWrapper>
 
             <div className="section-wrapper-m ">
-                <div className="section-space container">
+                <div className="section-space container hidden">
                     <ul className="flex flex-wrap justify-center gap-[12px] lg:justify-start  ">
                         {['all', 'digital marketing', 'flutter', 'python'].map(
                             (el) => {
@@ -180,6 +196,57 @@ export default function blogs({
                             }
                         )}
                     </ul>
+                </div>
+                <div className="section-space container mb-20">
+                    <form
+                        className="flex items-center justify-end gap-2 self-end "
+                        onSubmit={(e) => {
+                            e.preventDefault()
+                            router.replace({
+                                query: {
+                                    // ...currentQuery,
+                                    q: (e.target as HTMLFormElement).searchTerm
+                                        .value //Property 'searchTerm' does not exist on type 'EventTarget
+                                }
+                            })
+                            // clearFilter('q')
+                            setCurrentPage(1)
+                            setSearchTerm(
+                                (e.target as HTMLFormElement).searchTerm.value
+                            )
+                        }}
+                    >
+                        <div className="relative inline-block ">
+                            <input
+                                value={tempSearchTerm}
+                                onChange={(e) => {
+                                    // setSearchTerm(e.target.value)
+                                    setTempSearchTerm(e.target.value)
+                                }}
+                                name="searchTerm"
+                                type="text"
+                                className=" form-control border border-border px-4 py-2 focus:border-primary focus:text-primary focus:outline-none lg:w-64"
+                            />
+                            {tempSearchTerm.length > 0 && (
+                                <IoCloseOutline
+                                    onClick={() => {
+                                        clearFilter()
+                                        router.replace({
+                                            query: {
+                                                // ...currentQuery,
+                                                q: ''
+                                            }
+                                        })
+                                    }}
+                                    className="clickable absolute right-2 top-[50%] -translate-y-[50%] text-2xl font-bold"
+                                />
+                            )}
+                        </div>
+
+                        <button className="btn-simple">
+                            <FaSearch />
+                        </button>
+                    </form>
                 </div>
 
                 <section className="container">
@@ -204,6 +271,9 @@ export default function blogs({
                             )
                         })}
                     </ul>
+                    <div className=" text-center text-2xl">
+                        {blogs.length === 0 && <p>No Such Blog Found</p>}
+                    </div>
                 </section>
 
                 <div className="container">
@@ -267,12 +337,12 @@ export default function blogs({
                                 }
                                 total={total_data}
                                 onChange={(e) => {
-                                    console.log('pagei n pagin', e)
                                     // if (router.isReady) {
                                     // let query = router.query;
                                     // query.page = e.toString();
                                     router.replace({
                                         query: {
+                                            ...currentQuery,
                                             page: e
                                         }
                                     })
@@ -327,7 +397,7 @@ export default function blogs({
 
             {showSpinner && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black  bg-opacity-60">
-                    <div className="h-16 w-16 animate-spin rounded-full border-t-4 border-white"></div>
+                    <div className="h-16 w-16   animate-spin rounded-full  border-t-4 border-white"></div>
                 </div>
             )}
         </div>
