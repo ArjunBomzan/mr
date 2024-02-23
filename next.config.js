@@ -31,6 +31,8 @@ const env = {
 }
 const images = {
   domains: ["mindrisers.com.np","picsum.photos","192.168.1.4"],
+  unoptimized:true
+
 }
 
 module.exports = withBundleAnalyzer({
