@@ -1,11 +1,17 @@
-import Head from "next/head";
+import Head from 'next/head'
+import { makeFullUrl } from '../utils/makeFullUrl'
 
 export default function Home(props) {
-    let meta_title = "About us | mindrisers Nepal";
-    let meta_description = "";
+    let meta_title = 'About us | mindrisers Nepal'
+    let meta_description = ''
     return (
         <>
             <Head>
+                <link
+                    rel="canonical"
+                    href={makeFullUrl('/about-us')}
+                    
+                />
                 <title>About Us</title>
                 <meta
                     name="keywords"
@@ -30,5 +36,5 @@ export default function Home(props) {
             </Head>
             <main>About us</main>
         </>
-    );
+    )
 }

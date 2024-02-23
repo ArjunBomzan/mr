@@ -13,7 +13,7 @@ import VideoPlayer from "../components/common/VideoPlayer";
 import Stats from "../components/common/Stats";
 import TypeWriter from "../components/common/TypeWriter";
 import HomeContact from "../components/HomePageComponents/HomeContact";
-import { makeFullApiUrl } from "../utils/makeFullUrl";
+import { makeFullApiUrl, makeFullUrl } from "../utils/makeFullUrl";
 import { useState } from "react";
 import Popup from "../components/Popup";
 
@@ -126,6 +126,11 @@ export default function Home(props) {
     return (
         <>
             <Head>
+            <link
+                    rel="canonical"
+                    href={makeFullUrl("")}
+                    
+                />
                 <title>
                     Best IT Training Institute in kathmandu, Nepal | Mindrisers
                     Institute of Technology

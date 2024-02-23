@@ -3,7 +3,7 @@ import BannerWrapper from '../components/common/BannerWrapper'
 import Image from 'next/image'
 import Swoosh from '../components/common/Swoosh'
 import Opportunity from '../components/common/Opportunity'
-import { makeFullApiUrl } from '../utils/makeFullUrl'
+import { makeFullApiUrl, makeFullUrl } from '../utils/makeFullUrl'
 import Link from 'next/link'
 
 const services = ({ successStoreis }) => {
@@ -14,6 +14,11 @@ const services = ({ successStoreis }) => {
     return (
         <>
             <Head>
+                <link
+                    rel="canonical"
+                    href={makeFullUrl('/success-gallery')}
+                    
+                />
                 <title>Success stories of mindrisers trainees</title>
                 <meta
                     name="keywords"

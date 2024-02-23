@@ -15,6 +15,11 @@ export default function Home({ partners }) {
     return (
         <>
             <Head>
+                <link
+                    rel="canonical"
+                    href={makeFullUrl('/placement-partner')}
+                    
+                />
                 <title>Placement Partners for mindrisers trainees</title>
                 <meta
                     name="keywords"

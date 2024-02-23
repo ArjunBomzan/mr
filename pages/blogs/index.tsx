@@ -118,7 +118,6 @@ export default function blogs({
         // }
     }, [current_page, searchTerm])
 
-
     function clearFilter(except?: string) {
         setSearchTerm('')
         setTempSearchTerm('')
@@ -136,11 +135,14 @@ export default function blogs({
     const firstHalf = blogs.slice(0, middleIndex)
     const secondHalf = blogs.slice(middleIndex)
 
-
-
     return (
         <div>
             <Head>
+                <link
+                    rel="canonical"
+                    href={makeFullUrl('/blogs')}
+                    
+                />
                 <title>Blogs - Trends, Ideas and Tips </title>
                 <meta
                     name="keywords"
