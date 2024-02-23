@@ -37,6 +37,7 @@ type courseType = {
 };
 
 export default function course(props) {
+
     let course: courseType = props.course;
     const router = useRouter();
 
@@ -422,7 +423,6 @@ export async function getStaticProps({ params }) {
     );
     const success_stories = await success_storie_res.json();
 
-    // console.log(success_stories);
 
     if (!res.ok) {
         return {
@@ -431,6 +431,15 @@ export async function getStaticProps({ params }) {
     }
 
     const course = await res.json();
+
+    if(!(course?.data?.course?.length > 0) ){
+
+
+        return {
+            notFound: true,
+        };
+
+    }
 
     return {
         props: {
