@@ -15,7 +15,6 @@ import TypeWriter from "../components/common/TypeWriter";
 import HomeContact from "../components/HomePageComponents/HomeContact";
 import { makeFullApiUrl, makeFullUrl } from "../utils/makeFullUrl";
 import { useState } from "react";
-import Popup from "../components/Popup";
 
 export let typeWriters = [
     "IT skills and expertise",
@@ -280,7 +279,7 @@ export default function Home(props) {
                 <div
                     className={classNames("lg:pr-[40px]", "order-2 lg:order-1")}
                 >
-                    <img
+                    <Image
                         loading="lazy"
                         className="w-full"
                         src={"/assets/images/home/internship-job.jpg"}
@@ -457,7 +456,7 @@ export default function Home(props) {
                         </Swoosh>
                     </h2>
                     <Link href={"/success-gallery"} className="inline-block">
-                        <img
+                        <Image
                             alt=""
                             src={"/assets/images/home/success-stories.jpg"}
                             className="mx-auto mt-[40px]"

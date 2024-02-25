@@ -1,44 +1,43 @@
-import Logo from "../../assets/mindrisers.png";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { Inter } from "@next/font/google";
-import { RiMenu3Line } from "react-icons/ri";
-import { useEffect, useRef, useState } from "react";
-import classNames from "classnames";
-const inter = Inter({ subsets: ["latin"] });
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { Inter } from '@next/font/google'
+import { RiMenu3Line } from 'react-icons/ri'
+import { useEffect, useRef, useState } from 'react'
+import classNames from 'classnames'
+const inter = Inter({ subsets: ['latin'] })
 
 const Header = () => {
-    const router = useRouter();
-    const route = router.route; //  eg: /courses /blogs
+    const router = useRouter()
+    const route = router.route //  eg: /courses /blogs
 
     let navLinks = [
         // split middlenav and right nav
         {
-            title: "our courses",
-            url: "/courses",
+            title: 'our courses',
+            url: '/courses'
         },
         {
-            title: "post +2 courses",
-            url: "/after+2-courses",
+            title: 'post +2 courses',
+            url: '/after+2-courses'
         },
         {
-            title: "placement partner",
-            url: "/placement-partner",
+            title: 'placement partner',
+            url: '/placement-partner'
         },
         {
-            title: "successful stories",
-            url: "/success-gallery",
+            title: 'successful stories',
+            url: '/success-gallery'
         },
         {
-            title: "blogs",
-            url: "/blogs",
+            title: 'blogs',
+            url: '/blogs'
         },
         {
-            title: "contact us",
-            url: "/contact-us",
-        },
-    ];
+            title: 'contact us',
+            url: '/contact-us'
+        }
+    ]
 
     /* for marking active nav link */
     const genCommonNavLinkClass = (el) => {
@@ -56,35 +55,35 @@ const Header = () => {
     after:rounded-full
     after:bg-primary
     `
-                : ""
-        }`;
-        return commonNavLinkClass;
-    };
+                : ''
+        }`
+        return commonNavLinkClass
+    }
 
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false)
     const commonLink = classNames(
-        "gap-[1.875rem] capitalize items-center  flex flex-col xl:flex-row ",
-    );
+        'gap-[1.875rem] capitalize items-center  flex flex-col xl:flex-row '
+    )
 
-    const myElementParent = useRef(null);
-    const myElementRef = useRef(null);
-    const myElementRefSecond = useRef(null);
+    const myElementParent = useRef(null)
+    const myElementRef = useRef(null)
+    const myElementRefSecond = useRef(null)
     useEffect(() => {
-        const elementHeight = myElementRef.current.clientHeight;
-        const elementHeightSecond = myElementRefSecond.current.clientHeight;
+        const elementHeight = myElementRef.current.clientHeight
+        const elementHeightSecond = myElementRefSecond.current.clientHeight
 
         if (menuOpen) {
             myElementParent.current.style.maxHeight = `${
                 elementHeight + 30 + elementHeightSecond
-            }px`; // 30 being gap between them
+            }px` // 30 being gap between them
         } else {
             // myElementParent.current.style.maxHeight = `${0}px`  // 30 being gap between them
         }
-    }, [menuOpen]);
+    }, [menuOpen])
 
     useEffect(() => {
-        setMenuOpen(false);
-    }, [route]);
+        setMenuOpen(false)
+    }, [route])
 
     return (
         <>
@@ -95,23 +94,23 @@ const Header = () => {
                 <div className="container">
                     <div
                         className={classNames(
-                            " shadow-small ease-linearr relative z-50 flex flex-wrap  items-center justify-between overflow-hidden bg-white  px-[1.875rem] py-[0.625rem] transition-all xl:justify-center xl:gap-[30px] xl:overflow-visible xl:py-[20px] xl:text-center 2xl:justify-between 2xl:gap-0 2xl:py-[10px] ",
+                            ' shadow-small ease-linearr relative z-50 flex flex-wrap  items-center justify-between overflow-hidden bg-white  px-[1.875rem] py-[0.625rem] transition-all xl:justify-center xl:gap-[30px] xl:overflow-visible xl:py-[20px] xl:text-center 2xl:justify-between 2xl:gap-0 2xl:py-[10px] ',
                             {
-                                "rounded-[0px] duration-[.3s]": menuOpen, // duration of opening
-                                "rounded-[6.25rem] duration-1000": !menuOpen,
-                            },
+                                'rounded-[0px] duration-[.3s]': menuOpen, // duration of opening
+                                'rounded-[6.25rem] duration-1000': !menuOpen
+                            }
                         )}
                     >
-                        <Link href={"/"} className="inline-flex items-center">
-                            <img
+                        <Link href={'/'} className="inline-flex items-center">
+                            <Image
                                 alt="company-logo"
-                                src={"/mindrisers.png"}
+                                src={'/mindrisers.png'}
                                 height={200}
                                 width={200}
                                 className="aspect-square h-[3.5rem] w-[3.5rem]"
                             />
                             <p
-                                className={`${inter.className} ml-[7px] title-xl xl:hidden 2xl:block`}
+                                className={`${inter.className} title-xl ml-[7px] xl:hidden 2xl:block`}
                             >
                                 mindrisers
                             </p>
@@ -119,18 +118,17 @@ const Header = () => {
                         <RiMenu3Line
                             className="text-3xl xl:hidden"
                             onClick={() => {
-                                setMenuOpen(!menuOpen);
+                                setMenuOpen(!menuOpen)
                             }}
                         />
                         <div
                             ref={myElementParent}
                             className={classNames(
-                                "ease-linearr flex max-h-0  w-full  flex-col gap-[1.875rem] overflow-hidden transition-all duration-[.3s] xl:max-h-[999px] xl:w-auto xl:flex-row xl:overflow-visible",
+                                'ease-linearr flex max-h-0  w-full  flex-col gap-[1.875rem] overflow-hidden transition-all duration-[.3s] xl:max-h-[999px] xl:w-auto xl:flex-row xl:overflow-visible',
                                 {
-                                    "!max-h-0 xl:!max-h-[999px]": !menuOpen,
-                                    "max-h-[988px]] mt-[1.875rem]    ":
-                                        menuOpen,
-                                },
+                                    '!max-h-0 xl:!max-h-[999px]': !menuOpen,
+                                    'max-h-[988px]] mt-[1.875rem]    ': menuOpen
+                                }
                             )}
                         >
                             <ul ref={myElementRef} className={commonLink}>
@@ -139,14 +137,14 @@ const Header = () => {
                                         <li
                                             key={el.title}
                                             className={`  ${genCommonNavLinkClass(
-                                                el,
+                                                el
                                             )}`}
                                         >
                                             <Link href={el.url}>
                                                 {el.title}
                                             </Link>
                                         </li>
-                                    );
+                                    )
                                 })}
                             </ul>
 
@@ -157,25 +155,25 @@ const Header = () => {
                                         <li
                                             key={el.title}
                                             className={`${genCommonNavLinkClass(
-                                                el,
+                                                el
                                             )} `}
                                         >
                                             <Link href={el.url}>
                                                 {el.title}
                                             </Link>
                                         </li>
-                                    );
+                                    )
                                 })}
                                 <li>
                                     <Link
                                         className="btn-simple targe relative inline-block overflow-visible"
-                                        href={"/online-admission"}
+                                        href={'/online-admission'}
                                     >
                                         Admission
                                         {/* <div className="absolute bottom-0 h-[200px] w-[200px] translate-y-full border bg-orange">
                                             one tow three
                                         </div> */}
-                                        {route === "/" && (
+                                        {route === '/' && (
                                             <div className="arrow-pointer translate-x-[50%]] absolute bottom-[-40%] right-[20%] z-[-1] h-[812px] w-[1561px]  translate-y-[100%] bg-cover bg-center bg-no-repeat "></div>
                                         )}
                                     </Link>
@@ -187,7 +185,7 @@ const Header = () => {
                 </div>
             </div>
         </>
-    );
-};
+    )
+}
 
-export default Header;
+export default Header

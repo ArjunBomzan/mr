@@ -1,70 +1,78 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 export default function Popup() {
-    const router = useRouter();
-    const route = router.route; //  eg:
-    const [isActive, setisActive] = useState(false);
-    const [temp, settemp] = useState(true);
+    const router = useRouter()
+    const route = router.route //  eg:
+    const [isActive, setisActive] = useState(false)
+    const [temp, settemp] = useState(true)
 
     const handleClose = () => {
-        settemp((state) => !state);
-        setisActive(false);
-    };
+        settemp((state) => !state)
+        setisActive(false)
+    }
 
     useEffect(() => {
-        handleClose();
-    }, [route]);
+        handleClose()
+    }, [route])
 
-    let className = `${isActive ? "active" : ""}  ${
-        temp ? "temp" : ""
-    } bottom-0 left-0 right-0 py-[20px] top-0 z-[100000000000] hidden h-screen overflow-hidden  w-full cursor-pointer items-center justify-center  bg-[rgba(0,0,0,0.8)] `;
+    let className = `${isActive ? 'active' : ''}  ${
+        temp ? 'temp' : ''
+    } bottom-0 left-0 right-0 py-[20px] top-0 z-[100000000000] hidden h-screen overflow-hidden  w-full cursor-pointer items-center justify-center  bg-[rgba(0,0,0,0.8)] `
     return (
         <section
             id="admission-modal"
             className={className}
             onClick={() => {
-                handleClose();
+                handleClose()
             }}
         >
             <div
                 className="relative  max-h-[657px] max-w-[90%] cursor-auto overflow-hidden rounded-[24px] bg-[#edfff5] py-[20px] md:py-[40px]"
                 onClick={(e) => {
-                    e.stopPropagation();
+                    e.stopPropagation()
                 }}
             >
                 <div className="mb-[40px]] relative z-20 flex justify-end pr-8">
-                    <img
+                    <Image
+                        alt=""
                         className="absolutee right-8 top-8 h-[42px] w-[42px] cursor-pointer"
                         src="/assets/images/popup/basil_cross-solid.png"
                         onClick={() => {
-                            handleClose();
+                            handleClose()
                         }}
                     />
                 </div>
-                <img
+                <Image
+                    alt=""
                     className="absolute -top-24 right-0 z-10"
                     src="/assets/images/popup/Ellipse 15.png"
                 />
-                <img
+                <Image
+                    alt=""
                     className="absolute right-0 top-2 z-10"
                     src="/assets/images/popup/Ellipse 15.png"
                 />
-                <img
+                <Image
+                    alt=""
                     className="absolute right-0 top-32 z-10"
                     src="/assets/images/popup/Ellipse 15.png"
                 />
-                <img
+                <Image
+                    alt=""
                     className="absolute bottom-20 right-0 z-10"
                     src="/assets/images/popup/Ellipse 15.png"
                 />
-                <img
+                <Image
+                    alt=""
                     className="absolute -bottom-14 right-0 z-10"
                     src="/assets/images/popup/Ellipse 15.png"
                 />
                 <div className="relative z-20 flex flex-col gap-[20px]">
-                    <img
+                    <Image
+                        alt=""
                         className="max-h-[150px] w-full max-w-[500px] self-center object-contain md:max-h-[200px] lg:max-h-[250px]"
                         src="/assets/images/popup//vector.png"
                     />
@@ -89,16 +97,14 @@ export default function Popup() {
                         {/* <button className="flex items-center gap-[20px] rounded-[30px] bg-[#018343] px-[16px] py-[10px] text-[16px] font-normal leading-6 text-white"> */}
                         <Link href="/" className="btn">
                             Explore Mindrisers
-                            {/* <img src="/assets/images/popup/white_arrow.png" /> */}
                         </Link>
                         {/* <button className="flex items-center gap-[20px] rounded-[30px] border-2 border-[#018343] bg-white px-[16px] py-[10px] text-[16px] font-normal leading-6 text-[#018343]"> */}
                         <Link href="/courses" className="btn-outline">
                             Explore Courses
-                            {/* <img src="/assets/images/popup/green_arrow.png" /> */}
                         </Link>
                     </div>
                 </div>
             </div>
         </section>
-    );
+    )
 }
