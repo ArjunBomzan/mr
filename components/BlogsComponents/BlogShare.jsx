@@ -1,8 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
-import Facebook from "../../assets/social/iconmonstr-facebook-4-240.png"
-import Twitter from "../../assets/social/iconmonstr-twitter-4-240.png"
-import Linkedin from "../../assets/social/iconmonstr-linkedin-4-240.png"
+import Facebook from "../../assets/social/iconmonstr-facebook-4-240.webp"
+import Twitter from "../../assets/social/iconmonstr-twitter-4-240.webp"
+import Linkedin from "../../assets/social/iconmonstr-linkedin-4-240.webp"
 
 
 export default function BlogShare() {

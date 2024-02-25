@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Logo from '../../assets/mindrisers.png'
+import Logo from '../../assets/mindrisers.webp'
 
 const HeaderLeft = () => {
   return (

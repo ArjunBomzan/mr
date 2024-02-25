@@ -1,4 +1,4 @@
-import OfficeBg from "../../assets/aboutUsPage/office.jpg";
+import OfficeBg from "../../assets/aboutUsPage/office.webp";
 const AboutUsBanner = () => {
   return (
     <div className='w-full bg-office-bg bg-fixed' style={{ backgroundImage: `url(${OfficeBg.src})` }}>

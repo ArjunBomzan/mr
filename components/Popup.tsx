@@ -39,7 +39,7 @@ export default function Popup() {
                     <Image
                         alt=""
                         className="absolutee right-8 top-8 h-[42px] w-[42px] cursor-pointer"
-                        src="/assets/images/popup/basil_cross-solid.png"
+                        src="/assets/images/popup/basil_cross-solid.webp"
                         onClick={() => {
                             handleClose()
                         }}
@@ -48,33 +48,33 @@ export default function Popup() {
                 <Image
                     alt=""
                     className="absolute -top-24 right-0 z-10"
-                    src="/assets/images/popup/Ellipse 15.png"
+                    src="/assets/images/popup/Ellipse 15.webp"
                 />
                 <Image
                     alt=""
                     className="absolute right-0 top-2 z-10"
-                    src="/assets/images/popup/Ellipse 15.png"
+                    src="/assets/images/popup/Ellipse 15.webp"
                 />
                 <Image
                     alt=""
                     className="absolute right-0 top-32 z-10"
-                    src="/assets/images/popup/Ellipse 15.png"
+                    src="/assets/images/popup/Ellipse 15.webp"
                 />
                 <Image
                     alt=""
                     className="absolute bottom-20 right-0 z-10"
-                    src="/assets/images/popup/Ellipse 15.png"
+                    src="/assets/images/popup/Ellipse 15.webp"
                 />
                 <Image
                     alt=""
                     className="absolute -bottom-14 right-0 z-10"
-                    src="/assets/images/popup/Ellipse 15.png"
+                    src="/assets/images/popup/Ellipse 15.webp"
                 />
                 <div className="relative z-20 flex flex-col gap-[20px]">
                     <Image
                         alt=""
                         className="max-h-[150px] w-full max-w-[500px] self-center object-contain md:max-h-[200px] lg:max-h-[250px]"
-                        src="/assets/images/popup//vector.png"
+                        src="/assets/images/popup//vector.webp"
                     />
                     <div>
                         <div>

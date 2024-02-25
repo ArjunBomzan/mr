@@ -23,7 +23,7 @@ const Trainings = (props) => {
             onClick={() =>{
               router.push("/courses")
             }}
-             title='remove tag' className=' inline absolute cursor-pointer  text-red-400' width={24} height={24} src={"/assets/images/iconmonstr-x-mark-6-240.png"} />
+             title='remove tag' className=' inline absolute cursor-pointer  text-red-400' width={24} height={24} src={"/assets/images/iconmonstr-x-mark-6-240.webp"} />
           </span>
           }
 

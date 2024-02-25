@@ -81,7 +81,7 @@ const Courses = ({ courses_all }) => {
 
     let meta_description =
         'Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers is the perfect platform for you to learn Digital Skils'
-    let meta_image = `${process.env.NEXT_PUBLIC_DOMAIN}/assets/images/courses.png`
+    let meta_image = `${process.env.NEXT_PUBLIC_DOMAIN}/assets/images/courses.webp`
 
     let recommendedCourses = allCourses.filter((el) => {
         if (courses.find((existing) => existing.id == el.id)) {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo from "../../assets/mindrisers-white.png";
+import Logo from "../../assets/mindrisers-white.webp";
 import { Inter } from "@next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import Link from "next/link";

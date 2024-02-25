@@ -126,7 +126,7 @@ export default function blogs({
 
     let meta_description =
         'Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers is the perfect platform for you to learn Digital Skils'
-    let meta_image = `${process.env.NEXT_PUBLIC_DOMAIN}/assets/images/blogs.png`
+    let meta_image = `${process.env.NEXT_PUBLIC_DOMAIN}/assets/images/blogs.webp`
 
     let blogsContainerClass =
         'grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-x-base-half gap-y-base '

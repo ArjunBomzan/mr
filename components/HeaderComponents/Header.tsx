@@ -1,4 +1,4 @@
-import Logo from "../../assets/mindrisers.png";
+import Logo from "../../assets/mindrisers.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";

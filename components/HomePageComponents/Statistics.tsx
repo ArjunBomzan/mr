@@ -2,8 +2,8 @@ import Image from 'next/image';
 import React, { useState } from 'react'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import StatisticsImage from '../../assets/homePage/statistics-img.jpg'
-import StatisticsBg from '../../assets/homePage/statistics-bg.jpg'
+import StatisticsImage from '../../assets/homePage/statistics-img.webp'
+import StatisticsBg from '../../assets/homePage/statistics-bg.webp'
 
 // Add visibility sensor for animations
 interface progressInterface {

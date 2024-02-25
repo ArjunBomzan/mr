@@ -1,5 +1,5 @@
-import Background from '../../assets/homePage/statistics-bg.jpg'
-import FakePerson from '../../assets/aboutUsPage/fakeperson.jpg'
+import Background from '../../assets/homePage/statistics-bg.webp'
+import FakePerson from '../../assets/aboutUsPage/fakeperson.webp'
 import Image from 'next/image'
 interface personInterface {
   name: string,

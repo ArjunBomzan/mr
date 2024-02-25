@@ -21,8 +21,8 @@ async function convertImagesToWebP(directoryPath) {
             await convertImagesToWebP(filePath); // Recursively process subdirectories
         } else if (stats.isFile()) {
             const extension = path.extname(file).toLowerCase();
-            // if (['.jpg', '.jpeg', '.png', '.webp', '.svg'].includes(extension)) {
-            if (['.jpg', '.jpeg', '.png', '.webp'].includes(extension)) {
+            // if (['.webp', '.jpeg', '.webp', '.webp', '.svg'].includes(extension)) {
+            if (['.webp', '.jpeg', '.webp', '.webp'].includes(extension)) {
                 const outputDir = path.dirname(filePath).replace('Images', 'Build'); // Adjust the output directory path
                 fs.mkdirSync(outputDir, { recursive: true }); // Ensure output directory exists
                 await imagemin([filePath], {

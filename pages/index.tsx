@@ -69,15 +69,15 @@ export default function Home(props) {
     
 
     let growWithUsers = [
-        { src: "/assets/images/home/banner/alija.jpg" },
-        { src: "/assets/images/home/banner/deepa.jpg" },
-        { src: "/assets/images/home/banner/nikita.jpg" },
+        { src: "/assets/images/home/banner/alija.webp" },
+        { src: "/assets/images/home/banner/deepa.webp" },
+        { src: "/assets/images/home/banner/nikita.webp" },
     ];
 
     // let courses = [
     //     {
     //         title: "MERN stack training in nepal",
-    //         image: "https://mindrisers.com.np/_next/image?url=https%3A%2F%2Fmindrisers.com.np%2F%2Fstatic%2FImages%2Fcourses%2FMern_wiWtVlC.jpg&w=640&q=75",
+    //         image: "https://mindrisers.com.np/_next/image?url=https%3A%2F%2Fmindrisers.com.np%2F%2Fstatic%2FImages%2Fcourses%2FMern_wiWtVlC.webp&w=640&q=75",
     //         duration: "3 months",
     //         slug: "mern",
     //     },
@@ -282,7 +282,7 @@ export default function Home(props) {
                     <Image
                         loading="lazy"
                         className="w-full"
-                        src={"/assets/images/home/internship-job.jpg"}
+                        src={"/assets/images/home/internship-job.webp"}
                         alt=""
                         width={500}
                         height={500}
@@ -458,7 +458,7 @@ export default function Home(props) {
                     <Link href={"/success-gallery"} className="inline-block">
                         <Image
                             alt=""
-                            src={"/assets/images/home/success-stories.jpg"}
+                            src={"/assets/images/home/success-stories.webp"}
                             className="mx-auto mt-[40px]"
                             width={700}
                             height={700}

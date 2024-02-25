@@ -1,4 +1,4 @@
-import Background from '../../assets/homePage/blog-splash.jpg'
+import Background from '../../assets/homePage/blog-splash.webp'
 
 const BlogsBanner = (props) => {
   return (

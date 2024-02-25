@@ -1,7 +1,7 @@
 import Image from "next/image"
-import master from "../../assets/trainingIcons/1-min.png"
-import tie from "../../assets/trainingIcons/3-min.png"
-import brains from "../../assets/trainingIcons/Untitled-2-min.png"
+import master from "../../assets/trainingIcons/1-min.webp"
+import tie from "../../assets/trainingIcons/3-min.webp"
+import brains from "../../assets/trainingIcons/Untitled-2-min.webp"
 
 const TrainingSubHeader = () => {
   return (
