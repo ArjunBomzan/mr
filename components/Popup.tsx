@@ -43,38 +43,53 @@ export default function Popup() {
                         onClick={() => {
                             handleClose()
                         }}
+                        width={100}
+                        height={100}
                     />
                 </div>
                 <Image
                     alt=""
                     className="absolute -top-24 right-0 z-10"
                     src="/assets/images/popup/Ellipse 15.webp"
+                    width={150}
+                    height={150}
                 />
                 <Image
                     alt=""
                     className="absolute right-0 top-2 z-10"
                     src="/assets/images/popup/Ellipse 15.webp"
+                    width={150}
+                    height={150}
                 />
                 <Image
                     alt=""
                     className="absolute right-0 top-32 z-10"
                     src="/assets/images/popup/Ellipse 15.webp"
+                    width={150}
+                    height={150}
                 />
                 <Image
                     alt=""
                     className="absolute bottom-20 right-0 z-10"
                     src="/assets/images/popup/Ellipse 15.webp"
+                    width={150}
+                    height={150}
                 />
                 <Image
                     alt=""
                     className="absolute -bottom-14 right-0 z-10"
                     src="/assets/images/popup/Ellipse 15.webp"
+                    width={150}
+                    height={150}
                 />
                 <div className="relative z-20 flex flex-col gap-[20px]">
                     <Image
                         alt=""
                         className="max-h-[150px] w-full max-w-[500px] self-center object-contain md:max-h-[200px] lg:max-h-[250px]"
-                        src="/assets/images/popup//vector.webp"
+                        src="/assets/images/popup/vector.webp"
+                        height={400}
+                        width={400}
+
                     />
                     <div>
                         <div>

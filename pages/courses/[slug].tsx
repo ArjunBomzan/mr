@@ -120,7 +120,7 @@ export default function course(props) {
                 <meta name="twitter:image" content={meta_image} />
             </Head>
             <BannerWrapper extendedClassName="after:!h-[50px]]">
-                <div className="container relative z-10 grid items-center gap-[30px] lg:grid-cols-[60%,40%]">
+                <div className="container relative z-10 grid items-center gap-[30px] lg:grid-cols-[60fr,40fr]">
                     <div>
                         <h1 className="header-md title-space  text-center leading-[145%] lg:text-left">
                             {course.title}
