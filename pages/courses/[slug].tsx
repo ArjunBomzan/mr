@@ -1,56 +1,55 @@
-import BannerWrapper from "../../components/common/BannerWrapper";
-import Image from "next/image";
-import Swoosh from "../../components/common/Swoosh";
-import Faqs from "../../components/common/Faqs";
+import BannerWrapper from '../../components/common/BannerWrapper'
+import Image from 'next/image'
+import Swoosh from '../../components/common/Swoosh'
+import Faqs from '../../components/common/Faqs'
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
-import { useWindowSize } from "../../components/home/Testimonials";
-import { useEffect, useState } from "react";
-import { makeFullApiUrl, makeFullUrl } from "../../utils/makeFullUrl";
-import { clearStyle } from "../../utils/clearStyle";
-import TrainingInquiry from "../../components/TrainingComponents/TrainingInquiry";
-import Link from "next/link";
-import classNames from "classnames";
-import Head from "next/head";
-import { useRouter } from "next/router";
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper/modules'
+import { useWindowSize } from '../../components/home/Testimonials'
+import { useEffect, useState } from 'react'
+import { makeFullApiUrl, makeFullUrl } from '../../utils/makeFullUrl'
+import { clearStyle } from '../../utils/clearStyle'
+import TrainingInquiry from '../../components/TrainingComponents/TrainingInquiry'
+import Link from 'next/link'
+import classNames from 'classnames'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 // import { Autoplay, FreeMode, Navigation, Pagination } from "swiper";
 
 // import DownArrow from "/assets/images/courses/iconmonstr-arrow-down-thin-48-_1_.webp"
 // import UpArrow from "/assets/images/courses/iconmonstr-arrow-up-thin-48-_1_.webp"
 
 type courseType = {
-    meta: any;
-    title: string;
-    banner: string;
-    image: string;
-    description: string;
-    short_desc: string;
-    duration: string;
-    career: string;
-    tag: {}[];
-    syllabus: {}[];
-};
+    meta: any
+    title: string
+    banner: string
+    image: string
+    description: string
+    short_desc: string
+    duration: string
+    career: string
+    tag: {}[]
+    syllabus: {}[]
+}
 
 export default function course(props) {
+    let course: courseType = props.course
+    const router = useRouter()
 
-    let course: courseType = props.course;
-    const router = useRouter();
+    const size = useWindowSize({ useEffect, useState })
 
-    const size = useWindowSize({ useEffect, useState });
-
-    const [limitOverView, setlimitOverView] = useState(true);
+    const [limitOverView, setlimitOverView] = useState(true)
 
     let specs = [
-        { title: "Training Level", ans: "Beginner to Expert" },
-        { title: "Format", ans: "Physical/Online Class" },
-        { title: "Duration", ans: course.duration },
-        { title: "Career Prospect", ans: course.career },
-    ];
+        { title: 'Training Level', ans: 'Beginner to Expert' },
+        { title: 'Format', ans: 'Physical/Online Class' },
+        { title: 'Duration', ans: course.duration },
+        { title: 'Career Prospect', ans: course.career }
+    ]
 
     let faqs = course.syllabus.map((el: any) => {
         return {
@@ -59,21 +58,21 @@ export default function course(props) {
                 <div
                     className="editor-content"
                     dangerouslySetInnerHTML={{
-                        __html: clearStyle(el.description),
+                        __html: clearStyle(el.description)
                     }}
                 ></div>
-            ),
-        };
-    });
+            )
+        }
+    })
 
     let meta_description =
-        course.meta?.find((meta) => meta.name == "description")?.content || "";
+        course.meta?.find((meta) => meta.name == 'description')?.content || ''
 
-    let meta_image = course.image;
+    let meta_image = course.image
     if (meta_image) {
-        meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${meta_image}`;
+        meta_image = `${process.env.NEXT_PUBLIC_DB_DOMAIN}${meta_image}`
     }
-    let current_url = `${process.env.NEXT_PUBLIC_DOMAIN}${router.asPath}`;
+    let current_url = `${process.env.NEXT_PUBLIC_DOMAIN}${router.asPath}`
 
     return (
         <div>
@@ -92,7 +91,7 @@ export default function course(props) {
                             content={meta?.content}
                             property={meta?.property}
                         />
-                    );
+                    )
                 })}
 
                 {/* facebook og tags */}
@@ -104,6 +103,8 @@ export default function course(props) {
                 />
                 <meta property="og:description" content={meta_description} />
                 <meta property="og:image" content={meta_image} />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
 
                 {/* twitter og tags */}
                 <meta name="twitter:card" content="summary" />
@@ -128,7 +129,7 @@ export default function course(props) {
                         <div
                             className="editor-content  text-primary md:text-[20px]"
                             dangerouslySetInnerHTML={{
-                                __html: clearStyle(course.short_desc),
+                                __html: clearStyle(course.short_desc)
                             }}
                         ></div>
                         <div className="title-space-3xl-reverse">
@@ -161,13 +162,13 @@ export default function course(props) {
                                                 </span>
                                             </p>
                                         </li>
-                                    );
+                                    )
                                 })}
                             </ul>
 
                             <div className="title-space-3xl-reverse gap-base-half flex justify-center lg:justify-start">
                                 <Link
-                                    href={"/online-admission"}
+                                    href={'/online-admission'}
                                     className="btn-simple"
                                 >
                                     Get Admission
@@ -215,17 +216,17 @@ export default function course(props) {
 
                                 <div
                                     className={`overview__wrapper relative ${
-                                        limitOverView ? "limited" : ""
+                                        limitOverView ? 'limited' : ''
                                     }`}
                                 >
                                     <div
                                         className={classNames(
-                                            "editor-content  ",
+                                            'editor-content  '
                                         )}
                                         dangerouslySetInnerHTML={{
                                             __html: clearStyle(
-                                                course.description,
-                                            ),
+                                                course.description
+                                            )
                                         }}
                                     ></div>
                                     <div className="fader absolute"></div>
@@ -236,43 +237,43 @@ export default function course(props) {
                                 className="m-8 text-center font-bold"
                                 id="overview__min_max"
                                 style={{
-                                    cursor: "pointer",
-                                    textTransform: "uppercase",
+                                    cursor: 'pointer',
+                                    textTransform: 'uppercase'
                                 }}
                                 onClick={() => {
-                                    setlimitOverView(!limitOverView);
+                                    setlimitOverView(!limitOverView)
                                 }}
                             >
                                 {limitOverView ? (
                                     <>
                                         <span>
-                                            {" "}
+                                            {' '}
                                             <Image
                                                 alt="arrow-down-icon"
                                                 src={
-                                                    "/assets/images/courses/iconmonstr-arrow-down-thin-48-_1_.webp"
+                                                    '/assets/images/courses/iconmonstr-arrow-down-thin-48-_1_.webp'
                                                 }
                                                 height={16}
                                                 width={16}
                                                 className="inline"
-                                            />{" "}
-                                        </span>{" "}
+                                            />{' '}
+                                        </span>{' '}
                                         <p className="inline">Read More</p>
                                     </>
                                 ) : (
                                     <>
                                         <span>
-                                            {" "}
+                                            {' '}
                                             <Image
                                                 alt="arrow-up-icon"
                                                 src={
-                                                    "/assets/images/courses/iconmonstr-arrow-up-thin-48-_1_.webp"
+                                                    '/assets/images/courses/iconmonstr-arrow-up-thin-48-_1_.webp'
                                                 }
                                                 height={16}
                                                 width={16}
                                                 className="inline"
-                                            />{" "}
-                                        </span>{" "}
+                                            />{' '}
+                                        </span>{' '}
                                         <p className="inline">Read Less</p>
                                     </>
                                 )}
@@ -298,14 +299,14 @@ export default function course(props) {
                             <li
                                 key={el.id}
                                 className={classNames(
-                                    "hover:shadow-small relative cursor-pointer rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary hover:bg-gray-100",
+                                    'hover:shadow-small relative cursor-pointer rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary hover:bg-gray-100'
                                 )}
                             >
                                 <Link href={`/courses?tag=${el.name}`}>
                                     {el.name}
                                 </Link>
                             </li>
-                        );
+                        )
                     })}
                 </ul>
                 <section className="section-wrapper-m">
@@ -346,7 +347,7 @@ export default function course(props) {
                             pagination={{
                                 clickable: true,
                                 dynamicBullets: true,
-                                dynamicMainBullets: 3,
+                                dynamicMainBullets: 3
                             }}
                             modules={[Pagination]}
                         >
@@ -355,7 +356,6 @@ export default function course(props) {
                                     <SwiperSlide className="max-w-full cursor-grab select-none rounded-xl border border-green-200 bg-green-50 p-5 md:min-w-[407px] ">
                                         <div className="gap-base-half title-space-xl grid grid-cols-[40%,60%]">
                                             <Image
-                                                
                                                 src={el.image}
                                                 className=" aspect-square rounded-full border-4 border-primary bg-cover object-cover"
                                                 alt=""
@@ -370,7 +370,7 @@ export default function course(props) {
                                                 <h3 className="mt-[4px] font-medium">
                                                     <span className="text-secondary">
                                                         @
-                                                    </span>{" "}
+                                                    </span>{' '}
                                                     {el.working_at?.name}
                                                 </h3>
                                             </div>
@@ -392,14 +392,14 @@ export default function course(props) {
                                             </h3>
                                         </div>
                                     </SwiperSlide>
-                                );
+                                )
                             })}
                         </Swiper>
                     </div>
                 </section>
             </main>
         </div>
-    );
+    )
 }
 
 export async function getStaticPaths() {
@@ -408,37 +408,33 @@ export async function getStaticPaths() {
     // const paths = courses?.map((course) => ({
     //     params: { slug: course.slug },
     // }))
-    let paths = [];
-    return { paths, fallback: "blocking" };
+    let paths = []
+    return { paths, fallback: 'blocking' }
 }
 
 export async function getStaticProps({ params }) {
-    const res = await fetch(makeFullApiUrl(`/coursecombine/${params.slug}/`));
+    const res = await fetch(makeFullApiUrl(`/coursecombine/${params.slug}/`))
 
-    const courses_list_res = await fetch(makeFullApiUrl("/course/"));
-    const courses_list = await courses_list_res.json();
+    const courses_list_res = await fetch(makeFullApiUrl('/course/'))
+    const courses_list = await courses_list_res.json()
 
     const success_storie_res = await fetch(
-        `${makeFullApiUrl("/successstoryhome/")}`,
-    );
-    const success_stories = await success_storie_res.json();
-
+        `${makeFullApiUrl('/successstoryhome/')}`
+    )
+    const success_stories = await success_storie_res.json()
 
     if (!res.ok) {
         return {
-            notFound: true,
-        };
+            notFound: true
+        }
     }
 
-    const course = await res.json();
+    const course = await res.json()
 
-    if(!(course?.data?.course?.length > 0) ){
-
-
+    if (!(course?.data?.course?.length > 0)) {
         return {
-            notFound: true,
-        };
-
+            notFound: true
+        }
     }
 
     return {
@@ -449,11 +445,11 @@ export async function getStaticProps({ params }) {
                 syllabus: course.data.syllabus,
                 time: course.data.time,
                 meta: course.data.meta,
-                tag: course.data.tag,
+                tag: course.data.tag
             },
             success_stories: success_stories,
-            courses_list,
+            courses_list
         },
-        revalidate: 60 * 1,
-    };
+        revalidate: 60 * 1
+    }
 }
