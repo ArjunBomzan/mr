@@ -21,6 +21,7 @@ import Link from "next/link";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import Popup from "../components/Popup"
+import PopupWelcome from "../components/PopupWelcome"
 
 function MyApp({ Component, pageProps }) {
     useEffect(() => {
@@ -170,8 +171,9 @@ function MyApp({ Component, pageProps }) {
                 <Footer />
             </div>
 
-            {/* <Footer /> */}
-            <Popup/>
+            {/* Admission modal */}
+            <Popup />
+            <PopupWelcome />
 
             {/* <div
                 className="admission-modal"
