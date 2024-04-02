@@ -41,7 +41,10 @@ export default function PopupWelcome() {
     useEffect(() => {
         setTimeout(() => {
             if (route !== '/contact-us') {
-                setIsActive(true)
+                let querySubmitted = localStorage.getItem('enquirySubmitted')
+                if (querySubmitted != 'true') {
+                    setIsActive(true)
+                }
             }
         }, 60 * 1000)
     }, [])
