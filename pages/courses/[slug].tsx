@@ -62,8 +62,7 @@ export default function course(props) {
         }
     })
 
-    let meta_description =
-        course.meta?.find((meta) => meta.name == 'description')?.content || ''
+    let meta_description = course.meta?.find((meta) => meta.name == 'description')?.content || ''
 
     let meta_image = course.image
     if (meta_image) {
@@ -75,29 +74,16 @@ export default function course(props) {
         <div>
             <Head>
                 <title>{course.title}</title>
-                <meta
-                    name="title"
-                    content={props?.course?.data?.course[0]?.title}
-                />
+                <meta name="title" content={props?.course?.data?.course[0]?.title} />
 
                 {course.meta?.map((meta) => {
-                    return (
-                        <meta
-                            key={meta?.id}
-                            name={meta?.name}
-                            content={meta?.content}
-                            property={meta?.property}
-                        />
-                    )
+                    return <meta key={meta?.id} name={meta?.name} content={meta?.content} property={meta?.property} />
                 })}
 
                 {/* facebook og tags */}
                 <meta property="og:url" content={current_url} />
                 <meta property="og:type" content="website" />
-                <meta
-                    property="og:title"
-                    content={props?.course?.data?.course[0]?.title}
-                />
+                <meta property="og:title" content={props?.course?.data?.course[0]?.title} />
                 <meta property="og:description" content={meta_description} />
                 <meta property="og:image" content={meta_image} />
                 <meta property="og:image:width" content="1200" />
@@ -107,14 +93,8 @@ export default function course(props) {
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="@mindrisers" />
                 <meta name="twitter:creator" content="@mindrisers" />
-                <meta
-                    property="twitter:title"
-                    content={props?.course?.data?.course[0]?.title}
-                />
-                <meta
-                    property="twitter:description"
-                    content={meta_description}
-                />
+                <meta property="twitter:title" content={props?.course?.data?.course[0]?.title} />
+                <meta property="twitter:description" content={meta_description} />
                 <meta name="twitter:image" content={meta_image} />
             </Head>
             <BannerWrapper extendedClassName="after:!h-[50px]]">
@@ -151,12 +131,8 @@ export default function course(props) {
                                     return (
                                         <li className="  ">
                                             <p className="grid grid-cols-2">
-                                                <span className="capitalize">
-                                                    {el.title}
-                                                </span>
-                                                <span className="pl-1 font-semibold capitalize">
-                                                    {el.ans}
-                                                </span>
+                                                <span className="capitalize">{el.title}</span>
+                                                <span className="pl-1 font-semibold capitalize">{el.ans}</span>
                                             </p>
                                         </li>
                                     )
@@ -164,16 +140,10 @@ export default function course(props) {
                             </ul>
 
                             <div className="title-space-3xl-reverse gap-base-half flex justify-center lg:justify-start">
-                                <Link
-                                    href={'/online-admission'}
-                                    className="btn-simple"
-                                >
+                                <Link href={'/online-admission'} className="btn-simple">
                                     Get Admission
                                 </Link>
-                                <a
-                                    href="#quick-enquiry"
-                                    className="btn-simple-outline"
-                                >
+                                <a href="#quick-enquiry" className="btn-simple-outline">
                                     Send Enquiry
                                 </a>
                             </div>
@@ -198,32 +168,19 @@ export default function course(props) {
                                     <span className="inline-block border-b-[3px] border-primary  p-[10px] text-center font-medium text-primary">
                                         Course Overview
                                     </span>
-                                    <a
-                                        href="#syllabus"
-                                        className="inline-block p-[10px] text-center"
-                                    >
+                                    <a href="#syllabus" className="inline-block p-[10px] text-center">
                                         Syllabus
                                     </a>
                                 </div>
                             </section>
                             <section className="title-space-3xl-reverse title-space-xl">
-                                <h2 className="sub-header-lg">
-                                    Course Overview
-                                </h2>
+                                <h2 className="sub-header-lg">Course Overview</h2>
 
-                                <div
-                                    className={`overview__wrapper relative ${
-                                        limitOverView ? 'limited' : ''
-                                    }`}
-                                >
+                                <div className={`overview__wrapper relative ${limitOverView ? 'limited' : ''}`}>
                                     <div
-                                        className={classNames(
-                                            'editor-content  '
-                                        )}
+                                        className={classNames('editor-content  ')}
                                         dangerouslySetInnerHTML={{
-                                            __html: clearStyle(
-                                                course.description
-                                            )
+                                            __html: clearStyle(course.description)
                                         }}
                                     ></div>
                                     <div className="fader absolute"></div>
@@ -247,9 +204,7 @@ export default function course(props) {
                                             {' '}
                                             <Image
                                                 alt="arrow-down-icon"
-                                                src={
-                                                    '/assets/images/courses/iconmonstr-arrow-down-thin-48-_1_.webp'
-                                                }
+                                                src={'/assets/images/courses/iconmonstr-arrow-down-thin-48-_1_.webp'}
                                                 height={16}
                                                 width={16}
                                                 className="inline"
@@ -263,9 +218,7 @@ export default function course(props) {
                                             {' '}
                                             <Image
                                                 alt="arrow-up-icon"
-                                                src={
-                                                    '/assets/images/courses/iconmonstr-arrow-up-thin-48-_1_.webp'
-                                                }
+                                                src={'/assets/images/courses/iconmonstr-arrow-up-thin-48-_1_.webp'}
                                                 height={16}
                                                 width={16}
                                                 className="inline"
@@ -299,9 +252,7 @@ export default function course(props) {
                                     'hover:shadow-small relative cursor-pointer rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary hover:bg-gray-100'
                                 )}
                             >
-                                <Link href={`/courses?tag=${el.name}`}>
-                                    {el.name}
-                                </Link>
+                                <Link href={`/courses?tag=${el.name}`}>{el.name}</Link>
                             </li>
                         )
                     })}
@@ -310,23 +261,15 @@ export default function course(props) {
                     <div className="title-space flex justify-between text-primary">
                         <p>Success Stories</p>
                         <p>
-                            <Link href="/success-gallery">
-                                View success stories
-                            </Link>
+                            <Link href="/success-gallery">View success stories</Link>
                         </p>
                     </div>
                     <h2 className="sub-header-lg max-w-[633px]">
-                        See how <Swoosh type="secondary">Mindrisers</Swoosh> is
-                        helping learners get expertise and pursue their future.
+                        See how <Swoosh type="secondary">Mindrisers</Swoosh> is helping learners get expertise and
+                        pursue their future.
                     </h2>
-                    <CourseSuccessStories
-                        success_stories={props.success_stories}
-                    />
-                    <Offer
-                        matchingUrls={[
-                            `/${OfferPage.CourseDetail}/${course.slug}`
-                        ]}
-                    />
+                    <CourseSuccessStories success_stories={props.success_stories} />
+                    <Offer matchingUrl={`/${OfferPage.CourseDetail}/${course.slug}`} />
                 </section>
             </main>
         </div>
@@ -349,9 +292,7 @@ export async function getStaticProps({ params }) {
     const courses_list_res = await fetch(makeFullApiUrl('/course/'))
     const courses_list = await courses_list_res.json()
 
-    const success_storie_res = await fetch(
-        `${makeFullApiUrl('/successstoryhome/')}`
-    )
+    const success_storie_res = await fetch(`${makeFullApiUrl('/successstoryhome/')}`)
     const success_stories = await success_storie_res.json()
 
     if (!res.ok) {

@@ -3,6 +3,9 @@ import axios from 'axios'
 export const publicRequest = axios.create({
     baseURL: 'https://mindrisers.com.np/blog/api/v1/'
 })
+
+
+
 export async function coursesApi(props) {
     await publicRequest
         .get(`course/?category=${props.ApiType ? props.ApiType : ''}`)

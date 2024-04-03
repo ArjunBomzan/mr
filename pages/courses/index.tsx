@@ -12,6 +12,7 @@ import { typeWriters } from '..'
 import { FaCross, FaSearch } from 'react-icons/fa'
 import { IoCloseOutline } from 'react-icons/io5'
 import classNames from 'classnames'
+import Offer from '../../components/Offer'
 
 export async function getStaticProps() {
     // export async function getServerSideProps({query}) {
@@ -349,6 +350,8 @@ const Courses = ({ courses_all }) => {
                     <div className="h-16 w-16 animate-spin rounded-full border-t-4 border-white"></div>
                 </div>
             )}
+            <Offer matchingUrl={`/course`} />
+
         </>
     )
 }
