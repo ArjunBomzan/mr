@@ -58,25 +58,29 @@ export default function Offer({ matchingUrl }: { matchingUrl: string }) {
 
     useEffect(() => {
         let timer = null
-        let offTimer = null
         if (selectedOffer) {
             timer = setTimeout(() => {
                 // if (!disabledOffers.includes(selectedOffer?.id)) {
                 setIsActive(true)
-                offTimer = setTimeout(() => {
-                    if (isActive) {
-                        setIsActive(false)
-                    }
-                }, 10 * 1000)
 
                 // }
-            }, 1 * 1000)
+            }, 10 * 1000)
         }
         return () => {
             clearTimeout(timer)
-            clearTimeout(offTimer)
         }
     }, [JSON.stringify(selectedOffer)])
+
+    useEffect(() => {
+        let offTimer = setTimeout(() => {
+            if (isActive) {
+                setIsActive(false)
+            }
+        }, 10 * 1000)
+        return () => {
+            clearTimeout(offTimer)
+        }
+    }, [isActive])
 
     function goToOfferPage() {
         disabledOffers.push(selectedOffer.id)
