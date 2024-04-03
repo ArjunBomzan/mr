@@ -1,14 +1,40 @@
-let editor_content = `<div style="color:red;font-inherit" class="one" data-attribte="12" custom-id =12 id=13  onClick="doSomething()">
-  <p style = "margin-top:10px" class="ok>
-    <span>hello</span>
-    <br/>
-    other contents
-  </p>
-</div>`;
+let offers = [
+    {
+        page: 'home'
+    },
+    {
+        page: 'courseDetail',
+        course: {
+            slug: 'mern-stack'
+        }
+    }
+]
 
+offers = offers.map(el => `/${el.page}${el.course?.slug?(`/${el.course?.slug}`):""}`)
+console.log(offers);
 
-// Call the function to clear styles
-clearStyle();
+/* <Offer match=["/home"]/> */
 
-// Display the updated content
-console.log(editor_content);
+// const url = 'https://mindrisers.com.np/courses/mern-stack-development-training-in-nepal/?hello=puja';
+// const url = 'https://mindrisers.com.np';
+// const url = 'https://mindrisers.com.np/courses';
+const url = 'http://mindrisers.com.np/courses'
+// Create a URL object
+const parsedUrl = new URL(url)
+
+// Extract the path
+const path = parsedUrl.pathname
+console.log({ path })
+
+// Find the start index of the desired substring
+// const startIndex = url.indexOf('/courses/mern-stack-development-training-in-nepal');
+const startIndex = path.indexOf('/trainings')
+
+// // Find the end index of the desired substring
+// const endIndex = url.indexOf('?');
+
+// // Extract the substring
+// const extractedString = url.substring(startIndex, endIndex);
+// ​
+
+console.log(startIndex)

@@ -1,78 +1,77 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import Partners from "../components/home/Partners";
-import Testimonials from "../components/home/Testimonials";
-import Swoosh from "../components/common/Swoosh";
-import BannerWrapper from "../components/common/BannerWrapper";
-import CoursesList from "../components/common/CoursesList";
-import Opportunity from "../components/common/Opportunity";
-import Faqs from "../components/common/Faqs";
-import classNames from "classnames";
-import VideoPlayer from "../components/common/VideoPlayer";
-import Stats from "../components/common/Stats";
-import TypeWriter from "../components/common/TypeWriter";
-import HomeContact from "../components/HomePageComponents/HomeContact";
-import { makeFullApiUrl, makeFullUrl } from "../utils/makeFullUrl";
-import { useState } from "react";
+import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
+import Partners from '../components/home/Partners'
+import Testimonials from '../components/home/Testimonials'
+import Swoosh from '../components/common/Swoosh'
+import BannerWrapper from '../components/common/BannerWrapper'
+import CoursesList from '../components/common/CoursesList'
+import Opportunity from '../components/common/Opportunity'
+import Faqs from '../components/common/Faqs'
+import classNames from 'classnames'
+import VideoPlayer from '../components/common/VideoPlayer'
+import Stats from '../components/common/Stats'
+import TypeWriter from '../components/common/TypeWriter'
+import HomeContact from '../components/HomePageComponents/HomeContact'
+import { makeFullApiUrl, makeFullUrl } from '../utils/makeFullUrl'
+import { useState } from 'react'
+import Offer from '../components/Offer'
+import { OfferPage } from '../constants/offers'
 
 export let typeWriters = [
-    "IT skills and expertise",
-    "Javascript",
-    "Django",
-    "Figma",
-    "Flutter",
-    "Devops"
-];
-
+    'IT skills and expertise',
+    'Javascript',
+    'Django',
+    'Figma',
+    'Flutter',
+    'Devops'
+]
 
 export default function Home(props) {
     // const [showVideo, setshowVideo] = useState(false)
-    const [videoOpen, setVideoOpen] = useState(false);
+    const [videoOpen, setVideoOpen] = useState(false)
 
     let meta_title =
-        "Best IT Training Institute in kathmandu, Nepal | Mindrisers Institute of Technology";
+        'Best IT Training Institute in kathmandu, Nepal | Mindrisers Institute of Technology'
     let meta_description =
-        "Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers Institute of Technology is the perfect platform for you to learn Digital Skills";
+        'Are you searching for a Practical IT Training Center in Kathmandu Nepal then Mindrisers Institute of Technology is the perfect platform for you to learn Digital Skills'
 
     let tags = [
         {
-            title: "javascript",
-            icon: "/assets/images/home/banner/fa6-brands_square-js.svg",
+            title: 'javascript',
+            icon: '/assets/images/home/banner/fa6-brands_square-js.svg'
         },
         {
-            title: "django",
-            icon: "/assets/images/home/banner/skill-icons_django.svg",
+            title: 'django',
+            icon: '/assets/images/home/banner/skill-icons_django.svg'
         },
         {
-            title: "figma",
-            icon: "/assets/images/home/banner/solar_figma-bold-duotone.svg",
+            title: 'figma',
+            icon: '/assets/images/home/banner/solar_figma-bold-duotone.svg'
         },
         {
-            title: "flutter",
-            icon: "/assets/images/home/banner/material-symbols_flutter.svg",
+            title: 'flutter',
+            icon: '/assets/images/home/banner/material-symbols_flutter.svg'
         },
         {
-            title: "photshop",
-            icon: "/assets/images/home/banner/iconoir_adobe-photoshop-solid.svg",
+            title: 'photshop',
+            icon: '/assets/images/home/banner/iconoir_adobe-photoshop-solid.svg'
         },
         {
-            title: "database",
-            icon: "/assets/images/home/banner/icon-park-solid_data.svg",
+            title: 'database',
+            icon: '/assets/images/home/banner/icon-park-solid_data.svg'
         },
         {
-            title: "digital marketing",
-            icon: "/assets/images/home/banner/nimbus_marketing.svg",
-        },
-    ];
-
-    
+            title: 'digital marketing',
+            icon: '/assets/images/home/banner/nimbus_marketing.svg'
+        }
+    ]
 
     let growWithUsers = [
-        { src: "/assets/images/home/banner/alija.webp" },
-        { src: "/assets/images/home/banner/deepa.webp" },
-        { src: "/assets/images/home/banner/nikita.webp" },
-    ];
+        { src: '/assets/images/home/banner/alija.webp' },
+        { src: '/assets/images/home/banner/deepa.webp' },
+        { src: '/assets/images/home/banner/nikita.webp' }
+    ]
 
     // let courses = [
     //     {
@@ -95,41 +94,37 @@ export default function Home(props) {
 
     let faqs = [
         {
-            title: "courses",
+            title: 'courses',
             number: 10,
             content:
-                "From cutting-edge programming languages to content writing expertise to desiging website, our diverse range of courses equips you with the skills employers crave.",
+                'From cutting-edge programming languages to content writing expertise to desiging website, our diverse range of courses equips you with the skills employers crave.'
         },
         {
-            title: "Placement",
+            title: 'Placement',
             number: 4000,
             content:
-                "We don't just teach, we guide you towards your dream career. 4,000+ successful placements speak for themselves, proving our dedication to your employability.",
+                "We don't just teach, we guide you towards your dream career. 4,000+ successful placements speak for themselves, proving our dedication to your employability."
         },
         {
-            title: "years experience",
+            title: 'years experience',
             number: 7,
             content:
-                "Backed by 7+ years of refining our curriculum and teaching methods, we offer industry-aligned courses that cater to the ever-evolving demands of the IT sector.",
+                'Backed by 7+ years of refining our curriculum and teaching methods, we offer industry-aligned courses that cater to the ever-evolving demands of the IT sector.'
         },
         {
-            title: "students",
+            title: 'students',
             number: 10000,
             content:
-                "Over 10,000 graduates stand as a testament to our commitment to excellence. Join a thriving alumni network and connect with future colleagues.",
-        },
-    ];
+                'Over 10,000 graduates stand as a testament to our commitment to excellence. Join a thriving alumni network and connect with future colleagues.'
+        }
+    ]
 
     faqs[0].number = props.courses.length
 
     return (
         <>
             <Head>
-            <link
-                    rel="canonical"
-                    href={makeFullUrl("")}
-                    
-                />
+                <link rel="canonical" href={makeFullUrl('')} />
                 <title>
                     Best IT Training Institute in kathmandu, Nepal | Mindrisers
                     Institute of Technology
@@ -137,7 +132,7 @@ export default function Home(props) {
                 <meta
                     name="title"
                     content={
-                        "Best IT Training Institute in kathmandu, Nepal | Mindrisers Institute of Technology"
+                        'Best IT Training Institute in kathmandu, Nepal | Mindrisers Institute of Technology'
                     }
                 />
                 <meta name="description" content={meta_description} />
@@ -163,11 +158,14 @@ export default function Home(props) {
                 {/* <meta name="twitter:image" content={meta_image} /> */}
             </Head>
 
-                    {/* <Popup/> */}
+            {/* <Popup/> */}
             {/* <div className="container my-7">
                 <TypeWriter contents={["one olne", "two"]} />
             </div> */}
-            <BannerWrapper size="big" extendedClassName="!py-0 zz-0 !items-start ">
+            <BannerWrapper
+                size="big"
+                extendedClassName="!py-0 zz-0 !items-start "
+            >
                 <section
                     className="h-full w-full bg-no-repeat  "
                     style={
@@ -199,7 +197,7 @@ export default function Home(props) {
                                             </Link>
                                         </li>
                                     </>
-                                );
+                                )
                             })}
                         </ul>
 
@@ -240,7 +238,6 @@ export default function Home(props) {
                                                 }px] `}
                                             >
                                                 <Image
-                                                    
                                                     alt=""
                                                     src={el.src}
                                                     height={50}
@@ -248,7 +245,7 @@ export default function Home(props) {
                                                     className="h-[50px] rounded-full  border-4 border-green-600 "
                                                 />
                                             </li>
-                                        );
+                                        )
                                     })}
                                 </ul>
                                 <p>
@@ -269,7 +266,10 @@ export default function Home(props) {
                         </p>
                         <div className="mt-[3.2rem] md:mt-[7.5rem]">
                             {/* <Stats wrapperClass="bg-green-100 grid grid-cols-2 md:grid-cols-4 gap-lg max-w-[772px]  rounded-xl p-5" /> */}
-                            <Stats coursesCount={props.courses.length} wrapperClass="bg-green-100 grid grid-cols-2 md:flex md:justify-between md:grid-cols-4 gap-lg max-w-[772px] xl:max-w-[900px] mmx-auto rounded-xl p-5" />
+                            <Stats
+                                coursesCount={props.courses.length}
+                                wrapperClass="bg-green-100 grid grid-cols-2 md:flex md:justify-between md:grid-cols-4 gap-lg max-w-[772px] xl:max-w-[900px] mmx-auto rounded-xl p-5"
+                            />
                         </div>
                     </div>
                 </section>
@@ -277,12 +277,12 @@ export default function Home(props) {
 
             <section className=" section-wrapper container grid grid-cols-1 items-center gap-[40px] lg:grid-cols-[45%,55%] lg:gap-0 ">
                 <div
-                    className={classNames("lg:pr-[40px]", "order-2 lg:order-1")}
+                    className={classNames('lg:pr-[40px]', 'order-2 lg:order-1')}
                 >
                     <Image
                         loading="lazy"
                         className="w-full"
-                        src={"/assets/images/home/internship-job.webp"}
+                        src={'/assets/images/home/internship-job.webp'}
                         alt=""
                         width={500}
                         height={500}
@@ -291,14 +291,14 @@ export default function Home(props) {
 
                 <article
                     className={classNames(
-                        "text-primary",
-                        "order-1 lg:order-2",
-                        "text-center lg:text-left",
+                        'text-primary',
+                        'order-1 lg:order-2',
+                        'text-center lg:text-left'
                     )}
                 >
                     <div
                         className={classNames(
-                            "title-space border-l-4 border-primary px-[20px] py-[10px] ",
+                            'title-space border-l-4 border-primary px-[20px] py-[10px] '
                         )}
                     >
                         <p className="text-xl">
@@ -319,7 +319,7 @@ export default function Home(props) {
                             provide internships and full-time job opportunities
                             to our Graduates
                         </p>
-                        <Link className="btn" href={"/contact-us"}>
+                        <Link className="btn" href={'/contact-us'}>
                             Contact us
                         </Link>
                     </div>
@@ -328,11 +328,11 @@ export default function Home(props) {
 
             {/* vercel test */}
 
-            <section className=" section-wrapper-m-sm lg:section-wrapper-m md:container pl-1">
+            <section className=" section-wrapper-m-sm lg:section-wrapper-m pl-1 md:container">
                 {/* <div className="flex justify-between"> */}
-                    <h2 className="header title-space-5xl text-center">
-                        Popular <Swoosh type="secondary">Courses</Swoosh>{" "}
-                    </h2>
+                <h2 className="header title-space-5xl text-center">
+                    Popular <Swoosh type="secondary">Courses</Swoosh>{' '}
+                </h2>
                 {/* </div> */}
                 {/* Headless component */}
                 <CoursesList courses={props.courses} />
@@ -345,9 +345,32 @@ export default function Home(props) {
                             <h2 className="header-lg title-space-lg text-expanded">
                                 <Swoosh type="secondary">About us</Swoosh>
                             </h2>
-                            <p className="title-space-lg text-primary text-justify lg:text-left ">
-                                Mindrisers is a parent company of <Link target="_blank" className="is-link underline" href='https://mindriserstech.com'>mindriserstech.com</Link>, <Link target="_blank" className="is-link underline" href='https://tummytruck.com.np/'>tummytruck</Link>, <Link target="_blank" className="is-link underline" href='https://digitalpalika.org/'>digitalpalika</Link>,
-                                and the training institute. We are the only
+                            <p className="title-space-lg text-justify text-primary lg:text-left ">
+                                Mindrisers is a parent company of{' '}
+                                <Link
+                                    target="_blank"
+                                    className="is-link underline"
+                                    href="https://mindriserstech.com"
+                                >
+                                    mindriserstech.com
+                                </Link>
+                                ,{' '}
+                                <Link
+                                    target="_blank"
+                                    className="is-link underline"
+                                    href="https://tummytruck.com.np/"
+                                >
+                                    tummytruck
+                                </Link>
+                                ,{' '}
+                                <Link
+                                    target="_blank"
+                                    className="is-link underline"
+                                    href="https://digitalpalika.org/"
+                                >
+                                    digitalpalika
+                                </Link>
+                                , and the training institute. We are the only
                                 company in Nepal where we guarantee paid
                                 internship and job placement after the course is
                                 completed in our software development and
@@ -359,7 +382,7 @@ export default function Home(props) {
                             <button
                                 className="btn"
                                 onClick={() => {
-                                    setVideoOpen(true);
+                                    setVideoOpen(true)
                                 }}
                             >
                                 Learn More
@@ -397,8 +420,8 @@ export default function Home(props) {
                                             </span>
                                         </h3>
                                     ),
-                                    content: el.content,
-                                };
+                                    content: el.content
+                                }
                             })}
                             faqTitleStyle="bg-white capitalize  p-5   flex justify-between items-center transition-all duration-[.3s] rounded-[12px] cursor-pointer"
                             faqTitleOpenedStyle="rounded-bl-[0px] rounded-br-[0px]"
@@ -450,15 +473,15 @@ export default function Home(props) {
                 <div className="text-center text-primary">
                     <p className="mb-[10px] uppercase ">be the part of</p>
                     <h2 className="header text-expanded">
-                        Mindrisers{" "}
+                        Mindrisers{' '}
                         <Swoosh type="secondary" hideInMob>
                             Success Network
                         </Swoosh>
                     </h2>
-                    <Link href={"/success-gallery"} className="inline-block">
+                    <Link href={'/success-gallery'} className="inline-block">
                         <Image
                             alt=""
-                            src={"/assets/images/home/success-stories.webp"}
+                            src={'/assets/images/home/success-stories.webp'}
                             className="mx-auto mt-[40px]"
                             width={700}
                             height={700}
@@ -474,37 +497,38 @@ export default function Home(props) {
             <div className=" container my-[100px]">
                 <Opportunity />
             </div>
+            <Offer matchingUrl={`/home`} />
         </>
-    );
+    )
 }
 
 export async function getStaticProps() {
-    let data = [];
-    let gallery_data = [];
-    let successStoreis = [];
-    let partners = [];
-    let testimonials = [];
+    let data = []
+    let gallery_data = []
+    let successStoreis = []
+    let partners = []
+    let testimonials = []
 
     try {
-        const res = await fetch(
-            `https://mindrisers.com.np/blog/api/v1/course/`,
-        );
-        data = await res.json();
+        const res = await fetch(`https://mindrisers.com.np/blog/api/v1/course/`)
+        data = await res.json()
 
         const gallery_res = await fetch(
-            `https://mindrisers.com.np/blog/api/v1/gallery/`,
-        );
-        gallery_data = await gallery_res.json();
+            `https://mindrisers.com.np/blog/api/v1/gallery/`
+        )
+        gallery_data = await gallery_res.json()
 
         const successStoreis_res = await fetch(
-            `https://mindrisers.com.np/blog/api/v1/successstoryhome/`,
-        );
-        successStoreis = await successStoreis_res.json();
+            `https://mindrisers.com.np/blog/api/v1/successstoryhome/`
+        )
+        successStoreis = await successStoreis_res.json()
 
-        const partners_res = await fetch(makeFullApiUrl(`/placementpartner/`));
-        partners = await partners_res.json();
-        const testimonials_res = await fetch(makeFullApiUrl(`/studenttestimonial/`));
-        testimonials = await testimonials_res.json();
+        const partners_res = await fetch(makeFullApiUrl(`/placementpartner/`))
+        partners = await partners_res.json()
+        const testimonials_res = await fetch(
+            makeFullApiUrl(`/studenttestimonial/`)
+        )
+        testimonials = await testimonials_res.json()
     } catch (err) {}
 
     return {
@@ -516,6 +540,6 @@ export async function getStaticProps() {
             testimonials
         },
         // revalidate: 60 * 60 * 24 * 1  // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
-        revalidate: 60 * 1, // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
-    };
+        revalidate: 60 * 1 // this may cause server unndecessary loads, since the data merely gets changed. but it is definately better than SSR ?  SSR doesnot trigger the html and store it  while ISR does -> ISR > SSR cause SSR will also create load on server since, every time, the server needs to create html and send as response while ISR will simply cache it and set it.
+    }
 }

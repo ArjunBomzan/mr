@@ -173,7 +173,7 @@ function MyApp({ Component, pageProps }) {
 
             {/* Admission modal */}
             <Popup />
-            <PopupWelcome />
+            {/* <PopupWelcome /> */}
 
             {/* <div
                 className="admission-modal"

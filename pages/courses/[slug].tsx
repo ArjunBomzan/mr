@@ -13,6 +13,8 @@ import classNames from 'classnames'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import CourseSuccessStories from './CourseSuccessStories'
+import Offer from '../../components/Offer'
+import { OfferPage } from '../../constants/offers'
 // import { Autoplay, FreeMode, Navigation, Pagination } from "swiper";
 
 // import DownArrow from "/assets/images/courses/iconmonstr-arrow-down-thin-48-_1_.webp"
@@ -29,12 +31,12 @@ type courseType = {
     career: string
     tag: {}[]
     syllabus: {}[]
+    slug: string
 }
 
 export default function course(props) {
     let course: courseType = props.course
     const router = useRouter()
-
     const size = useWindowSize({ useEffect, useState })
 
     const [limitOverView, setlimitOverView] = useState(true)
@@ -319,6 +321,11 @@ export default function course(props) {
                     </h2>
                     <CourseSuccessStories
                         success_stories={props.success_stories}
+                    />
+                    <Offer
+                        matchingUrls={[
+                            `/${OfferPage.CourseDetail}/${course.slug}`
+                        ]}
                     />
                 </section>
             </main>
