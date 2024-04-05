@@ -7,6 +7,7 @@ import moment from 'moment'
 import { publicRequest } from '../pages/api/apiCalls'
 import { makeFullUrl } from '../utils/makeFullUrl'
 import { Inter } from '@next/font/google'
+import axios from 'axios'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Offer({ matchingUrl }: { matchingUrl: string }) {
@@ -45,6 +46,34 @@ export default function Offer({ matchingUrl }: { matchingUrl: string }) {
                 return true
             }
         })
+
+        if (selectedOffer) {
+            // these two images take time to load, so immediately load these two images so that it can be immediatedly displayed in browser
+            // axios
+            //     .get(selectedOffer.desktop_image)
+            //     .then()
+            //     .catch((err) => {})
+            // axios
+            //     .get(selectedOffer.mobile_image)
+            //     .then()
+            //     .catch((err) => {})
+
+            // Create image tags
+            const desktopImage = document.createElement('img')
+            const mobileImage = document.createElement('img')
+
+            // Set src attributes
+            desktopImage.src = makeFullUrl(selectedOffer.desktop_image) 
+            mobileImage.src = makeFullUrl(selectedOffer.mobile_image) 
+
+            // Set styles
+            desktopImage.style.display = 'none'
+            mobileImage.style.display = 'none'
+
+            // Append images to the body
+            document.body.appendChild(desktopImage)
+            document.body.appendChild(mobileImage)
+        }
 
         setSelectedOffer(selectedOffer)
     }, [JSON.stringify(offers)])
@@ -121,7 +150,7 @@ export default function Offer({ matchingUrl }: { matchingUrl: string }) {
                         id="welcome-modal"
                         className={` ${
                             selectedOffer && isActive ? 'fixed ' : 'hidden'
-                        } bg-[rgba(0,0,0,0.60)]] items-centerr pt-24] inset-0 z-[9000001] flex] w-full justify-center overflow-y-auto bg-white  pt-8  transition-all`}
+                        } bg-[rgba(0,0,0,0.60)]] items-centerr pt-24] flex] inset-0 z-[9000001] w-full justify-center overflow-y-auto bg-white  pt-8  transition-all`}
                         onClick={() => {
                             handleClose()
                         }}
