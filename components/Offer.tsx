@@ -10,7 +10,7 @@ import { Inter } from '@next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Offer({ matchingUrl }: { matchingUrl: string }) {
-    const [isActive, setIsActive] = useState(true)
+    const [isActive, setIsActive] = useState(false)
     const [offers, setOffers] = useState<Offer[]>([])
     const [selectedOffer, setSelectedOffer] = useState(undefined)
 
