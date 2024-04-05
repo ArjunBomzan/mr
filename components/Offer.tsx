@@ -10,7 +10,7 @@ import { Inter } from '@next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Offer({ matchingUrl }: { matchingUrl: string }) {
-    const [isActive, setIsActive] = useState(false)
+    const [isActive, setIsActive] = useState(true)
     const [offers, setOffers] = useState<Offer[]>([])
     const [selectedOffer, setSelectedOffer] = useState(undefined)
 
@@ -18,6 +18,7 @@ export default function Offer({ matchingUrl }: { matchingUrl: string }) {
     const route = router.route //  eg:
 
     let disabledOffers = []
+
     try {
         disabledOffers =
             JSON.parse(localStorage.getItem('disabledOffers') ? localStorage.getItem('disabledOffers') : null) || []
@@ -59,12 +60,7 @@ export default function Offer({ matchingUrl }: { matchingUrl: string }) {
     useEffect(() => {
         let timer = null
         if (selectedOffer) {
-            timer = setTimeout(() => {
-                // if (!disabledOffers.includes(selectedOffer?.id)) {
-                setIsActive(true)
-
-                // }
-            }, 10 * 1000)
+            setIsActive(true)
         }
         return () => {
             clearTimeout(timer)
@@ -72,11 +68,16 @@ export default function Offer({ matchingUrl }: { matchingUrl: string }) {
     }, [JSON.stringify(selectedOffer)])
 
     useEffect(() => {
-        let offTimer = setTimeout(() => {
-            if (isActive) {
-                setIsActive(false)
-            }
-        }, 10 * 1000)
+        let offTimer = null
+
+        if (isActive) {
+            offTimer = setTimeout(() => {
+                if (isActive) {
+                    setIsActive(false)
+                }
+            }, 10 * 1000)
+        }
+
         return () => {
             clearTimeout(offTimer)
         }
@@ -120,12 +121,12 @@ export default function Offer({ matchingUrl }: { matchingUrl: string }) {
                         id="welcome-modal"
                         className={` ${
                             selectedOffer && isActive ? 'fixed ' : 'hidden'
-                        } bg-[rgba(0,0,0,0.60)]] items-centerr inset-0 z-[9000001] flex h-screen w-full justify-center bg-white pt-24 transition-all`}
+                        } bg-[rgba(0,0,0,0.60)]] items-centerr pt-24] inset-0 z-[9000001] flex] w-full justify-center overflow-y-auto bg-white  pt-8  transition-all`}
                         onClick={() => {
                             handleClose()
                         }}
                     >
-                        <div className="flex flex-col items-center gap-8">
+                        <div className="flex flex-col items-center gap-8 ">
                             <Link href={'/'} className="inline-flex items-center">
                                 <Image
                                     alt="company-logo"
@@ -134,7 +135,7 @@ export default function Offer({ matchingUrl }: { matchingUrl: string }) {
                                     width={200}
                                     className="aspect-square h-[3.5rem] w-[3.5rem]"
                                 />
-                                <p className={`${inter.className} title-xl ml-[7px] xl:hidden 2xl:block`}>mindrisers</p>
+                                <p className={`${inter.className} title-xl ml-[7px]`}>mindrisers</p>
                             </Link>
 
                             <div
@@ -160,6 +161,7 @@ export default function Offer({ matchingUrl }: { matchingUrl: string }) {
                                 </div>
                             </div>
                         </div>
+                        <div className="mb-10"></div>
                     </section>
                 </div>
             </div>

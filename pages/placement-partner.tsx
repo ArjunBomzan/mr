@@ -6,6 +6,8 @@ import Swoosh from '../components/common/Swoosh'
 import Opportunity from '../components/common/Opportunity'
 import { makeFullApiUrl, makeFullUrl } from '../utils/makeFullUrl'
 import Link from 'next/link'
+import Offer from '../components/Offer'
+import { OfferPage } from '../constants/offers'
 
 export default function Home({ partners }) {
     let meta_title = 'Placement Partners | Internships | Mindrisers Nepal'
@@ -166,6 +168,7 @@ export default function Home({ partners }) {
             <div className="section-wrapper-m container ">
                 <Opportunity />
             </div>
+            <Offer matchingUrl={`/${OfferPage.Partner}`} />
         </>
     )
 }
