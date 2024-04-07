@@ -172,7 +172,7 @@ const Courses = ({ courses_all }) => {
                 <div className="lg:pt-[30px]] container grid items-center gap-[20px] text-center  lg:grid-cols-[60%,40%] lg:text-left xl:gap-[40px]">
                     <div>
                         <h1 className="header-xl title-space">
-                            Learn Top IT Skills
+                            Learn Top IT Skills 
                         </h1>
 
                         {/* <p className="title-lg mb-[30px] flex items-center justify-center  text-primary md:gap-[11px]  lg:justify-start">

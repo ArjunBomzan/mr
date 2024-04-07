@@ -15,6 +15,7 @@ import {
 } from "swiper/modules";
 import { useRouter } from "next/router";
 import classNames from "classnames";
+import DiscountCart from "./DiscountCart";
 
 /**
  * list of courses
@@ -28,6 +29,7 @@ type courseType = {
     title: string;
     duration: string;
     slug: string;
+    discount: number
 };
 
 export default function CoursesList({ courses }: { courses: courseType[] }) {
@@ -56,22 +58,22 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                         size.width >= 1536
                             ? 5
                             : size.width >= 1280
-                              ? 4
-                              : size.width >= 768
-                                ? 2.5
-                                : size.width >= 576
-                                  ? 2
-                                  : 1.15
+                                ? 4
+                                : size.width >= 768
+                                    ? 2.5
+                                    : size.width >= 576
+                                        ? 2
+                                        : 1.15
                         //   : 3
                     }
                     spaceBetween={
                         size.width >= 1536
                             ? 40
                             : size.width >= 1280
-                              ? 30
-                              : size.width >= 768
-                                ? 20
-                                : 10
+                                ? 30
+                                : size.width >= 768
+                                    ? 20
+                                    : 10
                     }
                     pagination={{
                         clickable: true,
@@ -93,10 +95,14 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                                 <li className="h-full">
                                     <Link
                                         href={`/courses/${el.slug}`}
-                                        className="hover:shadow-medium group block h-full rounded-xl border border-border p-5 transition hover:border-primary"
+                                        className="hover:shadow-medium group block h-full rounded-xl border border-border p-5 bg-white transition hover:border-primary"
                                     >
+                                        {
+                                            el?.discount &&
+                                            <DiscountCart discount={el.discount} />
+                                        }
                                         <Image
-                                            
+
                                             alt=""
                                             src={makeFullUrl(el.image)}
                                             width={300}
@@ -131,7 +137,7 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                 )}
             >
                 {courses.map((el, index) => {
-                    // console.log({ size });
+
 
                     if (
                         index >= (size.width >= 1280 ? 8 : 6) &&
@@ -140,13 +146,19 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                         return null;
                     }
                     return (
-                        <li className=" relative h-full  ">
+                        <li className=" relative h-full   ">
+
                             <Link
                                 href={`/courses/${el.slug}`}
-                                className="hover:shadow-medium group block h-full rounded-xl border border-border p-5 transition hover:border-primary"
-                            >
+                                className="hover:shadow-medium group block h-full rounded-xl border border-border p-5 
+                                transition hover:border-primary relative  bg-white  "
+                            >{
+                                    el?.discount &&
+                                    <DiscountCart discount={el.discount} />
+                                }
+
                                 <Image
-                                    
+
                                     alt=""
                                     src={makeFullUrl(el.image)}
                                     width={300}
@@ -164,7 +176,8 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                                     <span className="">Learn More</span>
                                 </span>
 
-                                <button className="btn-gray absolute bottom-5  left-5 transition group-hover:bg-green-50 group-hover:text-primary ">
+                                <button className="btn-gray absolute bottom-5  
+                                left-5 transition group-hover:bg-green-50 group-hover:text-primary z-10 ">
                                     <span className="transition-all group-hover:mr-2">
                                         Learn More
                                     </span>
