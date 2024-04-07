@@ -22,7 +22,6 @@ function DiscountCart({ discount }: { discount: number }) {
        before:h-3 
        before:w-[0.75rem]
        before:rotate-[60deg]
-       before:!bg-primary-dark
        before:bg-red-700
   
        
@@ -33,7 +32,7 @@ function DiscountCart({ discount }: { discount: number }) {
        after:-z-50 
        after:h-3
        after:w-[0.75rem]
-       after:rotate-[20deg] after:bg-primary-dark after:bg-red-700
+       after:rotate-[20deg]  after:bg-red-700
        after:content-['']
       "
             >
@@ -41,7 +40,7 @@ function DiscountCart({ discount }: { discount: number }) {
                     className="absolute -left-7 top-4
          w-full 
          -rotate-[50deg]
-         !bg-primary bg-red-600 text-center text-[14px]
+         bg-red-600 text-center text-[14px]
           text-white
       
         "
