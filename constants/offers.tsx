@@ -3,5 +3,6 @@ export const OfferPage = {
     Course: 'Course',
     CourseDetail: 'CourseDetail',
     Partner: 'Partner',
-    AFTER_PLUS_TWO: 'after+2-courses'
+    AFTER_PLUS_TWO: 'after+2-courses',
+    Blog: 'Blog',
 }

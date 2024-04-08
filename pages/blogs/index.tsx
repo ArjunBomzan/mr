@@ -11,6 +11,8 @@ import formatDate from '../../utils/formatDate'
 import Link from 'next/link'
 import { FaSearch } from 'react-icons/fa'
 import { IoCloseOutline } from 'react-icons/io5'
+import Offer from '../../components/Offer'
+import { OfferPage } from '../../constants/offers'
 
 const perPage = 16
 
@@ -402,6 +404,7 @@ export default function blogs({
                     <div className="h-16 w-16   animate-spin rounded-full  border-t-4 border-white"></div>
                 </div>
             )}
+            <Offer matchingUrl='/blog' offerType={OfferPage.Blog}  />
         </div>
     )
 }

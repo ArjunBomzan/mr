@@ -4,13 +4,13 @@ import Image from 'next/image'
 import Swoosh from '../../components/common/Swoosh'
 import CoursesList from '../../components/common/CoursesList'
 import { makeFullUrl } from '../../utils/makeFullUrl'
+import Offer from '../../components/Offer'
+import { OfferPage } from '../../constants/offers'
 
 export async function getStaticProps() {
     let data = []
     try {
-        const res = await fetch(
-            `https://mindrisers.com.np/blog/api/v1/course/?category=7`
-        )
+        const res = await fetch(`https://mindrisers.com.np/blog/api/v1/course/?category=7`)
         data = await res.json()
     } catch (err) {}
 
@@ -28,16 +28,9 @@ const courses = ({ courses }) => {
     return (
         <>
             <Head>
-                <link
-                    rel="canonical"
-                    href={makeFullUrl('/courses')}
-                    
-                />
+                <link rel="canonical" href={makeFullUrl('/courses')} />
                 <title>Courses for +2 graduates</title>
-                <meta
-                    name="keywords"
-                    content="mindrisers nepal, career choice in it"
-                />
+                <meta name="keywords" content="mindrisers nepal, career choice in it" />
                 {/* facebook og tags */}
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content={meta_title} />
@@ -49,10 +42,7 @@ const courses = ({ courses }) => {
                 <meta name="twitter:site" content="Mindrisers" />
                 <meta name="twitter:creator" content="@mindrisers" />
                 <meta property="twitter:title" content={meta_title} />
-                <meta
-                    property="twitter:description"
-                    content={meta_description}
-                />
+                <meta property="twitter:description" content={meta_description} />
                 {/* <meta name="twitter:image" content={meta_image} /> */}
             </Head>
             <BannerWrapper>
@@ -62,9 +52,7 @@ const courses = ({ courses }) => {
                             <span className="header-md title-space block font-normal capitalize text-secondary">
                                 before bachelor starts
                             </span>
-                            <span className="header-xl title-space block capitalize">
-                                become industry ready
-                            </span>
+                            <span className="header-xl title-space block capitalize">become industry ready</span>
                         </h1>
                         <p className="header-xl">
                             with{' '}
@@ -73,9 +61,8 @@ const courses = ({ courses }) => {
                             </span>
                         </p>
                         <p className="title text-primary">
-                            We provide variety of market demand IT skill courses
-                            at Mindrisers. Explore courses and start your IT
-                            journey with us.
+                            We provide variety of market demand IT skill courses at Mindrisers. Explore courses and
+                            start your IT journey with us.
                         </p>
                     </div>
                     <Image
@@ -98,6 +85,7 @@ const courses = ({ courses }) => {
                     <CoursesList courses={courses} />
                 </div>
             </section>
+            <Offer matchingUrl={`/${OfferPage.AFTER_PLUS_TWO}`} offerType={OfferPage.AFTER_PLUS_TWO} />
         </>
     )
 }
