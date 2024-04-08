@@ -127,6 +127,12 @@ export default function Offer({ matchingUrl, offerType }: { matchingUrl: string;
         disabledOffers.push(selectedOffer.id)
         localStorage.setItem('disabledOffers', JSON.stringify(disabledOffers))
         window.open(selectedOffer.url, '_blank')
+
+        publicRequest
+            .get(`offerclick/${selectedOffer.id}/`)
+            .then(() => {})
+            .catch((err) => {})
+
         setIsActive(false)
     }
 
