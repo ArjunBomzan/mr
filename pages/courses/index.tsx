@@ -13,6 +13,7 @@ import { FaCross, FaSearch } from 'react-icons/fa'
 import { IoCloseOutline } from 'react-icons/io5'
 import classNames from 'classnames'
 import Offer from '../../components/Offer'
+import { OfferPage } from '../../constants/offers'
 
 export async function getStaticProps() {
     // export async function getServerSideProps({query}) {
@@ -46,11 +47,7 @@ const Courses = ({ courses_all }) => {
 
         try {
             let data = []
-            const res = await fetch(
-                makeFullApiUrl(
-                    `/course/?tag=${tag || ''}&search=${searchTerm || ''}`
-                )
-            )
+            const res = await fetch(makeFullApiUrl(`/course/?tag=${tag || ''}&search=${searchTerm || ''}`))
 
             data = await res.json()
 
@@ -95,13 +92,7 @@ const Courses = ({ courses_all }) => {
     //     recommendedCourses =
     // }
 
-    let tags = [
-        'digital marketing',
-        'flutter',
-        'python',
-        'frontend',
-        'database'
-    ]
+    let tags = ['digital marketing', 'flutter', 'python', 'frontend', 'database']
 
     // tags = tags.filter((el) => {
     //     return el.toLowerCase() != router.query.tag;
@@ -133,47 +124,28 @@ const Courses = ({ courses_all }) => {
         <>
             <Head>
                 <title>Courses offered by mindrisers consortium</title>
-                <meta
-                    name="keywords"
-                    content="mindrisers nepal, courses, it training center, kathmandu"
-                />
+                <meta name="keywords" content="mindrisers nepal, courses, it training center, kathmandu" />
                 {/* facebook og tags */}
                 <meta property="og:type" content="website" />
-                <meta
-                    property="og:title"
-                    content={
-                        'Mindrisers Courses | IT related courses in Kathmandu, Nepal'
-                    }
-                />
+                <meta property="og:title" content={'Mindrisers Courses | IT related courses in Kathmandu, Nepal'} />
                 <meta property="og:description" content={meta_description} />
                 <meta property="og:image" content={meta_image} />
-                <link
-                    rel="canonical"
-                    href={makeFullUrl("/courses")}
-                    
-                />
+                <link rel="canonical" href={makeFullUrl('/courses')} />
                 {/* twitter og tags */}
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="Mindrisers" />
                 <meta name="twitter:creator" content="@mindrisers" />
                 <meta
                     property="twitter:title"
-                    content={
-                        'Mindrisers Courses | IT related courses in Kathmandu, Nepal'
-                    }
+                    content={'Mindrisers Courses | IT related courses in Kathmandu, Nepal'}
                 />
-                <meta
-                    property="twitter:description"
-                    content={meta_description}
-                />
+                <meta property="twitter:description" content={meta_description} />
                 <meta name="twitter:image" content={meta_image} />
             </Head>
             <BannerWrapper>
                 <div className="lg:pt-[30px]] container grid items-center gap-[20px] text-center  lg:grid-cols-[60%,40%] lg:text-left xl:gap-[40px]">
                     <div>
-                        <h1 className="header-xl title-space">
-                            Learn Top IT Skills 
-                        </h1>
+                        <h1 className="header-xl title-space">Learn Top IT Skills</h1>
 
                         {/* <p className="title-lg mb-[30px] flex items-center justify-center  text-primary md:gap-[11px]  lg:justify-start">
                             <span>{`<h2>`}</span>
@@ -196,9 +168,8 @@ const Courses = ({ courses_all }) => {
                             </span>
                         </p>
                         <p className="text-[20px] text-primary">
-                            We provide variety of market demand IT skill courses
-                            at Mindrisers. Explore courses and start your IT
-                            journey with us.
+                            We provide variety of market demand IT skill courses at Mindrisers. Explore courses and
+                            start your IT journey with us.
                         </p>
                     </div>
                     <Image
@@ -219,9 +190,7 @@ const Courses = ({ courses_all }) => {
                             <li
                                 onClick={() => {
                                     console.log('hello world')
-                                    if (
-                                        el.toLowerCase() == 'clear tag filter'
-                                    ) {
+                                    if (el.toLowerCase() == 'clear tag filter') {
                                         router.replace({
                                             query: {
                                                 tag: ''
@@ -242,13 +211,11 @@ const Courses = ({ courses_all }) => {
                                     'hover:shadow-small relative cursor-pointer rounded-xl bg-green-50 p-[10px] text-[14px] capitalize leading-[145%] text-primary hover:bg-gray-100',
                                     {
                                         'bg-red-400 text-white hover:!bg-red-500':
-                                            el.toLowerCase() ===
-                                            'clear tag filter'
+                                            el.toLowerCase() === 'clear tag filter'
                                     },
                                     {
                                         'cursor-text !bg-green-200 hover:!bg-green-200':
-                                            el.toLowerCase() ===
-                                            router.query.tag
+                                            el.toLowerCase() === router.query.tag
                                     }
                                 )}
                             >
@@ -278,14 +245,11 @@ const Courses = ({ courses_all }) => {
                         e.preventDefault()
                         router.replace({
                             query: {
-                                q: (e.target as HTMLFormElement).searchTerm
-                                    .value //Property 'searchTerm' does not exist on type 'EventTarget
+                                q: (e.target as HTMLFormElement).searchTerm.value //Property 'searchTerm' does not exist on type 'EventTarget
                             }
                         })
                         clearFilter('q')
-                        setSearchTerm(
-                            (e.target as HTMLFormElement).searchTerm.value
-                        )
+                        setSearchTerm((e.target as HTMLFormElement).searchTerm.value)
                     }}
                 >
                     <div className="relative inline-block ">
@@ -324,9 +288,7 @@ const Courses = ({ courses_all }) => {
                     <h2 className="sub-header-lg title-space">
                         Explore <Swoosh type="secondary">Skill Courses</Swoosh>
                     </h2>
-                    <p className="text-[20px] text-primary">
-                        Explore our courses
-                    </p>
+                    <p className="text-[20px] text-primary">Explore our courses</p>
                 </div>
                 <div className="title-space-6xl-reverse  !2xl:title-space-5xl-reverse container">
                     <CoursesList courses={courses} />
@@ -336,8 +298,7 @@ const Courses = ({ courses_all }) => {
                 <section className="section-wrapper-m">
                     <div className="text-center">
                         <h2 className="sub-header-lg title-space">
-                            Recommended{' '}
-                            <Swoosh type="secondary">For You</Swoosh>
+                            Recommended <Swoosh type="secondary">For You</Swoosh>
                         </h2>
                     </div>
                     <div className="title-space-6xl-reverse  !2xl:title-space-5xl-reverse container">
@@ -350,8 +311,7 @@ const Courses = ({ courses_all }) => {
                     <div className="h-16 w-16 animate-spin rounded-full border-t-4 border-white"></div>
                 </div>
             )}
-            <Offer matchingUrl={`/course`} />
-
+            <Offer matchingUrl={`/course`} offerType={OfferPage.Course} />
         </>
     )
 }

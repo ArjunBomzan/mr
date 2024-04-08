@@ -10,7 +10,14 @@ import { Inter } from '@next/font/google'
 import axios from 'axios'
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Offer({ matchingUrl }: { matchingUrl: string }) {
+/**
+ *
+ * @param matchingUrl route where we want to show offer
+ * @param offerType
+ *
+ * @returns
+ */
+export default function Offer({ matchingUrl, offerType }: { matchingUrl: string; offerType: string }) {
     const [isActive, setIsActive] = useState(false)
     const [offers, setOffers] = useState<Offer[]>([])
     const [selectedOffer, setSelectedOffer] = useState(undefined)
@@ -26,9 +33,12 @@ export default function Offer({ matchingUrl }: { matchingUrl: string }) {
     } catch (err) {}
 
     useEffect(() => {
-        publicRequest.get('offers/').then((res) => {
-            setOffers(res.data)
-        })
+        publicRequest
+            .get(`offers/${offerType}/`)
+            .then((res) => {
+                setOffers(res.data)
+            })
+            .catch((err) => {})
     }, [])
 
     useEffect(() => {
@@ -42,10 +52,11 @@ export default function Offer({ matchingUrl }: { matchingUrl: string }) {
 
         let selectedOffer = activeOffers.find((el) => {
             let target = `/${el.page}${el.course?.slug ? `/${el.course?.slug}` : ''}`.toLowerCase()
-            if (target == matchingUrl.toLowerCase()) {
+            if (target.toLowerCase() == matchingUrl.toLowerCase()) {
                 return true
             }
         })
+        // debugger
 
         if (selectedOffer) {
             // these two images take time to load, so immediately load these two images so that it can be immediatedly displayed in browser
@@ -63,8 +74,8 @@ export default function Offer({ matchingUrl }: { matchingUrl: string }) {
             const mobileImage = document.createElement('img')
 
             // Set src attributes
-            desktopImage.src = makeFullUrl(selectedOffer.desktop_image) 
-            mobileImage.src = makeFullUrl(selectedOffer.mobile_image) 
+            desktopImage.src = makeFullUrl(selectedOffer.desktop_image)
+            mobileImage.src = makeFullUrl(selectedOffer.mobile_image)
 
             // Set styles
             desktopImage.style.display = 'none'

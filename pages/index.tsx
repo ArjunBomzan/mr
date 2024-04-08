@@ -497,7 +497,7 @@ export default function Home(props) {
             <div className=" container my-[100px]">
                 <Opportunity />
             </div>
-            <Offer matchingUrl={`/home`} />
+            <Offer matchingUrl={`/home`} offerType="Home"  />
         </>
     )
 }

@@ -269,7 +269,10 @@ export default function course(props) {
                         pursue their future.
                     </h2>
                     <CourseSuccessStories success_stories={props.success_stories} />
-                    <Offer matchingUrl={`/${OfferPage.CourseDetail}/${course.slug}`} />
+                    <Offer
+                        matchingUrl={`/${OfferPage.CourseDetail}/${course.slug}`}
+                        offerType={OfferPage.CourseDetail}
+                    />
                 </section>
             </main>
         </div>

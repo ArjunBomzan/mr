@@ -168,7 +168,7 @@ export default function Home({ partners }) {
             <div className="section-wrapper-m container ">
                 <Opportunity />
             </div>
-            <Offer matchingUrl={`/${OfferPage.Partner}`} />
+            <Offer matchingUrl={`/${OfferPage.Partner}`} offerType='Partner' />
         </>
     )
 }
