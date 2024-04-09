@@ -179,7 +179,7 @@ export default function Offer({ matchingUrl, offerType }: { matchingUrl: string;
                                     src={'/mindrisers.webp'}
                                     height={200}
                                     width={200}
-                                    className="aspect-square h-[3.5rem] w-[3.5rem]"
+                                    className="aspect-square h-[2.5rem] w-[2.5rem]"
                                 />
                                 <p className={`${inter.className} title-xl ml-[7px]`}>mindrisers</p>
                             </Link>
@@ -194,7 +194,7 @@ export default function Offer({ matchingUrl, offerType }: { matchingUrl: string;
                                     onClick={() => {
                                         handleClose()
                                     }}
-                                    className="absolute right-0 top-0 flex h-[36px] w-[36px] -translate-y-1/2 translate-x-1/2 cursor-pointer items-center justify-center rounded-full bg-red-500 font-bold text-white "
+                                    className="absolute right-0 top-0 flex h-[28px] w-[28px] -translate-y-1/2 translate-x-1/2 cursor-pointer items-center justify-center rounded-full bg-red-400 font-bold text-white md:h-[32px] md:w-[32px] "
                                 >
                                     X{/* <IoMdCloseCircle className="text-3xl text-red-500 lg:text-4xl " /> */}
                                 </span>
