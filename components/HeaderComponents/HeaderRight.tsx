@@ -1,25 +1,7 @@
-import MediaQuery from 'react-responsive'
+import React from 'react'
 
-import HeaderTabs from './HeaderTabs'
-import HeaderButtonRight from './HeaderButtonRight'
-import Hamburger from './Hamburger'
-
-const HeaderRight = () => {
-
+export default function HeaderRight() {
   return (
-    <div className='flex flex-row space-x-8 items-center'>
-      <MediaQuery minWidth={1101}>
-        <HeaderTabs />
-        <HeaderButtonRight />
-      </MediaQuery>
-      <MediaQuery maxWidth={1100}>
-        <Hamburger />
-        <MediaQuery minWidth={768}>
-          <HeaderButtonRight />
-        </MediaQuery>
-      </MediaQuery>
-    </div>
+    <div>HeaderRight</div>
   )
 }
-
-export default HeaderRight

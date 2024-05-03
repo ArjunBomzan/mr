@@ -25,10 +25,10 @@ import PopupWelcome from "../components/PopupWelcome"
 
 function MyApp({ Component, pageProps }) {
     useEffect(() => {
-        const use = async () => {
-            (await import("tw-elements")).default;
-        };
-        use();
+        // const use = async () => {
+        //     (await import("tw-elements")).default;
+        // };
+        // use();
     }, []);
 
     return (

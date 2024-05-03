@@ -5,9 +5,9 @@ module.exports = {
   content: [
     './pages/**/*.{html,js,jsx,ts,tsx}',
     "./components/**/*.{js,ts,jsx,tsx}",
-    './node_modules/tw-elements/dist/js/**/*.js',
     "./pages/*.{html,js,jsx}"
   ],
+  // './node_modules/tw-elements/dist/js/**/*.js',
   theme: {
     extend: {
       screens: {
@@ -79,8 +79,8 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('tw-elements/dist/plugin'),
-    require('@tailwindcss/line-clamp'),
   ],
+  // require('@tailwindcss/typography'),
+  // require('@tailwindcss/line-clamp'),
+  // require('tw-elements/dist/plugin'),
 }
