@@ -166,7 +166,7 @@ export default function Home(props) {
                 size="big"
                 extendedClassName="!py-0 zz-0 !items-start "
             >
-                <section
+                <div
                     className="h-full w-full bg-no-repeat  "
                     style={
                         {
@@ -175,9 +175,9 @@ export default function Home(props) {
                     }
                 >
                     <div className="container relative z-[999]  pt-[50px] text-center md:pt-[100px] md:text-left ">
-                        <h1 className="header-xl text-expanded-sm mb-[30px] uppercase lg:mb-[40px]">
+                        <p className="header-xl text-expanded-sm mb-[30px] uppercase lg:mb-[40px]">
                             Learn
-                        </h1>
+                        </p>
                         <ul className="title-space inline-flex flex-wrap justify-center gap-[20px] rounded-[12px] bg-primary px-[20px] py-[10px] md:gap-[37px]">
                             {tags.map((el) => {
                                 return (
@@ -186,6 +186,7 @@ export default function Home(props) {
                                             <Link
                                                 target="_blank"
                                                 href={`/courses?tag=${el.title}`}
+                                                aria-label={`view ${el.title} courses`}     
                                             >
                                                 <Image
                                                     alt=""
@@ -272,10 +273,10 @@ export default function Home(props) {
                             />
                         </div>
                     </div>
-                </section>
+                </div>
             </BannerWrapper>
 
-            <section className=" section-wrapper container grid grid-cols-1 items-center gap-[40px] lg:grid-cols-[45%,55%] lg:gap-0 ">
+            <div className=" section-wrapper container grid grid-cols-1 items-center gap-[40px] lg:grid-cols-[45%,55%] lg:gap-0 ">
                 <div
                     className={classNames('lg:pr-[40px]', 'order-2 lg:order-1')}
                 >
@@ -324,7 +325,7 @@ export default function Home(props) {
                         </Link>
                     </div>
                 </article>
-            </section>
+            </div>
 
             {/* vercel test */}
 
@@ -338,7 +339,7 @@ export default function Home(props) {
                 <CoursesList courses={props.courses} />
             </section>
             {/* About us */}
-            <section className="section-wrapper-m section-wrapper-p-half container   ">
+            <div className="section-wrapper-m section-wrapper-p-half container   ">
                 <div className="grid  items-center gap-[40px] rounded-[24px]  bg-primary-light px-[10px] py-[40px]  md:px-[20px] lg:px-[30px] xl:grid-cols-[45%,55%] xl:gap-0 xl:p-[40px]">
                     <article className=" text-center xl:pr-[40px] xl:text-left">
                         <div>
@@ -443,9 +444,9 @@ export default function Home(props) {
                         />
                     </article>
                 </div>
-            </section>
+            </div>
 
-            <section className=" section-wrapper-m section-wrapper-p-half container">
+            <div className=" section-wrapper-m section-wrapper-p-half container">
                 <div className=" section-p  relative grid gap-[40px] overflow-hidden rounded-3xl   bg-orange-100 xl:grid-cols-[45%,55%]  xl:gap-0  ">
                     <article className="text-center text-secondary xl:pr-[40px] xl:text-left">
                         <h2 className="header-lg  text-expanded title-space-lg">
@@ -464,11 +465,11 @@ export default function Home(props) {
                             </div>
                         </div>
                     </article>
-                    <article className="relative z-10 rounded-xl bg-white p-[40px]">
+                    <div className="relative z-10 rounded-xl bg-white p-[40px]">
                         <HomeContact />
-                    </article>
+                    </div>
                 </div>
-            </section>
+            </div>
             <section className=" section-wrappe container">
                 <div className="text-center text-primary">
                     <p className="mb-[10px] uppercase ">be the part of</p>
@@ -478,7 +479,7 @@ export default function Home(props) {
                             Success Network
                         </Swoosh>
                     </h2>
-                    <Link href={'/success-gallery'} className="inline-block">
+                    <Link href={'/success-gallery'} className="inline-block" aria-label="visit success-gallery page" >
                         <Image
                             alt=""
                             src={'/assets/images/home/success-stories.webp'}

@@ -3,13 +3,14 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
-
 /**
- * Post Admission modal  
+ * Post Admission modal
  */
+
 export default function Popup() {
     const router = useRouter()
     const route = router.route //  eg:
+    const [renderElements, setrenderElements] = useState(false)
     const [isActive, setisActive] = useState(false)
     const [temp, settemp] = useState(true)
 
@@ -22,9 +23,21 @@ export default function Popup() {
         handleClose()
     }, [route])
 
+    useEffect(() => {
+        setTimeout(() => {
+            setrenderElements(true)
+        }, 2000)
+    }, [])
+
     let className = `${isActive ? 'active' : ''}  ${
         temp ? 'temp' : ''
     } bottom-0 left-0 right-0 py-[20px] top-0 z-[100000000000] hidden h-screen overflow-hidden  w-full cursor-pointer items-center justify-center  bg-[rgba(0,0,0,0.8)] `
+
+    /* used in _app for all... we do not need this in inital load. disabled to optimize page speed  */
+    if (!renderElements) {
+        return null
+    }
+
     return (
         <section
             id="admission-modal"
@@ -54,35 +67,35 @@ export default function Popup() {
                 <Image
                     alt=""
                     className="absolute -top-24 right-0 z-10"
-                    src="/assets/images/popup/Ellipse 15.webp"
+                    src="/assets/images/popup/Ellipse_15.webp"
                     width={150}
                     height={150}
                 />
                 <Image
                     alt=""
                     className="absolute right-0 top-2 z-10"
-                    src="/assets/images/popup/Ellipse 15.webp"
+                    src="/assets/images/popup/Ellipse_15.webp"
                     width={150}
                     height={150}
                 />
                 <Image
                     alt=""
                     className="absolute right-0 top-32 z-10"
-                    src="/assets/images/popup/Ellipse 15.webp"
+                    src="/assets/images/popup/Ellipse_15.webp"
                     width={150}
                     height={150}
                 />
                 <Image
                     alt=""
                     className="absolute bottom-20 right-0 z-10"
-                    src="/assets/images/popup/Ellipse 15.webp"
+                    src="/assets/images/popup/Ellipse_15.webp"
                     width={150}
                     height={150}
                 />
                 <Image
                     alt=""
                     className="absolute -bottom-14 right-0 z-10"
-                    src="/assets/images/popup/Ellipse 15.webp"
+                    src="/assets/images/popup/Ellipse_15.webp"
                     width={150}
                     height={150}
                 />
@@ -93,7 +106,6 @@ export default function Popup() {
                         src="/assets/images/popup/vector.webp"
                         height={400}
                         width={400}
-
                     />
                     <div>
                         <div>
@@ -107,8 +119,7 @@ export default function Popup() {
                         </div>
                         <div className="mt-[20px]">
                             <p className="max-w-[550px] px-3 text-center text-[20px] font-normal leading-7 text-[#686163]">
-                                Your form have been submitted successfully.
-                                We'll reach out to you soon
+                                Your form have been submitted successfully. We'll reach out to you soon
                             </p>
                         </div>
                     </div>

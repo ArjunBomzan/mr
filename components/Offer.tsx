@@ -200,10 +200,11 @@ export default function Offer({ matchingUrl, offerType }: { matchingUrl: string;
                                 </span>
                                 <div onClick={goToOfferPage} className="inline-block cursor-pointer">
                                     <img
+                                    alt='offer image'
                                         className="hidden lg:inline-block"
                                         src={makeFullUrl(selectedOffer.desktop_image)}
                                     />
-                                    <img className="lg:hidden" src={makeFullUrl(selectedOffer.mobile_image)} />
+                                    <img className="lg:hidden" alt='offer image' src={makeFullUrl(selectedOffer.mobile_image)} />
                                 </div>
                             </div>
                         </div>

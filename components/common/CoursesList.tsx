@@ -73,7 +73,7 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                                     }
                                 }
                             >
-                                <li className="h-full">
+                                <div className="h-full">
                                     <Link
                                         href={`/courses/${el.slug}`}
                                         className="hover:shadow-medium group block h-full rounded-xl border border-border bg-white p-5 transition hover:border-primary"
@@ -95,11 +95,11 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                                             </h3>
                                         </div>
                                         <p className="header-space-xs">{el.duration}</p>
-                                        <button className="btn-gray transition group-hover:bg-green-50  group-hover:text-primary ">
+                                        <div className="btn-gray inline-block transition group-hover:bg-green-50  group-hover:text-primary ">
                                             <span className="transition-all group-hover:mr-2">Learn More</span>
-                                        </button>
+                                        </div>
                                     </Link>
-                                </li>
+                                </div>
                             </SwiperSlide>
                         )
                     })}
@@ -136,12 +136,12 @@ export default function CoursesList({ courses }: { courses: courseType[] }) {
                                     <span className="">Learn More</span>
                                 </span>
 
-                                <button
-                                    className="btn-gray absolute bottom-5  
-                                left-5 z-10 transition group-hover:bg-green-50 group-hover:text-primary "
+                                <div
+                                    className="btn-gray absolute bottom-5 left-5  
+                                z-10 inline-block transition group-hover:bg-green-50 group-hover:text-primary "
                                 >
                                     <span className="transition-all group-hover:mr-2">Learn More</span>
-                                </button>
+                                </div>
                             </Link>
                         </li>
                     )

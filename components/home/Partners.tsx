@@ -68,7 +68,7 @@ export default function Partners({ partners }) {
                         {partners.map((el) => {
                             return (
                                 <SwiperSlide className="px-[10px] md:px-[25px] lg:px-[30px]  ">
-                                    <Link href={el.link} className="h-[72px] w-full  md:h-[46px] borde border-border select-none">
+                                    <Link href={el.link} aria-label={`visit ${el.name} page`} className="h-[72px] w-full  md:h-[46px] borde border-border select-none">
                                     <Image
                                         title={el.name}
                                         src={makeFullUrl(el.image)}

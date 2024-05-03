@@ -39,8 +39,6 @@ export default function TypeWriter({ contents }: { contents: string[] }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     useEffect(() => {
         const intervalId = setInterval(() => {
-            console.log("here");
-
             setCurrentIndex((prevIndex) => (prevIndex + 1) % contents.length);
         }, 1000);
 
