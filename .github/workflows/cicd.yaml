@@ -41,7 +41,7 @@ jobs:
 
 
     deploy-staging:
-        name: Deploy Production
+        name: Deploy Staging
         needs: [build-frontend, test-frontend]
         if: github.event_name == 'push' &&  (github.ref == 'refs/heads/staging')
         runs-on: ubuntu-latest
