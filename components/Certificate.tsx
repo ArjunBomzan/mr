@@ -38,12 +38,12 @@ const Certificate = () => {
 
         {/* About course and certificate */}
         <div className="mt-[-30px] flex items-center gap-9 justify-between">
-          <div className="text-black">
+          <div className="text-black space-y-1">
             <p className="text-[17.3px] font-medium leading-[20.32px]">Course Duration: 3 months</p>
             <p className="text-[17px] leading-[20.32px] font-medium">Certification No: <span className="text-[13.1px] leading-[15.3px]  font-medium uppercase">mr-80290-pd	</span></p>
           </div>
 
-          <div className="text-black gap-y-1">
+          <div className="text-black space-y-1">
             <p className=" text-[17.46px] leading-[20.46px]">Issued Date:</p>
             <p className="text-[15.87px] leading-[18.6px]">29 Jan, 2024</p>
           </div>
