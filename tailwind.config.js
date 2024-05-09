@@ -10,6 +10,9 @@ module.exports = {
   // './node_modules/tw-elements/dist/js/**/*.js',
   theme: {
     extend: {
+      fontFamily: {
+        'Roboto': ['Roboto', 'sans-serif']
+      },
       screens: {
         "mine": "361px", // landscape view mobiles
         "sm": "576px", // landscape view mobiles

@@ -1,34 +1,35 @@
 @import url("./tailwind.css");
 @import url("./universal.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 :root {
-    --primary-color: #018343;
+  --primary-color: #018343;
 }
 
 html {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .swoosh-h,
 .swoosh-h-secondary {
-    position: absolute;
-    z-index: -1;
-    bottom: -3px;
-    left: -3%;
-    content: "";
-    height: 14px;
-    width: 107%;
-    /* background-image: url("/assets/images/common/swoosh-primary.svg"); */
-    /* background-size: cover;
+  position: absolute;
+  z-index: -1;
+  bottom: -3px;
+  left: -3%;
+  content: "";
+  height: 14px;
+  width: 107%;
+  /* background-image: url("/assets/images/common/swoosh-primary.svg"); */
+  /* background-size: cover;
     background-repeat: no-repeat;
     background-position: center; */
-    clip-path: polygon(0 0, 0% 100%, 100% 0);
-    /*but clip-path not support by all yet */
-    background-color: var(--primary-color);
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+  /*but clip-path not support by all yet */
+  background-color: var(--primary-color);
 }
 
 .swoosh-h-secondary {
-    background-color: #e27c00;
+  background-color: #e27c00;
 }
 
 /* TODO: swoosh should go behind the text  => seems like we cannot send element made using after like that ... make reusable component 
@@ -36,152 +37,156 @@ html {
 */
 
 .banner-b-white-curve::after {
-    height: 90px;
-    background-image: url("/assets/images/common/banner-b-white-curve.svg");
-    /* background-color: white; */
-    /* c-clip-path: polygon(25% 100%, 76% 100%, 88% 94%, 100% 74%, 100% 100%, 0 100%, 0 80%, 9% 91%);
+  height: 90px;
+  background-image: url("/assets/images/common/banner-b-white-curve.svg");
+  /* background-color: white; */
+  /* c-clip-path: polygon(25% 100%, 76% 100%, 88% 94%, 100% 74%, 100% 100%, 0 100%, 0 80%, 9% 91%);
     c-clip-path: polygon(48% 100%, 57% 100%, 87% 87%, 100% 65%, 100% 100%, 0 100%, 0 72%, 14% 85%);
     c-clip-path: polygon(100% 100%, 44.7% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 99.5%);
     c-clip-path: polygon(100% 0, 44.74% 0, 0 100%, 100% 100%);
     c-clip-path: ellipse(100% 99.6% at 50% 100%);
     c-background-color: teal; */
-    /* display: none; */
+  /* display: none; */
 }
+
 .banner-b-white-curve.small-curve::after {
-    height: 85px;
-    background-image: url("/assets/images/common/banner-b-white-curve-small.svg");
+  height: 85px;
+  background-image: url("/assets/images/common/banner-b-white-curve-small.svg");
 }
 
 .testimonial-card-clamp {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    overflow-x: hidden;
-    overflow-y: auto;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .clamp-4 {
-    -webkit-line-clamp: 4;
+  -webkit-line-clamp: 4;
 }
 
 .clamp-5 {
-    -webkit-line-clamp: 5;
+  -webkit-line-clamp: 5;
 }
 
 .clamp-6 {
-    -webkit-line-clamp: 6;
+  -webkit-line-clamp: 6;
 }
 
 .clamp-7 {
-    -webkit-line-clamp: 7;
+  -webkit-line-clamp: 7;
 }
 
 /* TODO: scrollbar is not changing .. change its desing */
 .testimonial-card-clamp-4::-webkit-scrollbar {
-    width: 6px;
-    /* Set the width of the scrollbar */
+  width: 6px;
+  /* Set the width of the scrollbar */
 }
 
 .testimonial-card-clamp-4::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-    /* Set the background color of the track */
-    border-radius: 10px;
-    /* Set the border radius of the track */
+  background-color: #f1f1f1;
+  /* Set the background color of the track */
+  border-radius: 10px;
+  /* Set the border radius of the track */
 }
 
 .testimonial-card-clamp-4::-webkit-scrollbar-thumb {
-    background-color: #888;
-    /* Set the color of the scrollbar thumb */
-    border-radius: 10px;
-    /* Set the border radius of the scrollbar thumb */
+  background-color: #888;
+  /* Set the color of the scrollbar thumb */
+  border-radius: 10px;
+  /* Set the border radius of the scrollbar thumb */
 }
 
 .testimonial-card-clamp-4::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-    /* Set the color of the scrollbar thumb on hover */
+  background-color: #555;
+  /* Set the color of the scrollbar thumb on hover */
 }
 
 /* TODO: scrollbar is not changing .. change its desing */
 
 
 .custom-sidebar::-webkit-scrollbar {
-    width: 6px;
-    /* Set the width of the scrollbar */
+  width: 6px;
+  /* Set the width of the scrollbar */
 }
 
 .custom-sidebar::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-    /* Set the background color of the track */
-    border-radius: 10px;
-    /* Set the border radius of the track */
+  background-color: #f1f1f1;
+  /* Set the background color of the track */
+  border-radius: 10px;
+  /* Set the border radius of the track */
 }
 
 .custom-sidebar::-webkit-scrollbar-thumb {
-    background-color: #888;
-    /* Set the color of the scrollbar thumb */
-    border-radius: 10px;
-    /* Set the border radius of the scrollbar thumb */
+  background-color: #888;
+  /* Set the color of the scrollbar thumb */
+  border-radius: 10px;
+  /* Set the border radius of the scrollbar thumb */
 }
 
 .custom-sidebar::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-    /* Set the color of the scrollbar thumb on hover */
+  background-color: #555;
+  /* Set the color of the scrollbar thumb on hover */
 }
 
 /* for cruved ..arrow in home page */
 .target::after {
-    position: absolute;
-    content: "";
-    background-image: url("/assets/images/home/banner/curve-stroke.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    bottom: -8px;
-    height: auto;
-    width: auto;
-    height: 812px;
-    width: 1561px;
-    transform: translate(-100%, 100%);
-    z-index: -1;
+  position: absolute;
+  content: "";
+  background-image: url("/assets/images/home/banner/curve-stroke.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: -8px;
+  height: auto;
+  width: auto;
+  height: 812px;
+  width: 1561px;
+  transform: translate(-100%, 100%);
+  z-index: -1;
 }
+
 .arrow-pointer {
-    background-image: url("/assets/images/home/banner/curve-stroke.svg");
+  background-image: url("/assets/images/home/banner/curve-stroke.svg");
 }
 
 .custom-swiper-dots .swiper-pagination {
-    bottom: -40px !important;
+  bottom: -40px !important;
 }
+
 .custom-swiper-dots.custom .swiper-pagination {
-    bottom: -50px !important;
+  bottom: -50px !important;
 }
 
 @media (min-width: 768px) {
-    .hide-custom-swiper-dots .swiper-pagination {
-        display: none;
-    }
+  .hide-custom-swiper-dots .swiper-pagination {
+    display: none;
+  }
 }
 
 @keyframes appear {
-    from {
-        /* opacity: 0; */
-        /* width: 0px; */
-        max-width: 0px;
-        /* max-width: min-content */
-        /* overflow: hidden; */
-        /* transform: scale(.5); */
-    }
-    to {
-        /* opacity: 1; */
-        max-width: 9999px;
-        /* max-width: ; */
-        /* transform: scale(1); */
-    }
+  from {
+    /* opacity: 0; */
+    /* width: 0px; */
+    max-width: 0px;
+    /* max-width: min-content */
+    /* overflow: hidden; */
+    /* transform: scale(.5); */
+  }
+
+  to {
+    /* opacity: 1; */
+    max-width: 9999px;
+    /* max-width: ; */
+    /* transform: scale(1); */
+  }
 }
 
 .animateMe {
-    white-space: nowrap;
-    animation: appear 6s;
-    animation-timing-function: linear;
+  white-space: nowrap;
+  animation: appear 6s;
+  animation-timing-function: linear;
 }
 
 /* .sub-header-lg {
@@ -190,194 +195,198 @@ html {
 
 .editor-content strong,
 .editor-content b {
-    font-weight: inherit;
-    font-weight: 600;
+  font-weight: inherit;
+  font-weight: 600;
 }
 
 .editor-content h2 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    font-size: 22px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 22px;
 }
 
 @media (min-width: 1280px) {
-    .editor-content h2 {
-        font-size: 23px;
-    }
+  .editor-content h2 {
+    font-size: 23px;
+  }
 }
+
 @media (min-width: 1536px) {
-    .editor-content h2 {
-        font-size: 24px;
-    }
+  .editor-content h2 {
+    font-size: 24px;
+  }
 }
 
 .editor-content h3 {
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: var(--primary-color);
-    font-size: 20px;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  font-size: 20px;
 }
 
 @media (min-width: 1280px) {
-    .editor-content h2 {
-        font-size: 21px;
-    }
+  .editor-content h2 {
+    font-size: 21px;
+  }
 }
+
 @media (min-width: 1536px) {
-    .editor-content h2 {
-        font-size: 22px;
-    }
+  .editor-content h2 {
+    font-size: 22px;
+  }
 }
 
 .editor-content a {
-    color: #1a0dab;
-}
-.editor-content a:hover {
-    text-decoration: underline;
-}
-.editor-content ul,
-.editor-content ol {
-    list-style: disc;
-    padding-left: 40px;
+  color: #1a0dab;
 }
 
-.editor-content{
-    text-align: justify;
+.editor-content a:hover {
+  text-decoration: underline;
 }
-.editor-content h1, .editor-content h2, .editor-content h3{
-    text-align: left !important;
+
+.editor-content ul,
+.editor-content ol {
+  list-style: disc;
+  padding-left: 40px;
+}
+
+.editor-content {
+  text-align: justify;
+}
+
+.editor-content h1,
+.editor-content h2,
+.editor-content h3 {
+  text-align: left !important;
 }
 
 .contact-us svg {
-    color: var(--primary-color);
-    fill: var(--primary-color);
+  color: var(--primary-color);
+  fill: var(--primary-color);
 }
 
 #scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 900000;
-    width: 40px;
-    height: 40px;
-    color: white;
-    fill: currentColor;
-    border: 1px solid white;
-    border-radius: 100%;
-    box-shadow: 0px 0px 5px 2px rgba(208, 208, 208, 0.12);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 900000;
+  width: 40px;
+  height: 40px;
+  color: white;
+  fill: currentColor;
+  border: 1px solid white;
+  border-radius: 100%;
+  box-shadow: 0px 0px 5px 2px rgba(208, 208, 208, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 #scroll-to-top svg {
-    width: 20px;
+  width: 20px;
 }
 
 .paginate-wrapper li[title] {
-    font-size: 0.8rem;
-    margin-right: 0.3rem;
-    border-radius: 50%;
-    text-align: center;
-    min-width: 2rem;
-    aspect-ratio: 1/1;
-    user-select: none;
-    display: inline-block;
-    border: 1px solid gray;
-    padding: 0.3rem;
-    vertical-align: middle;
-    position: relative;
-    cursor: pointer;
+  font-size: 0.8rem;
+  margin-right: 0.3rem;
+  border-radius: 50%;
+  text-align: center;
+  min-width: 2rem;
+  aspect-ratio: 1/1;
+  user-select: none;
+  display: inline-block;
+  border: 1px solid gray;
+  padding: 0.3rem;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
 }
 
 .paginate-wrapper li * {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
+
 .paginate-wrapper li:has(button) {
-    margin: 0 !important;
-    border: none !important;
-    border-top: 0 !important;
-    border-bottom: 0 !important;
-    position: relative;
+  margin: 0 !important;
+  border: none !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  position: relative;
 }
 
 .paginate-wrapper li:has(button)::after {
-    content: "•••";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  content: "•••";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .paginate-wrapper li.disabled,
 .rc-pagination-disabled {
-    /* background-color: gray; */
-    opacity: 0.4;
-    cursor: no-drop;
+  /* background-color: gray; */
+  opacity: 0.4;
+  cursor: no-drop;
 }
 
 .paginate-wrapper li.disabled *,
 .rc-pagination-disabled {
-    cursor: no-drop;
+  cursor: no-drop;
 }
 
 .paginate-wrapper li.selected,
 .rc-pagination-item-active {
-    color: white;
-    background-color: #eeeffb;
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+  color: white;
+  background-color: #eeeffb;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .rc-pagination-total-text {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 #admission-modal {
-    display: none;
+  display: none;
 }
 
 #admission-modal.active {
-    display: flex !important;
-    position: fixed !important;
+  display: flex !important;
+  position: fixed !important;
 }
 
 .overview__wrapper.limited {
-    height: 500px;
-    overflow: hidden;
+  height: 500px;
+  overflow: hidden;
 }
 
 .overview__wrapper.limited .fader {
-    bottom: 0;
-    height: 8rem;
-    left: 0;
-    right: 0;
-    background: -webkit-linear-gradient(
-        top,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 1) 100%
-    );
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 1) 100%
-    );
+  bottom: 0;
+  height: 8rem;
+  left: 0;
+  right: 0;
+  background: -webkit-linear-gradient(top,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 100%);
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 100%);
 }
 
 .custom .swiper-wrapper .swiper-slide {
-    height: unset;
-    height: auto;
+  height: unset;
+  height: auto;
 }
 
 .custom .swiper-wrapper {
-    align-items: stretch;
+  align-items: stretch;
 }

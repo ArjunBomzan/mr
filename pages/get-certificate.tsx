@@ -31,8 +31,9 @@ const getCertificate = () => {
 
         {/* Certificate */}
         <div className="flex justify-center">
-
-          <Certificate />
+          <div className="w-[960px] p-[30px]   bg-[#fff5c5] ">
+            <Certificate />
+          </div>
         </div>
 
         {/* buttons */}

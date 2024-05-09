@@ -1,28 +1,25 @@
 import Image from "next/image"
-import Link from "next/link"
+
 
 
 const Certificate = () => {
   return (
-    <div className="py-[20px]  px-[30px] w-[888px] flex justify-center gap-7 border-[28px] border-[#fff5c5]">
+    <div className="w-[888px] py-[40px]  flex justify-center gap-7 bg-white font-Roboto">
       {/* content */}
       <div className=" pt-[20px] flex flex-col items-center gap-y-8">
+        {/* Certificate logo */}
+        <div className="flex items-end gap-2">
+          <Image src="/mindrisers.png" alt="mindrisers logo" height={58.91} width={63.96} className="h-[58.91px] w-[63.96px]" />
 
-        <Image src="/CertificateLogo.png" alt="mindrisers logo" height={71} width={276.5} className="" />
-
+          <div className="text-primary">
+            <h1 className=" text-[36.39px] leading-[41.84px] mb-[-4px] font-bold lowercase">mindrisers</h1>
+            <h3 className="text-[18.45px] font-medium leading-[21px]">CONSORTIUM PVT. LTD.</h3>
+            <p className="mt-[-2px] text-black text-[12.19px] leading-[14.29px] uppercase">PUTALISADAK, KATHMANDU, NEPAL</p>
+          </div>
+        </div>
         {/* Certificate title */}
-        <div className="text-center">
-          <h1 className="text-[65.66px] leading-[58.8px]" style={{
-            color: 'transparent',
-            backgroundImage: 'linear-gradient(rgba(235, 179, 8, 1),rgba(218, 165, 5, 1),rgba(175, 134, 10, 1), rgba(175, 134, 10, 1), rgba(237, 181, 7, 1))',
-            backgroundClip: 'text',
-          }}>CERTIFICATE</h1>
-          <h3 className="text-[32.38px] leading-[38.86px]"
-            style={{
-              color: 'transparent',
-              background: 'linear-gradient(rgba(218, 165, 5, 1),rgba(175, 134, 10, 1),rgba(237, 181, 7, 1),rgba(175, 134, 10, 1),rgba(235, 179, 8, 1))',
-              backgroundClip: 'text'
-            }}>OF COMPLETION</h3>
+        <div>
+          <Image src="/CertificteTitle.png" alt="Certificate title" height={90.34} width={401} />
         </div>
 
         {/* Student Name */}
@@ -33,7 +30,7 @@ const Certificate = () => {
             <p className="text-[19.68px] font-medium leading-[23.06px]">has successfully completed the Python with Django Training.</p>
           </div>
 
-          <Image src="/BG WM.png" alt="logo watermark" height={122} width={122} className="absolute bottom-[-12px] left-[210px] z-10" />
+          <Image src="/BG WM.png" alt="logo watermark" height={122} width={122} className="absolute bottom-[-18px] left-[212px] z-10" />
         </div>
 
         {/* About course and certificate */}
@@ -55,7 +52,7 @@ const Certificate = () => {
         </div>
 
         {/* End */}
-        <div className="flex justify-center gap-[95px] mt-[-45px] ml-[210px]">
+        <div className="flex justify-center gap-[80px] mt-[-45px] ml-[200px]">
           <p className="text-black">mindrisersnepal.com</p>
           <Image src="/logo-stamp 1.png" alt="stamp" width={131} height={111.72} className="mt-[-74px] z-50" />
         </div>
