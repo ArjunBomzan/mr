@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const Certificate = () => {
   return (
-    <div className="py-[20px] px-[30px] w-[888px] flex justify-center gap-10 border-[28px] border-[#fff5c5]">
+    <div className="py-[20px]  px-[30px] w-[888px] flex justify-center gap-7 border-[28px] border-[#fff5c5]">
       {/* content */}
       <div className=" pt-[20px] flex flex-col items-center gap-y-8">
 
@@ -33,11 +33,11 @@ const Certificate = () => {
             <p className="text-[19.68px] font-medium leading-[23.06px]">has successfully completed the Python with Django Training.</p>
           </div>
 
-          <Image src="/BG WM.png" alt="logo watermark" height={122} width={122} className="absolute bottom-[-22px] left-[190px] z-10" />
+          <Image src="/BG WM.png" alt="logo watermark" height={122} width={122} className="absolute bottom-[-12px] left-[210px] z-10" />
         </div>
 
         {/* About course and certificate */}
-        <div className="mt-[-30px] flex items-center gap-9 justify-between">
+        <div className="mt-[-30px] flex items-center gap-7 justify-between">
           <div className="text-black space-y-1">
             <p className="text-[17.3px] font-medium leading-[20.32px]">Course Duration: 3 months</p>
             <p className="text-[17px] leading-[20.32px] font-medium">Certification No: <span className="text-[13.1px] leading-[15.3px]  font-medium uppercase">mr-80290-pd	</span></p>
@@ -57,7 +57,7 @@ const Certificate = () => {
         {/* End */}
         <div className="flex justify-center gap-[95px] mt-[-45px] ml-[210px]">
           <p className="text-black">mindrisersnepal.com</p>
-          <Image src="/logo-stamp 1.png" alt="stamp" width={131} height={111.72} className="mt-[-73px] z-50" />
+          <Image src="/logo-stamp 1.png" alt="stamp" width={131} height={111.72} className="mt-[-74px] z-50" />
         </div>
       </div>
 
