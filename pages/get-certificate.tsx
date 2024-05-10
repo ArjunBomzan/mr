@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image"
 import BannerWrapper from "../components/common/BannerWrapper"
 import { FiDownload } from "react-icons/fi";
@@ -5,9 +7,40 @@ import { RiShareBoxFill } from "react-icons/ri";
 import { FaArrowRight } from "react-icons/fa";
 import AdmissionEnquiry from "../components/common/AdmissionEnquiry";
 import Certificate from "../components/Certificate";
+import { useEffect, useRef, useState } from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 
 const getCertificate = () => {
+  const [imageSrc, setImageSrc] = useState("")
+  const [imageGenerated, setImageGenetated] = useState(false)
+  const pngRef = useRef()
+
+  const generateImage = () => {
+    const input = pngRef.current;
+    html2canvas(input).then((canvas) => {
+      const imageData = canvas.toDataURL('image/png');
+      setImageSrc(imageData);
+      setImageGenetated(true)
+    });
+  };
+
+  const handleDownload = () => {
+console.log("first")
+    const downloadLink = document.createElement('a');
+    downloadLink.href = imageSrc;
+    downloadLink.download = 'certificate.png';
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+
+
+
+  }
+  useEffect(() => {
+    generateImage()
+  })
   return (
     <div>
       <BannerWrapper>
@@ -32,13 +65,18 @@ const getCertificate = () => {
         {/* Certificate */}
         <div className="flex justify-center">
           <div className="w-[960px] p-[30px]   bg-[#fff5c5] ">
-            <Certificate />
+            {
+              imageGenerated ? (<img src={imageSrc} className="w-full h-full" />) : (<Certificate downloadRef={pngRef} />)
+            }
+
+
+
           </div>
         </div>
 
         {/* buttons */}
         <div className="mt-[35px] flex justify-center gap-6">
-          <button className=" py-[14px] px-[20px] w-[243px] h-[52px] bg-[#E27C0014] text-[#E27C00] flex items-center gap-[10px] rounded-[30px]  " >Download Certificate <FiDownload /></button>
+          <button className=" py-[14px] px-[20px] w-[243px] h-[52px] bg-[#E27C0014] text-[#E27C00] flex items-center gap-[10px] rounded-[30px]  " onClick={handleDownload}>Download Certificate <FiDownload /></button>
           <button className=" py-[14px] px-[20px] w-[209px] h-[52px] bg-[#E27C00] text-white flex items-center gap-[10px] rounded-[30px] ">Share Certificate <RiShareBoxFill /></button>
         </div>
       </div>

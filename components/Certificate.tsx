@@ -2,9 +2,9 @@ import Image from "next/image"
 
 
 
-const Certificate = () => {
+const Certificate = ({downloadRef}) => {
   return (
-    <div className="w-[888px] py-[40px]  flex justify-center gap-7 bg-white font-Roboto">
+    <div className="w-[888px] py-[40px]  flex justify-center gap-7 bg-white font-Roboto" ref={downloadRef}>
       {/* content */}
       <div className=" pt-[20px] flex flex-col items-center gap-y-8">
         {/* Certificate logo */}
@@ -13,7 +13,7 @@ const Certificate = () => {
 
           <div className="text-primary">
             <h1 className=" text-[36.39px] leading-[41.84px] mb-[-4px] font-bold lowercase">mindrisers</h1>
-            <h3 className="text-[18.45px] font-medium leading-[21px]">CONSORTIUM PVT. LTD.</h3>
+            <h3 className="text-[18.45px] font-medium leading-[21px] my-1">CONSORTIUM PVT. LTD.</h3>
             <p className="mt-[-2px] text-black text-[12.19px] leading-[14.29px] uppercase">PUTALISADAK, KATHMANDU, NEPAL</p>
           </div>
         </div>
